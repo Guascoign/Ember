@@ -1,0 +1,70 @@
+(ExpressProject ""
+  (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[11/06/24]")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library")
+    ("Allegro Netlist Directory" "allegro")
+    (File ".\embermain.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420")
+    (NoModify))
+  (Folder "Layout")
+  (Folder "Outputs")
+  (Folder "Referenced Projects")
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles")
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (Folder "Logs")
+  (PartMRUSelector)
+  (MPSSessionName "15291")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\embermain.dsn")
+      (Path "Design Resources" ".\embermain.dsn" "EmberMain")
+      (Select "Design Resources" ".\embermain.dsn"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 875"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 2232 28 897")
+        (Scroll "-525 3")
+        (Zoom "118")
+        (Occurrence "/"))
+      (Path "D:\PROJECTS\EMBER\01.HARDWARE\01.MAIN\01.SCH\EMBERMAIN.DSN")
+      (Schematic "EmberMain")
+      (Page "01 VERSION"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 0 0 5 2232 28 897")
+        (Scroll "-525 3")
+        (Zoom "118")
+        (Occurrence "/"))
+      (Path "D:\PROJECTS\EMBER\01.HARDWARE\01.MAIN\01.SCH\EMBERMAIN.DSN")
+      (Schematic "EmberMain")
+      (Page "02 POWER"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 2232 28 897")
+        (Scroll "-451 -6")
+        (Zoom "85")
+        (Occurrence "/"))
+      (Path "D:\PROJECTS\EMBER\01.HARDWARE\01.MAIN\01.SCH\EMBERMAIN.DSN")
+      (Schematic "EmberMain")
+      (Page "03 MCU"))))
