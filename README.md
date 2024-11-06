@@ -1,2 +1,38 @@
 # Ember
 STM32F401迷你核心板
+核心板
+	主控
+		STM32F411RCT6
+			100MHz
+			256KB FLASH
+			128KB SRAM
+			50 GPIO
+	CLK
+		8MHz
+		32.768KHz
+			RTC
+	接口
+		SWD
+		50 I/O
+		BOOT
+	屏幕
+		1.14寸TFT 135*240
+			SPI
+	扩展
+		NOR FLASH
+			W25Q64JVSSIQ
+		SRAM
+			23K256T-I/ST
+	电源
+		TYPE-C 5V
+			TPLP2992IM5X-3.3
+		SWD 3.3V
+	按键
+		RESET
+		K1
+	LED
+		RUN
+		PWR
+		LED1
+		RGB x4
+		RGB x4
