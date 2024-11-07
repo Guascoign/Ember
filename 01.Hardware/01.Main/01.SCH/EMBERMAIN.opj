@@ -1,6 +1,6 @@
 (ExpressProject ""
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[11/06/24]")
+  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[11/07/24]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library")
@@ -11,7 +11,22 @@
     (CompileFileAddedOrDeleted "x")
     (DOCKED "TRUE")
     (DOCKING_POSITION "59420")
-    (NoModify))
+    (NoModify)
+    (Netlist_TAB "0")
+    ("Create Allegro Netlist" "TRUE")
+    ("View Allegro Netlist Files" "FALSE")
+    ("Allegro Netlist Create DCF File" "FALSE")
+    ("Update Allegro Board" "FALSE")
+    ("Allegro Netlist Output Board File" "allegro\EMBERMAIN.brd")
+    ("Allegro Netlist Remove Etch" "FALSE")
+    ("Allegro Netlist Place Changed Component" "ALWAYS_REPLACE")
+    ("Allegro Netlist Open Board in Allegro" "ALLEGRO")
+    ("Allegro Setup Backup Versions" "3")
+    ("Allegro Setup Ignore Constraints" "FALSE")
+    ("Allegro Setup Part Type Length" "255")
+    ("Allegro Netlist Combine Property String" "PCB Footprint")
+    ("Allegro Netlist Ignore Fixed Property" "FALSE")
+    ("Allegro Netlist User Defined Property" "FALSE"))
   (Folder "Layout")
   (Folder "Outputs")
   (Folder "Referenced Projects")
@@ -24,47 +39,66 @@
     (Folder "Include Files"
       (Sort User)))
   (Folder "Logs")
-  (PartMRUSelector)
+  (PartMRUSelector
+    (BUZZER_NS
+      (FullPartName "BUZZER_NS.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
+      (DeviceIndex "0"))
+    (MOSFET-N
+      (FullPartName "MOSFET-N.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
+      (DeviceIndex "0"))
+    (MPU6050
+      (FullPartName "MPU6050.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\PERIPHERALS.OLB")
+      (DeviceIndex "0"))
+    (CON_2X16
+      (FullPartName "CON_2X16.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\HEADDER.OLB")
+      (DeviceIndex "0"))
+    (TPLP2992IM5X-3.3
+      (FullPartName "TPLP2992IM5X-3.3.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\POWER.OLB")
+      (DeviceIndex "0"))
+    (CON_32
+      (FullPartName "CON_32.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\HEADDER.OLB")
+      (DeviceIndex "0"))
+    (23K256T
+      (FullPartName "23K256T.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\IC.OLB")
+      (DeviceIndex "0")))
   (MPSSessionName "15291")
   (GlobalState
     (FileView
       (Path "Design Resources")
       (Path "Design Resources" ".\embermain.dsn")
-      (Path "Design Resources" ".\embermain.dsn" "EmberMain")
+      (Path "Design Resources" ".\embermain.dsn" "M3_LVGL")
       (Select "Design Resources" ".\embermain.dsn"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 875"))
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 1000"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 2232 28 897")
-        (Scroll "-525 3")
-        (Zoom "118")
+        (Placement "44 0 1 -1 -1 5 28 5 2232 28 1022")
+        (Scroll "-413 0")
+        (Zoom "141")
         (Occurrence "/"))
       (Path "D:\PROJECTS\EMBER\01.HARDWARE\01.MAIN\01.SCH\EMBERMAIN.DSN")
-      (Schematic "EmberMain")
-      (Page "01 VERSION"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 0 0 5 2232 28 897")
-        (Scroll "-525 3")
-        (Zoom "118")
-        (Occurrence "/"))
-      (Path "D:\PROJECTS\EMBER\01.HARDWARE\01.MAIN\01.SCH\EMBERMAIN.DSN")
-      (Schematic "EmberMain")
+      (Schematic "M3_LVGL")
       (Page "02 POWER"))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 2232 28 897")
-        (Scroll "-451 -6")
-        (Zoom "85")
+        (Placement "44 0 1 -1 -1 5 28 5 2232 28 1022")
+        (Scroll "-352 -5")
+        (Zoom "98")
         (Occurrence "/"))
       (Path "D:\PROJECTS\EMBER\01.HARDWARE\01.MAIN\01.SCH\EMBERMAIN.DSN")
-      (Schematic "EmberMain")
-      (Page "03 MCU"))))
+      (Schematic "M3_LVGL")
+      (Page "03 MCU")))
+  (ISPCBBASICLICENSE "false"))
