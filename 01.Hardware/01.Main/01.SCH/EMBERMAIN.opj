@@ -1,6 +1,6 @@
 (ExpressProject ""
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[11/07/24]")
+  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[11/08/24]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library")
@@ -26,7 +26,8 @@
     ("Allegro Setup Part Type Length" "255")
     ("Allegro Netlist Combine Property String" "PCB Footprint")
     ("Allegro Netlist Ignore Fixed Property" "FALSE")
-    ("Allegro Netlist User Defined Property" "FALSE"))
+    ("Allegro Netlist User Defined Property" "FALSE")
+    (Board_sim_option "VHDL_flow"))
   (Folder "Layout")
   (Folder "Outputs")
   (Folder "Referenced Projects")
@@ -90,7 +91,7 @@
       (Path "Design Resources")
       (Path "Design Resources" ".\embermain.dsn")
       (Path "Design Resources" ".\embermain.dsn" "EMBER_Main")
-      (Select "Design Resources" ".\embermain.dsn"))
+      (Select "Design Resources" ".\embermain.dsn" "EMBER_Main" "03 MCU"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
