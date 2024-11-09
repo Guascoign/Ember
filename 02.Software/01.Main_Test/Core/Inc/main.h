@@ -71,7 +71,7 @@ void Error_Handler(void);
 #define LCD_PWR_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
-#define LOG_OUTPUT //±£´æÈÕÖ¾
+#define LOG_OUTPUT //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

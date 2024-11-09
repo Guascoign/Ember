@@ -73,6 +73,7 @@ RunTime runtime = {0};
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -107,8 +108,8 @@ int main(void)
         MX_TIM11_Init();
     }
 
-	HAL_TIM_Base_Start_IT(&htim11); //¶¨Ê±Æ÷6Ê¹ÄÜ
-	HAL_TIM_Base_Start_IT(&htim10); //¶¨Ê±Æ÷7Ê¹ÄÜ
+	HAL_TIM_Base_Start_IT(&htim11); //ï¿½ï¿½Ê±ï¿½ï¿½6Ê¹ï¿½ï¿½
+	HAL_TIM_Base_Start_IT(&htim10); //ï¿½ï¿½Ê±ï¿½ï¿½7Ê¹ï¿½ï¿½
 	HAL_Delay(100);
 
 
@@ -221,7 +222,7 @@ void SystemClock_Config(void)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) 
 {
-if (htim->Instance == htim10.Instance) //¶¨Ê±Æ÷11ÖÐ¶ÏÒµÎñ
+if (htim->Instance == htim10.Instance) //ï¿½ï¿½Ê±ï¿½ï¿½11ï¿½Ð¶ï¿½Òµï¿½ï¿½
 		{
 				update_run_time_s(&runtime); 
 		}
