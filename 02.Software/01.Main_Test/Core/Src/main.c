@@ -105,7 +105,7 @@ int main(void)
 
 	 if (calculate_dividers(TARGET_FREQ, &Prescaler, &Counter_period) == 0) 
 		{
-        MX_TIM11_Init();
+        MX_TIM11_Init();//123
     }
 
 	HAL_TIM_Base_Start_IT(&htim11); //��ʱ��6ʹ��
