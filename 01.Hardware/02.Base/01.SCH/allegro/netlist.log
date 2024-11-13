@@ -1,0 +1,13 @@
+{ Using PSTWRITER 17.4.0 d001Nov-13-2024 at 18:19:11 }
+
+#1 WARNING(ORCAP-36038): "No_connect" property on Pin "U3.5" ignored for U3: SCHEMATIC1, 03 MCU (2.10, 4.00). Connecting pin to net "N695551".
+INFO(ORCAP-36080): Scanning netlist files ...
+
+Loading... D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\allegro\pstchip.dat
+
+Loading... D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\allegro\pstchip.dat
+
+Loading... D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\allegro\pstxprt.dat
+
+Loading... D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\allegro\pstxnet.dat
+packaging the design view...

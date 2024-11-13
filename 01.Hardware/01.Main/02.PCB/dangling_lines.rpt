@@ -1,0 +1,108 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    Dangling Line, Via and Antenna Report                            )
+(                                                                     )
+(    Drawing          : EmberMain.brd                                 )
+(    Software Version : 17.4S037                                      )
+(    Date/Time        : Fri Nov  8 19:42:33 2024                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Report methodology:
+  - Dangling lines have at least one end not connected.
+  - Dangling vias have one or no connection
+      - Plus are not a test, thieving or netshort property via.
+  - Antenna vias do not have connections on their start and end layers.
+      - Plus they are not a thieving vias.
+      - Optionally, VOLTAGE nets, testvias and through vias can be suppressed with
+        the environment variable report_antennavia.
+      - Section may be suppressed by variable report_noantennavia.
+  - Not part of the current partition.
+  - To suppress items in dangle report add the OK_DANGLE property to the via
+    or connect line.
+
+<< Dangling Lines >>  - Location marked with a star (*) is dangling.
+  Net                 Layer                  Length       Location
+  ------------------------------------------------------------------------------------------
+  BEEP                 TOP                    1.000     *(381.890 195.850) to  (381.890 196.850)
+  PC13                 BOTTOM                34.791     *(121.413 138.587) to  (86.622 138.587)
+  VREF3V3              BOTTOM                14.800     *(298.000 902.921) to  (308.465 913.386)
+
+
+<< Dangling Vias >>
+  Net                  Padstack               Location            Layers
+  ---------------------------------------------------------------------------
+  IMU_SCL              VIA-12               (580.000 228.000) TOP/BOTTOM 
+  IMU_SDA              VIA-12               (557.975 204.785) TOP/BOTTOM 
+  PA1                  VIA-12               (499.283 72.000) TOP/BOTTOM 
+
+
+<< Antenna Vias >>
+  Net                  Padstack               Location            Layers
+  ---------------------------------------------------------------------------
+  IMU_SCL              VIA-12               (580.000 228.000) TOP/BOTTOM 
+  IMU_SDA              VIA-12               (557.975 204.785) TOP/BOTTOM 
+  X2_OUT               VIA-12               (33.000 177.957) TOP/BOTTOM 
+  X2_OUT               VIA-12               (777.699 464.038) TOP/BOTTOM 
+  PA5                  VIA-12               (33.000 296.000) TOP/BOTTOM 
+  PA5                  VIA-12               (561.000 544.000) TOP/BOTTOM 
+  PA4                  VIA-12               (172.000 319.000) TOP/BOTTOM 
+  PA4                  VIA-12               (536.856 501.649) TOP/BOTTOM 
+  PA6                  VIA-12               (154.000 276.000) TOP/BOTTOM 
+  PA6                  VIA-12               (539.126 581.869) TOP/BOTTOM 
+  PA7                  VIA-12               (32.000 256.000) TOP/BOTTOM 
+  PA7                  VIA-12               (517.000 605.000) TOP/BOTTOM 
+  BOOT0                VIA-12               (152.000 236.000) TOP/BOTTOM 
+  BOOT0                VIA-12               (857.000 525.000) TOP/BOTTOM 
+  PC7                  VIA-12               (1229.000 1010.000) TOP/BOTTOM 
+  PC7                  VIA-12               (640.000 918.000) TOP/BOTTOM 
+  PC6                  VIA-12               (1226.000 924.398) TOP/BOTTOM 
+  PC13                 VIA-12               (32.000 138.587) TOP/BOTTOM 
+  PC13                 VIA-12               (843.869 453.934) TOP/BOTTOM 
+  VCC3V3               VIA-12               (1128.189 511.811) TOP/BOTTOM 
+  VCC3V3               VIA-12               (1015.000 229.690) TOP/BOTTOM 
+  VCC3V3               VIA-12               (1121.000 407.276) TOP/BOTTOM 
+  VCC3V3               VIA-12               (1282.000 242.000) TOP/BOTTOM 
+  VCC3V3               VIA-12               (1351.803 175.197) TOP/BOTTOM 
+  VCC3V3               VIA-12               (897.503 822.503) TOP/BOTTOM 
+  VCC3V3               VIA-12               (624.000 487.000) TOP/BOTTOM 
+  TC_TXD               VIA-12               (1345.000 864.000) TOP/BOTTOM 
+  TC_TXD               VIA-12               (720.000 864.743) TOP/BOTTOM 
+  PB12                 VIA-12               (1229.000 964.398) TOP/BOTTOM 
+  PB8                  VIA-12               (33.000 218.000) TOP/BOTTOM 
+  PB8                  VIA-12               (808.000 516.000) TOP/BOTTOM 
+  PB10                 VIA-12               (145.500 366.500) TOP/BOTTOM 
+  PB10                 VIA-12               (347.000 544.000) TOP/BOTTOM 
+  PA1                  VIA-12               (499.283 72.000) TOP/BOTTOM 
+  PA13                 VIA-12               (1347.000 825.977) TOP/BOTTOM 
+  PA13                 VIA-12               (719.891 710.927) TOP/BOTTOM 
+  PA13                 VIA-12               (1138.824 626.000) TOP/BOTTOM 
+  X2_IN                VIA-12               (144.000 148.000) TOP/BOTTOM 
+  X2_IN                VIA-12               (809.686 463.121) TOP/BOTTOM 
+  PB11                 VIA-12               (33.000 375.000) TOP/BOTTOM 
+  VBATTERY             VIA-12               (1085.500 381.500) TOP/BOTTOM 
+  VBATTERY             VIA-12               (991.000 476.000) TOP/BOTTOM 
+  TC_RXD               VIA-12               (1225.000 837.000) TOP/BOTTOM 
+  TC_RXD               VIA-12               (725.160 759.815) TOP/BOTTOM 
+  PC8                  VIA-12               (1345.000 904.728) TOP/BOTTOM 
+  PC8                  VIA-12               (624.714 755.286) TOP/BOTTOM 
+  PA8                  VIA-12               (1230.000 883.000) TOP/BOTTOM 
+  PA8                  VIA-12               (692.001 757.984) TOP/BOTTOM 
+  PB9                  VIA-12               (154.000 192.000) TOP/BOTTOM 
+  PB9                  VIA-12               (858.721 482.279) TOP/BOTTOM 
+  PA14                 VIA-12               (871.000 757.000) TOP/BOTTOM 
+  PA14                 VIA-12               (1125.000 587.000) TOP/BOTTOM 
+  VREF3V3              VIA-12               (356.614 913.386) TOP/BOTTOM 
+  PC9                  VIA-12               (1345.000 983.457) TOP/BOTTOM 
+  PC9                  VIA-12               (678.000 957.000) TOP/BOTTOM 
+  5V                   VIA-12               (117.000 539.000) TOP/BOTTOM 
+  5V                   VIA-12               (1345.000 1090.999) TOP/BOTTOM 
+  5V                   VIA-12               (1232.000 1087.000) TOP/BOTTOM 
+  5V                   VIA-12               (173.000 99.000) TOP/BOTTOM 
+  5V                   VIA-12               (527.000 221.000) TOP/BOTTOM 
+
+<< Summary >>
+  Total dangling lines:       3
+  Total dangling vias:        3
+  Total antenna vias:        60

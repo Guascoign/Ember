@@ -1,6 +1,6 @@
 (ExpressProject "EmberBase"
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[11/11/24]")
+  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[11/13/24]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library")
@@ -17,7 +17,7 @@
     ("View Allegro Netlist Files" "FALSE")
     ("Allegro Netlist Create DCF File" "FALSE")
     ("Update Allegro Board" "FALSE")
-    ("Allegro Netlist Output Board File" "allegro\EMBERBASE.brd")
+    ("Allegro Netlist Output Board File" ".\allegro\emberbase.brd")
     ("Allegro Netlist Remove Etch" "FALSE")
     ("Allegro Netlist Place Changed Component" "ALWAYS_REPLACE")
     ("Allegro Netlist Open Board in Allegro" "ALLEGRO")
@@ -26,7 +26,24 @@
     ("Allegro Setup Part Type Length" "255")
     ("Allegro Netlist Combine Property String" "PCB Footprint")
     ("Allegro Netlist Ignore Fixed Property" "FALSE")
-    ("Allegro Netlist User Defined Property" "FALSE"))
+    ("Allegro Netlist User Defined Property" "FALSE")
+    (Board_sim_option "VHDL_flow")
+    (ANNOTATE_Scope "0")
+    (ANNOTATE_Mode "1")
+    (ANNOTATE_Action "0")
+    (Annotate_Page_Order "0")
+    (ANNOTATE_Reset_References_to_1 "FALSE")
+    (ANNOTATE_No_Page_Number_Change "FALSE")
+    (ANNOTATE_Property_Combine "{Value}{Source Package}{POWER_GROUP}")
+    (ANNOTATE_IncludeNonPrimitive "FALSE")
+    (ANNOTATE_PreserveDesignator "FALSE")
+    (ANNOTATE_PreserveUserEdits "FALSE")
+    (ANNOTATE_Refdes_Control_Required "FALSE")
+    (Update_Instace_for_External_Design "FALSE")
+    (Annotate_type "Default")
+    (width_pages "100")
+    (width_start "80")
+    (width_End "80"))
   (Folder "Layout")
   (Folder "Outputs"
     (File ".\allegro\pstxnet.dat"
@@ -49,6 +66,42 @@
       (Sort User)))
   (Folder "Logs")
   (PartMRUSelector
+    (CON_4
+      (FullPartName "CON_4.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\HEADDER.OLB")
+      (DeviceIndex "0"))
+    (AT24C256C
+      (FullPartName "AT24C256C.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\PERIPHERALS.OLB")
+      (DeviceIndex "0"))
+    (CON_2X16
+      (FullPartName "CON_2X16.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\HEADDER.OLB")
+      (DeviceIndex "0"))
+    (Ember_V1.0
+      (FullPartName "Ember_V1.0B.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\PERIPHERALS.OLB")
+      (DeviceIndex "1"))
+    (BATTERY
+      (FullPartName "BATTERY.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
+      (DeviceIndex "0"))
+    (TVSA
+      (FullPartName "TVSA.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
+      (DeviceIndex "0"))
+    (TVSB
+      (FullPartName "TVSB.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
+      (DeviceIndex "0"))
+    (CON_2X20
+      (FullPartName "CON_2X20.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\HEADDER.OLB")
+      (DeviceIndex "0"))
+    (TYPE-C_12P_SMD
+      (FullPartName "TYPE-C_12P_SMD.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\HEADDER.OLB")
+      (DeviceIndex "0"))
     (C
       (FullPartName "C.Normal")
       (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
@@ -61,20 +114,45 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Outputs"))
+      (Path "Design Resources" ".\emberbase.dsn")
+      (Path "Design Resources" ".\emberbase.dsn" "SCHEMATIC1")
+      (Path "Design Resources" ".\emberbase.dsn" "Design Cache")
+      (Path "Outputs")
+      (Select "Design Resources" ".\emberbase.dsn" "SCHEMATIC1" "03 MCU"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 1000"))
+        (Placement "44 0 1 -1 -1 -1 -1 0 251 0 976"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 2232 28 1022")
-        (Scroll "-462 -9")
+        (Placement "44 0 1 -1 -1 -1 -1 5 2181 28 1022")
+        (Scroll "-436 -9")
         (Zoom "131")
         (Occurrence "/"))
       (Path "D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\EMBERBASE.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "PAGE1"))))
+      (Page "01 VERSION"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 5 28 5 2181 28 1022")
+        (Scroll "-417 0")
+        (Zoom "135")
+        (Occurrence "/"))
+      (Path "D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\EMBERBASE.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "02 POWER"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 5 28 5 2181 28 1022")
+        (Scroll "1654 1145")
+        (Zoom "392")
+        (Occurrence "/"))
+      (Path "D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\EMBERBASE.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "03 MCU")))
+  (MPSSessionName "15291"))
