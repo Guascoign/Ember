@@ -30,7 +30,7 @@ f407zet\at24cxx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfu
 f407zet\at24cxx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 f407zet\at24cxx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 f407zet\at24cxx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-f407zet\at24cxx.o: ../Drivers/BSP/IIC/IIC.h
+f407zet\at24cxx.o: ../Drivers/BSP/IIC/iic.h
 f407zet\at24cxx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 f407zet\at24cxx.o: ../Drivers/Lib/crc.h
 f407zet\at24cxx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

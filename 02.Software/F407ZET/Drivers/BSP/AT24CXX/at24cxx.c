@@ -151,7 +151,9 @@ static void AT24CXX_WriteOneByte(struct AT24CXX_Device *p_AT24Dev,uint16_t Write
  */
 static void AT24CXX_Init(struct AT24CXX_Device *p_AT24Dev)
 {
-    printf("AT24CXX_Init\r\n");
+    #ifdef Debug_Logs
+        printf("AT24CXX_Init\r\n");
+    #endif   
  	p_AT24Dev->IIC_Device->IIC_Init(p_AT24Dev->IIC_Device);//IIC初始化
 }
 

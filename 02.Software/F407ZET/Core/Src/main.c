@@ -115,7 +115,7 @@ pUARTDev->Init(pUARTDev, 115200, 8, 'N', 1);
 
 //AT24C02初始化
 struct AT24CXX_Device *pAT24Dev = AT24CXX_GetDevice("AT24C02");//获取外设地址指针
-pAT24Dev->AT24CXX_Check(&pAT24Dev);
+pAT24Dev->AT24CXX_Check(pAT24Dev);
 
   
 

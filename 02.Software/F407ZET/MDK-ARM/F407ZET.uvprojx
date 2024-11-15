@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Drivers/Lib;../Drivers/BSP;../Drivers/BSP/AT24CXX;../Drivers/BSP/IIC;../Drivers/BSP/UART</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Drivers/Lib;../Drivers/BSP;../Drivers/BSP/AT24CXX;../Drivers/BSP/IIC;../Drivers/BSP/UART;..\Drivers\BSP\MPU6050;..\Drivers\BSP\MPU6050\eMPL</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -762,6 +762,21 @@
               <FileName>uart_printf.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\BSP\UART\uart_printf.c</FilePath>
+            </File>
+            <File>
+              <FileName>mpu6050.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\BSP\MPU6050\mpu6050.c</FilePath>
+            </File>
+            <File>
+              <FileName>inv_mpu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\BSP\MPU6050\eMPL\inv_mpu.c</FilePath>
+            </File>
+            <File>
+              <FileName>inv_mpu_dmp_motion_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\BSP\MPU6050\eMPL\inv_mpu_dmp_motion_driver.c</FilePath>
             </File>
           </Files>
         </Group>

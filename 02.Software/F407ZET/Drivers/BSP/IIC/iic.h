@@ -38,9 +38,9 @@ typedef struct IIC_Device
 	  void (*IIC_SendByte)(const struct IIC_Device *p_IICDev,uint8_t Send_data); //IIC发送一个字节
 	  uint8_t (*IIC_ReadByte)(const struct IIC_Device *p_IICDev , uint8_t ack); //IIC读取一个字节
 	  void (*IIC_WriteRegByte)(const struct IIC_Device *p_IICDev, uint8_t SlaveAddress, uint8_t RegAddress, uint8_t ByteData);//向寄存器写入一个字节
-	  void (*IIC_WriteReg2Byte)(const struct IIC_Device *p_IICDev, uint8_t SlaveAddress, uint8_t RegAddress, uint16_t ByteData);//向寄存器写入两个字节
 	  uint8_t (*IIC_ReadRegByte)(const struct IIC_Device *p_IICDev, uint8_t SlaveAddress, uint8_t RegAddress);//从寄存器读取一个字节
-	  uint16_t (*IIC_ReadReg2Byte)(const struct IIC_Device *p_IICDev, uint8_t SlaveAddress, uint8_t RegAddress);//从寄存器读取两个字节
+	  void (*IIC_WriteReg)(const struct IIC_Device *p_IICDev, uint8_t SlaveAddress, uint8_t RegAddress, uint8_t len , uint8_t *pbuf);//向寄存器连续写
+	  void (*IIC_ReadReg)(const struct IIC_Device *p_IICDev, uint8_t SlaveAddress, uint8_t RegAddress , uint8_t len , uint8_t *pbuf);//向寄存器连续读
 	  void (*delay_us)(uint32_t nus); //延时函数
 	  void *priv_data;//私有数据
 }IIC_DeviceTypeDef;

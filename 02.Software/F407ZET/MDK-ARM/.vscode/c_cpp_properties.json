@@ -13,6 +13,8 @@
                 "d:\\Projects\\Ember\\02.Software\\F407ZET\\Drivers\\BSP\\AT24CXX",
                 "d:\\Projects\\Ember\\02.Software\\F407ZET\\Drivers\\BSP\\IIC",
                 "d:\\Projects\\Ember\\02.Software\\F407ZET\\Drivers\\BSP\\UART",
+                "d:\\Projects\\Ember\\02.Software\\F407ZET\\Drivers\\BSP\\MPU6050",
+                "d:\\Projects\\Ember\\02.Software\\F407ZET\\Drivers\\BSP\\MPU6050\\eMPL",
                 "C:\\Keil_v5\\ARM\\ARMCC\\include",
                 "C:\\Keil_v5\\ARM\\ARMCC\\include\\rw",
                 "d:\\Projects\\Ember\\02.Software\\F407ZET\\MDK-ARM",

@@ -539,6 +539,60 @@ uint16_t iic_ReadReg2Byte_CRC8(const struct IIC_Device *p_IICDev, uint8_t SlaveA
     return data;
 }
 
+/**
+ * @brief   向寄存器连续写
+ *
+ * @param   p_IICDev    IIC设备结构体
+ * @param   SlaveAddress    从设备地址
+ * @param   RegAddress      寄存器地址
+ * @param   len             读取长度
+ * @param   buf             读取数据存储区
+ *
+ */
+void iic_WriteReg(const struct IIC_Device *p_IICDev, uint8_t SlaveAddress, uint8_t RegAddress, uint8_t len , uint8_t *pbuf)
+{
+    uint8_t i;
+    iic_start(p_IICDev);
+    iic_send_byte(p_IICDev, SlaveAddress);
+    iic_wait_ack(p_IICDev);
+    iic_send_byte(p_IICDev, RegAddress);
+    iic_wait_ack(p_IICDev);
+    for(i = 0; i < len; i++)
+    {
+        iic_send_byte(p_IICDev, pbuf[i]);
+        iic_wait_ack(p_IICDev);
+    }
+    iic_stop(p_IICDev);
+}
+
+/**
+ * @brief   向寄存器连续读
+ *
+ * @param   p_IICDev    IIC设备结构体
+ * @param   SlaveAddress    从设备地址
+ * @param   RegAddress      寄存器地址
+ * @param   len             读取长度
+ * @param   buf             读取数据存储区
+ *
+ */
+void iic_ReadReg(const struct IIC_Device *p_IICDev, uint8_t SlaveAddress, uint8_t RegAddress , uint8_t len , uint8_t *pbuf)
+{
+    uint8_t i;
+    iic_start(p_IICDev);
+    iic_send_byte(p_IICDev, SlaveAddress);
+    iic_wait_ack(p_IICDev);
+    iic_send_byte(p_IICDev, RegAddress);
+    iic_wait_ack(p_IICDev);
+    iic_restart(p_IICDev);
+    iic_send_byte(p_IICDev, SlaveAddress + 1);
+    iic_wait_ack(p_IICDev);
+    for(i = 0; i < len; i++)
+    {
+        pbuf[i] = iic_read_byte(p_IICDev , 1);
+    }
+    iic_nack(p_IICDev);
+    iic_stop(p_IICDev);
+}
 
 /**
  * @brief   us延时函数
@@ -587,8 +641,8 @@ struct IIC_Device IIC1 = {
     .IIC_ReadByte = iic_read_byte, // IIC读取一个字节
     .IIC_ReadRegByte = iic_ReadRegByte, // 从寄存器读取一个字节
     .IIC_WriteRegByte = iic_WriteRegByte, // 向寄存器写入一个字节
-    .IIC_ReadReg2Byte = iic_ReadReg2Byte, // 从寄存器读取两个字节
-    .IIC_WriteReg2Byte = iic_WriteReg2Byte, // 向寄存器写入两个字节
+    .IIC_ReadReg = iic_ReadReg, // 向寄存器连续写
+    .IIC_WriteReg = iic_WriteReg, // 向寄存器连续读取
     .delay_us = delay_us, // 延时函数
     .priv_data = NULL // 私有数据
 };
