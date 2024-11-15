@@ -24,7 +24,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "iic.h"
+#include "uart_pack.h"
+#include "uart_printf.h"
+#include "at24cxx.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -91,6 +94,33 @@ int main(void)
   MX_DMA_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+	HAL_Delay(500);
+	printf("======================================\r\n");
+	printf("   ______  ______  _______ \r\n");
+	printf("  / __/  |/  / _ )/ __/ _ \\\r\n");
+	printf(" / _// /|_/ / _  / _// , _/\r\n");
+	printf("/___/_/  /_/____/___/_/|_| \r\n");
+	printf("System Start!\r\n");
+	printf("Version: 1.0\r\n"); 
+	printf("======================================\r\n");
+	printf("[info]Running....\r\n");  
+
+  //串口初始化
+struct UART_Device *pUARTDev = GetUARTDevice("STM32_Bare_HAL_UART1_IT");//获取外设地址指针
+pUARTDev->Init(pUARTDev, 115200, 8, 'N', 1);
+
+//AT24C02初始化
+struct AT24CXX_Device *pAT24Dev = AT24CXX_GetDevice("AT24C02");//获取外设地址指针
+  if(pAT24Dev->AT24CXX_Check(pAT24Dev) == 0)
+    {
+      printf("[info]AT24CXX Check OK!\r\n");
+    }
+    else
+    {
+      printf("[info]AT24CXX Check Failed!\r\n");
+    }
+
+  
 
   /* USER CODE END 2 */
 
@@ -101,6 +131,11 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+
+
+    HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
+    HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }

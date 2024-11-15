@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "string.h": "c",
-        "ws2812b.h": "c"
+        "ws2812b.h": "c",
+        "uart_printf.h": "c",
+        "at24cxx.h": "c"
     }
 }

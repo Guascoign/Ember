@@ -162,19 +162,19 @@ static void AT24CXX_Init(struct AT24CXX_Device *p_AT24Dev)
  * @param   p_AT24Dev   AT24CXX存储器设备结构体指针
  * @return  返回0表示检测成功，返回1表示检测失败
  */
-// static uint8_t AT24CXX_Check(struct AT24CXX_Device *p_AT24Dev)   
-// {
-// 	uint8_t temp;
-//  	temp = p_AT24Dev->AT24CXX_ReadOneByte(p_AT24Dev,p_AT24Dev->EEP_SIZE);//避免每次开机都写AT24CXX      
-//  	if(temp == 0X33)return 0;     
-//  	else//排除第一次初始化的情况
-//  	{
-//    		 p_AT24Dev->AT24CXX_WriteOneByte(p_AT24Dev,p_AT24Dev->EEP_SIZE,0X33);
-//      		temp = p_AT24Dev->AT24CXX_ReadOneByte(p_AT24Dev,p_AT24Dev->EEP_SIZE);
-//     		if(temp==0X33)return 0;
-// 	 }
-// 	 return 1;  
-// }
+static uint8_t AT24CXX_Check(struct AT24CXX_Device *p_AT24Dev)   
+{
+	uint8_t temp;
+ 	temp = p_AT24Dev->AT24CXX_ReadOneByte(p_AT24Dev,p_AT24Dev->EEP_TYPE->EEP_SIZE);//避免每次开机都写AT24CXX      
+ 	if(temp == 0X42)return 0;     
+ 	else//排除第一次初始化的情况
+ 	{
+   		 p_AT24Dev->AT24CXX_WriteOneByte(p_AT24Dev,p_AT24Dev->EEP_TYPE->EEP_SIZE,0X42);
+     		temp = p_AT24Dev->AT24CXX_ReadOneByte(p_AT24Dev,p_AT24Dev->EEP_TYPE->EEP_SIZE);
+    		if(temp==0X42)return 0;
+	 }
+	 return 1;  
+}
 
 
 
@@ -284,17 +284,17 @@ void AT24CXX_Read(struct AT24CXX_Device *p_AT24Dev, uint16_t ReadAddr, uint8_t *
 
 
 //实例化AT24CXX对象
-extern struct IIC_Device IIC2;//IIC.c定义接口
-struct AT24CXX_Device AT24C64_device = {
-    .name = "AT24C64",
-    .EEP_TYPE =  &AT24C64,
-    .IIC_Device = &IIC2,
+extern struct IIC_Device IIC1;//IIC.c定义接口
+struct AT24CXX_Device AT24C02_device = {
+    .name = "AT24C02",
+    .EEP_TYPE =  &AT24C02,
+    .IIC_Device = &IIC1,
     .AT24CXX_Init = AT24CXX_Init,
     .AT24CXX_ReadOneByte = AT24CXX_ReadOneByte, //done
     .AT24CXX_WriteOneByte = AT24CXX_WriteOneByte,   //done
     .AT24CXX_Read = AT24CXX_Read,
     .AT24CXX_Write = AT24CXX_Write,
-    .AT24CXX_Check = NULL,
+    .AT24CXX_Check = AT24CXX_Check,
 };
 
 
@@ -302,7 +302,7 @@ struct AT24CXX_Device AT24C64_device = {
   *@brief   AT24设备数组
  */
 struct AT24CXX_Device *AT24CXX_Devices[] = {
-    &AT24C64_device  //AT24C64
+    &AT24C02_device  //AT24C02
 };
 
 /**

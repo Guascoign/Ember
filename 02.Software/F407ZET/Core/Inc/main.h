@@ -63,10 +63,10 @@ void Error_Handler(void);
 #define LED1_GPIO_Port GPIOF
 #define TD_INT_Pin GPIO_PIN_0
 #define TD_INT_GPIO_Port GPIOC
-#define IIC_SDA_Pin GPIO_PIN_8
+#define IIC_SCL_Pin GPIO_PIN_8
+#define IIC_SCL_GPIO_Port GPIOB
+#define IIC_SDA_Pin GPIO_PIN_9
 #define IIC_SDA_GPIO_Port GPIOB
-#define IIC_SDAB9_Pin GPIO_PIN_9
-#define IIC_SDAB9_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

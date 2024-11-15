@@ -32,3 +32,9 @@ f407zet\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 f407zet\main.o: ../Core/Inc/dma.h
 f407zet\main.o: ../Core/Inc/usart.h
 f407zet\main.o: ../Core/Inc/gpio.h
+f407zet\main.o: ../Drivers/BSP/IIC/iic.h
+f407zet\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+f407zet\main.o: ../Drivers/Lib/crc.h
+f407zet\main.o: ../Drivers/BSP/UART/uart_pack.h
+f407zet\main.o: ../Drivers/BSP/UART/uart_printf.h
+f407zet\main.o: ../Drivers/BSP/AT24CXX/at24cxx.h

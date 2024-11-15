@@ -190,7 +190,7 @@
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\Drivers\Lib;..\Drivers\BSP</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Drivers/Lib;../Drivers/BSP;../Drivers/BSP/AT24CXX;../Drivers/BSP/IIC;../Drivers/BSP/UART</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -738,10 +738,30 @@
               <FileType>1</FileType>
               <FilePath>..\Drivers\Lib\crc.c</FilePath>
             </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>BSP</GroupName>
+          <Files>
             <File>
-              <FileName>tim_base.c</FileName>
+              <FileName>at24cxx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Drivers\Lib\tim_base.c</FilePath>
+              <FilePath>..\Drivers\BSP\AT24CXX\at24cxx.c</FilePath>
+            </File>
+            <File>
+              <FileName>iic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\BSP\IIC\iic.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart_pack.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\BSP\UART\uart_pack.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart_printf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\BSP\UART\uart_printf.c</FilePath>
             </File>
           </Files>
         </Group>
