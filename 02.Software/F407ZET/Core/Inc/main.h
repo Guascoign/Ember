@@ -69,7 +69,7 @@ void Error_Handler(void);
 #define IIC_SDA_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
-
+#define Debug_Logs
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

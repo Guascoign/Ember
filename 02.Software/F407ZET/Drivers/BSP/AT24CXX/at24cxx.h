@@ -44,8 +44,8 @@ typedef struct AT24CXX_Device
     void (*AT24CXX_Init)(struct AT24CXX_Device *p_AT24Dev); //初始化AT24CXX
     uint8_t (*AT24CXX_ReadOneByte)(struct AT24CXX_Device *p_AT24Dev, uint16_t ReadAddr);//读取一个字节
     void (*AT24CXX_WriteOneByte)(struct AT24CXX_Device *p_AT24Dev, uint16_t WriteAddr, uint8_t DataToWrite);//写入一个字节
-    void (*AT24CXX_Write)(struct AT24CXX_Device *p_AT24Dev, uint16_t WriteAddr, uint8_t *pBuffer, uint16_t NumToWrite);//写入
-    void (*AT24CXX_Read)(struct AT24CXX_Device *p_AT24Dev, uint16_t ReadAddr, uint8_t *pBuffer, uint16_t NumToRead);//读取
+    void (*AT24CXX_Write)(struct AT24CXX_Device *p_AT24Dev, uint16_t WriteAddr, uint8_t *pBuffer, uint16_t NumToWrite);//连续写入
+    void (*AT24CXX_Read)(struct AT24CXX_Device *p_AT24Dev, uint16_t ReadAddr, uint8_t *pBuffer, uint16_t NumToRead);//连续读取
     uint8_t (*AT24CXX_Check)(struct AT24CXX_Device *p_AT24Dev);   //检查器件
     void *priv_data;//私有数据
 }AT24CXX_DeviceDef;

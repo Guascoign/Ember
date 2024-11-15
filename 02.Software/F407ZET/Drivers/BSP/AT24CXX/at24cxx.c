@@ -173,6 +173,9 @@ static uint8_t AT24CXX_Check(struct AT24CXX_Device *p_AT24Dev)
      		temp = p_AT24Dev->AT24CXX_ReadOneByte(p_AT24Dev,p_AT24Dev->EEP_TYPE->EEP_SIZE);
     		if(temp==0X42)return 0;
 	 }
+     #ifdef Debug_Logs
+        printf("EEprom Check ERROR");
+     #endif
 	 return 1;  
 }
 
@@ -187,6 +190,9 @@ static void AT24CXX_Write(struct AT24CXX_Device *p_AT24Dev, uint16_t WriteAddr, 
     if (CurrentPage >= PageNum)
     {
         // 超过了总页数，无法写入
+        #ifdef Debug_Logs
+            printf("EEPROM Write REG Overflow");
+        #endif
         return;
     }
 
@@ -295,6 +301,7 @@ struct AT24CXX_Device AT24C02_device = {
     .AT24CXX_Read = AT24CXX_Read,
     .AT24CXX_Write = AT24CXX_Write,
     .AT24CXX_Check = AT24CXX_Check,
+    .priv_data = NULL
 };
 
 

@@ -94,7 +94,11 @@ int main(void)
   MX_DMA_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-	HAL_Delay(500);
+	HAL_Delay(1000);
+  HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin,GPIO_PIN_SET);
+  HAL_Delay(1000);
+  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin,GPIO_PIN_SET);
+  HAL_Delay(1000);
 	printf("======================================\r\n");
 	printf("   ______  ______  _______ \r\n");
 	printf("  / __/  |/  / _ )/ __/ _ \\\r\n");
@@ -111,14 +115,7 @@ pUARTDev->Init(pUARTDev, 115200, 8, 'N', 1);
 
 //AT24C02初始化
 struct AT24CXX_Device *pAT24Dev = AT24CXX_GetDevice("AT24C02");//获取外设地址指针
-  if(pAT24Dev->AT24CXX_Check(pAT24Dev) == 0)
-    {
-      printf("[info]AT24CXX Check OK!\r\n");
-    }
-    else
-    {
-      printf("[info]AT24CXX Check Failed!\r\n");
-    }
+pAT24Dev->AT24CXX_Check(&pAT24Dev);
 
   
 
