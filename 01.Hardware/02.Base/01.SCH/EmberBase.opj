@@ -123,13 +123,13 @@
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 251 0 976"))
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 1000"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 2181 28 1022")
-        (Scroll "-436 -9")
+        (Placement "44 0 1 -1 -1 -1 -1 5 2232 28 1022")
+        (Scroll "-462 -9")
         (Zoom "131")
         (Occurrence "/"))
       (Path "D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\EMBERBASE.DSN")
@@ -138,8 +138,8 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 5 28 5 2181 28 1022")
-        (Scroll "-417 0")
+        (Placement "44 0 1 -1 -1 5 28 5 2232 28 1022")
+        (Scroll "-442 0")
         (Zoom "135")
         (Occurrence "/"))
       (Path "D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\EMBERBASE.DSN")
@@ -148,9 +148,9 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 5 28 5 2181 28 1022")
-        (Scroll "1654 1145")
-        (Zoom "392")
+        (Placement "44 0 1 -1 -1 5 28 5 2232 28 1022")
+        (Scroll "-330 0")
+        (Zoom "101")
         (Occurrence "/"))
       (Path "D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\EMBERBASE.DSN")
       (Schematic "SCHEMATIC1")
