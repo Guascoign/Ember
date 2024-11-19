@@ -1,6 +1,6 @@
 (ExpressProject ""
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[11/14/24]")
+  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[11/20/24]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library")
@@ -17,7 +17,7 @@
     ("View Allegro Netlist Files" "FALSE")
     ("Allegro Netlist Create DCF File" "FALSE")
     ("Update Allegro Board" "FALSE")
-    ("Allegro Netlist Output Board File" ".\allegro\embermain.brd")
+    ("Allegro Netlist Output Board File" "allegro\EMBERMAIN.brd")
     ("Allegro Netlist Remove Etch" "FALSE")
     ("Allegro Netlist Place Changed Component" "ALWAYS_REPLACE")
     ("Allegro Netlist Open Board in Allegro" "ALLEGRO")
@@ -29,7 +29,16 @@
     ("Allegro Netlist User Defined Property" "FALSE")
     (Board_sim_option "VHDL_flow"))
   (Folder "Layout")
-  (Folder "Outputs")
+  (Folder "Outputs"
+    (File ".\allegro\pstxnet.dat"
+      (Type "Report")
+      (DisplayName "pstxnet.dat"))
+    (File ".\allegro\pstxprt.dat"
+      (Type "Report")
+      (DisplayName "pstxprt.dat"))
+    (File ".\allegro\pstchip.dat"
+      (Type "Report")
+      (DisplayName "pstchip.dat")))
   (Folder "Referenced Projects")
   (Folder "PSpice Resources"
     (Folder "Simulation Profiles")
@@ -41,20 +50,74 @@
       (Sort User)))
   (Folder "Logs")
   (PartMRUSelector
-    (TP
-      (FullPartName "TP.Normal")
+    (MPU6050
+      (FullPartName "MPU6050.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\PERIPHERALS.OLB")
+      (DeviceIndex "0"))
+    (CRYSTAL_F
+      (FullPartName "CRYSTAL_F.Normal")
       (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
       (DeviceIndex "0"))
-    (CON_6
-      (FullPartName "CON_6.Normal")
-      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\HEADDER.OLB")
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
+      (DeviceIndex "0"))
+    (L
+      (FullPartName "L.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
+      (DeviceIndex "0"))
+    (VCC_BAR
+      (LibraryName "D:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (GND
+      (LibraryName "D:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    ("1.14 TFT-LCD_13P"
+      (FullPartName "1.14 TFT-LCD_13P.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\PERIPHERALS.OLB")
+      (DeviceIndex "0"))
+    (KEY_D_OPEN
+      (FullPartName "KEY_D_OPEN.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
       (DeviceIndex "0"))
     (KEY-SMD-4
       (FullPartName "KEY-SMD-4.Normal")
       (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
       (DeviceIndex "0"))
-    ("1.14 TFT-LCD_13P"
-      (FullPartName "1.14 TFT-LCD_13P.Normal")
+    (WS2812
+      (FullPartName "WS2812.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
+      (DeviceIndex "0"))
+    (LED
+      (FullPartName "LED.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
+      (DeviceIndex "0"))
+    (CON_2X16
+      (FullPartName "CON_2X16.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\HEADDER.OLB")
+      (DeviceIndex "0"))
+    (CON_4
+      (FullPartName "CON_4.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\HEADDER.OLB")
+      (DeviceIndex "0"))
+    (CON_6
+      (FullPartName "CON_6.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\HEADDER.OLB")
+      (DeviceIndex "0"))
+    (W25Qxxx
+      (FullPartName "W25Qxxx.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\PERIPHERALS.OLB")
+      (DeviceIndex "0"))
+    (TPLP2992IM5X-3.3
+      (FullPartName "TPLP2992IM5X-3.3.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\POWER.OLB")
+      (DeviceIndex "0"))
+    (STM32F411RET6
+      (FullPartName "STM32F411RET6B.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\IC.OLB")
+      (DeviceIndex "1"))
+    (AT24C256C
+      (FullPartName "AT24C256C.Normal")
       (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\PERIPHERALS.OLB")
       (DeviceIndex "0"))
     (BUZZER_NS
@@ -65,66 +128,55 @@
       (FullPartName "MOSFET-N.Normal")
       (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
       (DeviceIndex "0"))
-    (MPU6050
-      (FullPartName "MPU6050.Normal")
-      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\PERIPHERALS.OLB")
+    (Triode-PNP
+      (FullPartName "Triode-PNP.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
       (DeviceIndex "0"))
-    (CON_2X16
-      (FullPartName "CON_2X16.Normal")
-      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\HEADDER.OLB")
+    (FUSE
+      (FullPartName "FUSE.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
       (DeviceIndex "0"))
-    (TPLP2992IM5X-3.3
-      (FullPartName "TPLP2992IM5X-3.3.Normal")
-      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\POWER.OLB")
+    ("DIODE SCHOTTKY"
+      (FullPartName "DIODE SCHOTTKY.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
       (DeviceIndex "0"))
-    (CON_32
-      (FullPartName "CON_32.Normal")
-      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\HEADDER.OLB")
-      (DeviceIndex "0"))
-    (23K256T
-      (FullPartName "23K256T.Normal")
-      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\IC.OLB")
+    (C
+      (FullPartName "C.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
       (DeviceIndex "0")))
+  (MPSSessionName "15291")
+  (ISPCBBASICLICENSE "false")
   (GlobalState
     (FileView
       (Path "Design Resources")
       (Path "Design Resources" ".\embermain.dsn")
-      (Path "Design Resources" ".\embermain.dsn" "EMBER_Main"))
+      (Path "Design Resources" ".\embermain.dsn" "SCHEMATIC1")
+      (Path "Design Resources" ".\embermain.dsn" "Design Cache")
+      (Path "Outputs")
+      (Select "Design Resources" ".\embermain.dsn" "SCHEMATIC1" "02 MCU"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 1000"))
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 2120"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 5 28 5 2232 28 1022")
-        (Scroll "-462 -9")
+        (Placement "44 0 1 -1 -1 -1 -1 5 1112 28 2142")
+        (Scroll "0 -569")
         (Zoom "131")
         (Occurrence "/"))
       (Path "D:\PROJECTS\EMBER\01.HARDWARE\01.MAIN\01.SCH\EMBERMAIN.DSN")
-      (Schematic "EMBER_Main")
-      (Page "02 POWER"))
+      (Schematic "SCHEMATIC1")
+      (Page "01 VERSION"))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 2 3 -1 -1 5 28 5 2232 28 1022")
-        (Scroll "-330 0")
-        (Zoom "101")
+        (Placement "44 0 1 -1 -1 5 28 5 1112 28 2142")
+        (Scroll "0 -362")
+        (Zoom "140")
         (Occurrence "/"))
       (Path "D:\PROJECTS\EMBER\01.HARDWARE\01.MAIN\01.SCH\EMBERMAIN.DSN")
-      (Schematic "EMBER_Main")
-      (Page "03 MCU"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 5 28 5 2232 28 1022")
-        (Scroll "1215 956")
-        (Zoom "540")
-        (Occurrence "/"))
-      (Path "D:\PROJECTS\EMBER\01.HARDWARE\01.MAIN\01.SCH\EMBERMAIN.DSN")
-      (Schematic "EMBER_Main")
-      (Page "01 VERSION")))
-  (ISPCBBASICLICENSE "false")
-  (MPSSessionName "15291"))
+      (Schematic "SCHEMATIC1")
+      (Page "02 MCU"))))

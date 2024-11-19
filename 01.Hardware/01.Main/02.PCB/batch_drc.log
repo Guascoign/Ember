@@ -4,7 +4,7 @@
 (                                                                     )
 (    Drawing          : EmberMain.brd                                 )
 (    Software Version : 17.4S037                                      )
-(    Date/Time        : Wed Nov 13 10:50:20 2024                      )
+(    Date/Time        : Wed Nov 20 00:22:25 2024                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
@@ -20,10 +20,7 @@
  ========= check standalone text              0:00:00
  ========= check standalone rectangles        0:00:00
 
- ..... Total number of DRC errors  51
-
-
-WARNING: 4 dynamic shape(s) out of date; checking skipped on these elements.
+ ..... Total number of DRC errors  9
 
  ..... DRC update completed, total CPU time   0:00:00
  *************************************************************************

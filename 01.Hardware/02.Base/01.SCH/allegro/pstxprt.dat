@@ -1,5 +1,5 @@
 FILE_TYPE = EXPANDEDPARTLIST;
-{ Using PSTWRITER 17.4.0 d001Nov-13-2024 at 18:19:11 }
+{ Using PSTWRITER 17.4.0 d001Nov-19-2024 at 19:17:47 }
 DIRECTIVES
  PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
  ROOT_DRAWING='EMBERBASE';
@@ -54,16 +54,6 @@ SECTION_NUMBER 1
  '@EMBERBASE.SCHEMATIC1(SCH_1):INS695569@BASIC.C.NORMAL(CHIPS)':
  C_PATH='@emberbase.schematic1(sch_1):ins695569@basic.\c.normal\(chips)',
  P_PATH='@emberbase.schematic1(sch_1):page3_ins695569@basic.\c.normal\(chips)',
- PRIM_FILE='.\pstchip.dat',
- SECTION='';
-
-PART_NAME
- C5 'C_C0603_0.1UF':;
-
-SECTION_NUMBER 1
- '@EMBERBASE.SCHEMATIC1(SCH_1):INS703837@BASIC.C.NORMAL(CHIPS)':
- C_PATH='@emberbase.schematic1(sch_1):ins703837@basic.\c.normal\(chips)',
- P_PATH='@emberbase.schematic1(sch_1):page3_ins703837@basic.\c.normal\(chips)',
  PRIM_FILE='.\pstchip.dat',
  SECTION='';
 
@@ -218,26 +208,6 @@ SECTION_NUMBER 1
  SECTION='';
 
 PART_NAME
- R8 'R_R0603_4.7K':;
-
-SECTION_NUMBER 1
- '@EMBERBASE.SCHEMATIC1(SCH_1):INS703853@BASIC.R.NORMAL(CHIPS)':
- C_PATH='@emberbase.schematic1(sch_1):ins703853@basic.\r.normal\(chips)',
- P_PATH='@emberbase.schematic1(sch_1):page3_ins703853@basic.\r.normal\(chips)',
- PRIM_FILE='.\pstchip.dat',
- SECTION='';
-
-PART_NAME
- R9 'R_R0603_4.7K':;
-
-SECTION_NUMBER 1
- '@EMBERBASE.SCHEMATIC1(SCH_1):INS703869@BASIC.R.NORMAL(CHIPS)':
- C_PATH='@emberbase.schematic1(sch_1):ins703869@basic.\r.normal\(chips)',
- P_PATH='@emberbase.schematic1(sch_1):page3_ins703869@basic.\r.normal\(chips)',
- PRIM_FILE='.\pstchip.dat',
- SECTION='';
-
-PART_NAME
  U1 'AMS1117_SOT89_SOT-89-3_AMS1117':;
 
 SECTION_NUMBER 1
@@ -271,16 +241,6 @@ SECTION_NUMBER 1
  '@EMBERBASE.SCHEMATIC1(SCH_1):INS695403@PERIPHERALS.CH340X.NORMAL(CHIPS)':
  C_PATH='@emberbase.schematic1(sch_1):ins695403@peripherals.\ch340x.normal\(chips)',
  P_PATH='@emberbase.schematic1(sch_1):page3_ins695403@peripherals.\ch340x.normal\(chips)',
- PRIM_FILE='.\pstchip.dat',
- SECTION='';
-
-PART_NAME
- U4 'AT24C256C_SOP-8_AT24C256_E08U097':;
-
-SECTION_NUMBER 1
- '@EMBERBASE.SCHEMATIC1(SCH_1):INS780211@PERIPHERALS.AT24C256C.NORMAL(CHIPS)':
- C_PATH='@emberbase.schematic1(sch_1):ins780211@peripherals.\at24c256c.normal\(chips)',
- P_PATH='@emberbase.schematic1(sch_1):page3_ins780211@peripherals.\at24c256c.normal\(chips)',
  PRIM_FILE='.\pstchip.dat',
  SECTION='';
 

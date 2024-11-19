@@ -1,5 +1,5 @@
 FILE_TYPE=LIBRARY_PARTS;
-{ Using PSTWRITER 17.4.0 d001Nov-13-2024 at 18:19:11}
+{ Using PSTWRITER 17.4.0 d001Nov-19-2024 at 19:17:47}
 primitive 'BATTERY_CR1220_SMD_CR1220_E11M011';
   pin
     '1':
@@ -379,21 +379,6 @@ primitive 'R_R0603_1K(NC)';
     VALUE='1K(NC)';
   end_body;
 end_primitive;
-primitive 'R_R0603_4.7K';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='R';
-    JEDEC_TYPE='r0603';
-    VALUE='4.7K';
-  end_body;
-end_primitive;
 primitive 'AMS1117_SOT89_SOT-89-3_AMS1117';
   pin
     'GND':
@@ -651,40 +636,6 @@ primitive 'CH340X_MSOP-10_CH340X';
     PART_NAME='CH340X';
     JEDEC_TYPE='MSOP-10';
     VALUE='CH340X';
-  end_body;
-end_primitive;
-primitive 'AT24C256C_SOP-8_AT24C256_E08U097';
-  pin
-    'A0':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    'A1':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-    'A2':
-      PIN_NUMBER='(3)';
-      PINUSE='UNSPEC';
-    'GND':
-      PIN_NUMBER='(4)';
-      PINUSE='UNSPEC';
-    'SDA':
-      PIN_NUMBER='(5)';
-      PINUSE='UNSPEC';
-    'SCL':
-      PIN_NUMBER='(6)';
-      PINUSE='UNSPEC';
-    'WP':
-      PIN_NUMBER='(7)';
-      PINUSE='UNSPEC';
-    'VCC':
-      PIN_NUMBER='(8)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='AT24C256C';
-    JEDEC_TYPE='sop-8';
-    VALUE='AT24C256';
-    PART_NUMBER='E08U097';
   end_body;
 end_primitive;
 primitive 'TVSA_SOD-123FL_SMF7.0A_E04D023';
