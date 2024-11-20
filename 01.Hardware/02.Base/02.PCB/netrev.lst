@@ -1,0 +1,92 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    Allegro Netrev Import Logic                                      )
+(                                                                     )
+(    Drawing          : EmberBase.brd                                 )
+(    Software Version : 17.4S037                                      )
+(    Date/Time        : Tue Nov 19 19:18:01 2024                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+------ Directives ------------
+
+Ripup etch:                  No
+Ripup delete first segment:  No
+Ripup retain bondwire:       No
+Ripup symbols:               Always
+Missing symbol has error:    No
+DRC update:                  Yes
+Schematic directory:         'D:/Projects/Ember/01.Hardware/02.Base/01.SCH/allegro'
+Design Directory:            'D:/Projects/Ember/01.Hardware/02.Base/02.PCB'
+Old design name:             'D:/Projects/Ember/01.Hardware/02.Base/02.PCB/EmberBase.brd'
+New design name:             'D:/Projects/Ember/01.Hardware/02.Base/02.PCB/EmberBase.brd'
+
+CmdLine: netrev -$ -i D:/Projects/Ember/01.Hardware/02.Base/01.SCH/allegro -y 1 -h -q netrev_constraint_report.xml D:/Projects/Ember/01.Hardware/02.Base/02.PCB/#Taaaaan28696.tmp
+
+------ Preparing to read pst files ------
+
+Starting to read D:/Projects/Ember/01.Hardware/02.Base/01.SCH/allegro/pstchip.dat 
+   Finished reading D:/Projects/Ember/01.Hardware/02.Base/01.SCH/allegro/pstchip.dat (00:00:00.01)
+Starting to read D:/Projects/Ember/01.Hardware/02.Base/01.SCH/allegro/pstxprt.dat 
+   Finished reading D:/Projects/Ember/01.Hardware/02.Base/01.SCH/allegro/pstxprt.dat (00:00:00.00)
+Starting to read D:/Projects/Ember/01.Hardware/02.Base/01.SCH/allegro/pstxnet.dat 
+   Finished reading D:/Projects/Ember/01.Hardware/02.Base/01.SCH/allegro/pstxnet.dat (00:00:00.00)
+
+------ Oversights/Warnings/Errors ------
+
+
+------ Library Paths ------
+MODULEPATH =  . 
+           d:/cadence/spb_17.4/share/local/pcb/modules 
+
+PSMPATH =  D:/Cadence/LIB/DATABASE/PCB/package 
+           . 
+           symbols 
+           .. 
+           ../symbols 
+           d:/cadence/spb_17.4/share/local/pcb/symbols 
+           d:/cadence/spb_17.4/share/pcb/pcb_lib/symbols 
+           d:/cadence/spb_17.4/share/pcb/allegrolib/symbols 
+
+PADPATH =  D:/Cadence/LIB/DATABASE/PCB/padstack 
+           . 
+           symbols 
+           .. 
+           ../symbols 
+           d:/cadence/spb_17.4/share/local/pcb/padstacks 
+           d:/cadence/spb_17.4/share/pcb/pcb_lib/symbols 
+           d:/cadence/spb_17.4/share/pcb/allegrolib/symbols 
+
+
+------ Summary Statistics ------
+
+
+netrev run on Nov 19 19:18:01 2024
+   DESIGN NAME : 'EMBERBASE'
+   PACKAGING ON May 19 2023 23:44:21
+
+   COMPILE 'logic'
+   CHECK_PIN_NAMES OFF
+   CROSS_REFERENCE OFF
+   FEEDBACK OFF
+   INCREMENTAL OFF
+   INTERFACE_TYPE PHYSICAL
+   MAX_ERRORS 500
+   MERGE_MINIMUM 5
+   NET_NAME_CHARS '#%&()*+-./:=>?@[]^_`|'
+   NET_NAME_LENGTH 24
+   OVERSIGHTS ON
+   REPLACE_CHECK OFF
+   SINGLE_NODE_NETS ON
+   SPLIT_MINIMUM 0
+   SUPPRESS   20
+   WARNINGS ON
+
+ No error detected
+ No oversight detected
+ No warning detected
+
+cpu time      0:00:43
+elapsed time  0:00:00
+

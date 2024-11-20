@@ -1,8 +1,0 @@
-\t (00:01:20) allegro 17.4 S037 Windows SPB 64-bit Edition
-\t (00:01:20)     Journal start - Tue Nov 19 22:09:20 2024
-\t (00:01:20)         Host=ITX User=15291 Pid=45964 CPUs=16
-\t (00:01:20) CmdLine= d:\cadence\spb_17.4\tools\bin\allegro.exe D:\Projects\Ember\01.Hardware\01.Main\02.PCB\EmberMain.brd
-\t (00:01:20) 
-\i (00:01:20) done 
-\i (00:01:20) placementedit 
-\t (00:01:21)     Journal end - Tue Nov 19 22:09:20 2024

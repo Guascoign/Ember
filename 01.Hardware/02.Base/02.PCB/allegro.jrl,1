@@ -1,0 +1,54 @@
+\t (00:00:01) allegro 17.4 S037 Windows SPB 64-bit Edition
+\t (00:00:01)     Journal start - Tue Nov 19 19:17:52 2024
+\t (00:00:01)         Host=ITX User=15291 Pid=28696 CPUs=16
+\t (00:00:01) CmdLine= d:\cadence\spb_17.4\tools\bin\allegro.exe D:\Projects\Ember\01.Hardware\02.Base\02.PCB\EmberBase.brd
+\t (00:00:01) 
+   (00:00:01) Loading axlcore.cxt 
+   (00:00:01) Loading skillExt.cxt 
+   (00:00:01) function addMetadata redefined
+   (00:00:01) function addIndent redefined
+   (00:00:01) function addLine redefined
+   (00:00:01) function addCircle redefined
+   (00:00:01) function addArc redefined
+   (00:00:01) function parseSegment redefined
+   (00:00:01) function addText redefined
+   (00:00:01) function addVia redefined
+   (00:00:01) function lineToSvgPath redefined
+   (00:00:01) function arcToSvgPath redefined
+   (00:00:01) function textToSvgPath redefined
+   (00:00:01) function createSvgPath redefined
+   (00:00:01) function createZone redefined
+   (00:00:01) function addBoardGeometry redefined
+   (00:00:01) function rotateVector redefined
+   (00:00:01) function getBboxSize redefined
+   (00:00:01) function figureToSvgPath redefined
+   (00:00:01) function addPad redefined
+   (00:00:01) function addComponentTable redefined
+   (00:00:01) function addFootprint redefined
+   (00:00:01) function addSymbols redefined
+   (00:00:01) function addCopper redefined
+   (00:00:01) function addNets redefined
+   (00:00:01) function writeJsonFile redefined
+   (00:00:01) function getVariantInfo redefined
+   (00:00:01) function exportJson redefined
+\t (00:00:04) Opening existing design...
+\d (00:00:04) Design opened: D:/Projects/Ember/01.Hardware/02.Base/02.PCB/EmberBase.brd
+\i (00:00:04) trapsize 11088
+\i (00:00:04) trapsize 11287
+\i (00:00:05) trapsize 12747
+\i (00:00:05) trapsize 12980
+\i (00:00:05) placementedit 
+\t (00:00:05) axlTrigger disabled!
+\t (00:00:05) axlTrigger disabled!
+\i (00:00:07) netin 
+\i (00:00:09) setwindow form.niparams
+\i (00:00:09) FORM niparams import  
+\t (00:00:09) Starting Cadence Logic Import...
+\t (00:00:09) Opening existing design...
+\i (00:00:10) setwindow pcb
+\i (00:00:10) trapsize 12980
+\i (00:00:11) placementedit 
+\i (00:00:12) exit 
+\e (00:00:12) Do you want to save the changes you made to D:/Projects/Ember/01.Hardware/02.Base/02.PCB/EmberBase.brd?
+\i (00:00:14) fillin no 
+\t (00:00:14)     Journal end - Tue Nov 19 19:18:06 2024
