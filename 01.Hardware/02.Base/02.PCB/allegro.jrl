@@ -1,47 +1,2267 @@
-\t (00:00:02) allegro 17.4 S037 Windows SPB 64-bit Edition
-\t (00:00:02)     Journal start - Tue Nov 19 20:13:21 2024
-\t (00:00:02)         Host=ITX User=15291 Pid=37544 CPUs=16
-\t (00:00:02) CmdLine= D:\Cadence\SPB_17.4\tools\bin\allegro.exe
-\t (00:00:02) 
-   (00:00:02) Loading axlcore.cxt 
-   (00:00:03) Loading skillExt.cxt 
-   (00:00:03) function addMetadata redefined
-   (00:00:03) function addIndent redefined
-   (00:00:03) function addLine redefined
-   (00:00:03) function addCircle redefined
-   (00:00:03) function addArc redefined
-   (00:00:03) function parseSegment redefined
-   (00:00:03) function addText redefined
-   (00:00:03) function addVia redefined
-   (00:00:03) function lineToSvgPath redefined
-   (00:00:03) function arcToSvgPath redefined
-   (00:00:03) function textToSvgPath redefined
-   (00:00:03) function createSvgPath redefined
-   (00:00:03) function createZone redefined
-   (00:00:03) function addBoardGeometry redefined
-   (00:00:03) function rotateVector redefined
-   (00:00:03) function getBboxSize redefined
-   (00:00:03) function figureToSvgPath redefined
-   (00:00:03) function addPad redefined
-   (00:00:03) function addComponentTable redefined
-   (00:00:03) function addFootprint redefined
-   (00:00:03) function addSymbols redefined
-   (00:00:03) function addCopper redefined
-   (00:00:03) function addNets redefined
-   (00:00:03) function writeJsonFile redefined
-   (00:00:03) function getVariantInfo redefined
-   (00:00:03) function exportJson redefined
-\t (00:00:05) Starting new design...
-\i (00:00:06) trapsize 530
-\i (00:00:06) trapsize 539
-\i (00:00:06) trapsize 609
-\i (00:00:06) trapsize 862
-\i (00:00:06) trapsize 847
+\t (00:00:01) allegro 17.4 S037 Windows SPB 64-bit Edition
+\t (00:00:01)     Journal start - Wed Nov 20 18:49:27 2024
+\t (00:00:01)         Host=ITX User=15291 Pid=3840 CPUs=16
+\t (00:00:01) CmdLine= d:\cadence\spb_17.4\tools\bin\allegro.exe D:\Projects\Ember\01.Hardware\02.Base\02.PCB\EmberBase.brd
+\t (00:00:01) 
+   (00:00:01) Loading axlcore.cxt 
+   (00:00:02) Loading skillExt.cxt 
+   (00:00:02) function addMetadata redefined
+   (00:00:02) function addIndent redefined
+   (00:00:02) function addLine redefined
+   (00:00:02) function addCircle redefined
+   (00:00:02) function addArc redefined
+   (00:00:02) function parseSegment redefined
+   (00:00:02) function addText redefined
+   (00:00:02) function addVia redefined
+   (00:00:02) function lineToSvgPath redefined
+   (00:00:02) function arcToSvgPath redefined
+   (00:00:02) function textToSvgPath redefined
+   (00:00:02) function createSvgPath redefined
+   (00:00:02) function createZone redefined
+   (00:00:02) function addBoardGeometry redefined
+   (00:00:02) function rotateVector redefined
+   (00:00:02) function getBboxSize redefined
+   (00:00:02) function figureToSvgPath redefined
+   (00:00:02) function addPad redefined
+   (00:00:02) function addComponentTable redefined
+   (00:00:02) function addFootprint redefined
+   (00:00:02) function addSymbols redefined
+   (00:00:02) function addCopper redefined
+   (00:00:02) function addNets redefined
+   (00:00:02) function writeJsonFile redefined
+   (00:00:02) function getVariantInfo redefined
+   (00:00:02) function exportJson redefined
+\t (00:00:05) Opening existing design...
+\d (00:00:05) Design opened: D:/Projects/Ember/01.Hardware/02.Base/02.PCB/EmberBase.brd
+\i (00:00:05) trapsize 13980
+\i (00:00:05) trapsize 14298
+\i (00:00:05) trapsize 16725
+\i (00:00:05) trapsize 16725
+\i (00:00:05) trapsize 16599
+\t (00:00:06) axlTrigger disabled!
 \i (00:00:06) placementedit 
 \t (00:00:06) axlTrigger disabled!
-\t (00:00:06) axlTrigger disabled!
-\i (00:00:10) new 
-\e (00:00:10) Do you want to save the changes you made to unnamed.brd?
-\i (00:00:12) fillin no 
-\i (00:00:31) newdrawfillin "EmberMain.brd" "Board"
-\t (00:00:31)     Journal end - Tue Nov 19 20:13:50 2024
+\i (00:00:07) trapsize 16725
+\i (00:00:07) trapsize 16649
+\i (00:00:08) trapsize 12747
+\i (00:00:08) zoom out 1 
+\i (00:00:08) setwindow pcb
+\i (00:00:08) zoom out 1123.661 -3135.644
+\i (00:00:08) trapsize 25495
+\i (00:00:08) zoom out 1 
+\i (00:00:08) setwindow pcb
+\i (00:00:08) zoom out 1133.859 -3171.336
+\i (00:00:08) trapsize 50990
+\i (00:00:08) zoom out 1 
+\i (00:00:08) setwindow pcb
+\i (00:00:08) zoom out 782.788 -3212.128
+\i (00:00:08) trapsize 85000
+\i (00:00:09) zoom in 1 
+\i (00:00:09) setwindow pcb
+\i (00:00:09) zoom in 1031.000 1394.000
+\i (00:00:09) trapsize 42500
+\i (00:00:09) zoom in 1 
+\i (00:00:09) setwindow pcb
+\i (00:00:09) zoom in 1031.000 1394.000
+\i (00:00:09) trapsize 21250
+\i (00:00:09) zoom in 1 
+\i (00:00:09) setwindow pcb
+\i (00:00:09) zoom in 1137.250 1300.500
+\i (00:00:09) trapsize 10625
+\i (00:00:12) netin 
+\i (00:00:14) setwindow form.niparams
+\i (00:00:14) FORM niparams import  
+\t (00:00:14) Starting Cadence Logic Import...
+\t (00:00:15) Opening existing design...
+\i (00:00:15) setwindow pcb
+\i (00:00:15) trapsize 10625
+\i (00:00:16) placementedit 
+\i (00:00:16) zoom out 1 
+\i (00:00:16) setwindow pcb
+\i (00:00:16) zoom out 2208.250 741.625
+\i (00:00:16) trapsize 21250
+\i (00:00:18) pick grid -180.250 1863.625
+\t (00:00:18) last pick:  -180.000 1860.000
+\i (00:00:18) move 
+\t (00:00:18) last pick:  177.165 1299.213
+\t (00:00:18) Moving U4 / EMBER_V1.1_EMBERV1_1_EMBER_V1.1_E11M015 / EMBERV1_1.
+\t (00:00:18) Pick new location for the element(s).
+\i (00:00:21) Rotate 
+\t (00:00:21) Spin the element(s).
+\i (00:00:22) iangle -90.000
+\t (00:00:22) last angle:  180.000 Degrees
+\i (00:00:22) mouse_pos 177.165 1299.213
+\i (00:00:22) pick grid -1238.500 971.125
+\t (00:00:22) last pick:  -1240.000 970.000
+\i (00:00:22) placementedit 
+\i (00:00:23) pick grid -1829.250 2003.875
+\t (00:00:23) last pick:  -1830.000 2000.000
+\i (00:00:23) zoom in 1 
+\i (00:00:23) setwindow pcb
+\i (00:00:23) zoom in -1884.500 805.375
+\i (00:00:23) trapsize 10625
+\i (00:00:23) zoom in 1 
+\i (00:00:23) setwindow pcb
+\i (00:00:23) zoom in -1882.375 803.250
+\i (00:00:23) trapsize 5312
+\i (00:00:24) zoom in 1 
+\i (00:00:24) setwindow pcb
+\i (00:00:24) zoom in -1647.562 743.750
+\i (00:00:24) trapsize 2656
+\i (00:00:24) zoom in 1 
+\i (00:00:24) setwindow pcb
+\i (00:00:24) zoom in -1647.562 743.751
+\i (00:00:24) trapsize 1328
+\i (00:00:24) zoom out 1 
+\i (00:00:24) setwindow pcb
+\i (00:00:24) zoom out -1613.561 745.079
+\i (00:00:24) trapsize 2656
+\i (00:00:24) zoom out 1 
+\i (00:00:24) setwindow pcb
+\i (00:00:24) zoom out -1613.562 745.080
+\i (00:00:24) trapsize 5313
+\i (00:00:25) zoom in 1 
+\i (00:00:25) setwindow pcb
+\i (00:00:25) zoom in -1736.813 787.581
+\i (00:00:25) trapsize 2656
+\i (00:00:25) zoom in 1 
+\i (00:00:25) setwindow pcb
+\i (00:00:25) zoom in -1795.781 807.238
+\i (00:00:25) trapsize 1328
+\i (00:00:27) zoom out 1 
+\i (00:00:27) setwindow pcb
+\i (00:00:27) zoom out -1763.375 806.175
+\i (00:00:27) trapsize 2656
+\i (00:00:27) zoom out 1 
+\i (00:00:27) setwindow pcb
+\i (00:00:27) zoom out -1545.563 815.738
+\i (00:00:27) trapsize 5313
+\i (00:00:27) zoom out 1 
+\i (00:00:27) setwindow pcb
+\i (00:00:27) zoom out -1545.562 812.551
+\i (00:00:27) trapsize 10625
+\i (00:00:28) zoom in 1 
+\i (00:00:28) setwindow pcb
+\i (00:00:28) zoom in -291.810 1433.052
+\i (00:00:28) trapsize 5313
+\i (00:00:28) zoom in 1 
+\i (00:00:28) setwindow pcb
+\i (00:00:28) zoom in -291.810 1434.115
+\i (00:00:28) trapsize 2656
+\i (00:00:29) zoom in 1 
+\i (00:00:29) setwindow pcb
+\i (00:00:29) zoom in -640.310 1125.458
+\i (00:00:29) trapsize 1328
+\i (00:00:31) add connect 
+\t (00:00:31) Pick first element.
+\i (00:00:33) add connect 
+\t (00:00:33) Pick first element.
+\i (00:00:33) zoom out 1 
+\i (00:00:33) setwindow pcb
+\i (00:00:33) zoom out -531.669 1174.865
+\i (00:00:33) trapsize 2656
+\i (00:00:33) zoom out 1 
+\i (00:00:33) setwindow pcb
+\i (00:00:33) zoom out -529.013 1176.458
+\i (00:00:33) trapsize 5313
+\i (00:00:33) zoom out 1 
+\i (00:00:33) setwindow pcb
+\i (00:00:33) zoom out -519.451 1180.709
+\i (00:00:33) trapsize 10625
+\i (00:00:33) zoom in 1 
+\i (00:00:33) setwindow pcb
+\i (00:00:33) zoom in -2098.330 702.583
+\i (00:00:33) trapsize 5313
+\i (00:00:33) zoom in 1 
+\i (00:00:33) setwindow pcb
+\i (00:00:33) zoom in -2086.643 703.645
+\i (00:00:33) trapsize 2656
+\i (00:00:35) zoom out 1 
+\i (00:00:35) setwindow pcb
+\i (00:00:35) zoom out -1825.267 813.614
+\i (00:00:35) trapsize 5313
+\i (00:00:35) zoom in 1 
+\i (00:00:35) setwindow pcb
+\i (00:00:35) zoom in -1649.955 815.739
+\i (00:00:35) trapsize 2656
+\i (00:00:35) zoom in 1 
+\i (00:00:35) setwindow pcb
+\i (00:00:35) zoom in -1649.955 815.740
+\i (00:00:35) trapsize 1328
+\i (00:00:36) zoom out 1 
+\i (00:00:36) setwindow pcb
+\i (00:00:36) zoom out -1774.002 826.630
+\i (00:00:36) trapsize 2656
+\i (00:00:36) zoom out 1 
+\i (00:00:36) setwindow pcb
+\i (00:00:36) zoom out -1639.597 831.943
+\i (00:00:36) trapsize 5313
+\i (00:00:37) roam start
+\i (00:00:37) roam x 16
+\i (00:00:37) roam x 48
+\i (00:00:37) roam x 16
+\i (00:00:37) roam x 48
+\i (00:00:37) roam y -16
+\i (00:00:37) roam x 32
+\i (00:00:37) roam x 32
+\i (00:00:37) roam x 128
+\i (00:00:37) roam y -16
+\i (00:00:37) roam x 80
+\i (00:00:37) roam y -16
+\i (00:00:37) roam x 96
+\i (00:00:37) roam y -16
+\i (00:00:37) roam x 80
+\i (00:00:37) roam y -16
+\i (00:00:37) roam x 128
+\i (00:00:37) roam y -16
+\i (00:00:37) roam x 128
+\i (00:00:37) roam y -16
+\i (00:00:37) roam x 128
+\i (00:00:37) roam y -32
+\i (00:00:37) roam x 128
+\i (00:00:37) roam y -16
+\i (00:00:37) roam x 80
+\i (00:00:37) roam y -16
+\i (00:00:37) roam x 16
+\i (00:00:37) roam y 16
+\i (00:00:37) roam x -16
+\i (00:00:37) roam x -16
+\i (00:00:37) roam x -16
+\i (00:00:37) roam y 16
+\i (00:00:37) roam x -32
+\i (00:00:37) roam x -32
+\i (00:00:37) roam x -32
+\i (00:00:37) roam y 16
+\i (00:00:37) roam end
+\i (00:00:38) zoom in 1 
+\i (00:00:38) setwindow pcb
+\i (00:00:38) zoom in -898.477 1128.401
+\i (00:00:38) trapsize 2656
+\i (00:00:39) zoom in 1 
+\i (00:00:39) setwindow pcb
+\i (00:00:39) zoom in -597.788 1139.027
+\i (00:00:39) trapsize 1328
+\i (00:00:39) zoom in 1 
+\i (00:00:39) setwindow pcb
+\i (00:00:39) zoom in -597.788 1139.027
+\i (00:00:39) trapsize 664
+\i (00:00:40) zoom out 1 
+\i (00:00:40) setwindow pcb
+\i (00:00:40) zoom out -615.452 1125.215
+\i (00:00:40) trapsize 1328
+\i (00:00:40) zoom out 1 
+\i (00:00:40) setwindow pcb
+\i (00:00:40) zoom out -610.139 1124.152
+\i (00:00:40) trapsize 2656
+\i (00:00:40) zoom out 1 
+\i (00:00:40) setwindow pcb
+\i (00:00:40) zoom out -593.140 1119.902
+\i (00:00:40) trapsize 5313
+\i (00:00:40) zoom out 1 
+\i (00:00:40) setwindow pcb
+\i (00:00:40) zoom out -568.702 1108.215
+\i (00:00:40) trapsize 10625
+\i (00:00:40) prepopup -494.325 1112.466
+\i (00:00:41) done 
+\i (00:00:41) placementedit 
+\i (00:00:58) netin 
+\i (00:00:59) setwindow form.niparams
+\i (00:00:59) FORM niparams import  
+\t (00:00:59) Starting Cadence Logic Import...
+\t (00:01:00) Opening existing design...
+\i (00:01:00) setwindow pcb
+\i (00:01:00) trapsize 10625
+\i (00:01:01) placementedit 
+\i (00:01:02) zoom in 1 
+\i (00:01:02) setwindow pcb
+\i (00:01:02) zoom in -1728.957 746.964
+\i (00:01:02) trapsize 5313
+\i (00:01:02) zoom in 1 
+\i (00:01:02) setwindow pcb
+\i (00:01:02) zoom in -1728.957 746.964
+\i (00:01:02) trapsize 2656
+\i (00:01:02) zoom out 1 
+\i (00:01:02) setwindow pcb
+\i (00:01:02) zoom out -1939.864 864.371
+\i (00:01:02) trapsize 5313
+\i (00:01:02) zoom out 1 
+\i (00:01:02) setwindow pcb
+\i (00:01:02) zoom out -1944.115 867.560
+\i (00:01:02) trapsize 10625
+\i (00:01:02) zoom out 1 
+\i (00:01:02) setwindow pcb
+\i (00:01:02) zoom out -1944.114 867.559
+\i (00:01:02) trapsize 21250
+\i (00:01:03) zoom in 1 
+\i (00:01:03) setwindow pcb
+\i (00:01:03) zoom in -1213.110 1126.811
+\i (00:01:03) trapsize 10625
+\i (00:01:03) zoom out 1 
+\i (00:01:03) setwindow pcb
+\i (00:01:03) zoom out -1072.859 1099.186
+\i (00:01:03) trapsize 21250
+\i (00:01:05) setwindow form.find
+\i (00:01:05) FORM find all_off  
+\i (00:01:07) setwindow pcb
+\i (00:01:07) Delete 
+\i (00:01:08) setwindow form.find
+\i (00:01:08) FORM find all_off  
+\i (00:01:09) FORM find shapes YES 
+\i (00:01:11) FORM find all_off  
+\i (00:01:12) setwindow pcb
+\i (00:01:12) QtSignal ColorVisibilityPane CVPGlobalVisOff clicked
+\i (00:01:13) setwindow form.find
+\i (00:01:13) FORM find shapes YES 
+\i (00:01:14) FORM find shapes NO 
+\i (00:01:15) setwindow pcb
+\i (00:01:15) prepopup 2930.663 1341.437
+\i (00:01:15) done 
+\i (00:01:15) placementedit 
+\i (00:01:18) QtSignal CVPLayerGrid CVPBoxAllTop clicked true
+\i (00:01:20) QtSignal CVPLayerGrid CVPBoxAllBottom clicked true
+\i (00:01:20) pick grid 2522.661 66.430
+\t (00:01:20) last pick:  2520.000 70.000
+\i (00:01:21) Delete 
+\i (00:01:22) drag_start grid -507.606 2153.192
+\i (00:01:23) drag_stop 27.897 2178.692
+\i (00:01:24) setwindow form.find
+\i (00:01:24) FORM find all_off  
+\i (00:01:24) FORM find shapes YES 
+\i (00:01:25) FORM find cline_segs YES 
+\i (00:01:26) FORM find vias YES 
+\i (00:01:26) setwindow pcb
+\i (00:01:26) drag_start grid -1000.609 2565.444
+\i (00:01:27) drag_stop 2760.663 -694.324
+\i (00:01:27) pick grid 2756.412 -694.324
+\t (00:01:27) last pick:  2760.000 -690.000
+\i (00:01:28) drag_start grid -273.855 1978.941
+\i (00:01:28) drag_stop 2514.161 -571.074
+\i (00:01:28) pick grid 2518.411 -571.074
+\t (00:01:28) last pick:  2520.000 -570.000
+\i (00:01:28) zoom in 1 
+\i (00:01:28) setwindow pcb
+\i (00:01:28) zoom in -197.354 1256.437
+\i (00:01:28) trapsize 10625
+\i (00:01:29) prepopup -167.604 1171.437
+\i (00:01:29) done 
+\i (00:01:29) placementedit 
+\i (00:01:30) QtSignal ColorVisibilityPane CVPGlobalVisOn clicked
+\i (00:01:30) roam start
+\i (00:01:30) roam x -16
+\i (00:01:30) roam x -80
+\i (00:01:30) roam y 16
+\i (00:01:30) roam x -48
+\i (00:01:30) roam x -16
+\i (00:01:31) roam x -16
+\i (00:01:31) roam end
+\i (00:01:32) Move 
+\t (00:01:32) Select element(s) to move.
+\i (00:01:32) pick grid -634.939 1221.943
+\t (00:01:32) last pick:  -630.000 1220.000
+\t (00:01:32) last pick:  -637.646 1226.705
+\t (00:01:32) Pick new location for the element(s).
+\i (00:01:34) done generaledit 
+\i (00:01:34) placementedit 
+\i (00:01:34) pick grid -369.313 1200.693
+\t (00:01:34) last pick:  -370.000 1200.000
+\i (00:01:35) Move 
+\t (00:01:35) Select element(s) to move.
+\i (00:01:35) setwindow form.find
+\i (00:01:35) FORM find all_off  
+\i (00:01:36) FORM find symbols YES 
+\i (00:01:36) setwindow pcb
+\i (00:01:36) pick grid -1085.442 983.942
+\t (00:01:36) last pick:  -1090.000 980.000
+\t (00:01:36) last pick:  -1240.000 970.000
+\t (00:01:36) Moving U4 / EMBER_V1.1_EMBERV1_1_EMBER_V1.1_E11M015 / EMBERV1_1.
+\t (00:01:36) Pick new location for the element(s).
+\i (00:01:37) roam start
+\i (00:01:37) roam x 16
+\i (00:01:37) roam x 112
+\i (00:01:37) roam x 176
+\i (00:01:37) roam y 32
+\i (00:01:37) roam x 128
+\i (00:01:37) roam y 16
+\i (00:01:37) roam x 144
+\i (00:01:37) roam y 32
+\i (00:01:37) roam x 144
+\i (00:01:37) roam y 32
+\i (00:01:37) roam x 128
+\i (00:01:37) roam y 16
+\i (00:01:37) roam x 64
+\i (00:01:37) roam x 32
+\i (00:01:37) roam y 16
+\i (00:01:37) roam x -96
+\i (00:01:37) roam y -16
+\i (00:01:37) roam x -160
+\i (00:01:37) roam y -32
+\i (00:01:37) roam x -176
+\i (00:01:37) roam y -32
+\i (00:01:37) roam x -160
+\i (00:01:37) roam y -32
+\i (00:01:37) roam x -96
+\i (00:01:37) roam y -16
+\i (00:01:37) roam x -80
+\i (00:01:37) roam y -16
+\i (00:01:37) roam x 16
+\i (00:01:37) roam end
+\i (00:01:38) pick grid 676.194 833.066
+\t (00:01:38) last pick:  680.000 830.000
+\i (00:01:38) pick grid -947.315 1034.942
+\t (00:01:38) last pick:  -950.000 1030.000
+\i (00:01:38) roam start
+\i (00:01:38) roam x 16
+\i (00:01:38) roam x 128
+\i (00:01:38) roam y 16
+\i (00:01:38) roam x 64
+\i (00:01:38) roam y 16
+\i (00:01:38) roam x 48
+\i (00:01:38) roam y 16
+\i (00:01:39) roam x 32
+\i (00:01:39) roam x 48
+\i (00:01:39) roam y 16
+\i (00:01:39) roam x 48
+\i (00:01:39) roam x 80
+\i (00:01:39) roam y 16
+\i (00:01:39) roam end
+\i (00:01:40) pick grid 153.440 493.064
+\t (00:01:40) last pick:  150.000 490.000
+\t (00:01:40) last pick:  680.000 830.000
+\t (00:01:40) Moving U4 / EMBER_V1.1_EMBERV1_1_EMBER_V1.1_E11M015 / EMBERV1_1.
+\t (00:01:40) Pick new location for the element(s).
+\i (00:01:42) pick grid 784.569 867.066
+\t (00:01:42) last pick:  780.000 870.000
+\i (00:01:42) pick grid 45.065 1049.817
+\t (00:01:42) last pick:  50.000 1050.000
+\i (00:01:43) zoom in 1 
+\i (00:01:43) setwindow pcb
+\i (00:01:43) zoom in 1432.698 1166.693
+\i (00:01:43) trapsize 5313
+\i (00:01:43) zoom in 1 
+\i (00:01:43) setwindow pcb
+\i (00:01:43) zoom in 1432.698 1157.130
+\i (00:01:43) trapsize 2656
+\i (00:01:43) zoom out 1 
+\i (00:01:43) setwindow pcb
+\i (00:01:43) zoom out 1492.198 1101.880
+\i (00:01:43) trapsize 5313
+\i (00:01:43) zoom out 1 
+\i (00:01:43) setwindow pcb
+\i (00:01:43) zoom out 1492.198 1101.880
+\i (00:01:43) trapsize 10625
+\i (00:01:47) roam start
+\i (00:01:47) roam y 16
+\i (00:01:47) roam y 32
+\i (00:01:47) roam y 32
+\i (00:01:47) roam end
+\i (00:01:49) pick grid 2467.580 731.065
+\t (00:01:49) last pick:  2470.000 730.000
+\i (00:01:51) Delete 
+\i (00:01:52) setwindow form.find
+\i (00:01:52) FORM find all_off  
+\i (00:01:52) FORM find shapes YES 
+\i (00:01:53) setwindow pcb
+\i (00:01:53) pick grid 274.567 1224.068
+\t (00:01:53) last pick:  270.000 1220.000
+\t (00:01:53) Shape "U4, Package Geometry/Place_Bound_Top"
+\i (00:01:53) pick grid -399.062 1270.819
+\t (00:01:53) last pick:  -400.000 1270.000
+\i (00:01:54) prepopup -360.811 1275.069
+\i (00:01:54) done 
+\i (00:01:54) placementedit 
+\i (00:01:55) Move 
+\t (00:01:55) Select element(s) to move.
+\i (00:01:55) pick grid 686.820 988.192
+\t (00:01:55) last pick:  690.000 990.000
+\i (00:01:56) pick grid 215.067 705.565
+\t (00:01:56) last pick:  220.000 710.000
+\t (00:01:56) last pick:  780.000 870.000
+\t (00:01:56) Moving U4 / EMBER_V1.1_EMBERV1_1_EMBER_V1.1_E11M015 / EMBERV1_1.
+\t (00:01:56) Pick new location for the element(s).
+\i (00:01:58) pick grid 756.945 856.441
+\t (00:01:58) last pick:  760.000 860.000
+\i (00:01:58) pick grid -25.060 969.067
+\t (00:01:58) last pick:  -30.000 970.000
+\i (00:01:59) 3d 
+\i (00:02:00) QtSignal 3DUniFilterDialog UniFilterOkButton clicked
+\i (00:02:01) QtSignal pcb3d_MapperTab packageDeviceList itemChanged 0 C0603
+\i (00:02:01) QtSignal pcb3d_MapperTab packageDeviceList itemChanged 1 C0805
+\i (00:02:01) QtSignal pcb3d_MapperTab packageDeviceList itemChanged 2 "CASE-A-3216"
+\i (00:02:01) QtSignal pcb3d_MapperTab packageDeviceList itemChanged 4 F0805
+\i (00:02:01) QtSignal pcb3d_MapperTab packageDeviceList itemChanged 6 "MSOP-10"
+\i (00:02:01) QtSignal pcb3d_MapperTab packageDeviceList itemChanged 8 "SOD-123FL"
+\i (00:02:01) QtSignal pcb3d_MapperTab packageDeviceList itemChanged 9 "SOT-89-3"
+\i (00:02:01) QtSignal pcb3d_MapperTab packageDeviceList itemChanged 10 "TYPE-C-12P"
+\i (00:02:01) QtSignal pcb3d_MapperTab packageDeviceList itemChanged 11 "XH_254-4P"
+\i (00:02:01) placementedit 
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas keyPressEvent 16777248 33554432 false 1
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasMousePressEvent 1240 570 1240 615 4 4 +
+\i (00:02:01) QtSignal 33554432 "12323.8" "9889.5" "-37.3447"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12323.8" "9889.5" "-37.3447" +
+\i (00:02:01) QtSignal "12328.9" "9884.42" "-49.7937" "48199.2" "-30480.5" "32675.8" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.364187" "0.364187" "0.857167"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12331.9" "9881.36" "-47.2473" +
+\i (00:02:01) QtSignal "12331.9" "9881.36" "-47.2473" "48199.2" "-30480.5" "32675.8" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.364187" "0.364187" "0.857167"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12331.9" "9881.36" "-47.2473" +
+\i (00:02:01) QtSignal "12347.4" "9886.29" "-59.5691" "47008.7" "-30846.1" "33609.2" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.374492" "0.374923" "0.848049"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12383.9" "9848.94" "-28.1192" +
+\i (00:02:01) QtSignal "12389.3" "9843.55" "-40.3098" "46590.9" "-30427.6" "34537.4" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.384684" "0.385545" "0.838673"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12392.5" "9840.19" "-37.3434" +
+\i (00:02:01) QtSignal "12408.3" "9844.66" "-49.27" "45366.9" "-30758" 35440 "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.394538" "0.396261" "0.829046"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12443.8" "9806.9" "-15.6132" +
+\i (00:02:01) QtSignal "12459.9" "9811.07" "-27.2648" "44121.3" "-31064.8" "36321.3" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.404049" "0.407062" "0.819173"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12494.4" "9772.68" "7.55176" +
+\i (00:02:01) QtSignal "12516.6" "9770.68" "-15.5932" "42395.3" "-30881.8" "38065.4" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.422247" "0.428699" "0.798702"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12553.6" "9727.52" "24.3917" +
+\i (00:02:01) QtSignal "12587.2" "9734.29" "2.52892" "39784.5" "-31352" "39692.9" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.43901" "0.450608" "0.777317"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 12651 "9654.38" "79.477" +
+\i (00:02:01) QtSignal "12657.3" "9647.9" "68.3031" "39296.9" "-30850.1" "40542.3" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.447192" "0.461359" "0.766268"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12660.8" "9643.42" "72.9084" +
+\i (00:02:01) QtSignal "12678.2" "9646.02" "62.7443" 37955 "-31037.5" "41308.2" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.455005" "0.472163" "0.755005"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12707.8" "9606.02" "104.183" +
+\i (00:02:01) QtSignal "12725.4" "9608.32" "94.3417" "36596.2" "-31201" "42049.2" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.462442" "0.483014" "0.743536"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12753.8" "9567.82" "136.887" +
+\i (00:02:01) QtSignal "12778.3" "9562.87" "116.686" "34700.7" "-30791.2" "43563.7" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.476414" "0.504646" "0.719974"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12808.9" "9516.64" "166.133" +
+\i (00:02:01) QtSignal "12845.3" "9519.68" "148.117" "31891.4" "-30975" "44890.2" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.488839" "0.526394" "0.695662"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12895.6" "9436.35" "240.233" +
+\i (00:02:01) QtSignal "12902.6" "9428.78" "230.233" "31350.1" "-30389.8" 45649 "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.494829" "0.537029" "0.683187"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12905.7" "9423.28" "236.688" +
+\i (00:02:01) QtSignal "12931.4" "9416.29" "218.732" "29364.8" "-29825.9" "46988.9" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.505866" "0.558159" "0.657692"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12956.9" "9369.09" "274.749" +
+\i (00:02:01) QtSignal 12983 "9361.35" "257.707" "27350.4" "-29204.2" "48257.9" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.515794" "0.578958" "0.631478"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13006.4" "9314.11" "316.291" +
+\i (00:02:01) QtSignal "13025.4" "9313.94" "309.266" "25884.9" "-29179.8" "48781.2" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.520275" "0.589266" "0.618126"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13043.9" "9273.02" "362.016" +
+\i (00:02:01) QtSignal "13078.1" "9255.61" "337.603" 23247 "-27790.8" "50575.7" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.532016" "0.619604" "0.577105"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13100 "9201.46" "409.103" +
+\i (00:02:01) QtSignal "13111.8" "9209.32" "411.539" "22342.4" "-28386.7" "50381.6" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.532016" "0.619604" "0.577105"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13123.9" "9175.52" "458.972" +
+\i (00:02:01) QtSignal "13158.7" "9156.51" "436.721" "19662.6" "-26876.6" "52008.2" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.540793" "0.649224" "0.534837"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13175.9" 9102 "512.718" +
+\i (00:02:01) QtSignal "13175.9" 9102 "512.718" "19662.6" "-26876.6" "52008.2" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.540793" "0.649224" "0.534837"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13175.9" 9102 "512.718" +
+\i (00:02:01) QtSignal 13223 "9089.15" "495.324" "16041.3" "-25822.5" "53237.4" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.546573" "0.678008" "0.49149"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13243.9" "9001.23" "625.035" +
+\i (00:02:01) QtSignal "13243.9" "9001.23" "625.035" "16041.3" "-25822.5" "53237.4" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.546573" "0.678008" "0.49149"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13243.9" "9001.23" "625.035" +
+\i (00:02:01) QtSignal "13263.8" "8998.77" "621.216" "14522.6" "-25624" "53513.8" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.547914" "0.687347" "0.476807"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13270.1" "8959.46" "682.735" +
+\i (00:02:01) QtSignal "13270.1" "8959.46" "682.735" "14522.6" "-25624" "53513.8" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.547914" "0.687347" "0.476807"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13270.1" "8959.46" "682.735" +
+\i (00:02:01) QtSignal "13297.8" "8946.86" "672.484" "12396.7" "-24633.3" "54258.1" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.549586" "0.705694" "0.44716"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13303.1" "8900.48" "746.298" +
+\i (00:02:01) QtSignal 13311 "8890.34" "739.87" "11791.5" "-23851.7" 54742 "9979.93" "7738.75" "199.188" +
+\i (00:02:01) QtSignal "-0.550171" "0.714546" "0.432129"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13311.4" "8883.46" "751.539" +
+\i (00:02:01) QtSignal "13351.2" "8876.96" "746.452" "8743.16" "-23314.7" "55065.5" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.549822" "0.732179" "0.402008"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13352.7" "8800.38" "876.078" +
+\i (00:02:01) QtSignal "13372.6" "8796.62" "874.4" "7219.63" "-23017.2" "55177.4" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.549141" "0.740804" "0.38685"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13370.4" "8759.02" "940.172" +
+\i (00:02:01) QtSignal "13378.3" "8748.37" "934.611" "6615.73" "-22197.3" "55594.8" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.548294" "0.749204" "0.371575"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13377.6" "8741.36" "947.348" +
+\i (00:02:01) QtSignal "13405.3" "8726.47" "940.983" "4493.79" "-21033.7" "56040.1" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.54559" "0.765594" "0.340877"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13399.3" "8682.77" "1021.54" +
+\i (00:02:01) QtSignal "13407.1" "8671.76" "1016.64" "3894.21" "-20186.8" "56406.7" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.543988" "0.773441" "0.32537"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13405.7" "8664.88" "1030.23" +
+\i (00:02:01) QtSignal "13425.5" "8660.29" "1030.09" "2380.26" "-19826.1" "56400.4" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.541967" "0.78119" "0.309862"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13417.3" "8625.68" "1099.01" +
+\i (00:02:01) QtSignal "13429.2" "8632.09" "1103.77" "1466.13" "-20312.4" "56027.5" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.541967" "0.78119" "0.309862"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13421.3" "8604.64" "1159.06" +
+\i (00:02:01) QtSignal "13429.1" "8593.41" "1154.61" "870.994" "-19448.5" 56360 "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.539528" "0.788834" "0.294363"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13426.9" "8586.49" "1168.64" +
+\i (00:02:01) QtSignal "13446.5" "8581.45" "1169.4" "-632.68" "-19054" "56285.5" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.536673" "0.796371" "0.278882"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13434.4" "8547.33" "1239.11" +
+\i (00:02:01) QtSignal "13442.2" "8535.88" "1235.1" "-1221.67" "-18173.5" "56583.9" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.533654" "0.803665" "0.263317"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13439.3" "8529.07" "1249.64" +
+\i (00:02:01) QtSignal "13466.6" "8512.15" "1247.28" "-3296.9" "-16858.6" "56722.2" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.526626" "0.817777" "0.232175"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13448.2" "8472.54" "1333.18" +
+\i (00:02:01) QtSignal "13467.6" "8466.87" "1335.27" "-4778.64" "-16416.8" 56545 "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.522621" "0.824588" "0.216613"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13450 "8435.41" "1406.75" +
+\i (00:02:01) QtSignal "13461.8" "8441.39" "1412.4" "-5678.58" "-16871.2" "56103.7" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.522621" "0.824588" "0.216613"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13446.5" "8416.93" "1468.7" +
+\i (00:02:01) QtSignal 13454 "8405.08" "1465.59" "-6251.34" "-15960" "56333.6" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.518208" "0.831274" "0.201107"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13449.7" "8398.45" "1480.97" +
+\i (00:02:01) QtSignal "13468.8" "8392.39" "1483.96" "-7714.1" "-15488.6" "56088.1" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.513389" "0.837831" "0.185667"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13447.2" "8361.7" "1555.79" +
+\i (00:02:01) QtSignal "13454.6" "8349.66" "1553.12" "-8276.39" "-14563.1" "56283.9" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.508413" "0.844132" "0.17017"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13449.5" "8343.23" "1568.94" +
+\i (00:02:01) QtSignal "13468.5" "8336.89" "1572.59" "-9722.68" "-14070.7" "55987.3" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.503037" "0.850297" "0.154753"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13444 "8307.73" "1645.02" +
+\i (00:02:01) QtSignal "13474.4" "8306.92" "1655.44" "-12034.3" "-13991.2" "55147.7" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.497019" "0.856442" "0.139566"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13426.1" "8255.14" "1784.06" +
+\i (00:02:01) QtSignal "13433.3" "8242.83" "1782.06" "-12577.9" "-13045.4" "55292.9" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.490851" "0.862326" "0.124336"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13426.7" "8236.58" "1798.25" +
+\i (00:02:01) QtSignal "13426.7" "8236.58" "1798.25" "-12577.9" "-13045.4" "55292.9" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.490851" "0.862326" "0.124336"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13426.7" "8236.57" "1798.25" +
+\i (00:02:01) QtSignal "13452.2" "8217.31" "1801.44" "-14514.6" "-11554.6" "55007.4" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.477585" "0.873536" "0.0940593"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13414.2" "8183.59" "1890.61" +
+\i (00:02:01) QtSignal "13425.6" "8189.03" "1897.59" "-15378.1" "-11968.3" "54464.8" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.477585" "0.873536" "0.0940594"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13400 8169 "1953.6" 13400 +
+\i (00:02:01) QtSignal 8169 "1953.6" "-15378.1" "-11968.3" "54464.8" "9979.93" "7738.75" "199.188" +
+\i (00:02:01) QtSignal "-0.477585" "0.873536" "0.0940593"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13400 8169 "1953.6" "13406.8" +
+\i (00:02:01) QtSignal "8156.45" "1952.25" "-15899.9" "-11004" "54560.1" "9979.93" "7738.75" "199.188" +
+\i (00:02:01) QtSignal "-0.470494" "0.878858" "0.0790257"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13399 "8150.56" "1968.89" +
+\i (00:02:01) QtSignal "13410.2" "8155.92" "1976.09" "-16755.6" "-11411.8" "54000.9" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.470494" "0.878857" "0.0790257"
+\i (00:02:01) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13383.1" "8136.39" "2031.84" +
+\i (00:02:01) QtSignal "13407.7" "8116.41" "2036.99" "-18621.7" "-9867.83" "53566.9" "9979.93" "7738.75" +
+\i (00:02:01) QtSignal "199.188" "-0.454941" "0.889144" "0.0495189"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13362 "8084.7" "2125.88" +
+\i (00:02:02) QtSignal 13362 "8084.7" "2125.88" "-18621.7" "-9867.83" "53566.9" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.454941" "0.889144" "0.049519"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13362 "8084.7" "2125.88" +
+\i (00:02:02) QtSignal "13379.5" "8077.14" "2132.79" "-19956.9" "-9282.92" "53021.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.446723" "0.893991" "0.0349044"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13339.9" "8053.07" "2204.74" +
+\i (00:02:02) QtSignal "13346.4" "8040.22" "2204.24" "-20443.9" "-8296.49" 53052 "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.43837" "0.898566" "0.0202793"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13336.6" "8034.89" "2221.26" +
+\i (00:02:02) QtSignal "13347.5" "8040.03" "2229.1" "-21273.8" "-8687.64" "52444.1" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.43837" "0.898566" "0.0202794"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13315.4" "8023.1" "2283.9" +
+\i (00:02:02) QtSignal "13321.7" "8010.19" "2283.61" "-21751.5" "-7696.27" "52458.5" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.429653" "0.902976" "0.00581633"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13311.4" "8004.99" "2300.66" +
+\i (00:02:02) QtSignal "13328.4" "7997.09" "2308.63" "-23039.7" "-7086.44" "51833.3" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.420578" "0.907217" "-0.00847584"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13283.9" "7975.67" "2380.06" +
+\i (00:02:02) QtSignal "13294.5" "7980.68" "2388.32" "-23850" "-7468.06" "51193.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.420578" "0.907217" "-0.00847581"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13259.4" "7964.9" "2442.24" +
+\i (00:02:02) QtSignal "13265.5" "7951.86" "2442.36" "-24307.7" "-6467.36" "51176.7" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.41115" "0.911288" "-0.0225884"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13254.1" "7946.95" "2459.4" +
+\i (00:02:02) QtSignal 13260 "7933.85" "2459.73" "-24754.9" "-5462.33" "51144.1" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.401598" "0.915081" "-0.0366942"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13248.3" "7929.21" "2476.96" +
+\i (00:02:02) QtSignal "13254.1" "7916.06" "2477.49" "-25191.6" "-4453.28" "51095.9" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.391923" "0.918595" "-0.0507888"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13242.1" "7911.71" "2494.91" +
+\i (00:02:02) QtSignal "13252.7" "7916.67" "2503.37" "-25991.4" "-4830.74" "50440.9" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.391923" "0.918595" "-0.0507888"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13215.1" "7903.61" "2556.72" +
+\i (00:02:02) QtSignal "13220.8" "7890.4" "2557.45" "-26417.2" "-3817.91" "50377.4" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.381908" "0.921934" "-0.0646866"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13208.2" "7886.23" "2574.83" +
+\i (00:02:02) QtSignal "13213.7" "7872.98" "2575.76" "-26831.9" "-2801.57" "50298.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.371776" "0.924992" "-0.0785647"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13200.9" "7869.11" "2593.31" +
+\i (00:02:02) QtSignal "13206.3" "7855.81" "2594.44" "-27235.5" "-1782.02" "50204.5" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.361531" "0.927769" "-0.0924188"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13193.1" "7852.26" "2612.16" +
+\i (00:02:02) QtSignal "13198.3" "7838.92" "2613.49" "-27627.7" "-759.568" "50095.2" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.351175" "0.930262" "-0.106245"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13184.9" "7835.7" "2631.38" +
+\i (00:02:02) QtSignal "13195.3" "7840.6" "2640.04" "-28416.3" "-1133.81" "49424.9" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.351175" "0.930262" "-0.106245"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13155.1" "7831.41" "2692.52" +
+\i (00:02:02) QtSignal "13160.1" "7818.04" "2694.04" "-28796.9" "-108.714" "49300.5" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.340495" "0.932576" "-0.119853"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13146.2" "7815.01" "2711.85" +
+\i (00:02:02) QtSignal "13151.1" "7801.6" "2713.57" "-29165.7" "918.775" "49161.1" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.329711" "0.934606" "-0.133425"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13136.8" "7798.92" "2731.52" +
+\i (00:02:02) QtSignal "13141.5" "7785.48" "2733.44" "-29522.6" "1948.34" "49006.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.318826" "0.936352" "-0.146956"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13127 "7783.15" "2751.52" +
+\i (00:02:02) QtSignal "13131.6" "7769.69" "2753.63" "-29867.4" "2979.67" "48837.7" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.307844" "0.937811" "-0.160442"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13116.7" "7767.72" "2771.86" +
+\i (00:02:02) QtSignal "13121.2" "7754.24" "2774.17" "-30200.1" "4012.45" "48653.7" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.296769" "0.938986" "-0.173879"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13106 "7752.63" "2792.52" +
+\i (00:02:02) QtSignal "13110.3" "7739.13" "2795.01" "-30520.6" "5046.37" 48455 "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.285603" "0.939874" "-0.187264"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13094.9" "7737.91" "2813.49" +
+\i (00:02:02) QtSignal "13084.7" "7733.04" "2804.63" "-29731.7" "5419.67" "49125.4" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.285603" "0.939874" "-0.187264"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13127 "7735.68" "2753.37" +
+\i (00:02:02) QtSignal "13131.1" "7722.17" "2756.07" "-30039.9" "6454.35" "48911.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.274568" "0.940373" "-0.200777"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13115.7" "7721.47" "2774.91" +
+\i (00:02:02) QtSignal "13105.3" "7716.59" "2766.24" "-29238.9" "6828.2" "49567.4" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.274568" "0.940373" "-0.200777"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13146.9" "7717.74" "2714.71" +
+\i (00:02:02) QtSignal "13136.4" "7712.86" "2706.24" "-28425.9" "7202.33" "50207.9" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.274568" "0.940373" "-0.200777"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13177 "7713.61" "2654.22" +
+\i (00:02:02) QtSignal 13181 "7700.1" "2657.11" "-28722.2" "8237.28" "49979.3" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.263897" "0.940378" "-0.214587"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13165.9" "7700.09" "2676.57" +
+\i (00:02:02) QtSignal "13155.2" "7695.2" "2668.3" "-27897.4" "8611.42" "50604.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.263897" "0.940378" "-0.214587"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13195.2" "7694.48" "2616.05" +
+\i (00:02:02) QtSignal "13184.3" "7689.6" "2607.98" "-27061.2" "8985.29" "51214.5" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.263897" "0.940378" "-0.214587"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13223.2" "7688.5" "2555.3" +
+\i (00:02:02) QtSignal 13227 "7674.98" "2558.38" "-27345.9" 10020 "50970.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.253605" "0.93989" "-0.228674"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13212.4" "7675.67" "2578.43" +
+\i (00:02:02) QtSignal 13194 "7652.4" "2565.98" "-25913.3" "11799.7" "51884.3" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.243707" "0.938909" "-0.243016"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13255 "7648.33" "2480.69" +
+\i (00:02:02) QtSignal 13255 "7648.33" "2480.69" "-25913.3" "11799.7" "51884.3" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.243707" "0.938909" "-0.243016"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13255 "7648.33" "2480.69" +
+\i (00:02:02) QtSignal "13243.7" "7643.47" "2473.23" "-25043.7" "12171.2" "52447.3" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.243707" "0.938909" "-0.243016"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13280.1" "7639.11" "2419.86" +
+\i (00:02:02) QtSignal "13260.8" "7615.92" "2408.85" "-23535.8" "13942.4" "53249.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.234467" "0.937335" "-0.257738"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13316.9" "7608.42" "2322.63" +
+\i (00:02:02) QtSignal "13305.2" "7603.61" "2315.8" "-22635" "14309.3" "53764.7" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.234467" "0.937335" "-0.257738"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13338.8" "7597.13" "2261.69" +
+\i (00:02:02) QtSignal "13326.9" "7592.35" "2255.07" "-21724.2" "14674.2" "54263.1" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.234467" "0.937335" "-0.257738"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13359.5" "7585.52" "2200.66" +
+\i (00:02:02) QtSignal "13326.9" "7557.78" "2185.15" "-19188.6" 16786 "55367.1" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.226428" "0.934973" "-0.273049"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13406 "7538.83" "2043.42" +
+\i (00:02:02) QtSignal 13406 "7538.83" "2043.42" "-19188.6" 16786 "55367.1" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.226428" "0.934973" "-0.273049"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13406 "7538.83" "2043.42" +
+\i (00:02:02) QtSignal "13381.4" "7529.5" "2031.92" "-17284.5" "17494.4" "56213.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.226428" "0.934973" "-0.273049"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13437.3" "7510.87" "1921.71" +
+\i (00:02:02) QtSignal "13424.7" "7506.27" "1916.4" "-16319.9" "17844.2" "56611.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.226428" "0.934973" "-0.273049"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13451.2" "7496.47" "1860.9" +
+\i (00:02:02) QtSignal "13438.5" "7491.92" "1855.82" "-15347.2" "18190.9" "56992.3" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.226428" "0.934973" "-0.273049"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13463.9" "7481.81" "1800.17" +
+\i (00:02:02) QtSignal "13428.9" "7454.84" "1789.51" "-12629.9" "20238.7" "57720.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13489.2" "7427.81" "1646.12" +
+\i (00:02:02) QtSignal "13463.1" "7419.05" "1637.77" "-10619.7" "20901.2" "58324.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13504.7" "7394.33" "1526.36" +
+\i (00:02:02) QtSignal "13491.5" "7390.05" "1522.64" "-9605.11" "21226.5" "58600.1" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13510.7" "7377.27" "1466.75" +
+\i (00:02:02) QtSignal "13497.5" "7373.04" "1463.27" "-8584.52" "21547.7" "58857.9" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13515.7" 7360 "1407.35" +
+\i (00:02:02) QtSignal "13488.9" "7351.67" "1400.85" "-6526.68" "22177.3" "59319.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13522.2" "7324.9" "1289.26" +
+\i (00:02:02) QtSignal "13495.1" "7316.79" "1283.69" "-4448.73" "22789.4" "59709.3" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13524.2" "7289.08" "1172.24" +
+\i (00:02:02) QtSignal "13524.2" "7289.08" "1172.24" "-4448.73" "22789.4" "59709.3" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13524.2" "7289.08" "1172.24" +
+\i (00:02:02) QtSignal "13483.3" "7277.27" "1165.31" "-1299.64" "23672.8" "60157.9" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13519.1" "7234.15" "999.073" +
+\i (00:02:02) QtSignal "13519.1" "7234.15" "999.073" "-1299.64" "23672.8" "60157.9" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13519.1" "7234.15" "999.073" +
+\i (00:02:02) QtSignal "13505.3" "7230.4" "997.477" "-242.648" "23957.7" "60270.9" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13515.2" "7215.55" "942.053" +
+\i (00:02:02) QtSignal "13487.5" "7208.17" "939.338" "1880.36" "24512.6" 60442 "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13504.3" "7177.96" "829.181" +
+\i (00:02:02) QtSignal "13490.4" "7174.4" "828.302" "2945.73" "24782.4" "60500.1" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13497.3" "7158.99" "773.36" +
+\i (00:02:02) QtSignal "13483.4" "7155.5" "772.721" "4013.23" 25047 "60539.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13489.3" "7139.91" "717.975" +
+\i (00:02:02) QtSignal "13489.3" "7139.91" "717.975" "4013.23" 25047 "60539.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13489.3" "7139.91" "717.975" +
+\i (00:02:02) QtSignal "13475.3" "7136.48" "717.577" "5082.56" "25306.4" "60561.1" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13480.2" "7120.73" "663.047" +
+\i (00:02:02) QtSignal "13466.2" "7117.37" "662.889" "6153.38" "25560.4" 60564 "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13470.1" "7101.46" "608.583" +
+\i (00:02:02) QtSignal "13456.1" "7098.17" "608.665" "7225.36" 25809 "60548.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13459.1" "7082.1" "554.609" +
+\i (00:02:02) QtSignal "13445.1" "7078.89" "554.931" "8298.19" 26052 "60514.7" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13447.1" "7062.67" "501.137" +
+\i (00:02:02) QtSignal 13433 "7059.53" "501.699" "9371.52" "26289.5" "60462.5" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13434 "7043.16" "448.181" +
+\i (00:02:02) QtSignal 13420 "7040.1" "448.983" 10445 "26521.4" "60391.9" "9979.93" "7738.75" "199.188" +
+\i (00:02:02) QtSignal "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13420.1" "7023.6" "395.762" +
+\i (00:02:02) QtSignal "13406.1" "7020.61" "396.804" "11518.4" "26747.5" 60303 "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13405.2" "7003.99" "343.891" +
+\i (00:02:02) QtSignal "13391.2" "7001.07" "345.173" "12591.3" "26967.8" "60195.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13389.3" "6984.32" "292.583" +
+\i (00:02:02) QtSignal "13375.3" "6981.48" "294.104" "13663.5" "27182.3" "60070.3" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13372.6" "6964.63" "241.855" +
+\i (00:02:02) QtSignal "13358.6" "6961.87" "243.614" "14734.4" "27390.8" "59926.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.220204" "0.931655" "-0.289013"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13354.9" "6944.9" "191.726" +
+\i (00:02:02) QtSignal "13351.7" "6958.3" "187.571" "14976.1" "26362.6" "60235.5" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.218854" "0.936953" "-0.272438"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13349.8" "6950.53" "163.266" +
+\i (00:02:02) QtSignal "13335.8" "6947.84" "165.263" "16045.6" "26565.3" "60073.5" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.218854" "0.936953" "-0.272438"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13331 "6931.67" "113.478" +
+\i (00:02:02) QtSignal "13303.1" "6926.44" "117.95" "18178.7" "26953.4" "59694.9" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.218854" "0.936953" "-0.272438"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13290.9" "6893.89" "15.7838" +
+\i (00:02:02) QtSignal "13290.9" "6893.89" "15.7838" "18178.7" "26953.4" "59694.9" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.218854" "0.936953" "-0.272438"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13290.9" "6893.88" "15.7838" +
+\i (00:02:02) QtSignal 13277 "6891.42" "18.4947" "19241.7" "27138.8" "59478.4" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.218854" "0.936953" "-0.272438"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13269.5" "6874.98" "-32.0937" +
+\i (00:02:02) QtSignal "13252.5" "6886.06" "-33.0626" "20541.1" "26284.1" "59534.7" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.215964" "0.942229" "-0.256055"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13240 "6861.88" "-107.013" +
+\i (00:02:02) QtSignal "13226.2" "6859.57" "-103.83" "21598.1" "26457.7" "59282.1" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.215964" "0.942229" "-0.256055"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13216.8" "6843.85" "-153.793" +
+\i (00:02:02) QtSignal 13203 "6841.62" "-150.374" "22651.6" "26625.7" "59011.5" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.215964" "0.942229" "-0.256055"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13192.8" "6825.83" "-199.885" +
+\i (00:02:02) QtSignal "13179.1" "6823.67" "-196.232" "23701.2" "26787.8" "58722.9" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.215964" "0.942229" "-0.256055"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13168.1" "6807.81" "-245.276" +
+\i (00:02:02) QtSignal "13164.9" "6821.36" "-248.957" "23936.8" 25748 "58995.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.212134" "0.947358" "-0.239818"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13159.4" "6813.99" "-272.291" +
+\i (00:02:02) QtSignal "13145.8" "6811.91" "-268.404" "24982.1" "25904.5" "58689.4" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.212134" "0.947358" "-0.239818"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13133.7" "6796.86" "-317.196" +
+\i (00:02:02) QtSignal "13120.1" "6794.85" "-313.076" "26022.9" "26055.5" "58365.2" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.212134" "0.947358" "-0.239818"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13107.2" "6779.74" "-361.368" +
+\i (00:02:02) QtSignal "13090.6" "6791.43" "-360.463" "27289.7" "25155.6" "58278.4" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.207374" "0.952323" "-0.223778"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13070.2" "6769.21" "-431.074" +
+\i (00:02:02) QtSignal "13056.7" "6767.34" "-426.49" "28320.4" "25295.5" "57918.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.207374" "0.952323" "-0.223778"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13042.1" 6753 "-473.975" +
+\i (00:02:02) QtSignal "13039.1" "6766.69" "-477.192" "28545.8" "24244.8" "58156.3" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.202267" "0.957037" "-0.207768"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13031.9" "6760.05" "-499.742" +
+\i (00:02:02) QtSignal 13029 "6773.81" "-502.729" "28765.6" "23189.1" "58376.1" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.197097" "0.96146" "-0.191696"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13021.8" "6767.64" "-525.141" +
+\i (00:02:02) QtSignal "13018.9" "6781.46" "-527.896" "28979.6" "22128.6" "58578.2" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.191868" "0.96559" "-0.175565"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13011.7" "6775.77" "-550.157" +
+\i (00:02:02) QtSignal 13009 "6789.65" "-552.681" "29187.9" "21063.8" "58762.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.18658" "0.969426" "-0.15938"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13001.8" "6784.41" "-574.78" +
+\i (00:02:02) QtSignal "12999.1" "6798.34" "-577.071" "29390.3" "19994.9" 58929 "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.181236" "0.972966" "-0.143147"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12991.8" "6793.56" "-599.005" +
+\i (00:02:02) QtSignal "12989.2" "6807.55" "-601.063" "29586.8" "18922.3" "59077.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.175836" "0.97621" "-0.126871"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 12982 "6803.21" "-622.827" +
+\i (00:02:02) QtSignal "12979.5" "6817.24" "-624.65" "29777.3" "17846.3" "59208.3" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.170382" "0.979156" "-0.110555"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12972.3" "6813.34" "-646.222" +
+\i (00:02:02) QtSignal "12969.8" "6827.42" "-647.811" "29961.8" "16767.2" 59321 "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.164877" "0.981805" "-0.0942064"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12962.6" "6823.96" "-669.202" +
+\i (00:02:02) QtSignal "12960.3" "6838.07" "-670.556" "30140.2" "15685.4" "59415.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.159321" "0.984154" "-0.0778288"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12953.1" "6835.03" "-691.743" +
+\i (00:02:02) QtSignal "12950.8" "6849.18" "-692.861" "30312.4" "14601.1" "59492.3" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.153717" "0.986204" "-0.0614274"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12943.6" "6846.56" "-713.848" +
+\i (00:02:02) QtSignal "12941.4" "6860.73" "-714.731" "30478.5" "13514.8" "59550.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.148066" "0.987953" "-0.0450074"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12934.3" "6858.52" "-735.502" +
+\i (00:02:02) QtSignal "12947.7" "6860.31" "-740.315" "29447.5" "13376.6" "59910.2" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.148066" "0.987953" "-0.0450074"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12964.2" "6865.01" "-691.263" +
+\i (00:02:02) QtSignal 12962 "6879.22" "-691.91" "29607.5" "12288.5" "59950.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.142656" "0.989363" "-0.0284742"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12955.3" "6877.45" "-712.586" +
+\i (00:02:02) QtSignal "12953.2" "6891.67" "-712.995" "29761.5" 11199 "59972.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.137202" "0.990471" "-0.0119323"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12946.5" "6890.31" "-733.443" +
+\i (00:02:02) QtSignal "12944.5" "6904.54" "-733.615" "29909.5" "10108.5" "59976.9" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.131706" "0.991278" "0.0046132"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12937.8" "6903.56" "-753.833" +
+\i (00:02:02) QtSignal "12951.3" "6905.38" "-758.41" "28872.5" "9969.12" 60318 "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.131706" "0.991278" "0.0046132"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12967.4" "6907.28" "-708.772" +
+\i (00:02:02) QtSignal "12965.5" "6921.53" "-708.705" "29014.5" "8877.88" "60303.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.126457" "0.991745" "0.0212517"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12959.1" "6920.96" "-728.799" +
+\i (00:02:02) QtSignal "12972.7" "6922.79" "-733.137" "27971.7" 8738 "60626.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.126457" "0.991745" "0.0212517"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12988.1" "6923.68" "-682.997" +
+\i (00:02:02) QtSignal "12986.3" "6937.94" "-682.691" "28108.2" "7646.44" 60594 "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.121458" "0.99187" "0.0379731"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "12980.3" "6937.79" "-702.643" +
+\i (00:02:02) QtSignal 12994 "6939.62" "-706.741" "27059.9" "7506.42" "60898.4" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.121458" "0.99187" "0.0379731"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13008.7" "6939.48" "-656.129" +
+\i (00:02:02) QtSignal 13007 "6953.74" "-655.583" "27190.9" "6414.91" "60847.4" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.116712" "0.991655" "0.0547672"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13001.4" "6953.99" "-675.378" +
+\i (00:02:02) QtSignal "13013.4" "6970.08" "-678.448" "26263.4" "5184.03" "61063.7" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.112222" "0.991099" "0.0716237"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13022.2" "6969.55" "-647.02" +
+\i (00:02:02) QtSignal 13036 "6971.38" "-650.635" 25205 "5044.86" "61331.1" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.112222" "0.991099" "0.0716237"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13049.3" "6969.16" "-599.16" +
+\i (00:02:02) QtSignal "13047.7" "6983.41" "-598.13" "25326.1" "3954.57" 61243 "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.107992" "0.990202" "0.0885325"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13042.8" "6984.44" "-617.574" +
+\i (00:02:02) QtSignal "13056.7" "6986.25" "-620.947" 24263 "3816.39" "61491.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.107992" "0.990202" "0.0885325"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13069.3" "6982.99" "-569.085" +
+\i (00:02:02) QtSignal "13067.7" "6997.22" "-567.813" "24379.7" "2727.27" 61385 "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.104022" "0.988966" "0.105483"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13063.2" "6998.62" "-587.062" +
+\i (00:02:02) QtSignal "13077.1" "7000.42" "-590.191" "23312.2" "2590.45" "61615.1" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.104022" "0.988966" "0.105483"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13088.9" "6996.1" "-537.974" +
+\i (00:02:02) QtSignal "13087.4" "7010.31" "-536.458" "23424.7" "1502.88" "61489.7" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.100316" "0.98739" "0.122465"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13083.3" "7012.08" "-555.497" +
+\i (00:02:02) QtSignal "13097.3" "7013.86" "-558.382" "22353.1" "1367.79" "61701.1" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.100316" "0.98739" "0.122465"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13108.3" "7008.46" "-505.841" +
+\i (00:02:02) QtSignal "13106.9" "7022.66" "-504.08" "22461.6" "282.145" 61557 "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.0968762" "0.985476" "0.139469"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13103.1" "7024.77" "-522.897" +
+\i (00:02:02) QtSignal "13117.1" "7026.53" "-525.538" "21386.3" "149.16" "61749.7" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.0968762" "0.985476" "0.139469"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13127.3" "7020.06" "-472.701" +
+\i (00:02:02) QtSignal 13126 "7034.22" "-470.696" "21491.2" "-934.195" "61586.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.0937045" "0.983226" "0.156483"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13122.5" "7036.68" "-489.283" +
+\i (00:02:02) QtSignal "13136.6" "7038.41" "-491.679" "20412.3" "-1064.7" "61760.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.0937045" "0.983226" "0.156483"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13146 "7030.86" "-438.581" +
+\i (00:02:02) QtSignal "13160.2" "7032.55" "-440.732" "19330.3" "-1192.53" "61916.1" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.0937045" "0.983226" "0.156483"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13168.7" "7024.85" "-387.244" +
+\i (00:02:02) QtSignal "13167.4" "7038.99" "-384.995" 19432 "-2273.2" "61734.5" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.0911023" "0.980604" "0.173541"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13164.6" "7041.81" "-403.385" +
+\i (00:02:02) QtSignal "13163.3" "7055.91" "-400.89" "19530.8" "-3350.83" "61534.1" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.0884723" "0.977684" "0.190545"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13160.5" "7059.01" "-418.979" +
+\i (00:02:02) QtSignal "13174.6" "7060.67" "-420.885" 18446 "-3475.6" "61670.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.0884723" "0.977684" "0.190545"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13182.5" "7050.94" "-367.358" +
+\i (00:02:02) QtSignal "13181.2" 7065 "-364.619" 18542 "-4549.83" "61451.6" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.0861157" "0.974431" "0.20753"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13178.8" "7068.41" "-382.439" +
+\i (00:02:02) QtSignal "13192.9" "7070.02" "-384.101" "17454.5" "-4671.03" "61569.4" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.0861157" "0.974431" "0.20753"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent 13200 "7059.21" "-330.41" +
+\i (00:02:02) QtSignal "13214.2" "7060.76" "-331.828" "16364.8" "-4788.45" "61668.5" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.0861157" "0.974431" "0.20753"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13220.3" "7049.8" "-277.795" +
+\i (00:02:02) QtSignal "13219.1" "7063.8" "-274.812" "16458.6" "-5858.9" "61430.8" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.0843354" "0.970815" "0.224511"
+\i (00:02:02) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13217.2" "7067.54" "-292.387" +
+\i (00:02:02) QtSignal "13231.5" "7069.05" "-293.56" "15366.9" "-5972.33" "61511.2" "9979.93" "7738.75" +
+\i (00:02:02) QtSignal "199.188" "-0.0843354" "0.970815" "0.224511"
+\i (00:02:03) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13236.7" "7056.99" "-239.416" +
+\i (00:02:03) QtSignal 13251 "7058.44" "-240.345" "14273.5" "-6081.6" "61572.9" "9979.93" "7738.75" +
+\i (00:02:03) QtSignal "199.188" "-0.0843354" "0.970815" "0.224511"
+\i (00:02:03) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasRotateEvent "13255.3" "7046.23" "-185.893" +
+\i (00:02:03) QtSignal "13269.6" "7047.63" "-186.578" "13178.8" "-6186.65" 61616 "9979.93" "7738.75" +
+\i (00:02:03) QtSignal "199.188" "-0.0843354" "0.970815" "0.224511"
+\i (00:02:03) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasMouseReleaseEvent 1243 623 1243 668 4 +
+\i (00:02:03) QtSignal 0 33554432 "13272.9" "7035.26" "-131.835"
+\i (00:02:03) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 1237 252 1237 297 0 0 120
+\i (00:02:03) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 1239 249 1239 294 0 0 120
+\i (00:02:04) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 1320 296 1320 341 0 0 "-120"
+\i (00:02:04) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 1325 301 1325 346 0 0 "-120"
+\i (00:02:05) QtSignal pcb3dViewer pcb3dViewer closed
+\i (00:02:07) Move 
+\t (00:02:07) Select element(s) to move.
+\i (00:02:07) pick grid 926.946 983.942
+\t (00:02:07) last pick:  930.000 980.000
+\i (00:02:08) pick grid 875.946 1047.692
+\t (00:02:08) last pick:  880.000 1050.000
+\t (00:02:08) last pick:  721.000 1032.000
+\t (00:02:08) Moving BT1 / BATTERY_CR1220_SMD_CR1220_E11M011 / CR1220_SMD.
+\t (00:02:08) Pick new location for the element(s).
+\i (00:02:08) zoom out 1 
+\i (00:02:08) setwindow pcb
+\i (00:02:08) zoom out 1311.573 1081.693
+\i (00:02:08) trapsize 21250
+\i (00:02:09) pick grid -184.435 -745.818
+\t (00:02:09) last pick:  -180.000 -750.000
+\i (00:02:09) pick grid 1434.824 -516.317
+\t (00:02:09) last pick:  1430.000 -520.000
+\i (00:02:10) zoom in 1 
+\i (00:02:10) setwindow pcb
+\i (00:02:10) zoom in 1260.573 626.939
+\i (00:02:10) trapsize 10625
+\i (00:02:11) save 
+\i (00:02:11) fillin yes 
+\i (00:02:11) placementedit 
+\i (00:02:12) roam start
+\i (00:02:12) roam y -16
+\i (00:02:12) roam x 32
+\i (00:02:12) roam y -16
+\i (00:02:12) roam x 16
+\i (00:02:12) roam y -32
+\i (00:02:12) roam x 16
+\i (00:02:12) roam y -16
+\i (00:02:12) roam x 16
+\i (00:02:12) roam y -16
+\i (00:02:12) roam x 16
+\i (00:02:12) roam y -16
+\i (00:02:12) roam x 16
+\i (00:02:12) roam y -16
+\i (00:02:12) roam end
+\i (00:02:13) zoom in 1 
+\i (00:02:13) setwindow pcb
+\i (00:02:13) zoom in 155.566 1655.446
+\i (00:02:13) trapsize 5313
+\i (00:02:13) zoom out 1 
+\i (00:02:13) setwindow pcb
+\i (00:02:13) zoom out 301.130 1572.571
+\i (00:02:13) trapsize 10625
+\i (00:02:15) zoom in 1 
+\i (00:02:15) setwindow pcb
+\i (00:02:15) zoom in 594.382 1319.694
+\i (00:02:15) trapsize 5313
+\i (00:02:15) roam start
+\i (00:02:15) roam x -16
+\i (00:02:15) roam x -16
+\i (00:02:15) roam y -32
+\i (00:02:15) roam x -16
+\i (00:02:15) roam y -16
+\i (00:02:16) roam x -16
+\i (00:02:16) roam y -16
+\i (00:02:16) roam y -16
+\i (00:02:16) roam y -16
+\i (00:02:16) roam y -16
+\i (00:02:16) roam y -16
+\i (00:02:16) roam x 16
+\i (00:02:16) roam end
+\i (00:02:21) zoom out 1 
+\i (00:02:21) setwindow pcb
+\i (00:02:21) zoom out 953.505 1283.565
+\i (00:02:21) trapsize 10625
+\i (00:13:06) Move 
+\t (00:13:06) Select element(s) to move.
+\i (00:13:07) setwindow form.find
+\i (00:13:07) FORM find all_off  
+\i (00:13:08) FORM find symbols YES 
+\i (00:13:09) setwindow pcb
+\i (00:13:09) roam start
+\i (00:13:09) roam y 16
+\i (00:13:09) roam y 32
+\i (00:13:09) roam y 16
+\i (00:13:09) roam x 16
+\i (00:13:09) roam y 48
+\i (00:13:09) roam x 16
+\i (00:13:09) roam y 80
+\i (00:13:09) roam x 16
+\i (00:13:09) roam y 80
+\i (00:13:09) roam x 16
+\i (00:13:09) roam y 32
+\i (00:13:09) roam x 16
+\i (00:13:09) roam x 16
+\i (00:13:09) roam y 16
+\i (00:13:09) roam y 16
+\i (00:13:09) roam y -16
+\i (00:13:09) roam y -16
+\i (00:13:09) roam y -16
+\i (00:13:09) roam y -16
+\i (00:13:09) roam y -16
+\i (00:13:09) roam y -16
+\i (00:13:09) roam end
+\i (00:13:09) zoom out 1 
+\i (00:13:09) setwindow pcb
+\i (00:13:09) zoom out 2125.452 824.566
+\i (00:13:09) trapsize 21250
+\i (00:13:10) drag_start grid -280.062 1887.073
+\i (00:13:11) drag_stop 2303.953 -216.689
+\i (00:13:11) pick grid 1725.949 399.565
+\t (00:13:11) last pick:  1730.000 400.000
+\t (00:13:11) Moving J3 / CON_2X16_CON_254-2X16P_2.54 2X16P_E09J086 / CON_254-2X16P.
+\t (00:13:11) Moving U4 / EMBER_V1.1_EMBERV1_1_EMBER_V1.1_E11M015 / EMBERV1_1.
+\t (00:13:11) Moving J2 / CON_2X16_CON_254-2X16P_2.54 2X16P_E09J086 / CON_254-2X16P.
+\t (00:13:11) Moving C1 / C_C0603_10UF / C0603.
+\t (00:13:11) Moving C3 / C_C0805_10UF / C0805.
+\t (00:13:11) Moving U1 / AMS1117_SOT89_SOT-89-3_AMS1117 / SOT-89-3.
+\t (00:13:11) Moving C2 / CAP_CASE-A-3216_10UF / CASE-A-3216.
+\t (00:13:11) Moving Z1 / TVSA_SOD-123FL_SMF7.0A_E04D023 / SOD-123FL.
+\t (00:13:11) Moving F1 / FUSE_F0805_BSMD0805-100-6V / F0805.
+\t (00:13:11) Moving C4 / C_C0603_0.1UF / C0603.
+\t (00:13:11) Moving R7 / R_R0603_1K(NC) / R0603.
+\t (00:13:11) Moving R3 / R_R0603_1K / R0603.
+\t (00:13:11) Moving U3 / CH340X_MSOP-10_CH340X / MSOP-10.
+\t (00:13:11) Moving R5 / R_R0603_3K / R0603.
+\t (00:13:11) Moving R6 / R_R0603_470R / R0603.
+\t (00:13:11) Moving R4 / R_R0603_3K / R0603.
+\t (00:13:11) Moving R1 / R_R0603_5.1K / R0603.
+\t (00:13:11) Moving J1 / TYPE-C_12P_SMD_TYPE-C-12P_TYPE-C 12P_E09J067 / TYPE-C-12P.
+\t (00:13:11) Moving R2 / R_R0603_5.1K / R0603.
+\t (00:13:11) Moving D2 / LED_LED0603_LED / LED0603.
+\t (00:13:11) Moving D1 / LED_LED0603_LED / LED0603.
+\t (00:13:11) Moving D3 / LED_LED0603_LED / LED0603.
+\t (00:13:11) Moving J4 / CON_4_XH_254-4P_SWD_E09J008 / XH_254-4P.
+\t (00:13:11) Pick new location for the element(s).
+\i (00:13:12) pick grid -1478.569 850.067
+\t (00:13:12) last pick:  -1480.000 850.000
+\i (00:13:12) pick grid 531.693 816.067
+\t (00:13:12) last pick:  530.000 820.000
+\i (00:13:15) pick grid -2970.327 2125.074
+\t (00:13:15) last pick:  -2970.000 2130.000
+\t (00:13:15) last pick:  -2324.173 2064.173
+\t (00:13:15) Moving J2 / CON_2X16_CON_254-2X16P_2.54 2X16P_E09J086 / CON_254-2X16P.
+\t (00:13:15) Pick new location for the element(s).
+\i (00:13:15) pick grid -54.811 2159.075
+\t (00:13:15) last pick:  -50.000 2160.000
+\i (00:13:16) zoom in 1 
+\i (00:13:16) setwindow pcb
+\i (00:13:16) zoom in -2613.325 2290.825
+\i (00:13:16) trapsize 10625
+\i (00:13:16) zoom in 1 
+\i (00:13:16) setwindow pcb
+\i (00:13:16) zoom in -2615.450 2290.826
+\i (00:13:16) trapsize 5313
+\i (00:13:16) zoom out 1 
+\i (00:13:16) setwindow pcb
+\i (00:13:16) zoom out -2141.572 2197.325
+\i (00:13:16) trapsize 10625
+\i (00:13:17) Delete 
+\i (00:13:19) drag_start grid -3246.579 2312.076
+\i (00:13:20) drag_stop -1446.693 1914.699
+\i (00:13:21) pick grid -1572.069 1950.824
+\t (00:13:21) last pick:  -1570.000 1950.000
+\i (00:13:21) zoom out 1 
+\i (00:13:21) setwindow pcb
+\i (00:13:21) zoom out -1510.444 2048.575
+\i (00:13:21) trapsize 21250
+\i (00:13:24) prepopup -838.939 905.318
+\i (00:13:24) done 
+\i (00:13:25) placementedit 
+\i (00:13:25) Move 
+\t (00:13:25) Select element(s) to move.
+\i (00:13:26) pick grid -2045.946 607.816
+\t (00:13:26) last pick:  -2050.000 610.000
+\t (00:13:26) last pick:  -2324.173 587.795
+\t (00:13:26) Moving J3 / CON_2X16_CON_254-2X16P_2.54 2X16P_E09J086 / CON_254-2X16P.
+\t (00:13:26) Pick new location for the element(s).
+\i (00:13:26) pick grid -2041.696 2358.826
+\t (00:13:26) last pick:  -2040.000 2360.000
+\i (00:13:26) zoom in 1 
+\i (00:13:26) setwindow pcb
+\i (00:13:26) zoom in -2181.947 301.815
+\i (00:13:26) trapsize 10625
+\i (00:13:27) Delete 
+\i (00:13:27) drag_start grid -3138.202 714.067
+\i (00:13:28) drag_stop -1525.318 337.940
+\i (00:13:28) pick grid -1648.569 306.065
+\t (00:13:28) last pick:  -1650.000 310.000
+\i (00:13:29) zoom out 1 
+\i (00:13:29) setwindow pcb
+\i (00:13:29) zoom out -2211.697 444.191
+\i (00:13:29) trapsize 21250
+\i (00:13:30) Move 
+\t (00:13:30) Select element(s) to move.
+\i (00:13:30) pick grid -1960.945 2314.201
+\t (00:13:30) last pick:  -1960.000 2310.000
+\t (00:13:30) last pick:  -2040.000 2360.000
+\t (00:13:30) Moving J3 / CON_2X16_CON_254-2X16P_2.54 2X16P_E09J086 / CON_254-2X16P.
+\t (00:13:30) Pick new location for the element(s).
+\i (00:13:32) pick grid -2390.198 473.940
+\t (00:13:32) last pick:  -2390.000 470.000
+\i (00:13:32) zoom in 1 
+\i (00:13:32) setwindow pcb
+\i (00:13:32) zoom in -2402.948 1298.445
+\i (00:13:32) trapsize 10625
+\i (00:13:33) pick grid -2360.447 452.690
+\t (00:13:33) last pick:  -2360.000 450.000
+\t (00:13:33) last pick:  -2390.000 470.000
+\t (00:13:33) Moving J3 / CON_2X16_CON_254-2X16P_2.54 2X16P_E09J086 / CON_254-2X16P.
+\t (00:13:33) Pick new location for the element(s).
+\i (00:13:33) pick grid -2439.073 495.190
+\t (00:13:33) last pick:  -2440.000 500.000
+\i (00:13:35) pick grid -1958.820 1521.571
+\t (00:13:35) last pick:  -1960.000 1520.000
+\t (00:13:35) last pick:  -2450.000 1310.000
+\t (00:13:35) Moving U4 / EMBER_V1.1_EMBERV1_1_EMBER_V1.1_E11M015 / EMBERV1_1.
+\t (00:13:35) Pick new location for the element(s).
+\i (00:13:35) zoom out 1 
+\i (00:13:35) setwindow pcb
+\i (00:13:35) zoom out -2598.448 1532.196
+\i (00:13:35) trapsize 21250
+\i (00:13:36) roam start
+\i (00:13:36) roam x 32
+\i (00:13:36) roam x 128
+\i (00:13:36) roam y -16
+\i (00:13:36) roam x 176
+\i (00:13:36) roam y -32
+\i (00:13:36) roam x 160
+\i (00:13:36) roam y -16
+\i (00:13:36) roam x 160
+\i (00:13:36) roam y -16
+\i (00:13:36) roam x 112
+\i (00:13:36) roam x 64
+\i (00:13:36) roam x 48
+\i (00:13:36) roam x -32
+\i (00:13:36) roam x -128
+\i (00:13:36) roam y 48
+\i (00:13:36) roam x -176
+\i (00:13:36) roam y 32
+\i (00:13:36) roam x -144
+\i (00:13:36) roam y 16
+\i (00:13:36) roam x -144
+\i (00:13:36) roam y 16
+\i (00:13:36) roam x -160
+\i (00:13:36) roam y 32
+\i (00:13:36) roam x -144
+\i (00:13:36) roam y 48
+\i (00:13:36) roam x -272
+\i (00:13:36) roam y 112
+\i (00:13:36) roam x -48
+\i (00:13:36) roam y 16
+\i (00:13:36) roam x 16
+\i (00:13:36) roam y -16
+\i (00:13:36) roam x 16
+\i (00:13:36) roam x 96
+\i (00:13:36) roam y -48
+\i (00:13:36) roam x 96
+\i (00:13:36) roam y -32
+\i (00:13:36) roam x 80
+\i (00:13:36) roam y -32
+\i (00:13:36) roam x 64
+\i (00:13:36) roam y -16
+\i (00:13:36) roam x 48
+\i (00:13:36) roam y -16
+\i (00:13:36) roam x 16
+\i (00:13:36) roam x 16
+\i (00:13:36) roam x 48
+\i (00:13:36) roam x 128
+\i (00:13:36) roam x 128
+\i (00:13:36) roam x 96
+\i (00:13:36) roam y 16
+\i (00:13:36) roam x 32
+\i (00:13:36) roam end
+\i (00:13:38) pick grid 776.069 879.816
+\t (00:13:38) last pick:  780.000 880.000
+\i (00:13:38) pick grid -464.938 586.565
+\t (00:13:38) last pick:  -460.000 590.000
+\i (00:13:38) pick grid -2007.697 484.564
+\t (00:13:38) last pick:  -2010.000 480.000
+\t (00:13:38) last pick:  -2440.000 500.000
+\t (00:13:38) Moving J3 / CON_2X16_CON_254-2X16P_2.54 2X16P_E09J086 / CON_254-2X16P.
+\t (00:13:38) Pick new location for the element(s).
+\i (00:13:41) pick grid 856.819 178.562
+\t (00:13:41) last pick:  860.000 180.000
+\i (00:13:41) pick grid 470.067 2159.074
+\t (00:13:41) last pick:  470.000 2160.000
+\t (00:13:41) last pick:  -50.000 2160.000
+\t (00:13:41) Moving J2 / CON_2X16_CON_254-2X16P_2.54 2X16P_E09J086 / CON_254-2X16P.
+\t (00:13:41) Pick new location for the element(s).
+\i (00:13:42) zoom in 1 
+\i (00:13:42) setwindow pcb
+\i (00:13:42) zoom in 1179.821 1525.820
+\i (00:13:42) trapsize 10625
+\i (00:13:43) pick grid 878.069 1604.446
+\t (00:13:43) last pick:  880.000 1600.000
+\i (00:13:44) pick grid 1840.700 1166.693
+\t (00:13:44) last pick:  1840.000 1170.000
+\i (00:13:53) zoom in 1 
+\i (00:13:53) setwindow pcb
+\i (00:13:53) zoom in 1084.196 1445.070
+\i (00:13:53) trapsize 5313
+\i (00:13:53) zoom in 1 
+\i (00:13:53) setwindow pcb
+\i (00:13:53) zoom in 1306.259 1318.632
+\i (00:13:53) trapsize 2656
+\i (00:13:54) zoom out 1 
+\i (00:13:54) setwindow pcb
+\i (00:13:54) zoom out 1303.603 1301.100
+\i (00:13:54) trapsize 5313
+\i (00:13:54) zoom in 1 
+\i (00:13:54) setwindow pcb
+\i (00:13:54) zoom in 1294.041 1294.726
+\i (00:13:54) trapsize 2656
+\i (00:13:54) zoom in 1 
+\i (00:13:54) setwindow pcb
+\i (00:13:54) zoom in 1294.041 1293.132
+\i (00:13:54) trapsize 1328
+\i (00:13:55) zoom out 1 
+\i (00:13:55) setwindow pcb
+\i (00:13:55) zoom out 1281.026 1301.367
+\i (00:13:55) trapsize 2656
+\i (00:13:55) zoom out 1 
+\i (00:13:55) setwindow pcb
+\i (00:13:55) zoom out 1281.026 1300.836
+\i (00:13:55) trapsize 5313
+\i (00:13:56) zoom in 1 
+\i (00:13:56) setwindow pcb
+\i (00:13:56) zoom in 1364.963 1317.836
+\i (00:13:56) trapsize 2656
+\i (00:13:57) zoom out 1 
+\i (00:13:57) setwindow pcb
+\i (00:13:57) zoom out 1390.995 1233.898
+\i (00:13:57) trapsize 5313
+\i (00:14:01) zoom in 1 
+\i (00:14:01) setwindow pcb
+\i (00:14:01) zoom in 1231.619 1030.959
+\i (00:14:01) trapsize 2656
+\i (00:14:01) zoom in 1 
+\i (00:14:01) setwindow pcb
+\i (00:14:01) zoom in 1232.682 1029.897
+\i (00:14:01) trapsize 1328
+\i (00:14:01) zoom out 1 
+\i (00:14:01) setwindow pcb
+\i (00:14:01) zoom out 1254.995 1024.054
+\i (00:14:01) trapsize 2656
+\i (00:14:01) zoom out 1 
+\i (00:14:01) setwindow pcb
+\i (00:14:01) zoom out 1254.995 1024.053
+\i (00:14:01) trapsize 5313
+\i (00:14:02) zoom in 1 
+\i (00:14:02) setwindow pcb
+\i (00:14:02) zoom in 265.802 1538.307
+\i (00:14:02) trapsize 2656
+\i (00:14:02) zoom out 1 
+\i (00:14:02) setwindow pcb
+\i (00:14:02) zoom out 258.365 1532.994
+\i (00:14:02) trapsize 5313
+\i (00:14:02) zoom out 1 
+\i (00:14:02) setwindow pcb
+\i (00:14:02) zoom out 250.927 1526.620
+\i (00:14:02) trapsize 10625
+\i (00:14:03) zoom in 1 
+\i (00:14:03) setwindow pcb
+\i (00:14:03) zoom in 1173.183 1229.118
+\i (00:14:03) trapsize 5313
+\i (00:14:04) zoom out 1 
+\i (00:14:04) setwindow pcb
+\i (00:14:04) zoom out 1643.873 1161.118
+\i (00:14:04) trapsize 10625
+\i (00:14:10) xNet Gnd 
+\t (00:14:10) Nets are not selectable at this time.
+\i (00:14:10) xNet 5V 
+\t (00:14:10) Nets are not selectable at this time.
+\i (00:14:10) xname_flush 
+\i (00:14:11) xNet '!' Gnd 
+\t (00:14:11) Nets are not selectable at this time.
+\i (00:14:11) xNet '!' 5V 
+\t (00:14:11) Nets are not selectable at this time.
+\i (00:14:11) xname_flush '!' 
+\i (00:14:12) xrefdes J2 
+\i (00:14:12) xname_flush 
+\i (00:14:14) xrefdes '!' J2 
+\i (00:14:14) xname_flush '!' 
+\i (00:14:15) xNet Gnd 
+\t (00:14:15) Nets are not selectable at this time.
+\i (00:14:15) xNet Pc5 
+\t (00:14:15) Nets are not selectable at this time.
+\i (00:14:15) xNet Pb1 
+\t (00:14:15) Nets are not selectable at this time.
+\i (00:14:15) xNet 5V 
+\t (00:14:15) Nets are not selectable at this time.
+\i (00:14:15) xNet Pa7 
+\t (00:14:15) Nets are not selectable at this time.
+\i (00:14:15) xNet Pa6 
+\t (00:14:15) Nets are not selectable at this time.
+\i (00:14:15) xNet Pa5 
+\t (00:14:15) Nets are not selectable at this time.
+\i (00:14:15) xNet Pb2 
+\t (00:14:15) Nets are not selectable at this time.
+\i (00:14:15) xNet Pb11 
+\t (00:14:15) Nets are not selectable at this time.
+\i (00:14:15) xNet Pa4 
+\t (00:14:15) Nets are not selectable at this time.
+\i (00:14:15) xNet Pb10 
+\t (00:14:15) Nets are not selectable at this time.
+\i (00:14:15) xNet Pa3 
+\t (00:14:15) Nets are not selectable at this time.
+\i (00:14:15) xNet Pb12 
+\t (00:14:15) Nets are not selectable at this time.
+\i (00:14:15) xNet Pc4 
+\t (00:14:15) Nets are not selectable at this time.
+\i (00:14:15) xNet Pb0 
+\t (00:14:15) Nets are not selectable at this time.
+\i (00:14:15) xname_flush 
+\i (00:14:16) xNet '!' Gnd 
+\t (00:14:16) Nets are not selectable at this time.
+\i (00:14:16) xNet '!' Pc5 
+\t (00:14:16) Nets are not selectable at this time.
+\i (00:14:16) xNet '!' Pb1 
+\t (00:14:16) Nets are not selectable at this time.
+\i (00:14:16) xNet '!' 5V 
+\t (00:14:16) Nets are not selectable at this time.
+\i (00:14:16) xNet '!' Pa7 
+\t (00:14:16) Nets are not selectable at this time.
+\i (00:14:16) xNet '!' Pa6 
+\t (00:14:16) Nets are not selectable at this time.
+\i (00:14:16) xNet '!' Pa5 
+\t (00:14:16) Nets are not selectable at this time.
+\i (00:14:16) xNet '!' Pb2 
+\t (00:14:16) Nets are not selectable at this time.
+\i (00:14:16) xNet '!' Pb11 
+\t (00:14:16) Nets are not selectable at this time.
+\i (00:14:16) xNet '!' Pa4 
+\t (00:14:16) Nets are not selectable at this time.
+\i (00:14:16) xNet '!' Pb10 
+\t (00:14:16) Nets are not selectable at this time.
+\i (00:14:16) xNet '!' Pa3 
+\t (00:14:16) Nets are not selectable at this time.
+\i (00:14:16) xNet '!' Pb12 
+\t (00:14:16) Nets are not selectable at this time.
+\i (00:14:16) xNet '!' Pc4 
+\t (00:14:16) Nets are not selectable at this time.
+\i (00:14:16) xNet '!' Pb0 
+\t (00:14:16) Nets are not selectable at this time.
+\i (00:14:16) xname_flush '!' 
+\i (00:14:20) xNet '!' Pa4 
+\t (00:14:20) Nets are not selectable at this time.
+\i (00:14:20) xNet '!' Pa7 
+\t (00:14:20) Nets are not selectable at this time.
+\i (00:14:20) xNet '!' Gnd 
+\t (00:14:20) Nets are not selectable at this time.
+\i (00:14:20) xNet '!' Pb0 
+\t (00:14:20) Nets are not selectable at this time.
+\i (00:14:20) xNet '!' Pb10 
+\t (00:14:20) Nets are not selectable at this time.
+\i (00:14:20) xNet '!' 5V 
+\t (00:14:20) Nets are not selectable at this time.
+\i (00:14:20) xNet '!' Pb12 
+\t (00:14:20) Nets are not selectable at this time.
+\i (00:14:20) xNet '!' Pa5 
+\t (00:14:20) Nets are not selectable at this time.
+\i (00:14:20) xNet '!' Pc4 
+\t (00:14:20) Nets are not selectable at this time.
+\i (00:14:20) xNet '!' Pb1 
+\t (00:14:20) Nets are not selectable at this time.
+\i (00:14:20) xNet '!' Pb11 
+\t (00:14:20) Nets are not selectable at this time.
+\i (00:14:20) xNet '!' Pa3 
+\t (00:14:20) Nets are not selectable at this time.
+\i (00:14:20) xNet '!' Pa6 
+\t (00:14:20) Nets are not selectable at this time.
+\i (00:14:20) xNet '!' Pc5 
+\t (00:14:20) Nets are not selectable at this time.
+\i (00:14:20) xNet '!' Pb2 
+\t (00:14:20) Nets are not selectable at this time.
+\i (00:14:20) xname_flush '!' 
+\i (00:14:21) xNet 5V 
+\t (00:14:21) Nets are not selectable at this time.
+\i (00:14:21) xNet Gnd 
+\t (00:14:21) Nets are not selectable at this time.
+\i (00:14:21) xname_flush 
+\i (00:14:24) xNet Pa4 
+\t (00:14:24) Nets are not selectable at this time.
+\i (00:14:24) xNet Pa7 
+\t (00:14:24) Nets are not selectable at this time.
+\i (00:14:24) xNet Gnd 
+\t (00:14:24) Nets are not selectable at this time.
+\i (00:14:24) xNet Pb0 
+\t (00:14:24) Nets are not selectable at this time.
+\i (00:14:24) xNet Pb10 
+\t (00:14:24) Nets are not selectable at this time.
+\i (00:14:24) xNet 5V 
+\t (00:14:24) Nets are not selectable at this time.
+\i (00:14:24) xNet Pb12 
+\t (00:14:24) Nets are not selectable at this time.
+\i (00:14:24) xNet Pa5 
+\t (00:14:24) Nets are not selectable at this time.
+\i (00:14:24) xNet Pc4 
+\t (00:14:24) Nets are not selectable at this time.
+\i (00:14:24) xNet Pb1 
+\t (00:14:24) Nets are not selectable at this time.
+\i (00:14:24) xNet Pb11 
+\t (00:14:24) Nets are not selectable at this time.
+\i (00:14:24) xNet Pa3 
+\t (00:14:24) Nets are not selectable at this time.
+\i (00:14:24) xNet Pa6 
+\t (00:14:24) Nets are not selectable at this time.
+\i (00:14:24) xNet Pc5 
+\t (00:14:24) Nets are not selectable at this time.
+\i (00:14:24) xNet Pb2 
+\t (00:14:24) Nets are not selectable at this time.
+\i (00:14:24) xname_flush 
+\i (00:14:30) xNet '!' Pa4 
+\t (00:14:30) Nets are not selectable at this time.
+\i (00:14:30) xNet '!' Pa7 
+\t (00:14:30) Nets are not selectable at this time.
+\i (00:14:30) xNet '!' Gnd 
+\t (00:14:30) Nets are not selectable at this time.
+\i (00:14:30) xNet '!' Pb0 
+\t (00:14:30) Nets are not selectable at this time.
+\i (00:14:30) xNet '!' Pb10 
+\t (00:14:30) Nets are not selectable at this time.
+\i (00:14:30) xNet '!' 5V 
+\t (00:14:30) Nets are not selectable at this time.
+\i (00:14:30) xNet '!' Pb12 
+\t (00:14:30) Nets are not selectable at this time.
+\i (00:14:30) xNet '!' Pa5 
+\t (00:14:30) Nets are not selectable at this time.
+\i (00:14:30) xNet '!' Pc4 
+\t (00:14:30) Nets are not selectable at this time.
+\i (00:14:30) xNet '!' Pb1 
+\t (00:14:30) Nets are not selectable at this time.
+\i (00:14:30) xNet '!' Pb11 
+\t (00:14:30) Nets are not selectable at this time.
+\i (00:14:30) xNet '!' Pa3 
+\t (00:14:30) Nets are not selectable at this time.
+\i (00:14:30) xNet '!' Pa6 
+\t (00:14:30) Nets are not selectable at this time.
+\i (00:14:30) xNet '!' Pc5 
+\t (00:14:30) Nets are not selectable at this time.
+\i (00:14:30) xNet '!' Pb2 
+\t (00:14:30) Nets are not selectable at this time.
+\i (00:14:30) xname_flush '!' 
+\i (00:14:33) xNet Pa13 
+\t (00:14:33) Nets are not selectable at this time.
+\i (00:14:33) xNet Pa8 
+\t (00:14:33) Nets are not selectable at this time.
+\i (00:14:33) xNet Pb15 
+\t (00:14:33) Nets are not selectable at this time.
+\i (00:14:33) xNet Vcc3v3 
+\t (00:14:33) Nets are not selectable at this time.
+\i (00:14:33) xNet Pa12 
+\t (00:14:33) Nets are not selectable at this time.
+\i (00:14:33) xNet Pc9 
+\t (00:14:33) Nets are not selectable at this time.
+\i (00:14:33) xNet Pb14 
+\t (00:14:33) Nets are not selectable at this time.
+\i (00:14:33) xNet Pa11 
+\t (00:14:33) Nets are not selectable at this time.
+\i (00:14:33) xNet Pc8 
+\t (00:14:33) Nets are not selectable at this time.
+\i (00:14:33) xNet Pb13 
+\t (00:14:33) Nets are not selectable at this time.
+\i (00:14:33) xNet Pa10 
+\t (00:14:33) Nets are not selectable at this time.
+\i (00:14:33) xNet Pc7 
+\t (00:14:33) Nets are not selectable at this time.
+\i (00:14:33) xNet Gnd 
+\t (00:14:33) Nets are not selectable at this time.
+\i (00:14:33) xNet Pa9 
+\t (00:14:33) Nets are not selectable at this time.
+\i (00:14:33) xNet Pc6 
+\t (00:14:33) Nets are not selectable at this time.
+\i (00:14:33) xname_flush 
+\i (00:14:34) xNet '!' Pa13 
+\t (00:14:34) Nets are not selectable at this time.
+\i (00:14:34) xNet '!' Pa8 
+\t (00:14:34) Nets are not selectable at this time.
+\i (00:14:34) xNet '!' Pb15 
+\t (00:14:34) Nets are not selectable at this time.
+\i (00:14:34) xNet '!' Vcc3v3 
+\t (00:14:34) Nets are not selectable at this time.
+\i (00:14:34) xNet '!' Pa12 
+\t (00:14:34) Nets are not selectable at this time.
+\i (00:14:34) xNet '!' Pc9 
+\t (00:14:34) Nets are not selectable at this time.
+\i (00:14:34) xNet '!' Pb14 
+\t (00:14:34) Nets are not selectable at this time.
+\i (00:14:34) xNet '!' Pa11 
+\t (00:14:34) Nets are not selectable at this time.
+\i (00:14:34) xNet '!' Pc8 
+\t (00:14:34) Nets are not selectable at this time.
+\i (00:14:34) xNet '!' Pb13 
+\t (00:14:34) Nets are not selectable at this time.
+\i (00:14:34) xNet '!' Pa10 
+\t (00:14:34) Nets are not selectable at this time.
+\i (00:14:34) xNet '!' Pc7 
+\t (00:14:34) Nets are not selectable at this time.
+\i (00:14:34) xNet '!' Gnd 
+\t (00:14:34) Nets are not selectable at this time.
+\i (00:14:34) xNet '!' Pa9 
+\t (00:14:34) Nets are not selectable at this time.
+\i (00:14:34) xNet '!' Pc6 
+\t (00:14:34) Nets are not selectable at this time.
+\i (00:14:34) xname_flush '!' 
+\i (00:14:35) xNet '!' Pc8 
+\t (00:14:35) Nets are not selectable at this time.
+\i (00:14:35) xNet '!' Gnd 
+\t (00:14:35) Nets are not selectable at this time.
+\i (00:14:35) xNet '!' Pa9 
+\t (00:14:35) Nets are not selectable at this time.
+\i (00:14:35) xNet '!' Pa12 
+\t (00:14:35) Nets are not selectable at this time.
+\i (00:14:35) xNet '!' Vcc3v3 
+\t (00:14:35) Nets are not selectable at this time.
+\i (00:14:35) xNet '!' Pb13 
+\t (00:14:35) Nets are not selectable at this time.
+\i (00:14:35) xNet '!' Pc6 
+\t (00:14:35) Nets are not selectable at this time.
+\i (00:14:35) xNet '!' Pc9 
+\t (00:14:35) Nets are not selectable at this time.
+\i (00:14:35) xNet '!' Pa10 
+\t (00:14:35) Nets are not selectable at this time.
+\i (00:14:35) xNet '!' Pa13 
+\t (00:14:35) Nets are not selectable at this time.
+\i (00:14:35) xNet '!' Pb14 
+\t (00:14:35) Nets are not selectable at this time.
+\i (00:14:35) xNet '!' Pc7 
+\t (00:14:35) Nets are not selectable at this time.
+\i (00:14:35) xNet '!' Pa8 
+\t (00:14:35) Nets are not selectable at this time.
+\i (00:14:35) xNet '!' Pa11 
+\t (00:14:35) Nets are not selectable at this time.
+\i (00:14:35) xNet '!' Pb15 
+\t (00:14:35) Nets are not selectable at this time.
+\i (00:14:35) xname_flush '!' 
+\i (00:14:36) xNet Gnd 
+\t (00:14:36) Nets are not selectable at this time.
+\i (00:14:36) xNet Vcc3v3 
+\t (00:14:36) Nets are not selectable at this time.
+\i (00:14:36) xname_flush 
+\i (00:14:38) xNet Gnd 
+\t (00:14:38) Nets are not selectable at this time.
+\i (00:14:38) xNet 5V 
+\t (00:14:38) Nets are not selectable at this time.
+\i (00:14:38) xname_flush 
+\i (00:14:39) xNet Vcc3v3 
+\t (00:14:39) Nets are not selectable at this time.
+\i (00:14:39) xNet Gnd 
+\t (00:14:39) Nets are not selectable at this time.
+\i (00:14:39) xname_flush 
+\i (00:14:41) xNet Pc8 
+\t (00:14:41) Nets are not selectable at this time.
+\i (00:14:41) xNet Gnd 
+\t (00:14:41) Nets are not selectable at this time.
+\i (00:14:41) xNet Pa9 
+\t (00:14:41) Nets are not selectable at this time.
+\i (00:14:41) xNet Pa12 
+\t (00:14:41) Nets are not selectable at this time.
+\i (00:14:41) xNet Vcc3v3 
+\t (00:14:41) Nets are not selectable at this time.
+\i (00:14:41) xNet Pb13 
+\t (00:14:41) Nets are not selectable at this time.
+\i (00:14:41) xNet Pc6 
+\t (00:14:41) Nets are not selectable at this time.
+\i (00:14:41) xNet Pc9 
+\t (00:14:41) Nets are not selectable at this time.
+\i (00:14:41) xNet Pa10 
+\t (00:14:41) Nets are not selectable at this time.
+\i (00:14:41) xNet Pa13 
+\t (00:14:41) Nets are not selectable at this time.
+\i (00:14:41) xNet Pb14 
+\t (00:14:41) Nets are not selectable at this time.
+\i (00:14:41) xNet Pc7 
+\t (00:14:41) Nets are not selectable at this time.
+\i (00:14:41) xNet Pa8 
+\t (00:14:41) Nets are not selectable at this time.
+\i (00:14:41) xNet Pa11 
+\t (00:14:41) Nets are not selectable at this time.
+\i (00:14:41) xNet Pb15 
+\t (00:14:41) Nets are not selectable at this time.
+\i (00:14:41) xname_flush 
+\i (00:14:44) xNet '!' Pc8 
+\t (00:14:44) Nets are not selectable at this time.
+\i (00:14:44) xNet '!' Gnd 
+\t (00:14:44) Nets are not selectable at this time.
+\i (00:14:44) xNet '!' Pa9 
+\t (00:14:44) Nets are not selectable at this time.
+\i (00:14:44) xNet '!' Pa12 
+\t (00:14:44) Nets are not selectable at this time.
+\i (00:14:44) xNet '!' Vcc3v3 
+\t (00:14:44) Nets are not selectable at this time.
+\i (00:14:44) xNet '!' Pb13 
+\t (00:14:44) Nets are not selectable at this time.
+\i (00:14:44) xNet '!' Pc6 
+\t (00:14:44) Nets are not selectable at this time.
+\i (00:14:44) xNet '!' Pc9 
+\t (00:14:44) Nets are not selectable at this time.
+\i (00:14:44) xNet '!' Pa10 
+\t (00:14:44) Nets are not selectable at this time.
+\i (00:14:44) xNet '!' Pa13 
+\t (00:14:44) Nets are not selectable at this time.
+\i (00:14:44) xNet '!' Pb14 
+\t (00:14:44) Nets are not selectable at this time.
+\i (00:14:44) xNet '!' Pc7 
+\t (00:14:44) Nets are not selectable at this time.
+\i (00:14:44) xNet '!' Pa8 
+\t (00:14:44) Nets are not selectable at this time.
+\i (00:14:44) xNet '!' Pa11 
+\t (00:14:44) Nets are not selectable at this time.
+\i (00:14:44) xNet '!' Pb15 
+\t (00:14:44) Nets are not selectable at this time.
+\i (00:14:44) xname_flush '!' 
+\i (00:14:48) xNet Vbat 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pc0 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pc2 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pd2 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pc11 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Gnd 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pc1 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pc3 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pc10 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet 5V 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pa0 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pa15 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pc13 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xrefdes U4 
+\i (00:14:48) xNet Pa1 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pa14 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Vref 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pa2 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pb8 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pc14 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Boot0 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pb9 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pb7 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pb5 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pc15 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pb6 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pb4 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Nrst 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pb3 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xNet Pc12 
+\t (00:14:48) Nets are not selectable at this time.
+\i (00:14:48) xname_flush 
+\i (00:14:49) xrefdes '!' U4 
+\i (00:14:49) xname_flush '!' 
+\i (00:14:50) xNet '!' Vbat 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pc0 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pc2 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pd2 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pc11 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Gnd 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pc1 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pc3 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pc10 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' 5V 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pa0 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pa15 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pc13 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pa1 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pa14 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Vref 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pa2 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pb8 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pc14 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Boot0 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pb9 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pb7 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pb5 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pc15 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pb6 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pb4 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Nrst 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pb3 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xNet '!' Pc12 
+\t (00:14:50) Nets are not selectable at this time.
+\i (00:14:50) xname_flush '!' 
+\i (00:14:54) xNet Pb5 
+\t (00:14:54) Nets are not selectable at this time.
+\i (00:14:54) xname_flush 
+\i (00:14:55) xNet '!' 5V 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pb3 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Nrst 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pb9 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pb6 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pc13 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pa2 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pc10 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pc3 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pd2 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pc0 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Vbat 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pb5 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pc14 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Gnd 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Boot0 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pa15 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pa0 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pc12 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pc1 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Vref 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pb4 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pb8 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pc15 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pb7 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pa14 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pa1 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pc11 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xNet '!' Pc2 
+\t (00:14:55) Nets are not selectable at this time.
+\i (00:14:55) xname_flush '!' 
+\i (00:14:58) xNet '!' Gnd 
+\t (00:14:58) Nets are not selectable at this time.
+\i (00:14:58) xname_flush '!' 
+\i (00:15:02) xNet '!' Gnd 
+\t (00:15:02) Nets are not selectable at this time.
+\i (00:15:02) xname_flush '!' 
+\i (00:15:02) xname_flush 
+\i (00:15:02) xNet '!' Gnd 
+\t (00:15:02) Nets are not selectable at this time.
+\i (00:15:02) xname_flush '!' 
+\i (00:15:04) xNet '!' Gnd 
+\t (00:15:04) Nets are not selectable at this time.
+\i (00:15:04) xname_flush '!' 
+\i (00:15:05) xname_flush 
+\i (00:15:05) xNet '!' Gnd 
+\t (00:15:05) Nets are not selectable at this time.
+\i (00:15:05) xname_flush '!' 
+\i (00:15:06) xNet '!' Gnd 
+\t (00:15:06) Nets are not selectable at this time.
+\i (00:15:06) xname_flush '!' 
+\i (00:15:11) xNet '!' Gnd 
+\t (00:15:11) Nets are not selectable at this time.
+\i (00:15:11) xname_flush '!' 
+\i (00:15:18) netin 
+\i (00:15:20) setwindow form.niparams
+\i (00:15:20) FORM niparams import  
+\t (00:15:20) Starting Cadence Logic Import...
+\t (00:15:20) Opening existing design...
+\i (00:15:20) setwindow pcb
+\i (00:15:20) trapsize 10625
+\i (00:15:21) placementedit 
+\i (00:15:22) roam start
+\i (00:15:22) roam y 16
+\i (00:15:22) roam y 48
+\i (00:15:22) roam y 16
+\i (00:15:22) roam y 16
+\i (00:15:22) roam y 16
+\i (00:15:22) roam y 16
+\i (00:15:22) roam y 16
+\i (00:15:22) roam end
+\i (00:15:22) Move 
+\t (00:15:22) Select element(s) to move.
+\i (00:15:23) pick grid 963.869 212.563
+\t (00:15:23) last pick:  960.000 210.000
+\t (00:15:23) last pick:  860.000 180.000
+\t (00:15:23) Moving J3 / CON_2X16_CON_254-2X16P_2.54 2X16P_E09J086 / CON_254-2X16P.
+\t (00:15:23) Pick new location for the element(s).
+\i (00:15:25) pick grid 2328.127 684.315
+\t (00:15:25) last pick:  2330.000 680.000
+\i (00:15:26) pick grid 1284.746 1557.695
+\t (00:15:26) last pick:  1280.000 1560.000
+\t (00:15:26) last pick:  880.000 1600.000
+\t (00:15:26) Moving J2 / CON_2X16_CON_254-2X16P_2.54 2X16P_E09J086 / CON_254-2X16P.
+\t (00:15:26) Pick new location for the element(s).
+\i (00:15:27) Rotate 
+\t (00:15:27) Spin the element(s).
+\i (00:15:28) iangle -180.000
+\t (00:15:28) last angle:  180.000 Degrees
+\i (00:15:28) mouse_pos 880.000 1600.000
+\i (00:15:30) zoom in 1 
+\i (00:15:30) setwindow pcb
+\i (00:15:30) zoom in 897.994 123.312
+\i (00:15:30) trapsize 5313
+\i (00:15:41) pick grid 904.369 135.000
+\t (00:15:41) last pick:  900.000 140.000
+\i (00:15:42) zoom out 1 
+\i (00:15:42) setwindow pcb
+\i (00:15:42) zoom out 774.744 226.376
+\i (00:15:42) trapsize 10625
+\i (00:15:42) pick grid 2107.126 642.878
+\t (00:15:42) last pick:  2110.000 640.000
+\t (00:15:42) last pick:  2330.000 680.000
+\t (00:15:42) Moving J3 / CON_2X16_CON_254-2X16P_2.54 2X16P_E09J086 / CON_254-2X16P.
+\t (00:15:42) Pick new location for the element(s).
+\i (00:15:43) roam start
+\i (00:15:43) roam y -16
+\i (00:15:43) roam x 16
+\i (00:15:43) roam y -32
+\i (00:15:43) roam x 16
+\i (00:15:43) roam y -32
+\i (00:15:43) roam x 32
+\i (00:15:43) roam y -32
+\i (00:15:43) roam x 16
+\i (00:15:43) roam y -32
+\i (00:15:43) roam end
+\i (00:15:44) pick grid 2312.453 1506.695
+\t (00:15:44) last pick:  2310.000 1510.000
+\i (00:15:44) pick grid 2437.829 907.441
+\t (00:15:44) last pick:  2440.000 910.000
+\i (00:15:45) roam start
+\i (00:15:45) roam y -16
+\i (00:15:45) roam x 64
+\i (00:15:45) roam y -48
+\i (00:15:45) roam x 16
+\i (00:15:45) roam y -16
+\i (00:15:45) roam x 16
+\i (00:15:45) roam y -16
+\i (00:15:45) roam end
+\i (00:15:46) pick grid 2465.454 1481.195
+\t (00:15:46) last pick:  2470.000 1480.000
+\t (00:15:46) last pick:  2310.000 1510.000
+\t (00:15:46) Moving J3 / CON_2X16_CON_254-2X16P_2.54 2X16P_E09J086 / CON_254-2X16P.
+\t (00:15:46) Pick new location for the element(s).
+\i (00:15:46) roam start
+\i (00:15:46) roam y 16
+\i (00:15:46) roam y 16
+\i (00:15:46) roam y 16
+\i (00:15:46) roam end
+\i (00:15:47) Rotate 
+\t (00:15:47) Spin the element(s).
+\i (00:15:48) iangle -180.000
+\t (00:15:48) last angle:  180.000 Degrees
+\i (00:15:48) mouse_pos 2310.000 1510.000
+\i (00:15:52) Rotate 
+\t (00:15:52) Spin the element(s).
+\i (00:15:52) iangle 0.000
+\t (00:15:52) last angle:  0.000 Degrees
+\i (00:15:52) mouse_pos 2310.000 1510.000
+\i (00:15:53) Rotate 
+\t (00:15:53) Spin the element(s).
+\i (00:15:54) iangle -180.000
+\t (00:15:54) last angle:  180.000 Degrees
+\i (00:15:54) mouse_pos 2310.000 1510.000
+\i (00:15:55) pick grid 892.945 1593.821
+\t (00:15:55) last pick:  890.000 1590.000
+\i (00:15:55) pick grid 2391.079 1640.571
+\t (00:15:55) last pick:  2390.000 1640.000
+\i (00:15:55) roam start
+\i (00:15:55) roam y 16
+\i (00:15:55) roam x -32
+\i (00:15:55) roam y 48
+\i (00:15:55) roam end
+\i (00:15:56) pick grid 1273.323 1604.446
+\t (00:15:56) last pick:  1270.000 1600.000
+\t (00:15:56) last pick:  890.000 1590.000
+\t (00:15:56) Moving J3 / CON_2X16_CON_254-2X16P_2.54 2X16P_E09J086 / CON_254-2X16P.
+\t (00:15:56) Pick new location for the element(s).
+\i (00:15:56) Rotate 
+\t (00:15:56) Spin the element(s).
+\i (00:15:57) iangle -180.000
+\t (00:15:57) last angle:  0.000 Degrees
+\i (00:15:57) mouse_pos 890.000 1590.000
+\i (00:16:01) pick grid 895.071 1598.071
+\t (00:16:01) last pick:  900.000 1600.000
+\i (00:16:01) pick grid 2522.830 1183.693
+\t (00:16:01) last pick:  2520.000 1180.000
+\i (00:16:02) roam start
+\i (00:16:02) roam y 16
+\i (00:16:02) roam x -48
+\i (00:16:02) roam y 64
+\i (00:16:02) roam end
+\i (00:16:06) save 
+\i (00:16:08) fillin yes 
+\i (00:16:08) placementedit 
+\i (00:16:08) pick grid 1279.697 1183.693
+\t (00:16:08) last pick:  1280.000 1180.000
+\i (00:16:09) Move 
+\t (00:16:09) Select element(s) to move.
+\i (00:16:09) pick grid 1294.572 1151.818
+\t (00:16:09) last pick:  1290.000 1150.000
+\i (00:16:10) pick grid 1266.947 1128.443
+\t (00:16:10) last pick:  1270.000 1130.000
+\t (00:16:10) last pick:  780.000 880.000
+\t (00:16:10) Moving U4 / EMBER_V1.1_EMBERV1_1_EMBER_V1.1_E11M015 / EMBERV1_1.
+\t (00:16:10) Pick new location for the element(s).
+\i (00:16:19) pick grid 867.445 905.317
+\t (00:16:19) last pick:  870.000 910.000
+\i (00:16:19) pick grid 2369.829 969.067
+\t (00:16:19) last pick:  2370.000 970.000
+\i (00:16:20) zoom in 1 
+\i (00:16:20) setwindow pcb
+\i (00:16:20) zoom in 1269.072 1425.945
+\i (00:16:20) trapsize 5313
+\i (00:16:20) zoom in 1 
+\i (00:16:20) setwindow pcb
+\i (00:16:20) zoom in 1395.510 1370.695
+\i (00:16:20) trapsize 2656
+\i (00:16:21) zoom out 1 
+\i (00:16:21) setwindow pcb
+\i (00:16:21) zoom out 1630.324 1176.788
+\i (00:16:21) trapsize 5313
+\i (00:16:21) zoom out 1 
+\i (00:16:21) setwindow pcb
+\i (00:16:21) zoom out 1632.450 1172.538
+\i (00:16:21) trapsize 10625
+\i (00:16:21) zoom in 1 
+\i (00:16:21) setwindow pcb
+\i (00:16:21) zoom in 729.320 1438.165
+\i (00:16:21) trapsize 5313
+\i (00:16:22) roam start
+\i (00:16:22) roam x 16
+\i (00:16:22) roam x 16
+\i (00:16:22) roam y 16
+\i (00:16:22) roam x 16
+\i (00:16:22) roam x 16
+\i (00:16:22) roam x 16
+\i (00:16:22) roam y 16
+\i (00:16:22) roam x 128
+\i (00:16:22) roam y 112
+\i (00:16:22) roam x 64
+\i (00:16:22) roam y 64
+\i (00:16:22) roam x 48
+\i (00:16:22) roam y 48
+\i (00:16:22) roam x 32
+\i (00:16:22) roam y 48
+\i (00:16:22) roam y 16
+\i (00:16:22) roam x 16
+\i (00:16:22) roam y 16
+\i (00:16:22) roam end
+\i (00:16:22) zoom in 1 
+\i (00:16:22) setwindow pcb
+\i (00:16:22) zoom in 1419.944 1053.002
+\i (00:16:22) trapsize 2656
+\i (00:16:23) zoom in 1 
+\i (00:16:23) setwindow pcb
+\i (00:16:23) zoom in 1427.382 1054.065
+\i (00:16:23) trapsize 1328
+\i (00:16:23) zoom out 1 
+\i (00:16:23) setwindow pcb
+\i (00:16:23) zoom out 1409.585 1055.924
+\i (00:16:23) trapsize 2656
+\i (00:16:23) zoom out 1 
+\i (00:16:23) setwindow pcb
+\i (00:16:23) zoom out 1405.866 1053.268
+\i (00:16:23) trapsize 5313
+\i (00:16:24) roam start
+\i (00:16:24) roam y -16
+\i (00:16:24) roam y -16
+\i (00:16:24) roam y -16
+\i (00:16:24) roam y -16
+\i (00:16:24) roam y -16
+\i (00:16:24) roam x 16
+\i (00:16:24) roam end
+\i (00:16:25) roam start
+\i (00:16:25) roam y 16
+\i (00:16:25) roam y 128
+\i (00:16:25) roam x -16
+\i (00:16:25) roam y 48
+\i (00:16:25) roam y 16
+\i (00:16:25) roam y 32
+\i (00:16:25) roam x -16
+\i (00:16:25) roam y 16
+\i (00:16:25) roam y 16
+\i (00:16:25) roam y 16
+\i (00:16:25) roam y 16
+\i (00:16:25) roam y 16
+\i (00:16:26) roam x -16
+\i (00:16:26) roam y 16
+\i (00:16:26) roam y 16
+\i (00:16:26) roam y 16
+\i (00:16:26) roam end
+\i (00:16:26) zoom in 1 
+\i (00:16:26) setwindow pcb
+\i (00:16:26) zoom in 352.126 755.500
+\i (00:16:26) trapsize 2656
+\i (00:16:27) zoom in 1 
+\i (00:16:27) setwindow pcb
+\i (00:16:27) zoom in 436.595 725.219
+\i (00:16:27) trapsize 1328
+\i (00:16:27) zoom out 1 
+\i (00:16:27) setwindow pcb
+\i (00:16:27) zoom out 471.393 790.829
+\i (00:16:27) trapsize 2656
+\i (00:16:27) zoom out 1 
+\i (00:16:27) setwindow pcb
+\i (00:16:27) zoom out 453.330 807.829
+\i (00:16:27) trapsize 5313
+\i (00:16:27) zoom out 1 
+\i (00:16:27) setwindow pcb
+\i (00:16:27) zoom out 429.954 832.267
+\i (00:16:27) trapsize 10625
+\i (00:16:28) zoom in 1 
+\i (00:16:28) setwindow pcb
+\i (00:16:28) zoom in 1792.088 254.265
+\i (00:16:28) trapsize 5313
+\i (00:16:29) zoom out 1 
+\i (00:16:29) setwindow pcb
+\i (00:16:29) zoom out 1941.901 255.327
+\i (00:16:29) trapsize 10625
+\i (00:16:29) zoom out 1 
+\i (00:16:29) setwindow pcb
+\i (00:16:29) zoom out 1948.276 242.577
+\i (00:16:29) trapsize 21250
+\i (00:16:29) zoom in 1 
+\i (00:16:29) setwindow pcb
+\i (00:16:29) zoom in 2071.527 969.332
+\i (00:16:29) trapsize 10625
+\i (00:16:33) xrefdes J2 
+\w (00:16:33) WARNING(SPMHA1-174): Illegal BMS record number.
+\i (00:16:33) xname_flush 
+\i (00:16:34) xrefdes '!' J2 
+\i (00:16:34) xname_flush '!' 
+\i (00:16:34) xrefdes J3 
+\i (00:16:34) xname_flush 
+\i (00:16:34) trapsize 8858
+\t (00:16:34) last pick:  900.000 1600.000
+\t (00:16:34) Moving J3 / CON_2X16_CON_254-2X16P_2.54 2X16P_E09J086 / CON_254-2X16P.
+\t (00:16:34) Pick new location for the element(s).
+\i (00:16:38) xrefdes J3 
+\i (00:16:38) xname_flush 
+\i (00:16:40) xname_flush '!' 
+\i (00:16:40) xrefdes J2 
+\i (00:16:40) xname_flush 
+\i (00:16:40) xname_flush '!' 
+\i (00:16:45) done generaledit 
+\i (00:16:45) placementedit 
+\i (00:16:45) pick grid 956.693 2007.480
+\t (00:16:45) last pick:  960.000 2010.000
+\i (00:16:47) netin 
+\i (00:16:48) setwindow form.niparams
+\i (00:16:48) FORM niparams import  
+\t (00:16:48) Starting Cadence Logic Import...
+\t (00:16:48) Opening existing design...
+\i (00:16:49) setwindow pcb
+\i (00:16:49) trapsize 8858
+\i (00:16:50) placementedit 
+\i (00:16:50) zoom out 1 
+\i (00:16:50) setwindow pcb
+\i (00:16:50) zoom out 795.473 1982.677
+\i (00:16:50) trapsize 17717
+\i (00:16:50) roam start
+\i (00:16:50) roam x -16
+\i (00:16:50) roam x -32
+\i (00:16:50) roam x -16
+\i (00:16:50) roam y 16
+\i (00:16:50) roam x -32
+\i (00:16:50) roam x -16
+\i (00:16:50) roam x -32
+\i (00:16:50) roam x -16
+\i (00:16:51) roam y 16
+\i (00:16:51) roam y 16
+\i (00:16:51) roam y 16
+\i (00:16:51) roam end
+\t (00:26:48) Performing autosave...
+\t (00:26:49) Autosave successful
+\i (01:23:57) pick grid 1743.980 2170.641
+\t (01:23:57) last pick:  1740.000 2170.000
+\i (01:23:58) save 
+\i (01:23:58) fillin yes 
+\i (01:23:58) placementedit 
+\i (01:23:59) exit 
+\t (01:23:59)     Journal end - Wed Nov 20 20:13:26 2024

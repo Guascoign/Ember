@@ -1,6 +1,6 @@
 (ExpressProject ""
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[11/19/24]")
+  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[11/20/24]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library")
@@ -17,7 +17,7 @@
     ("View Allegro Netlist Files" "FALSE")
     ("Allegro Netlist Create DCF File" "FALSE")
     ("Update Allegro Board" "FALSE")
-    ("Allegro Netlist Output Board File" "allegro\EMBERBASE.brd")
+    ("Allegro Netlist Output Board File" ".\allegro\emberbase.brd")
     ("Allegro Netlist Remove Etch" "FALSE")
     ("Allegro Netlist Place Changed Component" "ALWAYS_REPLACE")
     ("Allegro Netlist Open Board in Allegro" "ALLEGRO")
@@ -48,7 +48,11 @@
     (Folder "Include Files"
       (Sort User)))
   (Folder "Logs")
-  (PartMRUSelector)
+  (PartMRUSelector
+    (Ember_V1.1
+      (FullPartName "Ember_V1.1B.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\PERIPHERALS.OLB")
+      (DeviceIndex "1")))
   (MPSSessionName "15291")
   (ISPCBBASICLICENSE "false")
   (GlobalState
@@ -73,7 +77,17 @@
         (Occurrence "/"))
       (Path "D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\EMBERBASE.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "01 VERSION"))
+      (Page "02 POWER"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 2232 28 1022")
+        (Scroll "-352 -5")
+        (Zoom "98")
+        (Occurrence "/"))
+      (Path "D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\EMBERBASE.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "03 MCU"))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
@@ -83,14 +97,4 @@
         (Occurrence "/"))
       (Path "D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\EMBERBASE.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "02 POWER"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 2232 28 1022")
-        (Scroll "-337 0")
-        (Zoom "100")
-        (Occurrence "/"))
-      (Path "D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\EMBERBASE.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "03 MCU"))))
+      (Page "01 VERSION"))))

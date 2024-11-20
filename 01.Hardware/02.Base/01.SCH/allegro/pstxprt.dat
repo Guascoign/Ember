@@ -1,5 +1,5 @@
 FILE_TYPE = EXPANDEDPARTLIST;
-{ Using PSTWRITER 17.4.0 d001Nov-19-2024 at 19:17:47 }
+{ Using PSTWRITER 17.4.0 d001Nov-20-2024 at 19:06:10 }
 DIRECTIVES
  PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
  ROOT_DRAWING='EMBERBASE';
@@ -218,23 +218,6 @@ SECTION_NUMBER 1
  SECTION='';
 
 PART_NAME
- U2 'EMBER_V1.0_EMBERV1_0_EMBER_V1.0_E11M015':;
-
-SECTION_NUMBER 1
- '@EMBERBASE.SCHEMATIC1(SCH_1):INS705427@PERIPHERALS.EMBER_V1.0A.NORMAL(CHIPS)':
- C_PATH='@emberbase.schematic1(sch_1):ins705427@peripherals.\ember_v1.0a.normal\(chips)',
- P_PATH='@emberbase.schematic1(sch_1):page3_ins705427@peripherals.\ember_v1.0a.normal\(chips)',
- PRIM_FILE='.\pstchip.dat',
- SECTION='A';
-
-SECTION_NUMBER 2
- '@EMBERBASE.SCHEMATIC1(SCH_1):INS784359@PERIPHERALS.EMBER_V1.0B.NORMAL(CHIPS)':
- C_PATH='@emberbase.schematic1(sch_1):ins784359@peripherals.\ember_v1.0b.normal\(chips)',
- P_PATH='@emberbase.schematic1(sch_1):page3_ins784359@peripherals.\ember_v1.0b.normal\(chips)',
- PRIM_FILE='.\pstchip.dat',
- SECTION='B';
-
-PART_NAME
  U3 'CH340X_MSOP-10_CH340X':;
 
 SECTION_NUMBER 1
@@ -243,6 +226,23 @@ SECTION_NUMBER 1
  P_PATH='@emberbase.schematic1(sch_1):page3_ins695403@peripherals.\ch340x.normal\(chips)',
  PRIM_FILE='.\pstchip.dat',
  SECTION='';
+
+PART_NAME
+ U4 'EMBER_V1.1_EMBERV1_1_EMBER_V1.1_E11M015':;
+
+SECTION_NUMBER 1
+ '@EMBERBASE.SCHEMATIC1(SCH_1):INS787650@PERIPHERALS.EMBER_V1.1A.NORMAL(CHIPS)':
+ C_PATH='@emberbase.schematic1(sch_1):ins787650@peripherals.\ember_v1.1a.normal\(chips)',
+ P_PATH='@emberbase.schematic1(sch_1):page3_ins787650@peripherals.\ember_v1.1a.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='A';
+
+SECTION_NUMBER 2
+ '@EMBERBASE.SCHEMATIC1(SCH_1):INS787883@PERIPHERALS.EMBER_V1.1B.NORMAL(CHIPS)':
+ C_PATH='@emberbase.schematic1(sch_1):ins787883@peripherals.\ember_v1.1b.normal\(chips)',
+ P_PATH='@emberbase.schematic1(sch_1):page3_ins787883@peripherals.\ember_v1.1b.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='B';
 
 PART_NAME
  Z1 'TVSA_SOD-123FL_SMF7.0A_E04D023':;
