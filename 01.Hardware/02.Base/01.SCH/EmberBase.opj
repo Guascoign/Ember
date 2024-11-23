@@ -1,6 +1,6 @@
 (ExpressProject ""
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[11/20/24]")
+  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[11/23/24]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library")
@@ -49,6 +49,14 @@
       (Sort User)))
   (Folder "Logs")
   (PartMRUSelector
+    (CON_3
+      (FullPartName "CON_3.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\HEADDER.OLB")
+      (DeviceIndex "0"))
+    (DIODE_Dual1
+      (FullPartName "DIODE_Dual1.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
+      (DeviceIndex "0"))
     (Ember_V1.1
       (FullPartName "Ember_V1.1B.Normal")
       (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\PERIPHERALS.OLB")
@@ -61,7 +69,7 @@
       (Path "Design Resources" ".\emberbase.dsn")
       (Path "Design Resources" ".\emberbase.dsn" "SCHEMATIC1")
       (Path "Outputs")
-      (Select "Design Resources" ".\emberbase.dsn" "SCHEMATIC1" "03 MCU"))
+      (Select "Design Resources" ".\emberbase.dsn"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
@@ -82,8 +90,8 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -1 -1 5 2232 28 1022")
-        (Scroll "-352 -5")
-        (Zoom "98")
+        (Scroll "157 373")
+        (Zoom "196")
         (Occurrence "/"))
       (Path "D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\EMBERBASE.DSN")
       (Schematic "SCHEMATIC1")
