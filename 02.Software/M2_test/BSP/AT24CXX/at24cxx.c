@@ -295,7 +295,7 @@ void AT24CXX_Read(struct AT24CXX_Device *p_AT24Dev, uint16_t ReadAddr, uint8_t *
 extern struct IIC_Device IIC1;//IIC.c定义接口
 struct AT24CXX_Device AT24C02_device = {
     .name = "AT24C02",
-    .EEP_TYPE =  &AT24C02,
+    .EEP_TYPE =  &AT24C64,
     .IIC_Device = &IIC1,
     .AT24CXX_Init = AT24CXX_Init,
     .AT24CXX_ReadOneByte = AT24CXX_ReadOneByte, //done

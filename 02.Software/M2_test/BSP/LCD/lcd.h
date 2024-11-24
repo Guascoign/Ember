@@ -14,7 +14,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "tim_base.h"
 #include <stdarg.h>
 
 /* 选择硬件SPI通道 */
@@ -150,13 +149,6 @@ void LCD_Show_Image(uint16_t x, uint16_t y, uint16_t width, uint16_t height, con
 void PutChinese_strings(uint16_t Xpos, uint16_t Ypos, uint8_t *str, uint8_t mode);
 void LCD_DrawCircleQuarter(int centerX, int centerY, int radius, int startAngle, int endAngle);
 void LCD_DrawRoundRect(int x, int y, int width, int height, int radius);
-void LCD_DisPlayFrames (int x, int y, int Type);
-void LCD_Console_Write(LogLevel logLevel, char *str);
-void LCD_Console_Print(void); 
-void LCD_BootAnimation(void);
-void LCD_PrintRunTime(void);
-char* LCD_Printf(const char *format, ...);
-void LCD_ConsolePrintf(LogLevel logLevel, const char *format, ...);
 #endif
 
 

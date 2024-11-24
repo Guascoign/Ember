@@ -31,9 +31,6 @@ void ST7789V_Init(void)
     HAL_Delay(12);
 
 
-
-
-
 //-----------------------ST7789V Frame rate setting-----------------//
 //************************************************
                 LCD_Write_Cmd(0x3A);        //65k mode
@@ -139,7 +136,7 @@ void ST7789V_Init(void)
 
     LCD_Address_Set(0, 0, LCD_Width - 1, LCD_Height - 1);
 
-    LCD_Clear(BLACK);
+    LCD_Clear(WHITE);
 
     /* Display on */
     LCD_PWR(1);

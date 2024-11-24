@@ -46,3 +46,15 @@ m2_test\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 m2_test\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 m2_test\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 m2_test\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+m2_test\freertos.o: ../../F407ZET/Drivers/BSP/LCD/lcd.h
+m2_test\freertos.o: ../Core/Inc/gpio.h
+m2_test\freertos.o: ../Core/Inc/spi.h
+m2_test\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+m2_test\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+m2_test\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+m2_test\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+m2_test\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+m2_test\freertos.o: ../../F407ZET/Drivers/BSP/LCD/st7789.h
+m2_test\freertos.o: ../../F407ZET/Drivers/BSP/LCD/lcd.h
+m2_test\freertos.o: ../../F407ZET/Drivers/BSP/RGB/WS2812B.h
+m2_test\freertos.o: ../Core/Inc/tim.h

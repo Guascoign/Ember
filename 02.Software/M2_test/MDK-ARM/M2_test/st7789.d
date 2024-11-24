@@ -40,3 +40,5 @@ m2_test\st7789.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 m2_test\st7789.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 m2_test\st7789.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 m2_test\st7789.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+m2_test\st7789.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+m2_test\st7789.o: ..\BSP\LCD\st7789.h

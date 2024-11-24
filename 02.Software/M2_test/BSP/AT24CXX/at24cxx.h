@@ -15,12 +15,12 @@
 #define AT24_Address 0xA0
 
 // #define USE_AT24C01    //使用AT24C01
- #define USE_AT24C02    //使用AT24C02
+// #define USE_AT24C02    //使用AT24C02
 // #define USE_AT24C04    //使用AT24C04
 // #define USE_AT24C08    //使用AT24C08
 // #define USE_AT24C16    //使用AT24C16
 // #define USE_AT24C32    //使用AT24C32
-// #define USE_AT24C64    //使用AT24C64
+ #define USE_AT24C64    //使用AT24C64
 // #define USE_AT24C128   //使用AT24C128
 // #define USE_AT24C256   //使用AT24C256
 

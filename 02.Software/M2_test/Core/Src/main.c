@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
+#include "dma.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -26,7 +27,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "lcd.h"
+#include "WS2812B.h"
+#include "iic.h"
+#include "uart_pack.h"
+#include "uart_printf.h"
+#include "at24cxx.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -91,11 +97,25 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_SPI2_Init();
   MX_TIM2_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start_IT(&htim2); //定时器2使能
 
+  //串口初始化
+  struct UART_Device *pUARTDev = GetUARTDevice("STM32_Bare_HAL_UART1_IT");//获取外设地址指针
+  pUARTDev->Init(pUARTDev, 115200, 8, 'N', 1);
+
+  //AT24C02初始化
+  struct AT24CXX_Device *pAT24Dev = AT24CXX_GetDevice("AT24C02");//获取外设地址指针
+  pAT24Dev->AT24CXX_Check(pAT24Dev);
+
+  HAL_Delay(100);
+  LCD_Init();
+	
+  printf("[info]Init Done.Running....\r\n");  
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in cmsis_os2.c) */

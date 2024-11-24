@@ -22,9 +22,9 @@ V1.1 2024-05-09 Add IIC_TypeDef @ZM
 static void IIC_SCL(const struct IIC_Device *p_IICDev, uint8_t state)
 {
     if(state == 1)
-    HAL_GPIO_WritePin(p_IICDev->SCL_Port, p_IICDev->SCL_Pin, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(p_IICDev->IIC_SCL_Port, p_IICDev->IIC_SCL_Pin, GPIO_PIN_SET);
     if(state == 0)
-    HAL_GPIO_WritePin(p_IICDev->SCL_Port, p_IICDev->SCL_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(p_IICDev->IIC_SCL_Port, p_IICDev->IIC_SCL_Pin, GPIO_PIN_RESET);
 
 }
 
@@ -38,9 +38,9 @@ static void IIC_SCL(const struct IIC_Device *p_IICDev, uint8_t state)
 static void IIC_SDA(const struct IIC_Device *p_IICDev, uint8_t state)
 {
     if(state == 1)
-    HAL_GPIO_WritePin(p_IICDev->SDA_Port, p_IICDev->SDA_Pin, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(p_IICDev->IIC_SDA_Port, p_IICDev->IIC_SDA_Pin, GPIO_PIN_SET);
     if(state == 0)
-    HAL_GPIO_WritePin(p_IICDev->SDA_Port, p_IICDev->SDA_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(p_IICDev->IIC_SDA_Port, p_IICDev->IIC_SDA_Pin, GPIO_PIN_RESET);
 }
 
 /**
@@ -51,7 +51,7 @@ static void IIC_SDA(const struct IIC_Device *p_IICDev, uint8_t state)
  */
 static uint8_t IIC_READ_SDA(const struct IIC_Device *p_IICDev)
 {
-   return HAL_GPIO_ReadPin(p_IICDev->SDA_Port, p_IICDev->SDA_Pin);
+   return HAL_GPIO_ReadPin(p_IICDev->IIC_SDA_Port, p_IICDev->IIC_SDA_Pin);
 }
 
 
@@ -66,43 +66,43 @@ void iic_init(const struct IIC_Device *p_IICDev)
     GPIO_InitTypeDef GPIO_Initure;
 
     //根据GPIO组初始化GPIO时钟
-    if(p_IICDev->SCL_Port == GPIOA || p_IICDev->SDA_Port == GPIOA)
+    if(p_IICDev->IIC_SCL_Port == GPIOA || p_IICDev->IIC_SDA_Port == GPIOA)
     {
     __HAL_RCC_GPIOA_CLK_ENABLE();   //使能GPIOA时钟
     }
-    if(p_IICDev->SCL_Port == GPIOB || p_IICDev->SDA_Port == GPIOB)
+    if(p_IICDev->IIC_SCL_Port == GPIOB || p_IICDev->IIC_SDA_Port == GPIOB)
     {
         __HAL_RCC_GPIOB_CLK_ENABLE();   //使能GPIOB时钟
     }
-    if(p_IICDev->SCL_Port == GPIOC || p_IICDev->SDA_Port == GPIOC)
+    if(p_IICDev->IIC_SCL_Port == GPIOC || p_IICDev->IIC_SDA_Port == GPIOC)
     {
         __HAL_RCC_GPIOC_CLK_ENABLE();   //使能GPIOC时钟
     }
-    if(p_IICDev->SCL_Port == GPIOD || p_IICDev->SDA_Port == GPIOD)
+    if(p_IICDev->IIC_SCL_Port == GPIOD || p_IICDev->IIC_SDA_Port == GPIOD)
     {
         __HAL_RCC_GPIOD_CLK_ENABLE();   //使能GPIOD时钟
     }
-    if(p_IICDev->SCL_Port == GPIOE || p_IICDev->SDA_Port == GPIOE)
+    if(p_IICDev->IIC_SCL_Port == GPIOE || p_IICDev->IIC_SDA_Port == GPIOE)
     {
         __HAL_RCC_GPIOE_CLK_ENABLE();   //使能GPIOE时钟
     } 
-    if(p_IICDev->SCL_Port == GPIOH || p_IICDev->SDA_Port == GPIOH)
+    if(p_IICDev->IIC_SCL_Port == GPIOH || p_IICDev->IIC_SDA_Port == GPIOH)
     {
         __HAL_RCC_GPIOH_CLK_ENABLE();   //使能GPIOH时钟
     }     
 
     //GPIO_SCL初始化设置
-    GPIO_Initure.Pin=p_IICDev->SCL_Pin;
+    GPIO_Initure.Pin=p_IICDev->IIC_SCL_Pin;
     GPIO_Initure.Mode=GPIO_MODE_OUTPUT_OD;  //开漏输出
     GPIO_Initure.Pull=GPIO_NOPULL;          //上拉
     GPIO_Initure.Speed=GPIO_SPEED_FREQ_VERY_HIGH;    //快速
-    HAL_GPIO_Init(p_IICDev->SCL_Port,&GPIO_Initure);
+    HAL_GPIO_Init(p_IICDev->IIC_SCL_Port,&GPIO_Initure);
     //GPIO_SDA初始化设置
-    GPIO_Initure.Pin=p_IICDev->SDA_Pin;
+    GPIO_Initure.Pin=p_IICDev->IIC_SDA_Pin;
     GPIO_Initure.Mode=GPIO_MODE_OUTPUT_OD;  //开漏输出
     GPIO_Initure.Pull=GPIO_NOPULL;          //上拉
     GPIO_Initure.Speed=GPIO_SPEED_FREQ_VERY_HIGH;    //快速
-    HAL_GPIO_Init(p_IICDev->SDA_Port,&GPIO_Initure);
+    HAL_GPIO_Init(p_IICDev->IIC_SDA_Port,&GPIO_Initure);
 
     //SCL与SDA的初始化均为高电平
     IIC_SCL(p_IICDev, 1);
@@ -118,27 +118,27 @@ void iic_init(const struct IIC_Device *p_IICDev)
 void iic_deinit(const struct IIC_Device *p_IICDev)
 {
     // 关闭与 GPIO 相关的时钟
-    if(p_IICDev->SCL_Port == GPIOA || p_IICDev->SDA_Port == GPIOA)
+    if(p_IICDev->IIC_SCL_Port == GPIOA || p_IICDev->IIC_SDA_Port == GPIOA)
     {
         __HAL_RCC_GPIOA_CLK_DISABLE();
     }
-    if(p_IICDev->SCL_Port == GPIOB || p_IICDev->SDA_Port == GPIOB)
+    if(p_IICDev->IIC_SCL_Port == GPIOB || p_IICDev->IIC_SDA_Port == GPIOB)
     {
         __HAL_RCC_GPIOB_CLK_DISABLE();
     }
-    if(p_IICDev->SCL_Port == GPIOC || p_IICDev->SDA_Port == GPIOC)
+    if(p_IICDev->IIC_SCL_Port == GPIOC || p_IICDev->IIC_SDA_Port == GPIOC)
     {
         __HAL_RCC_GPIOC_CLK_DISABLE();
     }
-    if(p_IICDev->SCL_Port == GPIOD || p_IICDev->SDA_Port == GPIOD)
+    if(p_IICDev->IIC_SCL_Port == GPIOD || p_IICDev->IIC_SDA_Port == GPIOD)
     {
         __HAL_RCC_GPIOD_CLK_DISABLE();
     }
-    if(p_IICDev->SCL_Port == GPIOE || p_IICDev->SDA_Port == GPIOE)
+    if(p_IICDev->IIC_SCL_Port == GPIOE || p_IICDev->IIC_SDA_Port == GPIOE)
     {
         __HAL_RCC_GPIOE_CLK_DISABLE();
     } 
-    if(p_IICDev->SCL_Port == GPIOH || p_IICDev->SDA_Port == GPIOH)
+    if(p_IICDev->IIC_SCL_Port == GPIOH || p_IICDev->IIC_SDA_Port == GPIOH)
     {
         __HAL_RCC_GPIOH_CLK_DISABLE();
     }     
@@ -625,10 +625,10 @@ void iic_delay(int delay)
 //IIC1初始化
 struct IIC_Device IIC1 = {
     .name = "AT24C64_IIC", // 设备名称
-    .SCL_Port = IIC_SCL_GPIO_Port, // SCL引脚所在的GPIO组
-    .SCL_Pin = IIC_SCL_Pin, // SCL引脚编号
-    .SDA_Port = IIC_SDA_GPIO_Port, // SDA引脚所在的GPIO组
-    .SDA_Pin = IIC_SDA_Pin, // SDA引脚编号
+    .IIC_SCL_Port = SCL_GPIO_Port, // SCL引脚所在的GPIO组
+    .IIC_SCL_Pin = SCL_Pin, // SCL引脚编号
+    .IIC_SDA_Port = SDA_GPIO_Port, // SDA引脚所在的GPIO组
+    .IIC_SDA_Pin = SDA_Pin, // SDA引脚编号
     .IIC_Init = iic_init, // 初始化IIC
     .IIC_Deint = iic_deinit, // 反初始化IIC
     .IIC_Start = iic_start, // 发送IIC开始信号

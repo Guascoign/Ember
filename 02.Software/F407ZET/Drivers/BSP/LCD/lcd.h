@@ -14,7 +14,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "tim_base.h"
 #include <stdarg.h>
 
 /* 选择硬件SPI通道 */

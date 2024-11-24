@@ -3,6 +3,7 @@
 "m2_test\main.o"
 "m2_test\gpio.o"
 "m2_test\freertos.o"
+"m2_test\dma.o"
 "m2_test\spi.o"
 "m2_test\tim.o"
 "m2_test\usart.o"
@@ -37,7 +38,16 @@
 "m2_test\cmsis_os.o"
 "m2_test\heap_4.o"
 "m2_test\port.o"
---strict --scatter "M2_test\M2_test.sct"
+"m2_test\iic.o"
+"m2_test\at24cxx.o"
+"m2_test\crc.o"
+"m2_test\hzlib.o"
+"m2_test\lcd.o"
+"m2_test\st7789.o"
+"m2_test\ws2812b.o"
+"m2_test\uart_pack.o"
+"m2_test\uart_printf.o"
+--library_type=microlib --strict --scatter "M2_test\M2_test.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "M2_test.map" -o M2_test\M2_test.axf

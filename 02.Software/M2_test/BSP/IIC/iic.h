@@ -13,7 +13,7 @@ V1.1 2024-05-09 Add IIC_TypeDef @ZM
 #include <stdint.h>
 #include "main.h"
 #include <stdio.h>
-#include "crc.h"
+//#include "crc.h"
 
  #define IIC_Delay     1
 
@@ -22,10 +22,10 @@ typedef struct IIC_Device
 {
 	char *name;//设备名称
 	//管脚
-	  GPIO_TypeDef  *SCL_Port; 	//GPIO_SCL所属的GPIO组(如：GPIOA)
-	  GPIO_TypeDef  *SDA_Port; 	//GPIO_SDA所属的GPIO组(如：GPIOA)
-	  uint16_t SCL_Pin;    	//GPIO_SCL的IO引脚(如：GPIO_PIN_0)
-	  uint16_t SDA_Pin;    	//GPIO_SDA的IO引脚(如：GPIO_PIN_0)
+	  GPIO_TypeDef  *IIC_SCL_Port; 	//GPIO_SCL所属的GPIO组(如：GPIOA)
+	  GPIO_TypeDef  *IIC_SDA_Port; 	//GPIO_SDA所属的GPIO组(如：GPIOA)
+	  uint16_t IIC_SCL_Pin;    	//GPIO_SCL的IO引脚(如：GPIO_PIN_0)
+	  uint16_t IIC_SDA_Pin;    	//GPIO_SDA的IO引脚(如：GPIO_PIN_0)
 	  //操作函数
 	  void (*IIC_Init)(const struct IIC_Device *p_IICDev); //初始化IIC
 	  void (*IIC_Deint)(const struct IIC_Device *p_IICDev); //反初始化IIC
