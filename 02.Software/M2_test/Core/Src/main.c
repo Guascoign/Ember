@@ -33,6 +33,8 @@
 #include "UART/uart_pack.h"
 #include "UART/uart_printf.h"
 #include "AT24CXX/at24cxx.h"
+#include "lv_demos.h" 
+#include "lv_demo_stress.h" 
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
