@@ -22,6 +22,7 @@
 #include "task.h"
 #include "main.h"
 #include "cmsis_os.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "LCD/lcd.h"
@@ -30,6 +31,7 @@
 #include "lv_port_disp_template.h"
 #include "lv_demos.h" 
 #include "lv_demo_stress.h" 
+#include "lv_demo_benchmark.h" 
 
 /* USER CODE END Includes */
 
@@ -118,7 +120,7 @@ void MX_FREERTOS_Init(void) {
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of LCD */
-  osThreadDef(LCD, Start_LCD_Task, osPriorityAboveNormal, 0, 1024);
+  osThreadDef(LCD, Start_LCD_Task, osPriorityIdle, 0, 128);
   LCDHandle = osThreadCreate(osThread(LCD), NULL);
 
   /* definition and creation of LED */
@@ -166,7 +168,8 @@ void Start_LCD_Task(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    lv_demo_stress();
+    //lv_demo_stress();
+    lv_demo_benchmark_run_scene(1);
     while (1)
     {
       lv_timer_handler();

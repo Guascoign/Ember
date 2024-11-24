@@ -175,16 +175,16 @@
           <Type>0</Type>
           <LineNumber>122</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134355666</Address>
+          <Address>0</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
+          <BreakIfRCount>0</BreakIfRCount>
           <Filename>../Core/Src/main.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\M2_test\../Core/Src/main.c\122</Expression>
+          <Expression></Expression>
         </Bp>
         <Bp>
           <Number>2</Number>
@@ -405,7 +405,7 @@
 
   <Group>
     <GroupName>Drivers/STM32F4xx_HAL_Driver</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -669,7 +669,7 @@
 
   <Group>
     <GroupName>Middlewares/FreeRTOS</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -677,7 +677,7 @@
       <GroupNumber>6</GroupNumber>
       <FileNumber>32</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>../Middlewares/Third_Party/FreeRTOS/Source/croutine.c</PathWithFileName>
@@ -3122,6 +3122,126 @@
       <bDave2>0</bDave2>
       <PathWithFileName>..\Middlewares\LVGL\GUI_APP\demos\stress\lv_demo_stress.c</PathWithFileName>
       <FilenameWithoutPath>lv_demo_stress.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>14</GroupNumber>
+      <FileNumber>231</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\demos\benchmark\lv_demo_benchmark.c</PathWithFileName>
+      <FilenameWithoutPath>lv_demo_benchmark.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>14</GroupNumber>
+      <FileNumber>232</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_alpha16.c</PathWithFileName>
+      <FilenameWithoutPath>img_benchmark_cogwheel_alpha16.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>14</GroupNumber>
+      <FileNumber>233</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_argb.c</PathWithFileName>
+      <FilenameWithoutPath>img_benchmark_cogwheel_argb.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>14</GroupNumber>
+      <FileNumber>234</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_chroma_keyed.c</PathWithFileName>
+      <FilenameWithoutPath>img_benchmark_cogwheel_chroma_keyed.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>14</GroupNumber>
+      <FileNumber>235</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_indexed16.c</PathWithFileName>
+      <FilenameWithoutPath>img_benchmark_cogwheel_indexed16.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>14</GroupNumber>
+      <FileNumber>236</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_rgb.c</PathWithFileName>
+      <FilenameWithoutPath>img_benchmark_cogwheel_rgb.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>14</GroupNumber>
+      <FileNumber>237</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_rgb565a8.c</PathWithFileName>
+      <FilenameWithoutPath>img_benchmark_cogwheel_rgb565a8.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>14</GroupNumber>
+      <FileNumber>238</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\lv_font_bechmark_montserrat_12_compr_az.c.c</PathWithFileName>
+      <FilenameWithoutPath>lv_font_bechmark_montserrat_12_compr_az.c.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>14</GroupNumber>
+      <FileNumber>239</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\lv_font_bechmark_montserrat_16_compr_az.c.c</PathWithFileName>
+      <FilenameWithoutPath>lv_font_bechmark_montserrat_16_compr_az.c.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>14</GroupNumber>
+      <FileNumber>240</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\lv_font_bechmark_montserrat_28_compr_az.c.c</PathWithFileName>
+      <FilenameWithoutPath>lv_font_bechmark_montserrat_28_compr_az.c.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

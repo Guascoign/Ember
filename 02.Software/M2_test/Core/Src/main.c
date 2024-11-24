@@ -37,6 +37,7 @@
 #include "lv_port_disp_template.h"
 #include "lv_demos.h" 
 #include "lv_demo_stress.h" 
+#include "lv_demo_benchmark.h" 
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

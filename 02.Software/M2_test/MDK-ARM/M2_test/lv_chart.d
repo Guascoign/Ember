@@ -6,7 +6,7 @@ m2_test\lv_chart.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\widgets\chart\../../.
 m2_test\lv_chart.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\widgets\chart\../../../../src/misc/../lv_conf_internal.h
 m2_test\lv_chart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 m2_test\lv_chart.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\widgets\chart\../../../../src/misc/../lv_conf_kconfig.h
-m2_test\lv_chart.o: ..\Middlewares\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+m2_test\lv_chart.o: ../Middlewares/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 m2_test\lv_chart.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\widgets\chart\../../../../src/misc/lv_types.h
 m2_test\lv_chart.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\widgets\chart\../../../../src/misc/lv_timer.h
 m2_test\lv_chart.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\widgets\chart\../../../../src/misc/../hal/lv_hal_tick.h

@@ -229,6 +229,16 @@
 "m2_test\uart_pack.o"
 "m2_test\uart_printf.o"
 "m2_test\lv_demo_stress.o"
+"m2_test\lv_demo_benchmark.o"
+"m2_test\img_benchmark_cogwheel_alpha16.o"
+"m2_test\img_benchmark_cogwheel_argb.o"
+"m2_test\img_benchmark_cogwheel_chroma_keyed.o"
+"m2_test\img_benchmark_cogwheel_indexed16.o"
+"m2_test\img_benchmark_cogwheel_rgb.o"
+"m2_test\img_benchmark_cogwheel_rgb565a8.o"
+"m2_test\lv_font_bechmark_montserrat_12_compr_az.c.o"
+"m2_test\lv_font_bechmark_montserrat_16_compr_az.c.o"
+"m2_test\lv_font_bechmark_montserrat_28_compr_az.c.o"
 --library_type=microlib --strict --scatter "M2_test\M2_test.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
