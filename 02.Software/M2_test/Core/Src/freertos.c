@@ -22,11 +22,13 @@
 #include "task.h"
 #include "main.h"
 #include "cmsis_os.h"
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "LCD/lcd.h"
 #include "RGB/WS2812B.h"
+#include "lv_demos.h" 
+#include "lv_demo_stress.h" 
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
