@@ -1,5 +1,5 @@
-m2_test\at24cxx.o: ..\BSP\AT24CXX\at24cxx.c
-m2_test\at24cxx.o: ..\BSP\AT24CXX\at24cxx.h
+m2_test\at24cxx.o: ..\Drivers\BSP\AT24CXX\at24cxx.c
+m2_test\at24cxx.o: ..\Drivers\BSP\AT24CXX\at24cxx.h
 m2_test\at24cxx.o: ../Core/Inc/main.h
 m2_test\at24cxx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 m2_test\at24cxx.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -33,6 +33,6 @@ m2_test\at24cxx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 m2_test\at24cxx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 m2_test\at24cxx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 m2_test\at24cxx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-m2_test\at24cxx.o: ../../F407ZET/Drivers/BSP/IIC/iic.h
+m2_test\at24cxx.o: ..\Drivers\BSP\IIC/iic.h
 m2_test\at24cxx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 m2_test\at24cxx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

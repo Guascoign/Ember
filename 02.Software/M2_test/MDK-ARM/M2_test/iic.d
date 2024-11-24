@@ -1,5 +1,5 @@
-m2_test\iic.o: ..\BSP\IIC\iic.c
-m2_test\iic.o: ..\BSP\IIC\iic.h
+m2_test\iic.o: ..\Drivers\BSP\IIC\iic.c
+m2_test\iic.o: ..\Drivers\BSP\IIC\iic.h
 m2_test\iic.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 m2_test\iic.o: ../Core/Inc/main.h
 m2_test\iic.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h

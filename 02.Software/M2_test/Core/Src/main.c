@@ -27,12 +27,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "lcd.h"
-#include "WS2812B.h"
-#include "iic.h"
-#include "uart_pack.h"
-#include "uart_printf.h"
-#include "at24cxx.h"
+#include "LCD/lcd.h"
+#include "RGB/WS2812B.h"
+#include "IIC/iic.h"
+#include "UART/uart_pack.h"
+#include "UART/uart_printf.h"
+#include "AT24CXX/at24cxx.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

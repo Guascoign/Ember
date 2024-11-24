@@ -25,8 +25,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "lcd.h"
-#include "WS2812B.h"
+#include "LCD/lcd.h"
+#include "RGB/WS2812B.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

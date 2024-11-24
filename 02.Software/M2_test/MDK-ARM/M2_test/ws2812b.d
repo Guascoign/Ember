@@ -1,5 +1,5 @@
-m2_test\ws2812b.o: ..\BSP\RGB\ws2812b.c
-m2_test\ws2812b.o: ..\BSP\RGB\ws2812b.h
+m2_test\ws2812b.o: ..\Drivers\BSP\RGB\ws2812b.c
+m2_test\ws2812b.o: ..\Drivers\BSP\RGB\ws2812b.h
 m2_test\ws2812b.o: ../Core/Inc/tim.h
 m2_test\ws2812b.o: ../Core/Inc/main.h
 m2_test\ws2812b.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h

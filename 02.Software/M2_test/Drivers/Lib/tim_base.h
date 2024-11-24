@@ -12,7 +12,7 @@
 #include "tim.h"
 #include "main.h"
 
-#define BASE_TIMER htim11
+#define BASE_TIMER htim2
 #define MAIN_FREQ 100000000  // 主频为 100 MHz
 #define TARGET_FREQ 1000     // 目标频率为 1 kHz
 

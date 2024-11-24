@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F411xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../../F407ZET/Drivers/BSP/AT24CXX;../../F407ZET/Drivers/BSP/IIC;../../F407ZET/Drivers/BSP/LCD;../../F407ZET/Drivers/BSP/RGB;../../F407ZET/Drivers/BSP/UART;../BSP/CRC;..\Middlewares\LVGL\GUI;..\Middlewares\LVGL\GUI\lvgl;..\Middlewares\LVGL\GUI\lvgl\src;..\Middlewares\LVGL\GUI\lvgl\examples\porting</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;..\Drivers\BSP;..\Drivers\Lib;..\Middlewares\LVGL\GUI;..\Middlewares\LVGL\GUI\lvgl;..\Middlewares\LVGL\GUI\lvgl\src;..\Middlewares\LVGL\GUI\lvgl\examples\porting</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1002,6 +1002,21 @@
               <FileName>system_stm32f4xx.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/system_stm32f4xx.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Drivers/Lib</GroupName>
+          <Files>
+            <File>
+              <FileName>circle_buffer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Lib\circle_buffer.c</FilePath>
+            </File>
+            <File>
+              <FileName>crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Lib\crc.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2555,17 +2570,12 @@
             <File>
               <FileName>iic.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\BSP\IIC\iic.c</FilePath>
+              <FilePath>..\Drivers\BSP\IIC\iic.c</FilePath>
             </File>
             <File>
               <FileName>at24cxx.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\BSP\AT24CXX\at24cxx.c</FilePath>
-            </File>
-            <File>
-              <FileName>crc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BSP\CRC\crc.c</FilePath>
+              <FilePath>..\Drivers\BSP\AT24CXX\at24cxx.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2575,17 +2585,17 @@
             <File>
               <FileName>HzLib.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\BSP\LCD\HzLib.c</FilePath>
+              <FilePath>..\Drivers\BSP\LCD\HzLib.c</FilePath>
             </File>
             <File>
               <FileName>lcd.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\BSP\LCD\lcd.c</FilePath>
+              <FilePath>..\Drivers\BSP\LCD\lcd.c</FilePath>
             </File>
             <File>
               <FileName>st7789.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\BSP\LCD\st7789.c</FilePath>
+              <FilePath>..\Drivers\BSP\LCD\st7789.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -2595,12 +2605,9 @@
             <File>
               <FileName>ws2812b.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\BSP\RGB\ws2812b.c</FilePath>
+              <FilePath>..\Drivers\BSP\RGB\ws2812b.c</FilePath>
             </File>
           </Files>
-        </Group>
-        <Group>
-          <GroupName>BSP/FLASH</GroupName>
         </Group>
         <Group>
           <GroupName>BSP/UART</GroupName>
@@ -2608,17 +2615,17 @@
             <File>
               <FileName>uart_pack.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\BSP\UART\uart_pack.c</FilePath>
+              <FilePath>..\Drivers\BSP\UART\uart_pack.c</FilePath>
             </File>
             <File>
               <FileName>uart_printf.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\BSP\UART\uart_printf.c</FilePath>
+              <FilePath>..\Drivers\BSP\UART\uart_printf.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Lib</GroupName>
+          <GroupName>BSP/FLASH</GroupName>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>

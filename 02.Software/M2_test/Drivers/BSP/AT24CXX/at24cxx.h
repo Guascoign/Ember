@@ -10,7 +10,7 @@
 
 #include "main.h"
 #include <stdint.h>
-#include "iic.h"
+#include "IIC/iic.h"
 
 #define AT24_Address 0xA0
 

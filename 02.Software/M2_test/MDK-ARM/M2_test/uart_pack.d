@@ -1,4 +1,4 @@
-m2_test\uart_pack.o: ..\BSP\UART\uart_pack.c
+m2_test\uart_pack.o: ..\Drivers\BSP\UART\uart_pack.c
 m2_test\uart_pack.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 m2_test\uart_pack.o: ../Core/Inc/stm32f4xx_hal_conf.h
 m2_test\uart_pack.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
@@ -32,5 +32,5 @@ m2_test\uart_pack.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 m2_test\uart_pack.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 m2_test\uart_pack.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 m2_test\uart_pack.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h
-m2_test\uart_pack.o: ..\BSP\UART\uart_pack.h
+m2_test\uart_pack.o: ..\Drivers\BSP\UART\uart_pack.h
 m2_test\uart_pack.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

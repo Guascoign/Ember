@@ -1,5 +1,5 @@
-m2_test\uart_printf.o: ..\BSP\UART\uart_printf.c
-m2_test\uart_printf.o: ..\BSP\UART\uart_printf.h
+m2_test\uart_printf.o: ..\Drivers\BSP\UART\uart_printf.c
+m2_test\uart_printf.o: ..\Drivers\BSP\UART\uart_printf.h
 m2_test\uart_printf.o: ../Core/Inc/main.h
 m2_test\uart_printf.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 m2_test\uart_printf.o: ../Core/Inc/stm32f4xx_hal_conf.h
