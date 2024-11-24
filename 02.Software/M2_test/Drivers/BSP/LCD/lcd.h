@@ -135,7 +135,7 @@ void LCD_Write_HalfWord(const uint16_t da);                                     
 void LCD_Write_Cmd(uint8_t cmd);  
 void LCD_Write_Data(uint8_t data);  	
 void LCD_Clear(uint16_t color);                                                            //Clean screen
-void LCD_Fill(uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end, uint16_t color);                //Filled monochrome
+void LCD_Fill(uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end, uint16_t *color);                //Filled monochrome
 void LCD_Draw_Point(uint16_t x, uint16_t y);                                                        //Draw points
 void LCD_Draw_ColorPoint(uint16_t x, uint16_t y, uint16_t color);                                        //Painting with color dots
 void LCD_DrawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);                                        //Draw line

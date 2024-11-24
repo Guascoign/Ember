@@ -8,7 +8,7 @@
 #ifndef __ST7789_H
 #define __ST7789_H
 
-#include "lcd.h"
+#include "LCD/lcd.h"
 
 //extern  void LCD_Write_Cmd(uint8_t cmd);
 //extern  void LCD_Write_Data(uint8_t data);

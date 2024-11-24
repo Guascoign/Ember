@@ -26,6 +26,8 @@
 /* USER CODE BEGIN Includes */
 #include "LCD/lcd.h"
 #include "RGB/WS2812B.h"
+#include "lvgl.h"
+#include "lv_port_disp_template.h"
 #include "lv_demos.h" 
 #include "lv_demo_stress.h" 
 
@@ -90,7 +92,8 @@ void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackTy
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-
+  lv_init();											//lvgl系统初始化
+	lv_port_disp_init();						//lvgl显示接口初始化,放在lv_init()的后面
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -115,7 +118,7 @@ void MX_FREERTOS_Init(void) {
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of LCD */
-  osThreadDef(LCD, Start_LCD_Task, osPriorityIdle, 0, 128);
+  osThreadDef(LCD, Start_LCD_Task, osPriorityAboveNormal, 0, 1024);
   LCDHandle = osThreadCreate(osThread(LCD), NULL);
 
   /* definition and creation of LED */
@@ -163,7 +166,13 @@ void Start_LCD_Task(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-
+    lv_demo_stress();
+    while (1)
+    {
+      lv_timer_handler();
+      vTaskDelay(5);
+    }
+    
   }
   /* USER CODE END Start_LCD_Task */
 }

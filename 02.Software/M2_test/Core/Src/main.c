@@ -33,6 +33,8 @@
 #include "UART/uart_pack.h"
 #include "UART/uart_printf.h"
 #include "AT24CXX/at24cxx.h"
+#include "lvgl.h"
+#include "lv_port_disp_template.h"
 #include "lv_demos.h" 
 #include "lv_demo_stress.h" 
 /* USER CODE END Includes */
@@ -115,7 +117,7 @@ int main(void)
   pAT24Dev->AT24CXX_Check(pAT24Dev);
 
   HAL_Delay(100);
-  LCD_Init();
+  // LCD_Init();
 	
   printf("[info]Init Done.Running....\r\n");  
   /* USER CODE END 2 */

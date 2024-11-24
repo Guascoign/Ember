@@ -5,9 +5,9 @@
     * 编写日期 ：2024-04-12
     * 功     能：LCD屏幕驱动
 *********************************************************************************/
-#include "lcd.h"
-#include "font.h"
-#include "HzLib.h"
+#include "LCD/lcd.h"
+#include "LCD/font.h"
+#include "LCD/HzLib.h"
 uint16_t POINT_COLOR = WHITE;        //默认笔刷颜色
 uint16_t BACK_COLOR = BLACK;        //默认背景颜色
 /**
@@ -140,10 +140,11 @@ void LCD_Clear(uint16_t color)
  *
  * @return  void
  */
-void LCD_Fill(uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end, uint16_t color)
+void LCD_Fill(uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end, uint16_t *color)
 {
     uint16_t i = 0;
     uint32_t size = 0, size_remain = 0;
+    uint32_t color_index = 0;  // 用于跟踪颜色数组的索引
 
     size = (x_end - x_start + 1) * (y_end - y_start + 1) * 2;
 
@@ -156,8 +157,10 @@ void LCD_Fill(uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end
 
     while (1) {
         for (i = 0; i < size / 2; i++) {
-            lcd_buf[2 * i] = color >> 8;
-            lcd_buf[2 * i + 1] = color;
+            // 从颜色数组中读取颜色并填充到缓冲区
+            lcd_buf[2 * i] = color[color_index] >> 8;       // 高字节
+            lcd_buf[2 * i + 1] = color[color_index] & 0xFF; // 低字节
+            color_index++;  // 前进到下一个颜色
         }
 
         LCD_DC(1);
@@ -168,14 +171,49 @@ void LCD_Fill(uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end
 
         if (size_remain > LCD_Buf_Size) {
             size_remain = size_remain - LCD_Buf_Size;
-        }
-
-        else {
+        } else {
             size = size_remain;
             size_remain = 0;
         }
     }
 }
+
+// void LCD_Fill(uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end, uint16_t color)
+// {
+//     uint16_t i = 0;
+//     uint32_t size = 0, size_remain = 0;
+
+//     size = (x_end - x_start + 1) * (y_end - y_start + 1) * 2;
+
+//     if (size > LCD_Buf_Size) {
+//         size_remain = size - LCD_Buf_Size;
+//         size = LCD_Buf_Size;
+//     }
+
+//     LCD_Address_Set(x_start, y_start, x_end, y_end);
+
+//     while (1) {
+//         for (i = 0; i < size / 2; i++) {
+//             lcd_buf[2 * i] = color >> 8;
+//             lcd_buf[2 * i + 1] = color;
+//         }
+
+//         LCD_DC(1);
+//         LCD_SPI_Send(lcd_buf, size);
+
+//         if (size_remain == 0)
+//             break;
+
+//         if (size_remain > LCD_Buf_Size) {
+//             size_remain = size_remain - LCD_Buf_Size;
+//         }
+
+//         else {
+//             size = size_remain;
+//             size_remain = 0;
+//         }
+//     }
+// }
 
 /**
  * 画点函数
