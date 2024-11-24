@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F411xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;..\Drivers\BSP;..\Drivers\Lib;..\Middlewares\LVGL\GUI;..\Middlewares\LVGL\GUI\lvgl;..\Middlewares\LVGL\GUI\lvgl\src;..\Middlewares\LVGL\GUI\lvgl\examples\porting</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;..\Drivers\BSP;..\Drivers\Lib;..\Middlewares\LVGL\GUI;..\Middlewares\LVGL\GUI\lvgl;..\Middlewares\LVGL\GUI\lvgl\src;..\Middlewares\LVGL\GUI\lvgl\examples\porting;..\Middlewares\LVGL\GUI_APP\demos;..\Middlewares\LVGL\GUI_APP\demos\stress</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2626,6 +2626,16 @@
         </Group>
         <Group>
           <GroupName>BSP/FLASH</GroupName>
+        </Group>
+        <Group>
+          <GroupName>Middlewares/LVGL/Demos</GroupName>
+          <Files>
+            <File>
+              <FileName>lv_demo_stress.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\demos\stress\lv_demo_stress.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>

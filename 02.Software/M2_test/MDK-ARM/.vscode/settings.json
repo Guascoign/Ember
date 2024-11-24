@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "lcd.h": "c",
-        "ws2812b.h": "c"
+        "ws2812b.h": "c",
+        "cmsis_os.h": "c",
+        "lv_demo_stress.h": "c"
     }
 }
