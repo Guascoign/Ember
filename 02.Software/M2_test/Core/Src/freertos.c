@@ -181,7 +181,8 @@ void Main(void const * argument)
   osDelay(100);
   //AT24C02初始化
   struct AT24CXX_Device *pAT24Dev = AT24CXX_GetDevice("EEPROM");//获取外设地址指针
-  if(pAT24Dev->AT24CXX_Check == 0)
+  pAT24Dev->AT24CXX_Init(pAT24Dev);
+  if(pAT24Dev->AT24CXX_Check(pAT24Dev) == 0)
   {
     LCDPrint("EEPROM OK\n", LCD_text_buf , sizeof(LCD_text_buf));
   }
@@ -189,14 +190,6 @@ void Main(void const * argument)
   {
     LCDPrint("EEPROM Error\n", LCD_text_buf , sizeof(LCD_text_buf));
   }
-  osDelay(100);
-  //FLSH初始化
-  LCDPrint("FLASH Error\n", LCD_text_buf , sizeof(LCD_text_buf));
-
-  //RGB初始化
-  LCDPrint("RGB Start IN Rainbow Mode\n", LCD_text_buf , sizeof(LCD_text_buf));
-  WS_RainbowCycle(10);
-
 
   for(;;)
   {
