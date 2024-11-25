@@ -28,11 +28,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "LCD/lcd.h"
-#include "RGB/WS2812B.h"
-#include "IIC/iic.h"
-#include "UART/uart_pack.h"
-#include "UART/uart_printf.h"
-#include "AT24CXX/at24cxx.h"
 #include "lvgl.h"
 #include "lv_port_disp_template.h"
 #include "lv_demos.h" 
@@ -108,18 +103,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2); //定时器2使能
 
-  //串口初始化
-  struct UART_Device *pUARTDev = GetUARTDevice("STM32_Bare_HAL_UART1_IT");//获取外设地址指针
-  pUARTDev->Init(pUARTDev, 115200, 8, 'N', 1);
 
-  //AT24C02初始化
-  struct AT24CXX_Device *pAT24Dev = AT24CXX_GetDevice("AT24C02");//获取外设地址指针
-  pAT24Dev->AT24CXX_Check(pAT24Dev);
 
-  HAL_Delay(100);
-  // LCD_Init();
-	
-  printf("[info]Init Done.Running....\r\n");  
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in cmsis_os2.c) */

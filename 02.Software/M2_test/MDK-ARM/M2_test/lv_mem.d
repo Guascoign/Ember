@@ -3,7 +3,7 @@ m2_test\lv_mem.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_mem.h
 m2_test\lv_mem.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_internal.h
 m2_test\lv_mem.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 m2_test\lv_mem.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_kconfig.h
-m2_test\lv_mem.o: ..\Middlewares\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+m2_test\lv_mem.o: ../Middlewares/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 m2_test\lv_mem.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 m2_test\lv_mem.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 m2_test\lv_mem.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_types.h

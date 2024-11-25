@@ -5,7 +5,7 @@ m2_test\lv_style.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 m2_test\lv_style.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../font/lv_font.h
 m2_test\lv_style.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../font/../lv_conf_internal.h
 m2_test\lv_style.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../font/../lv_conf_kconfig.h
-m2_test\lv_style.o: ..\Middlewares\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+m2_test\lv_style.o: ../Middlewares/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 m2_test\lv_style.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 m2_test\lv_style.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../font/lv_symbol_def.h
 m2_test\lv_style.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../font/../misc/lv_area.h

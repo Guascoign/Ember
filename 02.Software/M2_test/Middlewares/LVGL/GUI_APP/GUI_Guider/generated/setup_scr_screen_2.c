@@ -70,7 +70,7 @@ void setup_scr_screen_2(lv_ui *ui)
 
     //Write codes screen_2_label_3
     ui->screen_2_label_3 = lv_label_create(ui->screen_2_cont_2);
-    lv_label_set_text(ui->screen_2_label_3, "datas");
+    lv_label_set_text(ui->screen_2_label_3, "Initializing...\n");
     lv_label_set_long_mode(ui->screen_2_label_3, LV_LABEL_LONG_WRAP);
     lv_obj_set_pos(ui->screen_2_label_3, 2, 2);
     lv_obj_set_size(ui->screen_2_label_3, 217, 94);
@@ -79,7 +79,7 @@ void setup_scr_screen_2(lv_ui *ui)
     lv_obj_set_style_border_width(ui->screen_2_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_radius(ui->screen_2_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(ui->screen_2_label_3, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui->screen_2_label_3, &lv_font_Youshebiaotihei_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui->screen_2_label_3, &lv_font_Youshebiaotihei_10, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui->screen_2_label_3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_letter_space(ui->screen_2_label_3, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
     lv_obj_set_style_text_line_space(ui->screen_2_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);

@@ -22,10 +22,11 @@
 #include "task.h"
 #include "main.h"
 #include "cmsis_os.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "LCD/lcd.h"
-#include "RGB/WS2812B.h"
+#include "RGB/ws2812b.h"
 #include "lvgl.h"
 #include "lv_port_disp_template.h"
 #include "lv_demos.h" 
@@ -34,6 +35,10 @@
 #include "../generated/events_init.h"
 #include "widgets_init.h"
 #include "circle_buffer.h"
+#include "IIC/iic.h"
+#include "UART/uart_pack.h"
+#include "UART/uart_printf.h"
+#include "AT24CXX/at24cxx.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,24 +60,29 @@
 /* USER CODE BEGIN Variables */
 
 /* USER CODE END Variables */
-osThreadId defaultTaskHandle;
-osThreadId LCDHandle;
-osThreadId LEDHandle;
-osThreadId EEPROMHandle;
+osThreadId Main_TaskHandle;
+osThreadId LcdRefresh_TaskHandle;
+osThreadId Led_TaskHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
 
 lv_ui guider_ui;
 uint8_t LCD_text_flag = 0; //文本更新标志位
-char LCD_text_buf[2560];
+char LCD_text_buf[1280];
+typedef struct
+  {
+    uint8_t Hour;
+    uint8_t Minute;
+    uint8_t Second;
+  }Run_time;
+  Run_time run_time = {0,0,0};
 
 /* USER CODE END FunctionPrototypes */
 
-void StartDefaultTask(void const * argument);
-void Start_LCD_Task(void const * argument);
-void Start_LED_Task(void const * argument);
-void Start_EEPROM_Task(void const * argument);
+void Main(void const * argument);
+void LcdRefresh(void const * argument);
+void Led(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -121,21 +131,17 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 1024);
-  defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+  /* definition and creation of Main_Task */
+  osThreadDef(Main_Task, Main, osPriorityAboveNormal, 0, 640);
+  Main_TaskHandle = osThreadCreate(osThread(Main_Task), NULL);
 
-  /* definition and creation of LCD */
-  osThreadDef(LCD, Start_LCD_Task, osPriorityAboveNormal, 0, 128);
-  LCDHandle = osThreadCreate(osThread(LCD), NULL);
+  /* definition and creation of LcdRefresh_Task */
+  osThreadDef(LcdRefresh_Task, LcdRefresh, osPriorityIdle, 0, 1280);
+  LcdRefresh_TaskHandle = osThreadCreate(osThread(LcdRefresh_Task), NULL);
 
-  /* definition and creation of LED */
-  osThreadDef(LED, Start_LED_Task, osPriorityIdle, 0, 128);
-  LEDHandle = osThreadCreate(osThread(LED), NULL);
-
-  /* definition and creation of EEPROM */
-  osThreadDef(EEPROM, Start_EEPROM_Task, osPriorityIdle, 0, 128);
-  EEPROMHandle = osThreadCreate(osThread(EEPROM), NULL);
+  /* definition and creation of Led_Task */
+  osThreadDef(Led_Task, Led, osPriorityAboveNormal, 0, 128);
+  Led_TaskHandle = osThreadCreate(osThread(Led_Task), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -143,99 +149,122 @@ void MX_FREERTOS_Init(void) {
 
 }
 
-/* USER CODE BEGIN Header_StartDefaultTask */
+/* USER CODE BEGIN Header_Main */
 /**
-  * @brief  Function implementing the defaultTask thread.
+  * @brief  Function implementing the Main_Task thread.
   * @param  argument: Not used
   * @retval None
   */
-/* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void const * argument)
+/* USER CODE END Header_Main */
+void Main(void const * argument)
 {
-  /* USER CODE BEGIN StartDefaultTask */
+  /* USER CODE BEGIN Main */
+  /* Infinite loop */
+  osDelay(2000);
+  LCDPrint("=================\r\n", LCD_text_buf , sizeof(LCD_text_buf));
+  osDelay(100);
+  LCDPrint("System Start!\r\n", LCD_text_buf , sizeof(LCD_text_buf));
+  osDelay(100);
+  LCDPrint("LVGL V8.4.0\n", LCD_text_buf , sizeof(LCD_text_buf));
+  osDelay(100);
+  LCDPrint("FreeRTOS V10.3.1\n", LCD_text_buf , sizeof(LCD_text_buf));
+  osDelay(100);
+  LCDPrint("CMSIS_OS V1.02\n", LCD_text_buf , sizeof(LCD_text_buf));
+  osDelay(100);
+  LCDPrint("=================\r\n", LCD_text_buf , sizeof(LCD_text_buf));
+  osDelay(500);
+
+  //串口初始化
+  struct UART_Device *pUARTDev = GetUARTDevice("STM32_Bare_HAL_UART1_IT");//获取外设地址指针
+  pUARTDev->Init(pUARTDev, 115200, 8, 'N', 1);
+  LCDPrint("UART1_115200\n", LCD_text_buf , sizeof(LCD_text_buf));
+  osDelay(100);
+  //AT24C02初始化
+  struct AT24CXX_Device *pAT24Dev = AT24CXX_GetDevice("EEPROM");//获取外设地址指针
+  if(pAT24Dev->AT24CXX_Check == 0)
+  {
+    LCDPrint("EEPROM OK\n", LCD_text_buf , sizeof(LCD_text_buf));
+  }
+  else
+  {
+    LCDPrint("EEPROM Error\n", LCD_text_buf , sizeof(LCD_text_buf));
+  }
+  osDelay(100);
+  //FLSH初始化
+  LCDPrint("FLASH Error\n", LCD_text_buf , sizeof(LCD_text_buf));
+
+  //RGB初始化
+  LCDPrint("RGB Start IN Rainbow Mode\n", LCD_text_buf , sizeof(LCD_text_buf));
+  WS_RainbowCycle(10);
+
+
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Main */
+}
+
+/* USER CODE BEGIN Header_LcdRefresh */
+/**
+* @brief Function implementing the LcdRefresh_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_LcdRefresh */
+void LcdRefresh(void const * argument)
+{
+  /* USER CODE BEGIN LcdRefresh */
   /* Infinite loop */
 	setup_ui(&guider_ui);
   events_init(&guider_ui);
 	lv_task_handler();
   //lv_label_set_text(guider_ui.screen_2_label_3, "Initializing...\n123");
-    while (1)
-    {
-      lv_timer_handler();
-      vTaskDelay(1);
-    }
-  /* USER CODE END StartDefaultTask */
-}
-
-/* USER CODE BEGIN Header_Start_LCD_Task */
-/**
-* @brief Function implementing the LCD thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_Start_LCD_Task */
-void Start_LCD_Task(void const * argument)
-{
-  /* USER CODE BEGIN Start_LCD_Task */
-  /* Infinite loop */
-    osDelay(1800); // 每500ms更新一次
-    /* 设置默认的标签文本 */
-    lv_label_set_text(guider_ui.screen_2_label_3, "Initializing...");
-    /* Infinite loop */
-    for (;;) {
-        if(LCD_text_flag)
+  for(;;)
+  {
+    if(LCD_text_flag)
         {
           lv_label_set_text(guider_ui.screen_2_label_3, LCD_text_buf);
           LCD_text_flag = 0;
         }
-        osDelay(500); // 每500ms更新一次
+    lv_timer_handler();
+    vTaskDelay(10);
+  }
+  /* USER CODE END LcdRefresh */
+}
+
+/* USER CODE BEGIN Header_Led */
+/**
+* @brief Function implementing the Led_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Led */
+void Led(void const * argument)
+{
+  /* USER CODE BEGIN Led */
+  char LCD_time_buf[32]; // 用于存储格式化的字符串
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1000);
+    HAL_GPIO_TogglePin(RUN_LED_GPIO_Port , RUN_LED_Pin);
+    run_time.Second = run_time.Second +1;
+    if(run_time.Second == 60)
+    {
+      run_time.Second = 0;
+      run_time.Minute = run_time.Minute +1;
+      if(run_time.Minute == 60)
+      {
+        run_time.Minute = 0;
+        run_time.Hour = run_time.Hour +1;
+      }
     }
-    /* USER CODE END Start_LCD_Task */
-}
-
-/* USER CODE BEGIN Header_Start_LED_Task */
-/**
-* @brief Function implementing the LED thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_Start_LED_Task */
-void Start_LED_Task(void const * argument)
-{
-  /* USER CODE BEGIN Start_LED_Task */
-  /* Infinite loop */
-  osDelay(3000);
-  LCDPrint("test123123123\n" , LCD_text_buf,sizeof(LCD_text_buf));
-  osDelay(3000);
-  LCDPrint("test1123123123\n" , LCD_text_buf,sizeof(LCD_text_buf));
-  osDelay(3000);
-  LCDPrint("test2123123\n" , LCD_text_buf,sizeof(LCD_text_buf));
-  osDelay(3000);
-  LCDPrint("test31231233333\n" , LCD_text_buf,sizeof(LCD_text_buf));
-  for(;;)
-  {
-		HAL_GPIO_TogglePin(RUN_LED_GPIO_Port,RUN_LED_Pin);
-    osDelay(200);
+    // 格式化字符串 xxH xxM xxS
+    sprintf(LCD_time_buf, "%02dH%02dM%02dS", run_time.Hour, run_time.Minute, run_time.Second);
+    lv_label_set_text(guider_ui.screen_2_label_2, LCD_time_buf);
   }
-  /* USER CODE END Start_LED_Task */
-}
-
-/* USER CODE BEGIN Header_Start_EEPROM_Task */
-/**
-* @brief Function implementing the EEPROM thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_Start_EEPROM_Task */
-void Start_EEPROM_Task(void const * argument)
-{
-  /* USER CODE BEGIN Start_EEPROM_Task */
-  /* Infinite loop */
-  for(;;)
-  {
-
-    osDelay(1);
-  }
-  /* USER CODE END Start_EEPROM_Task */
+  /* USER CODE END Led */
 }
 
 /* Private application code --------------------------------------------------*/
