@@ -166,7 +166,10 @@ void Start_LCD_Task(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    lv_demo_stress();
+    //lv_demo_stress();
+    lv_obj_t *switch1 = lv_switch_create(lv_scr_act());
+    lv_obj_set_size(switch1,200,100);
+    lv_obj_t *switch2 = lv_switch_create(switch1);
     while (1)
     {
       lv_timer_handler();
