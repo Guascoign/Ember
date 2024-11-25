@@ -78,6 +78,51 @@ typedef struct
   }Run_time;
   Run_time run_time = {0,0,0};
 
+
+
+#define WS2812_NUM_LEDS  8  // WS2812 灯带的 LED 数量
+#define WS2812_LED_DATA_SIZE (WS2812_NUM_LEDS * 24)  // 每个 LED 24 位
+
+// WS2812 数据结构（RGB 颜色）
+typedef struct {
+    uint8_t G;
+    uint8_t R;
+    uint8_t B;
+} WS2812_Color_t;
+
+// 存储 WS2812 的颜色数据
+WS2812_Color_t WS2812_Data[WS2812_NUM_LEDS];
+
+// 定义用于存储 WS2812 数据的 PWM 比较值
+uint16_t WS2812_PWM_Buffer[WS2812_LED_DATA_SIZE];
+
+void WS2812_TransmitData(void) {
+    int i, j;
+    int bitIndex = 0;
+
+    // 将数据转换为适合 PWM 输出的形式
+    for (i = 0; i < WS2812_NUM_LEDS; i++) {
+        uint8_t byte = 0;
+        
+        // 每个 LED 有 24 位（RGB），按顺序转换
+        for (j = 0; j < 8; j++) {
+            // 获取每个颜色的高位/低位值
+            byte = WS2812_Data[i].R;
+            // 通过 PWM 控制生成一个 0 或 1 的信号
+            WS2812_PWM_Buffer[bitIndex++] = (byte & (1 << (7 - j))) ? 70 : 35;
+            byte = WS2812_Data[i].G;
+            WS2812_PWM_Buffer[bitIndex++] = (byte & (1 << (7 - j))) ? 70 : 35;
+            byte = WS2812_Data[i].B;
+            WS2812_PWM_Buffer[bitIndex++] = (byte & (1 << (7 - j))) ? 70 : 35;
+        }
+    }
+
+    // 这里假设你已配置好 DMA 来更新 PWM 数据
+    // 使用 DMA 或定时器比较寄存器（CCR）来驱动 WS2812 数据线
+    HAL_TIM_PWM_Start_DMA(&htim5, TIM_CHANNEL_2, (uint32_t *)WS2812_PWM_Buffer, WS2812_LED_DATA_SIZE);
+}
+
+
 /* USER CODE END FunctionPrototypes */
 
 void Main(void const * argument);
@@ -140,7 +185,7 @@ void MX_FREERTOS_Init(void) {
   LcdRefresh_TaskHandle = osThreadCreate(osThread(LcdRefresh_Task), NULL);
 
   /* definition and creation of Led_Task */
-  osThreadDef(Led_Task, Led, osPriorityAboveNormal, 0, 128);
+  osThreadDef(Led_Task, Led, osPriorityIdle, 0, 128);
   Led_TaskHandle = osThreadCreate(osThread(Led_Task), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -190,10 +235,23 @@ void Main(void const * argument)
   {
     LCDPrint("EEPROM Error\n", LCD_text_buf , sizeof(LCD_text_buf));
   }
+  osDelay(100);
+
+ int i;
+    for (i = 0; i < WS2812_NUM_LEDS; i++) {
+        WS2812_Data[i].R = 255;
+        WS2812_Data[i].G = 0;
+        WS2812_Data[i].B = 0;
+    }
+
+
 
   for(;;)
   {
-    osDelay(1);
+  WS2812_TransmitData();  // 将数据发送到 WS2812
+        LCDPrint("RGB DMA\n", LCD_text_buf , sizeof(LCD_text_buf));
+        // 暂停一段时间以控制更新频率（比如 50ms 更新一次）
+        vTaskDelay(pdMS_TO_TICKS(50));
   }
   /* USER CODE END Main */
 }
@@ -263,5 +321,8 @@ void Led(void const * argument)
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
 
-
+// void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
+// {
+//     HAL_TIM_PWM_Stop_DMA(&htim5,TIM_CHANNEL_2);
+// }
 /* USER CODE END Application */

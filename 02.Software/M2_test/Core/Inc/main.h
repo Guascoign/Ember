@@ -63,8 +63,6 @@ void Error_Handler(void);
 #define SCL_GPIO_Port GPIOC
 #define RUN_LED_Pin GPIO_PIN_3
 #define RUN_LED_GPIO_Port GPIOC
-#define RGB_Pin GPIO_PIN_1
-#define RGB_GPIO_Port GPIOA
 #define LCD_CS_Pin GPIO_PIN_12
 #define LCD_CS_GPIO_Port GPIOB
 #define LCD_DC_Pin GPIO_PIN_14

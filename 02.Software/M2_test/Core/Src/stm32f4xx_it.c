@@ -55,7 +55,7 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern DMA_HandleTypeDef hdma_tim2_ch2_ch4;
+extern DMA_HandleTypeDef hdma_tim5_ch2;
 extern TIM_HandleTypeDef htim11;
 
 /* USER CODE BEGIN EV */
@@ -161,17 +161,17 @@ void DebugMon_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles DMA1 stream6 global interrupt.
+  * @brief This function handles DMA1 stream4 global interrupt.
   */
-void DMA1_Stream6_IRQHandler(void)
+void DMA1_Stream4_IRQHandler(void)
 {
-  /* USER CODE BEGIN DMA1_Stream6_IRQn 0 */
+  /* USER CODE BEGIN DMA1_Stream4_IRQn 0 */
 
-  /* USER CODE END DMA1_Stream6_IRQn 0 */
-  HAL_DMA_IRQHandler(&hdma_tim2_ch2_ch4);
-  /* USER CODE BEGIN DMA1_Stream6_IRQn 1 */
+  /* USER CODE END DMA1_Stream4_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_tim5_ch2);
+  /* USER CODE BEGIN DMA1_Stream4_IRQn 1 */
 
-  /* USER CODE END DMA1_Stream6_IRQn 1 */
+  /* USER CODE END DMA1_Stream4_IRQn 1 */
 }
 
 /**

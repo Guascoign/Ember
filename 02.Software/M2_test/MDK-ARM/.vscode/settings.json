@@ -12,6 +12,7 @@
         "lvgl.h": "c",
         "freertos.h": "c",
         "new": "cpp",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "tim.h": "c"
     }
 }
