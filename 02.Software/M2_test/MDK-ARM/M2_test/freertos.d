@@ -188,3 +188,6 @@ m2_test\freertos.o: ..\Middlewares\LVGL\GUI\lvgl\examples\porting\lv_port_disp_t
 m2_test\freertos.o: ..\Middlewares\LVGL\GUI_APP\demos\lv_demos.h
 m2_test\freertos.o: ..\Middlewares\LVGL\GUI_APP\demos\stress/lv_demo_stress.h
 m2_test\freertos.o: ..\Middlewares\LVGL\GUI_APP\demos\stress/../lv_demos.h
+m2_test\freertos.o: ..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\../generated/gui_guider.h
+m2_test\freertos.o: ..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\../generated/events_init.h
+m2_test\freertos.o: ..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\widgets_init.h

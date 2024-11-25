@@ -30,7 +30,9 @@
 #include "lv_port_disp_template.h"
 #include "lv_demos.h" 
 #include "lv_demo_stress.h" 
-
+#include "../generated/gui_guider.h"
+#include "../generated/events_init.h"
+#include "widgets_init.h"//LVGL时钟组件
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -59,7 +61,7 @@ osThreadId EEPROMHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-
+lv_ui guider_ui;
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void const * argument);
@@ -94,6 +96,7 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
   lv_init();											//lvgl系统初始化
 	lv_port_disp_init();						//lvgl显示接口初始化,放在lv_init()的后面
+	//LOG_MODULE_REGISTER(app);
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -167,9 +170,18 @@ void Start_LCD_Task(void const * argument)
   for(;;)
   {
     //lv_demo_stress();
-    lv_obj_t *switch1 = lv_switch_create(lv_scr_act());
-    lv_obj_set_size(switch1,200,100);
-    lv_obj_t *switch2 = lv_switch_create(switch1);
+		
+//    lv_obj_t *switch1 = lv_switch_create(lv_scr_act());
+//    lv_obj_set_size(switch1,200,100);
+//    lv_obj_t *switch2 = lv_switch_create(switch1);
+		
+		setup_ui(&guider_ui);
+   	events_init(&guider_ui);
+
+	lv_task_handler();
+	//display_blanking_off(display_dev);
+		
+		
     while (1)
     {
       lv_timer_handler();

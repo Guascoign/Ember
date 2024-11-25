@@ -19,6 +19,8 @@
                 "d:\\Projects\\Ember\\02.Software\\M2_test\\Middlewares\\LVGL\\GUI\\lvgl\\examples\\porting",
                 "d:\\Projects\\Ember\\02.Software\\M2_test\\Middlewares\\LVGL\\GUI_APP\\demos",
                 "d:\\Projects\\Ember\\02.Software\\M2_test\\Middlewares\\LVGL\\GUI_APP\\demos\\stress",
+                "d:\\Projects\\Ember\\02.Software\\M2_test\\Middlewares\\LVGL\\GUI_APP\\GUI_Guider\\generated",
+                "d:\\Projects\\Ember\\02.Software\\M2_test\\Middlewares\\LVGL\\GUI_APP\\GUI_Guider\\custom",
                 "C:\\Keil_v5\\ARM\\ARMCC\\include",
                 "C:\\Keil_v5\\ARM\\ARMCC\\include\\rw",
                 "d:\\Projects\\Ember\\02.Software\\M2_test\\MDK-ARM",
@@ -79,7 +81,8 @@
                 "d:\\Projects\\Ember\\02.Software\\M2_test\\Drivers\\BSP\\AT24CXX",
                 "d:\\Projects\\Ember\\02.Software\\M2_test\\Drivers\\BSP\\LCD",
                 "d:\\Projects\\Ember\\02.Software\\M2_test\\Drivers\\BSP\\RGB",
-                "d:\\Projects\\Ember\\02.Software\\M2_test\\Drivers\\BSP\\UART"
+                "d:\\Projects\\Ember\\02.Software\\M2_test\\Drivers\\BSP\\UART",
+                "d:\\Projects\\Ember\\02.Software\\M2_test\\Middlewares\\LVGL\\GUI_APP\\GUI_Guider\\generated\\guider_fonts"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

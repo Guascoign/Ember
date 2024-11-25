@@ -1,0 +1,1 @@
+GEN_CSRCS += lv_font_Youshebiaotihei_16.c
