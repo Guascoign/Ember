@@ -1,5 +1,5 @@
 m2_test\lcd.o: ..\Drivers\BSP\LCD\lcd.c
-m2_test\lcd.o: ../Drivers/BSP/LCD/lcd.h
+m2_test\lcd.o: ..\Drivers\BSP\LCD/lcd.h
 m2_test\lcd.o: ../Core/Inc/gpio.h
 m2_test\lcd.o: ../Core/Inc/main.h
 m2_test\lcd.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
@@ -40,7 +40,7 @@ m2_test\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 m2_test\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 m2_test\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 m2_test\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
-m2_test\lcd.o: ../Drivers/BSP/LCD/st7789.h
-m2_test\lcd.o: ../Drivers/BSP/LCD/lcd.h
-m2_test\lcd.o: ../Drivers/BSP/LCD/font.h
-m2_test\lcd.o: ../Drivers/BSP/LCD/HzLib.h
+m2_test\lcd.o: ..\Drivers\BSP\LCD/st7789.h
+m2_test\lcd.o: ..\Drivers\BSP\LCD/lcd.h
+m2_test\lcd.o: ..\Drivers\BSP\LCD/font.h
+m2_test\lcd.o: ..\Drivers\BSP\LCD/HzLib.h

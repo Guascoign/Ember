@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F411xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/BSP;../Drivers/Lib;../Middlewares/LVGL/GUI;../Middlewares/LVGL/GUI/lvgl;../Middlewares/LVGL/GUI/lvgl/src;../Middlewares/LVGL/GUI/lvgl/examples/porting;../Middlewares/LVGL/GUI_APP/demos;../Middlewares/LVGL/GUI_APP/demos/stress;../Middlewares/LVGL/GUI_APP/demos/benchmark;../Middlewares/LVGL/GUI_APP/demos/benchmark/assets</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;..\Drivers\BSP;..\Drivers\Lib;..\Middlewares\LVGL\GUI;..\Middlewares\LVGL\GUI\lvgl;..\Middlewares\LVGL\GUI\lvgl\src;..\Middlewares\LVGL\GUI\lvgl\examples\porting;..\Middlewares\LVGL\GUI_APP\demos;..\Middlewares\LVGL\GUI_APP\demos\stress;..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated;..\Middlewares\LVGL\GUI_APP\GUI_Guider\custom</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2635,55 +2635,60 @@
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\demos\stress\lv_demo_stress.c</FilePath>
             </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Middlewares/LVGL/GUI</GroupName>
+          <Files>
             <File>
-              <FileName>lv_demo_benchmark.c</FileName>
+              <FileName>events_init.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\demos\benchmark\lv_demo_benchmark.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\events_init.c</FilePath>
             </File>
             <File>
-              <FileName>img_benchmark_cogwheel_alpha16.c</FileName>
+              <FileName>gui_guider.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_alpha16.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\gui_guider.c</FilePath>
             </File>
             <File>
-              <FileName>img_benchmark_cogwheel_argb.c</FileName>
+              <FileName>setup_scr_screen.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_argb.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\setup_scr_screen.c</FilePath>
             </File>
             <File>
-              <FileName>img_benchmark_cogwheel_chroma_keyed.c</FileName>
+              <FileName>widgets_init.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_chroma_keyed.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\widgets_init.c</FilePath>
             </File>
             <File>
-              <FileName>img_benchmark_cogwheel_indexed16.c</FileName>
+              <FileName>lv_font_montserratMedium_12.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_indexed16.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_montserratMedium_12.c</FilePath>
             </File>
             <File>
-              <FileName>img_benchmark_cogwheel_rgb.c</FileName>
+              <FileName>lv_font_Youshebiaotihei_16.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_rgb.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_Youshebiaotihei_16.c</FilePath>
             </File>
             <File>
-              <FileName>img_benchmark_cogwheel_rgb565a8.c</FileName>
+              <FileName>custom.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\img_benchmark_cogwheel_rgb565a8.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\custom\custom.c</FilePath>
             </File>
             <File>
-              <FileName>lv_font_bechmark_montserrat_12_compr_az.c.c</FileName>
+              <FileName>lv_font_Alatsi_Regular_18.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\lv_font_bechmark_montserrat_12_compr_az.c.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_Alatsi_Regular_18.c</FilePath>
             </File>
             <File>
-              <FileName>lv_font_bechmark_montserrat_16_compr_az.c.c</FileName>
+              <FileName>lv_font_montserratMedium_16.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\lv_font_bechmark_montserrat_16_compr_az.c.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_montserratMedium_16.c</FilePath>
             </File>
             <File>
-              <FileName>lv_font_bechmark_montserrat_28_compr_az.c.c</FileName>
+              <FileName>lv_font_Youshebiaotihei_20.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\demos\benchmark\assets\lv_font_bechmark_montserrat_28_compr_az.c.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_Youshebiaotihei_20.c</FilePath>
             </File>
           </Files>
         </Group>

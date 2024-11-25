@@ -4,7 +4,7 @@ m2_test\lv_keyboard.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\widgets\keyboard\.
 m2_test\lv_keyboard.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\widgets\keyboard\../../../widgets/../lv_conf_internal.h
 m2_test\lv_keyboard.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 m2_test\lv_keyboard.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\widgets\keyboard\../../../widgets/../lv_conf_kconfig.h
-m2_test\lv_keyboard.o: ../Middlewares/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
+m2_test\lv_keyboard.o: ..\Middlewares\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
 m2_test\lv_keyboard.o: ..\Middlewares\LVGL\GUI\lvgl\src\extra\widgets\keyboard\../../../widgets/../core/lv_obj.h
 m2_test\lv_keyboard.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 m2_test\lv_keyboard.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

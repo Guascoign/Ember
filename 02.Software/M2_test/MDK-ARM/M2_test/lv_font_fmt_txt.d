@@ -3,7 +3,7 @@ m2_test\lv_font_fmt_txt.o: ..\Middlewares\LVGL\GUI\lvgl\src\font\lv_font.h
 m2_test\lv_font_fmt_txt.o: ..\Middlewares\LVGL\GUI\lvgl\src\font\../lv_conf_internal.h
 m2_test\lv_font_fmt_txt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 m2_test\lv_font_fmt_txt.o: ..\Middlewares\LVGL\GUI\lvgl\src\font\../lv_conf_kconfig.h
-m2_test\lv_font_fmt_txt.o: ../Middlewares/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
+m2_test\lv_font_fmt_txt.o: ..\Middlewares\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
 m2_test\lv_font_fmt_txt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 m2_test\lv_font_fmt_txt.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 m2_test\lv_font_fmt_txt.o: ..\Middlewares\LVGL\GUI\lvgl\src\font\lv_symbol_def.h

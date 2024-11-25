@@ -8,7 +8,7 @@ m2_test\lv_disp.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../hal/lv_hal.h
 m2_test\lv_disp.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../hal/../draw/lv_draw.h
 m2_test\lv_disp.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../hal/../draw/../lv_conf_internal.h
 m2_test\lv_disp.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../hal/../draw/../lv_conf_kconfig.h
-m2_test\lv_disp.o: ../Middlewares/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
+m2_test\lv_disp.o: ..\Middlewares\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
 m2_test\lv_disp.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../hal/../draw/../misc/lv_style.h
 m2_test\lv_disp.o: ..\Middlewares\LVGL\GUI\lvgl\src\core\../hal/../draw/../misc/../font/lv_font.h
 m2_test\lv_disp.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h

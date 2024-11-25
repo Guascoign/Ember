@@ -7,7 +7,6 @@
         "main.h": "c",
         "lv_port_disp_template.h": "c",
         "font.h": "c",
-        "hzlib.h": "c",
-        "lv_demo_benchmark.h": "c"
+        "hzlib.h": "c"
     }
 }
