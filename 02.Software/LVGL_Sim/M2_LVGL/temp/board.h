@@ -518,7 +518,7 @@
 
 #define LV_USE_RADIOBTN 0
 
-#define LV_USE_SPAN 1
+#define LV_USE_SPAN 0
 #if LV_USE_SPAN
 /*A line text can contain maximum num of span descriptor */
 #define LV_SPAN_SNIPPET_STACK_SIZE 64

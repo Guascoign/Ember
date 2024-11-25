@@ -238,6 +238,7 @@
 "m2_test\custom.o"
 "m2_test\lv_font_alatsi_regular_18.o"
 "m2_test\lv_font_montserratmedium_16.o"
+"m2_test\lv_font_youshebiaotihei_20.o"
 --library_type=microlib --strict --scatter "M2_test\M2_test.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

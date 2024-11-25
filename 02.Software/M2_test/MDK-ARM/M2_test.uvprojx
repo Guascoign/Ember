@@ -2685,6 +2685,11 @@
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_montserratMedium_16.c</FilePath>
             </File>
+            <File>
+              <FileName>lv_font_Youshebiaotihei_20.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_Youshebiaotihei_20.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -1,68 +1,8 @@
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'M2_test'
-compiling lv_dclock.c...
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_dclock.h(28): error:  #5: cannot open source input file "../../../core/lv_obj.h": No such file or directory
-  #include "../../../core/lv_obj.h"
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_dclock.c: 0 warnings, 1 error
-compiling lv_digitalclock.c...
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.h(50): error:  #77-D: this declaration has no storage class or type specifier
-  LV_ATTRIBUTE_EXTERN_DATA extern const lv_obj_class_t lv_digitalclock_class;
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.h(50): error:  #65: expected a ";"
-  LV_ATTRIBUTE_EXTERN_DATA extern const lv_obj_class_t lv_digitalclock_class;
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(44): error:  #136: struct "_lv_obj_class_t"  has no field "name"
-      .name = "digitalclock",
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(80): warning:  #223-D: function "lv_realloc" declared implicitly
-          digitalclock->text = lv_realloc(digitalclock->text, text_len);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(80): error:  #513: a value of type "int" cannot be assigned to an entity of type "char *"
-          digitalclock->text = lv_realloc(digitalclock->text, text_len);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(92): warning:  #223-D: function "lv_free" declared implicitly
-              lv_free(digitalclock->text);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(96): warning:  #223-D: function "lv_malloc" declared implicitly
-          digitalclock->text = lv_malloc(text_len);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(96): error:  #513: a value of type "int" cannot be assigned to an entity of type "char *"
-          digitalclock->text = lv_malloc(text_len);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(124): warning:  #223-D: function "lv_free" declared implicitly
-          lv_free(digitalclock->text);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(130): warning:  #223-D: function "_lv_text_set_text_vfmt" declared implicitly
-      digitalclock->text = _lv_text_set_text_vfmt(fmt, args);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(130): error:  #513: a value of type "int" cannot be assigned to an entity of type "char *"
-      digitalclock->text = _lv_text_set_text_vfmt(fmt, args);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(244): warning:  #223-D: function "lv_point_set" declared implicitly
-      lv_point_set(&digitalclock->offset, 0, 0);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(251): warning:  #223-D: function "lv_obj_remove_flag" declared implicitly
-      lv_obj_remove_flag(obj, LV_OBJ_FLAG_CLICKABLE);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(261): warning:  #223-D: function "lv_free" declared implicitly
-      if(!digitalclock->static_txt) lv_free(digitalclock->text);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(270): error:  #20: identifier "lv_result_t" is undefined
-      const lv_result_t res = lv_obj_event_base(MY_CLASS, e);
-KB: Unexpected type: 0
-error type>(271): error:  #20: identifier "LV_RESULT_OK" is undefined
-      if(res != LV_RESULT_OK) return;
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(303): warning:  #223-D: function "lv_text_get_size" declared implicitly
-              lv_text_get_size(&digitalclock->size_cache, digitalclock->text, font, letter_space, line_space, w, flag);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(320): error:  #20: identifier "lv_layer_t" is undefined
-      lv_layer_t * layer = lv_event_get_layer(e);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(320): error:  #20: identifier "layer" is undefined
-      lv_layer_t * layer = lv_event_get_layer(e);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(320): warning:  #223-D: function "lv_event_get_layer" declared implicitly
-      lv_layer_t * layer = lv_event_get_layer(e);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(329): error:  #136: struct "<unnamed>"  has no field "text"
-      digitalclock_draw_dsc.text = digitalclock->text;
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(349): error:  #165: too few arguments in function call
-      lv_draw_label(layer, &digitalclock_draw_dsc, &txt_coords);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(378): warning:  #223-D: function "lv_text_get_size" declared implicitly
-      lv_text_get_size(&size, digitalclock->text, font, letter_space, line_space, max_w, flag);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(392): warning:  #223-D: function "lv_strlen" declared implicitly
-      len = lv_strlen(text) + 1;
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c(403): warning:  #223-D: function "lv_strcpy" declared implicitly
-      lv_strcpy(digitalclock->text, text);
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\lv_digitalclock.c: 13 warnings, 12 errors
-compiling setup_scr_screen.c...
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\setup_scr_screen.c(133): warning:  #223-D: function "lv_dclock_create" declared implicitly
-      ui->screen_digital_clock_1 = lv_dclock_create(ui->screen, "11:25:50 AM");
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\setup_scr_screen.c(133): error:  #513: a value of type "int" cannot be assigned to an entity of type "lv_obj_t *"
-      ui->screen_digital_clock_1 = lv_dclock_create(ui->screen, "11:25:50 AM");
-..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\setup_scr_screen.c: 1 warning, 1 error
-"M2_test\M2_test.axf" - 14 Error(s), 14 Warning(s).
-Target not created.
-Build Time Elapsed:  00:00:03
+compiling freertos.c...
+linking...
+Program Size: Code=158900 RO-data=48308 RW-data=884 ZI-data=68268  
+FromELF: creating hex file...
+"M2_test\M2_test.axf" - 0 Error(s), 0 Warning(s).
+Build Time Elapsed:  00:00:04

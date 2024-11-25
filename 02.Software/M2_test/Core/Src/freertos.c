@@ -33,6 +33,7 @@
 #include "../generated/gui_guider.h"
 #include "../generated/events_init.h"
 #include "widgets_init.h"//LVGL时钟组件
+#include "gui_guider.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -181,11 +182,17 @@ void Start_LCD_Task(void const * argument)
 	lv_task_handler();
 	//display_blanking_off(display_dev);
 		
-		
+		char buffer[128];
+    int value = 42;
+    char text_buffer[128];
+    snprintf(buffer, sizeof(buffer), "Hello, World!\nValue: %d", value);
     while (1)
     {
       lv_timer_handler();
       vTaskDelay(5);
+      snprintf(text_buffer, 128, "Updated value: %d", value);
+value = value +1;
+      lv_label_set_text(guider_ui.screen_label_2, text_buffer);
     }
     
   }
