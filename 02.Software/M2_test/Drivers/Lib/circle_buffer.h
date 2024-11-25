@@ -17,6 +17,11 @@ typedef struct circle_buf {
 	uint8_t *buf;
 }circle_buf, *p_circle_buf;
 
+#define BUF_SIZE 256 // 假设缓冲区的最大大小
+extern uint8_t LCD_text_flag;
+
+void LCDPrint(const char *text, char *bufs, uint16_t buf_size);
+
 void circle_buf_init(p_circle_buf pCircleBuf, uint32_t len, uint8_t *buf);
 
 int circle_buf_read(p_circle_buf pCircleBuf, uint8_t *pVal);

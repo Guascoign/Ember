@@ -82,6 +82,7 @@
                 "d:\\Projects\\Ember\\02.Software\\M2_test\\Drivers\\BSP\\LCD",
                 "d:\\Projects\\Ember\\02.Software\\M2_test\\Drivers\\BSP\\RGB",
                 "d:\\Projects\\Ember\\02.Software\\M2_test\\Drivers\\BSP\\UART",
+                "d:\\Projects\\Ember\\02.Software\\M2_test\\Middlewares\\LVGL\\GUI_APP\\GUI_Guider\\generated\\images",
                 "d:\\Projects\\Ember\\02.Software\\M2_test\\Middlewares\\LVGL\\GUI_APP\\GUI_Guider\\generated\\guider_fonts"
             ],
             "defines": [

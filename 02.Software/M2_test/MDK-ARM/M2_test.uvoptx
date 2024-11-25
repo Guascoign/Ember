@@ -175,16 +175,16 @@
           <Type>0</Type>
           <LineNumber>169</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134227578</Address>
+          <Address>0</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
+          <BreakIfRCount>0</BreakIfRCount>
           <Filename>../Core/Src/freertos.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\M2_test\../Core/Src/freertos.c\169</Expression>
+          <Expression></Expression>
         </Bp>
         <Bp>
           <Number>2</Number>
@@ -3260,14 +3260,26 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\setup_scr_screen.c</PathWithFileName>
-      <FilenameWithoutPath>setup_scr_screen.c</FilenameWithoutPath>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\setup_scr_screen_1.c</PathWithFileName>
+      <FilenameWithoutPath>setup_scr_screen_1.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
     <File>
       <GroupNumber>15</GroupNumber>
       <FileNumber>234</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\setup_scr_screen_2.c</PathWithFileName>
+      <FilenameWithoutPath>setup_scr_screen_2.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>15</GroupNumber>
+      <FileNumber>235</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3279,25 +3291,13 @@
     </File>
     <File>
       <GroupNumber>15</GroupNumber>
-      <FileNumber>235</FileNumber>
-      <FileType>1</FileType>
-      <tvExp>0</tvExp>
-      <tvExpOptDlg>0</tvExpOptDlg>
-      <bDave2>0</bDave2>
-      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_montserratMedium_12.c</PathWithFileName>
-      <FilenameWithoutPath>lv_font_montserratMedium_12.c</FilenameWithoutPath>
-      <RteFlg>0</RteFlg>
-      <bShared>0</bShared>
-    </File>
-    <File>
-      <GroupNumber>15</GroupNumber>
       <FileNumber>236</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_Youshebiaotihei_16.c</PathWithFileName>
-      <FilenameWithoutPath>lv_font_Youshebiaotihei_16.c</FilenameWithoutPath>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\images\_indent_alpha_20x20.c</PathWithFileName>
+      <FilenameWithoutPath>_indent_alpha_20x20.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -3308,14 +3308,26 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_Guider\custom\custom.c</PathWithFileName>
-      <FilenameWithoutPath>custom.c</FilenameWithoutPath>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\images\_windowsxp_alpha_187x85.c</PathWithFileName>
+      <FilenameWithoutPath>_windowsxp_alpha_187x85.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
     <File>
       <GroupNumber>15</GroupNumber>
       <FileNumber>238</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\images\_windowsxp_alpha_198x89.c</PathWithFileName>
+      <FilenameWithoutPath>_windowsxp_alpha_198x89.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>15</GroupNumber>
+      <FileNumber>239</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3327,7 +3339,19 @@
     </File>
     <File>
       <GroupNumber>15</GroupNumber>
-      <FileNumber>239</FileNumber>
+      <FileNumber>240</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_montserratMedium_12.c</PathWithFileName>
+      <FilenameWithoutPath>lv_font_montserratMedium_12.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>15</GroupNumber>
+      <FileNumber>241</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3339,13 +3363,49 @@
     </File>
     <File>
       <GroupNumber>15</GroupNumber>
-      <FileNumber>240</FileNumber>
+      <FileNumber>242</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_Youshebiaotihei_10.c</PathWithFileName>
+      <FilenameWithoutPath>lv_font_Youshebiaotihei_10.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>15</GroupNumber>
+      <FileNumber>243</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_Youshebiaotihei_16.c</PathWithFileName>
+      <FilenameWithoutPath>lv_font_Youshebiaotihei_16.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>15</GroupNumber>
+      <FileNumber>244</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_Youshebiaotihei_20.c</PathWithFileName>
       <FilenameWithoutPath>lv_font_Youshebiaotihei_20.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>15</GroupNumber>
+      <FileNumber>245</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Middlewares\LVGL\GUI_APP\GUI_Guider\custom\custom.c</PathWithFileName>
+      <FilenameWithoutPath>custom.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

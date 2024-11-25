@@ -2651,9 +2651,14 @@
               <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\gui_guider.c</FilePath>
             </File>
             <File>
-              <FileName>setup_scr_screen.c</FileName>
+              <FileName>setup_scr_screen_1.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\setup_scr_screen.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\setup_scr_screen_1.c</FilePath>
+            </File>
+            <File>
+              <FileName>setup_scr_screen_2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\setup_scr_screen_2.c</FilePath>
             </File>
             <File>
               <FileName>widgets_init.c</FileName>
@@ -2661,19 +2666,19 @@
               <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\widgets_init.c</FilePath>
             </File>
             <File>
-              <FileName>lv_font_montserratMedium_12.c</FileName>
+              <FileName>_indent_alpha_20x20.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_montserratMedium_12.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\images\_indent_alpha_20x20.c</FilePath>
             </File>
             <File>
-              <FileName>lv_font_Youshebiaotihei_16.c</FileName>
+              <FileName>_windowsxp_alpha_187x85.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_Youshebiaotihei_16.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\images\_windowsxp_alpha_187x85.c</FilePath>
             </File>
             <File>
-              <FileName>custom.c</FileName>
+              <FileName>_windowsxp_alpha_198x89.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\custom\custom.c</FilePath>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\images\_windowsxp_alpha_198x89.c</FilePath>
             </File>
             <File>
               <FileName>lv_font_Alatsi_Regular_18.c</FileName>
@@ -2681,14 +2686,34 @@
               <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_Alatsi_Regular_18.c</FilePath>
             </File>
             <File>
+              <FileName>lv_font_montserratMedium_12.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_montserratMedium_12.c</FilePath>
+            </File>
+            <File>
               <FileName>lv_font_montserratMedium_16.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_montserratMedium_16.c</FilePath>
             </File>
             <File>
+              <FileName>lv_font_Youshebiaotihei_10.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_Youshebiaotihei_10.c</FilePath>
+            </File>
+            <File>
+              <FileName>lv_font_Youshebiaotihei_16.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_Youshebiaotihei_16.c</FilePath>
+            </File>
+            <File>
               <FileName>lv_font_Youshebiaotihei_20.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_Youshebiaotihei_20.c</FilePath>
+            </File>
+            <File>
+              <FileName>custom.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\LVGL\GUI_APP\GUI_Guider\custom\custom.c</FilePath>
             </File>
           </Files>
         </Group>

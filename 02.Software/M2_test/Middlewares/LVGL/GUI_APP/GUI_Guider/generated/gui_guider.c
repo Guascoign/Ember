@@ -73,12 +73,25 @@ void ui_animation(void * var, int32_t duration, int32_t delay, int32_t start_val
 void init_scr_del_flag(lv_ui *ui)
 {
 
-    ui->screen_del = true;
+    ui->screen_1_del = true;
+    ui->screen_2_del = true;
+}
+
+// 定义延迟切换的回调函数
+void change_to_screen_2(lv_timer_t *timer)
+{
+    lv_ui *ui = (lv_ui *)timer->user_data; // 从 timer 中获取用户数据
+    // 使用动画切换到 screen_2
+    lv_scr_load_anim(ui->screen_2, LV_SCR_LOAD_ANIM_FADE_ON, 200, 0, true);
 }
 
 void setup_ui(lv_ui *ui)
 {
     init_scr_del_flag(ui);
-    setup_scr_screen(ui);
-    lv_scr_load(ui->screen);
+    setup_scr_screen_1(ui);
+    setup_scr_screen_2(ui);
+    lv_scr_load(ui->screen_1);
+
+    lv_timer_t *timer = lv_timer_create(change_to_screen_2, 1600, ui);
+    lv_timer_set_repeat_count(timer, 1); // 设置只执行一次
 }

@@ -18,14 +18,19 @@ extern "C" {
 typedef struct
 {
   
-	lv_obj_t *screen;
-	bool screen_del;
-	lv_obj_t *screen_cont_1;
-	lv_obj_t *screen_bar_1;
-	lv_obj_t *screen_tileview_1;
-	lv_obj_t *screen_tileview_1_tile;
-	lv_obj_t *screen_label_2;
-	lv_obj_t *screen_label_3;
+	lv_obj_t *screen_1;
+	bool screen_1_del;
+	lv_obj_t *screen_1_cont_1;
+	lv_obj_t *screen_1_img_1;
+	lv_obj_t *screen_1_bar_1;
+	lv_obj_t *screen_2;
+	bool screen_2_del;
+	lv_obj_t *screen_2_cont_1;
+	lv_obj_t *screen_2_cont_2;
+	lv_obj_t *screen_2_label_3;
+	lv_obj_t *screen_2_label_1;
+	lv_obj_t *screen_2_label_2;
+	lv_obj_t *screen_2_img_1;
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -48,11 +53,14 @@ void setup_ui(lv_ui *ui);
 extern lv_ui guider_ui;
 
 
-void setup_scr_screen(lv_ui *ui);
+void setup_scr_screen_1(lv_ui *ui);
+void setup_scr_screen_2(lv_ui *ui);
+LV_IMG_DECLARE(_windowsxp_alpha_198x89);
+LV_IMG_DECLARE(_indent_alpha_20x20);
 
-LV_FONT_DECLARE(lv_font_Youshebiaotihei_20)
-LV_FONT_DECLARE(lv_font_montserratMedium_16)
 LV_FONT_DECLARE(lv_font_Youshebiaotihei_16)
+LV_FONT_DECLARE(lv_font_montserratMedium_16)
+LV_FONT_DECLARE(lv_font_Youshebiaotihei_10)
 
 
 #ifdef __cplusplus

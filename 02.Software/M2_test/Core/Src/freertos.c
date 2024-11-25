@@ -32,8 +32,8 @@
 #include "lv_demo_stress.h" 
 #include "../generated/gui_guider.h"
 #include "../generated/events_init.h"
-#include "widgets_init.h"//LVGL时钟组件
-#include "gui_guider.h"
+#include "widgets_init.h"
+#include "circle_buffer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -62,7 +62,11 @@ osThreadId EEPROMHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
+
 lv_ui guider_ui;
+uint8_t LCD_text_flag = 0; //文本更新标志位
+char LCD_text_buf[2560];
+
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void const * argument);
@@ -97,7 +101,7 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
   lv_init();											//lvgl系统初始化
 	lv_port_disp_init();						//lvgl显示接口初始化,放在lv_init()的后面
-	//LOG_MODULE_REGISTER(app);
+
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -118,11 +122,11 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 1024);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of LCD */
-  osThreadDef(LCD, Start_LCD_Task, osPriorityAboveNormal, 0, 1024);
+  osThreadDef(LCD, Start_LCD_Task, osPriorityAboveNormal, 0, 128);
   LCDHandle = osThreadCreate(osThread(LCD), NULL);
 
   /* definition and creation of LED */
@@ -150,10 +154,15 @@ void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
+	setup_ui(&guider_ui);
+  events_init(&guider_ui);
+	lv_task_handler();
+  //lv_label_set_text(guider_ui.screen_2_label_3, "Initializing...\n123");
+    while (1)
+    {
+      lv_timer_handler();
+      vTaskDelay(1);
+    }
   /* USER CODE END StartDefaultTask */
 }
 
@@ -168,35 +177,19 @@ void Start_LCD_Task(void const * argument)
 {
   /* USER CODE BEGIN Start_LCD_Task */
   /* Infinite loop */
-  for(;;)
-  {
-    //lv_demo_stress();
-		
-//    lv_obj_t *switch1 = lv_switch_create(lv_scr_act());
-//    lv_obj_set_size(switch1,200,100);
-//    lv_obj_t *switch2 = lv_switch_create(switch1);
-		
-		setup_ui(&guider_ui);
-   	events_init(&guider_ui);
-
-	lv_task_handler();
-	//display_blanking_off(display_dev);
-		
-		char buffer[128];
-    int value = 42;
-    char text_buffer[128];
-    snprintf(buffer, sizeof(buffer), "Hello, World!\nValue: %d", value);
-    while (1)
-    {
-      lv_timer_handler();
-      vTaskDelay(5);
-      snprintf(text_buffer, 128, "Updated value: %d", value);
-value = value +1;
-      lv_label_set_text(guider_ui.screen_label_2, text_buffer);
+    osDelay(1800); // 每500ms更新一次
+    /* 设置默认的标签文本 */
+    lv_label_set_text(guider_ui.screen_2_label_3, "Initializing...");
+    /* Infinite loop */
+    for (;;) {
+        if(LCD_text_flag)
+        {
+          lv_label_set_text(guider_ui.screen_2_label_3, LCD_text_buf);
+          LCD_text_flag = 0;
+        }
+        osDelay(500); // 每500ms更新一次
     }
-    
-  }
-  /* USER CODE END Start_LCD_Task */
+    /* USER CODE END Start_LCD_Task */
 }
 
 /* USER CODE BEGIN Header_Start_LED_Task */
@@ -210,11 +203,18 @@ void Start_LED_Task(void const * argument)
 {
   /* USER CODE BEGIN Start_LED_Task */
   /* Infinite loop */
+  osDelay(3000);
+  LCDPrint("test123123123\n" , LCD_text_buf,sizeof(LCD_text_buf));
+  osDelay(3000);
+  LCDPrint("test1123123123\n" , LCD_text_buf,sizeof(LCD_text_buf));
+  osDelay(3000);
+  LCDPrint("test2123123\n" , LCD_text_buf,sizeof(LCD_text_buf));
+  osDelay(3000);
+  LCDPrint("test31231233333\n" , LCD_text_buf,sizeof(LCD_text_buf));
   for(;;)
   {
 		HAL_GPIO_TogglePin(RUN_LED_GPIO_Port,RUN_LED_Pin);
-		HAL_Delay(100);
-    osDelay(1);
+    osDelay(200);
   }
   /* USER CODE END Start_LED_Task */
 }
@@ -240,5 +240,6 @@ void Start_EEPROM_Task(void const * argument)
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
+
 
 /* USER CODE END Application */
