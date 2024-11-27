@@ -178,8 +178,8 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 5 28 5 2232 28 1022")
-        (Scroll "-352 -5")
-        (Zoom "98")
+        (Scroll "0 218")
+        (Zoom "126")
         (Occurrence "/"))
       (Path "D:\PROJECTS\EMBER\01.HARDWARE\01.MAIN\01.SCH\EMBERMAIN.DSN")
       (Schematic "SCHEMATIC1")
