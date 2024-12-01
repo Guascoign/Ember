@@ -285,7 +285,7 @@ typedef struct os_thread_def  {
   uint32_t               stacksize;    ///< stack size requirements in bytes; 0 is default stack size
 #if( configSUPPORT_STATIC_ALLOCATION == 1 )
   uint32_t               *buffer;      ///< stack buffer for static allocation; NULL for dynamic allocation
-  osStaticThreadDef_t    *controlblock;     ///< control block to hold thread's data for static allocation; NULL for dynamic allocation
+  osStaticThreadDef_t    * ;     ///< control block to hold thread's data for static allocation; NULL for dynamic allocation
 #endif
 } osThreadDef_t;
 

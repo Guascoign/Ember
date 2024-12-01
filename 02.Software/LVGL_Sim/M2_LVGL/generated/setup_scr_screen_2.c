@@ -116,10 +116,10 @@ void setup_scr_screen_2(lv_ui *ui)
 
     //Write codes screen_2_label_2
     ui->screen_2_label_2 = lv_label_create(ui->screen_2_cont_1);
-    lv_label_set_text(ui->screen_2_label_2, "00H00M00S");
+    lv_label_set_text(ui->screen_2_label_2, "Runed\n00H00M00S");
     lv_label_set_long_mode(ui->screen_2_label_2, LV_LABEL_LONG_WRAP);
-    lv_obj_set_pos(ui->screen_2_label_2, 141, 14);
-    lv_obj_set_size(ui->screen_2_label_2, 93, 8);
+    lv_obj_set_pos(ui->screen_2_label_2, 131, 2);
+    lv_obj_set_size(ui->screen_2_label_2, 105, 23);
 
     //Write style for screen_2_label_2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
     lv_obj_set_style_border_width(ui->screen_2_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);

@@ -18,16 +18,22 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "dma.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
+#include "fsmc.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "iic.h"
-#include "uart_pack.h"
-#include "uart_printf.h"
-#include "at24cxx.h"
+#include "sys/sys.h"
+#include "delay/delay.h"  
+#include "usart/usart.h"   
+#include "LED/led.h"
+#include "LCD/lcd.h"
+#include "KEY/key.h"  
+#include "TIMER/timer.h"
+#include "SRAM/sram.h"
+#include "TOUCH/touch.h" 
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -91,33 +97,21 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_DMA_Init();
+  MX_FSMC_Init();
   MX_USART1_UART_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-	HAL_Delay(1000);
-  HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin,GPIO_PIN_SET);
-  HAL_Delay(1000);
-  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin,GPIO_PIN_SET);
-  HAL_Delay(1000);
-	printf("======================================\r\n");
-	printf("   ______  ______  _______ \r\n");
-	printf("  / __/  |/  / _ )/ __/ _ \\\r\n");
-	printf(" / _// /|_/ / _  / _// , _/\r\n");
-	printf("/___/_/  /_/____/___/_/|_| \r\n");
-	printf("System Start!\r\n");
-	printf("Version: 1.0\r\n"); 
-	printf("======================================\r\n");
-	printf("[info]Running....\r\n");  
-
-  //串口初始化
-struct UART_Device *pUARTDev = GetUARTDevice("STM32_Bare_HAL_UART1_IT");//获取外设地址指针
-pUARTDev->Init(pUARTDev, 115200, 8, 'N', 1);
-
-//AT24C02初始化
-struct AT24CXX_Device *pAT24Dev = AT24CXX_GetDevice("AT24C02");//获取外设地址指针
-pAT24Dev->AT24CXX_Check(pAT24Dev);
-
-  
+	
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//设置系统中断优先级分组2
+	delay_init(168);  //初始化延时函数
+	uart_init(115200);		//初始化串口波特率为115200
+	
+	LED_Init();					//初始化LED 
+ 	LCD_Init();					//LCD初始化 
+	KEY_Init(); 				//按键初始化  
+	TIM3_Int_Init(999,83);	//定时器初始化(1ms中断),用于给lvgl提供1ms的心跳节拍
+	FSMC_SRAM_Init();		//初始化外部sram
+	tp_dev.init();			//触摸屏初始化
 
   /* USER CODE END 2 */
 
@@ -131,8 +125,6 @@ pAT24Dev->AT24CXX_Check(pAT24Dev);
 
 
 
-    HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
-    HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }
@@ -154,12 +146,11 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
-  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
-  RCC_OscInitStruct.PLL.PLLM = 8;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = 4;
   RCC_OscInitStruct.PLL.PLLN = 168;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 4;

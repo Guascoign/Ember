@@ -23,6 +23,8 @@ typedef struct
 	lv_obj_t *screen_1_cont_1;
 	lv_obj_t *screen_1_img_1;
 	lv_obj_t *screen_1_bar_1;
+	lv_obj_t *screen_1_btn_1;
+	lv_obj_t *screen_1_btn_1_label;
 	lv_obj_t *screen_2;
 	bool screen_2_del;
 	lv_obj_t *screen_2_cont_1;
@@ -58,8 +60,9 @@ void setup_scr_screen_2(lv_ui *ui);
 LV_IMG_DECLARE(_windowsxp_alpha_198x89);
 LV_IMG_DECLARE(_indent_alpha_20x20);
 
-LV_FONT_DECLARE(lv_font_Youshebiaotihei_16)
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
+LV_FONT_DECLARE(lv_font_montserratMedium_12)
+LV_FONT_DECLARE(lv_font_Youshebiaotihei_16)
 LV_FONT_DECLARE(lv_font_Youshebiaotihei_10)
 
 
