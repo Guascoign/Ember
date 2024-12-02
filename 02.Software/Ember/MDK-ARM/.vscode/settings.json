@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "crc.h": "c",
+        "iic.h": "c"
+    }
+}
