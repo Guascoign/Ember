@@ -58,7 +58,7 @@ void LcdRefresh(void *pvParameters);             /* 任务函数 */
 /* LED 任务 配置
  * 包括: 任务句柄 任务优先级 堆栈大小 创建任务
  */
-#define LED_PRIO      3                   /* 任务优先级 */
+#define LED_PRIO      4                   /* 任务优先级 */
 #define LED_STK_SIZE  128                 /* 任务堆栈大小 */
 TaskHandle_t            LED_TaskHandle;  /* 任务句柄 */
 void LED(void *pvParameters);             /* 任务函数 */
@@ -128,7 +128,6 @@ void Main(void *pvParameters)
   
   while(1)
   {
-    lcdprintf("hello");
     vTaskDelay(pdMS_TO_TICKS(100));
   }
 }

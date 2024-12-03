@@ -716,7 +716,7 @@
 #endif    /* LV_IME_PINYIN_USE_K9_MODE */
 #endif    /* LV_USE_IME_PINYIN */
 /*Enable the text progress bar*/
-#define LV_USE_TEXTPROGRESS 1
+#define LV_USE_TEXTPROGRESS 0
 /*Enable the barcode*/
 #define LV_USE_BARCODE 0
 
