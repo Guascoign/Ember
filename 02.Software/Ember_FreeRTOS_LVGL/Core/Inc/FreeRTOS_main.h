@@ -1,7 +1,10 @@
 
-#ifndef __FREERTOS_DEMO_H
-#define __FREERTOS_DEMO_H
+#ifndef __FREERTOS_MAIN_H
+#define __FREERTOS_MAIN_H
 
-void freertos_main(void);
+
+void freertos_start(void);
+
+
 
 #endif

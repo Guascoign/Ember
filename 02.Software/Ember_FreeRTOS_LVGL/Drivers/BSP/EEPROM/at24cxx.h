@@ -8,9 +8,10 @@
 #ifndef __AT24CXX_H
 #define __AT24CXX_H
 
+#include "IIC/iic.h"
 #include "main.h"
 #include <stdint.h>
-#include "IIC/iic.h"
+
 
 #define AT24_Address 0xA0
 
@@ -33,7 +34,6 @@ typedef struct AT24CXX_Type
     uint16_t EEP_PAGESIZE;   //每页字节数
     uint8_t ADDR;           //地址
 }AT24CXX_TypeDef;           //存储器类型定义
-
 
 //定义AT24CXX类
 typedef struct AT24CXX_Device

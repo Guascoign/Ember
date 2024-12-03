@@ -24,12 +24,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "LCD/lcd.h"
-#include "circle_buffer.h"
-#include "IIC/iic.h"
-#include "UART/uart_pack.h"
-#include "uart_printf.h"
-#include "EEPROM/at24cxx.h"
 #include "FreeRTOS_main.h"
 /* USER CODE END Includes */
 
@@ -99,8 +93,7 @@ int main(void)
   MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
 	
-	
-	freertos_main();
+	freertos_start();
 	
   /* USER CODE END 2 */
 
@@ -111,8 +104,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-   // HAL_GPIO_TogglePin(RUNLED_GPIO_Port,RUNLED_Pin);
-    HAL_Delay(1000);
+    HAL_GPIO_TogglePin(RUNLED_GPIO_Port,RUNLED_Pin);
+    HAL_Delay(100);
   }
   /* USER CODE END 3 */
 }

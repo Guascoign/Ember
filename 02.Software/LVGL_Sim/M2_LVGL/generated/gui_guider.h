@@ -18,21 +18,48 @@ extern "C" {
 typedef struct
 {
   
-	lv_obj_t *screen_1;
-	bool screen_1_del;
-	lv_obj_t *screen_1_cont_1;
-	lv_obj_t *screen_1_img_1;
-	lv_obj_t *screen_1_bar_1;
-	lv_obj_t *screen_1_btn_1;
-	lv_obj_t *screen_1_btn_1_label;
-	lv_obj_t *screen_2;
-	bool screen_2_del;
-	lv_obj_t *screen_2_cont_1;
-	lv_obj_t *screen_2_cont_2;
-	lv_obj_t *screen_2_label_3;
-	lv_obj_t *screen_2_label_1;
-	lv_obj_t *screen_2_label_2;
-	lv_obj_t *screen_2_img_1;
+	lv_obj_t *Start_screen;
+	bool Start_screen_del;
+	lv_obj_t *Start_screen_cont_1;
+	lv_obj_t *Start_screen_Windows_img;
+	lv_obj_t *Start_screen_bar_1;
+	lv_obj_t *Start_screen_textprogress_1;
+	lv_obj_t *Outputs_screen;
+	bool Outputs_screen_del;
+	lv_obj_t *Outputs_screen_cont_1;
+	lv_obj_t *Outputs_screen_cont_2;
+	lv_obj_t *Outputs_screen_Consle_lable;
+	lv_obj_t *Outputs_screen_Output_lable;
+	lv_obj_t *Outputs_screen_Runtime_lable;
+	lv_obj_t *Outputs_screen_img_1;
+	lv_obj_t *Task_screen;
+	bool Task_screen_del;
+	lv_obj_t *Task_screen_cont_2;
+	lv_obj_t *Task_screen_cont_3;
+	lv_obj_t *Task_screen_Tasks;
+	lv_obj_t *Task_screen_btn_1;
+	lv_obj_t *Task_screen_btn_1_label;
+	lv_obj_t *Task_screen_label_1;
+	lv_obj_t *Task_screen_img_1;
+	lv_obj_t *Settings;
+	bool Settings_del;
+	lv_obj_t *Settings_menu_1;
+	lv_obj_t *Settings_menu_1_sidebar_page;
+	lv_obj_t *Settings_menu_1_subpage_1;
+	lv_obj_t *Settings_menu_1_cont_1;
+	lv_obj_t *Settings_menu_1_label_1;
+	lv_obj_t *Settings_menu_1_subpage_2;
+	lv_obj_t *Settings_menu_1_cont_2;
+	lv_obj_t *Settings_menu_1_label_2;
+	lv_obj_t *Settings_menu_1_subpage_3;
+	lv_obj_t *Settings_menu_1_cont_3;
+	lv_obj_t *Settings_menu_1_label_3;
+	lv_obj_t *Settings_menu_1_subpage_4;
+	lv_obj_t *Settings_menu_1_cont_4;
+	lv_obj_t *Settings_menu_1_label_4;
+	lv_obj_t *Settings_menu_1_subpage_5;
+	lv_obj_t *Settings_menu_1_cont_5;
+	lv_obj_t *Settings_menu_1_label_5;
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -55,15 +82,19 @@ void setup_ui(lv_ui *ui);
 extern lv_ui guider_ui;
 
 
-void setup_scr_screen_1(lv_ui *ui);
-void setup_scr_screen_2(lv_ui *ui);
+void setup_scr_Start_screen(lv_ui *ui);
+void setup_scr_Outputs_screen(lv_ui *ui);
+void setup_scr_Task_screen(lv_ui *ui);
+void setup_scr_Settings(lv_ui *ui);
 LV_IMG_DECLARE(_windowsxp_alpha_198x89);
 LV_IMG_DECLARE(_indent_alpha_20x20);
+LV_IMG_DECLARE(_indent_alpha_20x20);
 
-LV_FONT_DECLARE(lv_font_montserratMedium_16)
-LV_FONT_DECLARE(lv_font_montserratMedium_12)
 LV_FONT_DECLARE(lv_font_Youshebiaotihei_16)
+LV_FONT_DECLARE(lv_font_montserratMedium_16)
 LV_FONT_DECLARE(lv_font_Youshebiaotihei_10)
+LV_FONT_DECLARE(lv_font_montserratMedium_12)
+LV_FONT_DECLARE(lv_font_Youshebiaotihei_12)
 
 
 #ifdef __cplusplus

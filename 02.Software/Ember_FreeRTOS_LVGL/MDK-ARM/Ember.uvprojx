@@ -1762,6 +1762,11 @@
               <FileType>1</FileType>
               <FilePath>..\Drivers\BSP\LCD\st7789.c</FilePath>
             </File>
+            <File>
+              <FileName>lcd_consle.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\BSP\LCD\lcd_consle.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

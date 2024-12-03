@@ -54,38 +54,3 @@ int circle_buf_write(p_circle_buf pCircleBuf, uint8_t val)
 		return -1;
 	}
 }
-
-
-
-void LCDPrint(const char *text, char *bufs, uint16_t buf_size) {
-    /*
-     * 将缓冲区内容向后移动 `text` 的长度，然后将 `text` 拼接到缓冲区头部。
-     *
-     * 参数：
-     *     text: 要存储的文本字符串。
-     *     bufs: 缓冲区，用于存储文本的字符数组。
-     *     buf_size: 缓冲区的总大小。
-     */
-
-    // 获取文本长度
-    uint16_t text_len = strlen(text);
-
-    // 获取缓冲区中原始内容的长度
-    uint16_t bufs_len = strlen(bufs);
-
-    // 如果文本长度加原始内容超过缓冲区大小，截断原始内容
-    if (text_len + bufs_len >= buf_size) {
-        bufs_len = buf_size - text_len - 1; // 为 `text` 和终止符留出空间
-    }
-
-    // 将现有内容向后移动，为 `text` 腾出空间
-    memmove(bufs + text_len, bufs, bufs_len + 1); // +1 复制 '\0'
-
-    // 将 `text` 复制到缓冲区的头部
-    memcpy(bufs, text, text_len);
-
-    // 确保缓冲区以 `\0` 结束
-    bufs[text_len + bufs_len] = '\0';
-
-	LCD_text_flag = 1;
-}

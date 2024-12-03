@@ -292,11 +292,11 @@ void AT24CXX_Read(struct AT24CXX_Device *p_AT24Dev, uint16_t ReadAddr, uint8_t *
 
 
 //实例化AT24CXX对象
-extern struct IIC_Device IIC1;//IIC.c定义接口
+extern struct IIC_Device IIC2;//IIC.c定义接口
 struct AT24CXX_Device EEPROM_device = {
     .name = "EEPROM",
     .EEP_TYPE =  &AT24C64,
-    .IIC_Device = &IIC1,
+    .IIC_Device = &IIC2,
     .AT24CXX_Init = AT24CXX_Init,
     .AT24CXX_ReadOneByte = AT24CXX_ReadOneByte, //done
     .AT24CXX_WriteOneByte = AT24CXX_WriteOneByte,   //done
