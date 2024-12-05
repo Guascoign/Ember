@@ -43,7 +43,7 @@ void start_task(void *pvParameters);        /* 任务函数 */
  * 包括: 任务句柄 任务优先级 堆栈大小 创建任务
  */
 #define Main_PRIO      3                   /* 任务优先级 */
-#define Main_STK_SIZE  128                 /* 任务堆栈大小 */
+#define Main_STK_SIZE  1280                 /* 任务堆栈大小 */
 TaskHandle_t            Main_TaskHandle;  /* 任务句柄 */
 void Main(void *pvParameters);             /* 任务函数 */
 
@@ -125,7 +125,10 @@ void start_task(void *pvParameters)
  */
 void Main(void *pvParameters)
 {
-  
+  vTaskDelay(pdMS_TO_TICKS(3000));
+	lcdprintf("HELLO");
+	
+	
   while(1)
   {
     vTaskDelay(pdMS_TO_TICKS(100));

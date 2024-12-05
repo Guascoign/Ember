@@ -1,6 +1,6 @@
 (ExpressProject ""
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[11/23/24]")
+  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[12/05/24]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library")
@@ -49,6 +49,26 @@
       (Sort User)))
   (Folder "Logs")
   (PartMRUSelector
+    (CON_6
+      (FullPartName "CON_6.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\HEADDER.OLB")
+      (DeviceIndex "0"))
+    (Ember_V1.2
+      (FullPartName "Ember_V1.2B.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\PERIPHERALS.OLB")
+      (DeviceIndex "1"))
+    (REF3033AIDBZR
+      (FullPartName "REF3033AIDBZR.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\POWER.OLB")
+      (DeviceIndex "0"))
+    (SW_SIQ
+      (FullPartName "SW_SIQ.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
+      (DeviceIndex "0"))
+    (MicroSD
+      (FullPartName "MicroSD.Normal")
+      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\HEADDER.OLB")
+      (DeviceIndex "0"))
     (CON_3
       (FullPartName "CON_3.Normal")
       (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\HEADDER.OLB")
@@ -79,9 +99,9 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 2232 28 1022")
-        (Scroll "-462 -9")
-        (Zoom "131")
+        (Placement "44 0 1 -1 -1 5 28 5 2232 28 1022")
+        (Scroll "0 317")
+        (Zoom "262")
         (Occurrence "/"))
       (Path "D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\EMBERBASE.DSN")
       (Schematic "SCHEMATIC1")
@@ -89,20 +109,10 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 2232 28 1022")
-        (Scroll "157 373")
-        (Zoom "196")
+        (Placement "44 0 1 -1 -1 5 28 5 2232 28 1022")
+        (Scroll "-352 -5")
+        (Zoom "98")
         (Occurrence "/"))
       (Path "D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\EMBERBASE.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "03 MCU"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 2232 28 1022")
-        (Scroll "-462 -9")
-        (Zoom "131")
-        (Occurrence "/"))
-      (Path "D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\EMBERBASE.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "01 VERSION"))))
+      (Page "03 MCU"))))

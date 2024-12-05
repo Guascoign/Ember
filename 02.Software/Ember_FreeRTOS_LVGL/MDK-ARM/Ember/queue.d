@@ -1,0 +1,15 @@
+ember\queue.o: ..\Middlewares_User\FreeRTOS\queue.c
+ember\queue.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+ember\queue.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+ember\queue.o: ..\Middlewares_User\FreeRTOS\include\FreeRTOS.h
+ember\queue.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+ember\queue.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+ember\queue.o: ..\Middlewares_User\FreeRTOS\include\FreeRTOSConfig.h
+ember\queue.o: ..\Middlewares_User\FreeRTOS\include\projdefs.h
+ember\queue.o: ..\Middlewares_User\FreeRTOS\include\portable.h
+ember\queue.o: ..\Middlewares_User\FreeRTOS\include\deprecated_definitions.h
+ember\queue.o: ..\Middlewares_User\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
+ember\queue.o: ..\Middlewares_User\FreeRTOS\include\mpu_wrappers.h
+ember\queue.o: ..\Middlewares_User\FreeRTOS\include\task.h
+ember\queue.o: ..\Middlewares_User\FreeRTOS\include\list.h
+ember\queue.o: ..\Middlewares_User\FreeRTOS\include\queue.h

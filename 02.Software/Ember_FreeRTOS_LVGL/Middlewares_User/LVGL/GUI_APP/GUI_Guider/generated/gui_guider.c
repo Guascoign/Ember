@@ -85,6 +85,9 @@ void change_to_screen_2(lv_timer_t *timer)
     lv_scr_load_anim(ui->screen_2, LV_SCR_LOAD_ANIM_FADE_ON, 200, 0, true);
 }
 
+
+
+
 void setup_ui(lv_ui *ui)
 {
     init_scr_del_flag(ui);
@@ -94,4 +97,5 @@ void setup_ui(lv_ui *ui)
 
     lv_timer_t *timer = lv_timer_create(change_to_screen_2, 1600, ui);
     lv_timer_set_repeat_count(timer, 1); // 设置只执行一次
+	
 }
