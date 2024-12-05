@@ -1,3 +1,0 @@
-100ask: www.100ask.net
-100ask lvgl docs: https://lvgl.100ask.net
-100ask bilibili: https://space.bilibili.com/275908810
