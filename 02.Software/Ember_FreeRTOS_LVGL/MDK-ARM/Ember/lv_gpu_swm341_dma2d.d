@@ -4,7 +4,7 @@ ember\lv_gpu_swm341_dma2d.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\swm341_d
 ember\lv_gpu_swm341_dma2d.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\swm341_dma2d\../../misc/../lv_conf_internal.h
 ember\lv_gpu_swm341_dma2d.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\lv_gpu_swm341_dma2d.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\swm341_dma2d\../../misc/../lv_conf_kconfig.h
-ember\lv_gpu_swm341_dma2d.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lv_gpu_swm341_dma2d.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lv_gpu_swm341_dma2d.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\swm341_dma2d\../../misc/lv_assert.h
 ember\lv_gpu_swm341_dma2d.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\swm341_dma2d\../../misc/lv_log.h
 ember\lv_gpu_swm341_dma2d.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\swm341_dma2d\../../misc/lv_types.h

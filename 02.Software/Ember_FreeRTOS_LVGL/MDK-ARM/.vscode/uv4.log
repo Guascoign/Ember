@@ -1,17 +1,2 @@
-*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Build target 'Ember'
-compiling setup_scr_screen_2.c...
-"no source": Error:  #5: cannot open source input file "..\Middlewares_User\LVGL\GUI_APP\GUI_Guider\generated\setup_scr_screen_2.c": No such file or directory
-..\Middlewares_User\LVGL\GUI_APP\GUI_Guider\generated\setup_scr_screen_2.c: 0 warnings, 1 error
-compiling setup_scr_screen_1.c...
-"no source": Error:  #5: cannot open source input file "..\Middlewares_User\LVGL\GUI_APP\GUI_Guider\generated\setup_scr_screen_1.c": No such file or directory
-..\Middlewares_User\LVGL\GUI_APP\GUI_Guider\generated\setup_scr_screen_1.c: 0 warnings, 1 error
-compiling gui_guider.c...
-..\Middlewares_User\LVGL\GUI_APP\GUI_Guider\generated\gui_guider.c(96): error: At end of source:  #67: expected a "}"
-..\Middlewares_User\LVGL\GUI_APP\GUI_Guider\generated\gui_guider.c: 0 warnings, 1 error
-compiling events_init.c...
-compiling widgets_init.c...
-compiling FreeRTOS_main.c...
-"Ember\Ember.axf" - 3 Error(s), 0 Warning(s).
-Target not created.
-Build Time Elapsed:  00:00:04
+Load "Ember\\Ember.axf" 
+Erase Done.Programming Done.Verify OK.Flash Load finished at 15:23:00

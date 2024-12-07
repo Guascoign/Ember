@@ -9,7 +9,7 @@ ember\qrcodegen.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\qrcodegen.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\qrcode\../../../misc/lv_assert.h
 ember\qrcodegen.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\qrcode\../../../misc/../lv_conf_internal.h
 ember\qrcodegen.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\qrcode\../../../misc/../lv_conf_kconfig.h
-ember\qrcodegen.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\qrcodegen.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\qrcodegen.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\qrcode\../../../misc/lv_log.h
 ember\qrcodegen.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\qrcode\../../../misc/lv_types.h
 ember\qrcodegen.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\qrcode\../../../misc/lv_mem.h

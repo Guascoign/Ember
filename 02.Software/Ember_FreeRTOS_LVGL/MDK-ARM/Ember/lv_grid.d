@@ -5,7 +5,7 @@ ember\lv_grid.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\layouts\grid\../fle
 ember\lv_grid.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\layouts\grid\../flex/../../../core/../lv_conf_internal.h
 ember\lv_grid.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\lv_grid.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\layouts\grid\../flex/../../../core/../lv_conf_kconfig.h
-ember\lv_grid.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lv_grid.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lv_grid.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ember\lv_grid.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 ember\lv_grid.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\layouts\grid\../flex/../../../core/../misc/lv_style.h

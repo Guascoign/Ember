@@ -6,7 +6,7 @@ ember\lv_monkey.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\others\monkey\../
 ember\lv_monkey.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\others\monkey\../../../../src/misc/../lv_conf_internal.h
 ember\lv_monkey.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\lv_monkey.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\others\monkey\../../../../src/misc/../lv_conf_kconfig.h
-ember\lv_monkey.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lv_monkey.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lv_monkey.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\others\monkey\../../../../src/misc/lv_types.h
 ember\lv_monkey.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\others\monkey\../../../../src/misc/lv_timer.h
 ember\lv_monkey.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\others\monkey\../../../../src/misc/../hal/lv_hal_tick.h

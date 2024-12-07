@@ -4,7 +4,7 @@ ember\lv_snapshot.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\lv_snapshot.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ember\lv_snapshot.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\others\snapshot\../../../lv_conf_internal.h
 ember\lv_snapshot.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\others\snapshot\../../../lv_conf_kconfig.h
-ember\lv_snapshot.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lv_snapshot.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lv_snapshot.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\others\snapshot\../../../core/lv_obj.h
 ember\lv_snapshot.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 ember\lv_snapshot.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\others\snapshot\../../../core/../misc/lv_style.h

@@ -6,7 +6,7 @@ ember\lv_font_loader.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\font\../../lvgl.h
 ember\lv_font_loader.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\font\../../src/misc/lv_log.h
 ember\lv_font_loader.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\font\../../src/misc/../lv_conf_internal.h
 ember\lv_font_loader.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\font\../../src/misc/../lv_conf_kconfig.h
-ember\lv_font_loader.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lv_font_loader.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lv_font_loader.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\font\../../src/misc/lv_types.h
 ember\lv_font_loader.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\font\../../src/misc/lv_timer.h
 ember\lv_font_loader.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\font\../../src/misc/../hal/lv_hal_tick.h

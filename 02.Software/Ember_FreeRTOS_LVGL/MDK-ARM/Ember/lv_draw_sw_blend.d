@@ -5,7 +5,7 @@ ember\lv_draw_sw_blend.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\sw\../../mi
 ember\lv_draw_sw_blend.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\sw\../../misc/../lv_conf_internal.h
 ember\lv_draw_sw_blend.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\lv_draw_sw_blend.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\sw\../../misc/../lv_conf_kconfig.h
-ember\lv_draw_sw_blend.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lv_draw_sw_blend.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lv_draw_sw_blend.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\sw\../../misc/lv_assert.h
 ember\lv_draw_sw_blend.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\sw\../../misc/lv_log.h
 ember\lv_draw_sw_blend.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\sw\../../misc/lv_types.h

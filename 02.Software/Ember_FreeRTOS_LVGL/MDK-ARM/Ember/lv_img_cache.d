@@ -3,7 +3,7 @@ ember\lv_img_cache.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\../misc/lv_asse
 ember\lv_img_cache.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\../misc/../lv_conf_internal.h
 ember\lv_img_cache.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\lv_img_cache.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\../misc/../lv_conf_kconfig.h
-ember\lv_img_cache.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lv_img_cache.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lv_img_cache.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\../misc/lv_log.h
 ember\lv_img_cache.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\../misc/lv_types.h
 ember\lv_img_cache.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\../misc/lv_mem.h

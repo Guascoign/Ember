@@ -4,7 +4,7 @@ ember\lv_calendar_header_arrow.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\wi
 ember\lv_calendar_header_arrow.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\widgets\calendar\../../../core/../lv_conf_internal.h
 ember\lv_calendar_header_arrow.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\lv_calendar_header_arrow.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\widgets\calendar\../../../core/../lv_conf_kconfig.h
-ember\lv_calendar_header_arrow.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lv_calendar_header_arrow.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lv_calendar_header_arrow.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ember\lv_calendar_header_arrow.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 ember\lv_calendar_header_arrow.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\widgets\calendar\../../../core/../misc/lv_style.h

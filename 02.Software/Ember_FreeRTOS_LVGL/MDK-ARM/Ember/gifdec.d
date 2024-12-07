@@ -4,7 +4,7 @@ ember\gifdec.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\gifdec.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\gif\../../../misc/lv_fs.h
 ember\gifdec.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\gif\../../../misc/../lv_conf_internal.h
 ember\gifdec.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\gif\../../../misc/../lv_conf_kconfig.h
-ember\gifdec.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\gifdec.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\gifdec.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 ember\gifdec.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\gif\../../../misc/lv_log.h
 ember\gifdec.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\gif\../../../misc/lv_types.h

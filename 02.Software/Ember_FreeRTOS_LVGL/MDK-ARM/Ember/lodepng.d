@@ -7,7 +7,7 @@ ember\lodepng.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\png\../../../.
 ember\lodepng.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\png\../../../../src/misc/../lv_conf_internal.h
 ember\lodepng.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\lodepng.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\png\../../../../src/misc/../lv_conf_kconfig.h
-ember\lodepng.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lodepng.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lodepng.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\png\../../../../src/misc/lv_types.h
 ember\lodepng.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\png\../../../../src/misc/lv_timer.h
 ember\lodepng.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\libs\png\../../../../src/misc/../hal/lv_hal_tick.h

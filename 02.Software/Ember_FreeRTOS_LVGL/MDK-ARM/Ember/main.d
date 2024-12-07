@@ -33,6 +33,9 @@ ember\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 ember\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 ember\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 ember\main.o: ../Core/Inc/spi.h
+ember\main.o: ../Core/Inc/tim.h
 ember\main.o: ../Core/Inc/usart.h
 ember\main.o: ../Core/Inc/gpio.h
+ember\main.o: ../Drivers/BSP/BEEPER/BEEPER.h
+ember\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ember\main.o: ../Core/Inc/FreeRTOS_main.h

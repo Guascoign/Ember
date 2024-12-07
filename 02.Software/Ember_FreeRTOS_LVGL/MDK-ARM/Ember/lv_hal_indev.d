@@ -3,7 +3,7 @@ ember\lv_hal_indev.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\hal\../misc/lv_asser
 ember\lv_hal_indev.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\hal\../misc/../lv_conf_internal.h
 ember\lv_hal_indev.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\lv_hal_indev.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\hal\../misc/../lv_conf_kconfig.h
-ember\lv_hal_indev.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lv_hal_indev.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lv_hal_indev.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\hal\../misc/lv_log.h
 ember\lv_hal_indev.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\hal\../misc/lv_types.h
 ember\lv_hal_indev.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\hal\../misc/lv_mem.h

@@ -6,7 +6,7 @@ ember\lv_tabview.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\widgets\tabview\
 ember\lv_tabview.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\widgets\tabview\../../../../src/misc/../lv_conf_internal.h
 ember\lv_tabview.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\lv_tabview.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\widgets\tabview\../../../../src/misc/../lv_conf_kconfig.h
-ember\lv_tabview.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lv_tabview.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lv_tabview.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\widgets\tabview\../../../../src/misc/lv_types.h
 ember\lv_tabview.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\widgets\tabview\../../../../src/misc/lv_timer.h
 ember\lv_tabview.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\widgets\tabview\../../../../src/misc/../hal/lv_hal_tick.h

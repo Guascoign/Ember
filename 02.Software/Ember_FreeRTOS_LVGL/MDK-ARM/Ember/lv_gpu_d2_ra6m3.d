@@ -4,7 +4,7 @@ ember\lv_gpu_d2_ra6m3.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\renesas\../.
 ember\lv_gpu_d2_ra6m3.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\renesas\../../misc/../lv_conf_internal.h
 ember\lv_gpu_d2_ra6m3.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\lv_gpu_d2_ra6m3.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\renesas\../../misc/../lv_conf_kconfig.h
-ember\lv_gpu_d2_ra6m3.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lv_gpu_d2_ra6m3.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lv_gpu_d2_ra6m3.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\renesas\../../misc/lv_assert.h
 ember\lv_gpu_d2_ra6m3.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\renesas\../../misc/lv_log.h
 ember\lv_gpu_d2_ra6m3.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\renesas\../../misc/lv_types.h

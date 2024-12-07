@@ -5,7 +5,7 @@ ember\lv_refr.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\core\lv_obj.h
 ember\lv_refr.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\core\../lv_conf_internal.h
 ember\lv_refr.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\lv_refr.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\core\../lv_conf_kconfig.h
-ember\lv_refr.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lv_refr.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lv_refr.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 ember\lv_refr.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\core\../misc/lv_style.h
 ember\lv_refr.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\core\../misc/../font/lv_font.h

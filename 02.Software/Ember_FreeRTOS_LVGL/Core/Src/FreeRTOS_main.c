@@ -12,6 +12,7 @@
 #include "EEPROM/at24cxx.h"
 #include "UART/uart_pack.h"
 #include "uart_printf.h"
+#include "BEEPER/BEEPER.h"
 /*LVGL*********************************************************************************************/
 #include "lvgl.h"
 #include "lv_port_disp_template.h"
@@ -30,6 +31,7 @@ typedef struct Run_time
   }Run_time_TypeDef;
   Run_time_TypeDef run_time = {0,0,0};
 
+uint16_t Beeper_count;
 /******************************************************************************************************/
 /* START_TASK 任务 配置
  * 包括: 任务句柄 任务优先级 堆栈大小 创建任务
@@ -62,6 +64,14 @@ void LcdRefresh(void *pvParameters);             /* 任务函数 */
 #define LED_STK_SIZE  128                 /* 任务堆栈大小 */
 TaskHandle_t            LED_TaskHandle;  /* 任务句柄 */
 void LED(void *pvParameters);             /* 任务函数 */
+
+/* Beeper 任务 配置
+ * 包括: 任务句柄 任务优先级 堆栈大小 创建任务
+ */
+#define Beeper_PRIO      4                   /* 任务优先级 */
+#define Beeper_STK_SIZE  128                 /* 任务堆栈大小 */
+TaskHandle_t            Beeper_TaskHandle;  /* 任务句柄 */
+void Beeper(void *pvParameters);             /* 任务函数 */
 /******************************************************************************************************/
 /**
  * @brief       FreeRTOS例程入口函数
@@ -92,6 +102,9 @@ void freertos_start(void)
 void start_task(void *pvParameters)
 {
   taskENTER_CRITICAL();           /* 进入临界区 */
+  Beeper_Init();						// 蜂鸣器初始化
+
+
   /* 创建任务1 */
   xTaskCreate((TaskFunction_t )Main,
               (const char*    )"Main_Task",
@@ -113,6 +126,14 @@ void start_task(void *pvParameters)
               (void*          )NULL,
               (UBaseType_t    )LED_PRIO,
               (TaskHandle_t*  )&LED_TaskHandle);
+  /* 创建任务4 */
+  xTaskCreate((TaskFunction_t )Beeper,
+              (const char*    )"Beeper_Task",
+              (uint16_t       )Beeper_STK_SIZE,
+              (void*          )NULL,
+              (UBaseType_t    )Beeper_PRIO,
+              (TaskHandle_t*  )&Beeper_TaskHandle);
+
 
   vTaskDelete(StartTask_Handler); /* 删除开始任务 */
   taskEXIT_CRITICAL();            /* 退出临界区 */
@@ -126,12 +147,14 @@ void start_task(void *pvParameters)
 void Main(void *pvParameters)
 {
   vTaskDelay(pdMS_TO_TICKS(3000));
-	lcdprintf("HELLO");
-	
-	
+	lcdprintf("HELo\n");
+	Beeper_Perform(TWINKLE_TWINKLE);		// 蜂鸣器响声
+	lcdprintf("Beep!\n");
+  vTaskDelay(pdMS_TO_TICKS(1000));
   while(1)
   {
-    vTaskDelay(pdMS_TO_TICKS(100));
+  
+    vTaskDelay(pdMS_TO_TICKS(1000));
   }
 }
 
@@ -186,3 +209,23 @@ void LED(void *pvParameters)
     lv_label_set_text(guider_ui.screen_2_label_2, LCD_time_buf);
   }
 }
+
+/**
+ * @brief       Beeper
+ * @param       pvParameters : 传入参数(未用到)
+ * @retval      无
+ */
+void Beeper(void *pvParameters)
+{
+  
+  while(1)
+  {
+    vTaskDelay(pdMS_TO_TICKS(10));
+    		/* ---------- Beeper ---------- */
+		if (++Beeper_count >=2)
+		{
+			Beeper_Proc();
+			Beeper_count = 0;
+		}
+  }
+  }

@@ -8,7 +8,7 @@ ember\lv_hal_disp.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\hal\lv_hal.h
 ember\lv_hal_disp.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\hal\../draw/lv_draw.h
 ember\lv_hal_disp.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\hal\../draw/../lv_conf_internal.h
 ember\lv_hal_disp.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\hal\../draw/../lv_conf_kconfig.h
-ember\lv_hal_disp.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lv_hal_disp.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lv_hal_disp.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\hal\../draw/../misc/lv_style.h
 ember\lv_hal_disp.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\hal\../draw/../misc/../font/lv_font.h
 ember\lv_hal_disp.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\hal\../draw/../misc/../font/lv_symbol_def.h

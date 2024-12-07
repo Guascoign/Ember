@@ -6,7 +6,7 @@ ember\lv_ime_pinyin.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\others\ime\..
 ember\lv_ime_pinyin.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\others\ime\../../../../src/misc/../lv_conf_internal.h
 ember\lv_ime_pinyin.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\lv_ime_pinyin.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\others\ime\../../../../src/misc/../lv_conf_kconfig.h
-ember\lv_ime_pinyin.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lv_ime_pinyin.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lv_ime_pinyin.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\others\ime\../../../../src/misc/lv_types.h
 ember\lv_ime_pinyin.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\others\ime\../../../../src/misc/lv_timer.h
 ember\lv_ime_pinyin.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\others\ime\../../../../src/misc/../hal/lv_hal_tick.h

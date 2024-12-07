@@ -5,7 +5,7 @@ ember\lv_draw_sw_dither.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\sw\../../c
 ember\lv_draw_sw_dither.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\sw\../../core/../misc/../lv_conf_internal.h
 ember\lv_draw_sw_dither.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\lv_draw_sw_dither.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\sw\../../core/../misc/../lv_conf_kconfig.h
-ember\lv_draw_sw_dither.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lv_draw_sw_dither.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lv_draw_sw_dither.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 ember\lv_draw_sw_dither.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\sw\lv_draw_sw_gradient.h
 ember\lv_draw_sw_dither.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\draw\sw\../../misc/lv_color.h

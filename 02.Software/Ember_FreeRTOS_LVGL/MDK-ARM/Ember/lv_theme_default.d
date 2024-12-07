@@ -5,7 +5,7 @@ ember\lv_theme_default.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\themes\def
 ember\lv_theme_default.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\themes\default\../../../../src/misc/../lv_conf_internal.h
 ember\lv_theme_default.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\lv_theme_default.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\themes\default\../../../../src/misc/../lv_conf_kconfig.h
-ember\lv_theme_default.o: ..\Middlewares_User\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+ember\lv_theme_default.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 ember\lv_theme_default.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\themes\default\../../../../src/misc/lv_types.h
 ember\lv_theme_default.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\themes\default\../../../../src/misc/lv_timer.h
 ember\lv_theme_default.o: ..\Middlewares_User\LVGL\GUI\lvgl\src\extra\themes\default\../../../../src/misc/../hal/lv_hal_tick.h

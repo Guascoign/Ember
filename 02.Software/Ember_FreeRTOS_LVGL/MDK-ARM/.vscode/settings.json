@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "beeper.h": "c",
+        "main.h": "c"
+    }
+}

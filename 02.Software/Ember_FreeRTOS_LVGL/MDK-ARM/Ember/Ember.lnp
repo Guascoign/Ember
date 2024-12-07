@@ -4,6 +4,7 @@
 "ember\main.o"
 "ember\gpio.o"
 "ember\spi.o"
+"ember\tim.o"
 "ember\usart.o"
 "ember\stm32f4xx_it.o"
 "ember\stm32f4xx_hal_msp.o"
@@ -242,6 +243,7 @@
 "ember\circle_buffer.o"
 "ember\crc.o"
 "ember\uart_printf.o"
+"ember\beeper.o"
 --strict --scatter "Ember\Ember.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

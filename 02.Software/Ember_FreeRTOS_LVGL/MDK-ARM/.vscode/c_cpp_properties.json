@@ -83,7 +83,8 @@
                 "d:\\Projects\\Ember\\02.Software\\Ember_FreeRTOS_LVGL\\Drivers\\BSP\\IIC",
                 "d:\\Projects\\Ember\\02.Software\\Ember_FreeRTOS_LVGL\\Drivers\\BSP\\LCD",
                 "d:\\Projects\\Ember\\02.Software\\Ember_FreeRTOS_LVGL\\Drivers\\BSP\\EEPROM",
-                "d:\\Projects\\Ember\\02.Software\\Ember_FreeRTOS_LVGL\\Drivers\\BSP\\UART"
+                "d:\\Projects\\Ember\\02.Software\\Ember_FreeRTOS_LVGL\\Drivers\\BSP\\UART",
+                "d:\\Projects\\Ember\\02.Software\\Ember_FreeRTOS_LVGL\\Drivers\\BSP\\BEEPER"
             ],
             "defines": [
                 "USE_HAL_DRIVER",
