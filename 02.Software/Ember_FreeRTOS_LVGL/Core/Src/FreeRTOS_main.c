@@ -32,7 +32,10 @@ typedef struct Run_time
   }Run_time_TypeDef;
   Run_time_TypeDef run_time = {0,0,0};
 
-uint16_t Beeper_count;
+static uint16_t Beeper_count;
+static uint16_t Runled_count = 0;  // 计数器
+static uint8_t Runled_status = 0;     // 0 表示 RESET，1 表示 SET
+void Boot_anim(void);
 /******************************************************************************************************/
 /* START_TASK 任务 配置
  * 包括: 任务句柄 任务优先级 堆栈大小 创建任务
@@ -147,35 +150,10 @@ void start_task(void *pvParameters)
  */
 void Main(void *pvParameters)
 {
-  vTaskDelay(pdMS_TO_TICKS(3000));
-  lcdprintf("=================\r\n"); 
-  lcdprintf("System Start!\r\n"); 
-  vTaskDelay(pdMS_TO_TICKS(100));
-  lcdprintf("LVGL V8.4.0\r\n");
-  vTaskDelay(pdMS_TO_TICKS(100));
-  lcdprintf("FreeRTOS V202212.01\r\n");
-  vTaskDelay(pdMS_TO_TICKS(100));
-  lcdprintf("=================\r\n"); 
-  vTaskDelay(pdMS_TO_TICKS(1000));
-	lcdprintf("HELLO!\n");
-  vTaskDelay(pdMS_TO_TICKS(200));
-  Beeper_Perform(BOOT);		// 蜂鸣器响声
+  
+ Boot_anim();
   while(1)
   {
-    taskENTER_CRITICAL();           /* 进入临界区 */
-		PWM_WS2812B_Red(3);
-    taskEXIT_CRITICAL();            /* 退出临界区 */
-    lcdprintf("RED!\n");
-    vTaskDelay(pdMS_TO_TICKS(1000));
-    taskENTER_CRITICAL();           /* 进入临界区 */
-		PWM_WS2812B_Blue(3);
-    taskEXIT_CRITICAL();            /* 退出临界区 */
-    lcdprintf("RED!\n");
-    vTaskDelay(pdMS_TO_TICKS(1000));
-    taskENTER_CRITICAL();           /* 进入临界区 */
-		PWM_WS2812B_Green(3);
-    taskEXIT_CRITICAL();            /* 退出临界区 */
-    lcdprintf("RED!\n");
     vTaskDelay(pdMS_TO_TICKS(1000));
   }
 }
@@ -214,7 +192,6 @@ void LED(void *pvParameters)
   while(1)
   {
     vTaskDelay(pdMS_TO_TICKS(1000));
-    HAL_GPIO_TogglePin(RUNLED_GPIO_Port , RUNLED_Pin);
     run_time.Second = run_time.Second +1;
     if(run_time.Second == 60)
     {
@@ -243,7 +220,7 @@ void Beeper(void *pvParameters)
   while(1)
   {
     vTaskDelay(pdMS_TO_TICKS(10));
-    		/* ---------- Beeper ---------- */
+    /* ---------- Beeper ---------- */
 		if (++Beeper_count >=2)
 		{
       taskENTER_CRITICAL();           /* 进入临界区 */
@@ -251,5 +228,56 @@ void Beeper(void *pvParameters)
 			Beeper_count = 0;
       taskEXIT_CRITICAL();            /* 退出临界区 */
 		}
+    /* ---------- Runled ---------- */
+		 if (++Runled_count >= 200)
+    {
+        Runled_count = 0;
+        if (Runled_status == 0)
+        {
+            HAL_GPIO_WritePin(RUNLED_GPIO_Port, RUNLED_Pin, GPIO_PIN_RESET);
+            Runled_status = 1;
+        }
+    }
+    else if (Runled_count >= 191   && Runled_status == 0)
+    {
+        HAL_GPIO_WritePin(RUNLED_GPIO_Port, RUNLED_Pin, GPIO_PIN_SET);
+        Runled_status = 1;
+    }
+    else if (Runled_count < 191 && Runled_status == 1)
+    {
+        HAL_GPIO_WritePin(RUNLED_GPIO_Port, RUNLED_Pin, GPIO_PIN_RESET);
+        Runled_status = 0;
+    }
+    /* ---------- Key ---------- */
   }
-  }
+}
+
+/**
+ * @brief   Boot_anim 
+ * @param       无
+ * @retval      无
+ * 
+ */
+void Boot_anim(void)
+{
+   vTaskDelay(pdMS_TO_TICKS(3000));
+  lcdprintf("=================\r\n"); 
+  lcdprintf("System Start!\r\n"); 
+  vTaskDelay(pdMS_TO_TICKS(100));
+  lcdprintf("LVGL V8.4.0\r\n");
+  vTaskDelay(pdMS_TO_TICKS(100));
+  lcdprintf("FreeRTOS V202212.01\r\n");
+  vTaskDelay(pdMS_TO_TICKS(100));
+  lcdprintf("=================\r\n"); 
+  vTaskDelay(pdMS_TO_TICKS(1000));
+	lcdprintf("HELLO!\n");
+  vTaskDelay(pdMS_TO_TICKS(200));
+  PWM_WS2812B_Red(3);
+  Beeper_Perform(BOOT);		// 蜂鸣器响声
+  vTaskDelay(pdMS_TO_TICKS(150));
+  PWM_WS2812B_Blue(3);
+  vTaskDelay(pdMS_TO_TICKS(150));
+  PWM_WS2812B_Green(3);
+  vTaskDelay(pdMS_TO_TICKS(250));
+  PWM_WS2812B_Close(3);
+}

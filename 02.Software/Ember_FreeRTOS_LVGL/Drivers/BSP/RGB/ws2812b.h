@@ -20,6 +20,7 @@ void WS2812B_Show(void);
 void PWM_WS2812B_Red(uint16_t num);
 void PWM_WS2812B_Green(uint16_t num);
 void PWM_WS2812B_Blue(uint16_t num);
+void PWM_WS2812B_Close(uint16_t num);
 
 void WS2812B_Write_24Bits_independence(uint16_t num, uint32_t *GRB_Data); // 独立写像素的颜色
 void set_ws2812_breathing(uint8_t index);                                 // 呼吸灯

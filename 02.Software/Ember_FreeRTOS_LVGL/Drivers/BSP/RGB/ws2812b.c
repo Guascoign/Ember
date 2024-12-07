@@ -153,7 +153,12 @@ void PWM_WS2812B_Blue(uint16_t num)
 	WS2812B_Write_24Bits(num, 0x0000ff);
 	WS2812B_Show();
 }
-
+// N个灯珠关闭
+void PWM_WS2812B_Close(uint16_t num)
+{
+	WS2812B_Write_24Bits(num, 0x000000);
+	WS2812B_Show();
+}
 /*呼吸灯*/
 void set_ws2812_breathing(uint8_t index)
 {
