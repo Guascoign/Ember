@@ -1,6 +1,11 @@
 {
     "files.associations": {
         "beeper.h": "c",
-        "main.h": "c"
+        "main.h": "c",
+        "sys.h": "c",
+        "delay.h": "c",
+        "ws2812b.h": "c",
+        "lcd.h": "c",
+        "tim.h": "c"
     }
 }

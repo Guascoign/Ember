@@ -1,5 +1,5 @@
-#ifndef __BEEPER_H__
-#define __BEEPER_H__
+#ifndef __BEEP_H__
+#define __BEEP_H__
 
 #ifdef __cplusplus
 extern "C"
@@ -107,7 +107,7 @@ extern TIM_HandleTypeDef htim3;
 	extern const TONE BEEPER_WARNING[];
 	extern const TONE TWINKLE_TWINKLE[];
 	extern const TONE BEEP2[];
-	extern const TONE WINDOWS_XP_BOOT[];
+	extern const TONE BOOT[];
 	extern BEEPER_Tag Beeper0;
 
 	/*音调频率表*/

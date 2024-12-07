@@ -12,7 +12,8 @@
 #include "EEPROM/at24cxx.h"
 #include "UART/uart_pack.h"
 #include "uart_printf.h"
-#include "BEEPER/BEEPER.h"
+#include "BEEP/beep.h"
+#include "RGB/ws2812b.h"
 /*LVGL*********************************************************************************************/
 #include "lvgl.h"
 #include "lv_port_disp_template.h"
@@ -103,7 +104,7 @@ void start_task(void *pvParameters)
 {
   taskENTER_CRITICAL();           /* 进入临界区 */
   Beeper_Init();						// 蜂鸣器初始化
-
+  //PWM_WS2812B_Init(125);	// RGB初始化
 
   /* 创建任务1 */
   xTaskCreate((TaskFunction_t )Main,
@@ -147,13 +148,34 @@ void start_task(void *pvParameters)
 void Main(void *pvParameters)
 {
   vTaskDelay(pdMS_TO_TICKS(3000));
-	lcdprintf("HELo\n");
-	Beeper_Perform(TWINKLE_TWINKLE);		// 蜂鸣器响声
-	lcdprintf("Beep!\n");
+  lcdprintf("=================\r\n"); 
+  lcdprintf("System Start!\r\n"); 
+  vTaskDelay(pdMS_TO_TICKS(100));
+  lcdprintf("LVGL V8.4.0\r\n");
+  vTaskDelay(pdMS_TO_TICKS(100));
+  lcdprintf("FreeRTOS V202212.01\r\n");
+  vTaskDelay(pdMS_TO_TICKS(100));
+  lcdprintf("=================\r\n"); 
   vTaskDelay(pdMS_TO_TICKS(1000));
+	lcdprintf("HELLO!\n");
+  vTaskDelay(pdMS_TO_TICKS(200));
+  Beeper_Perform(BOOT);		// 蜂鸣器响声
   while(1)
   {
-  
+    taskENTER_CRITICAL();           /* 进入临界区 */
+		PWM_WS2812B_Red(3);
+    taskEXIT_CRITICAL();            /* 退出临界区 */
+    lcdprintf("RED!\n");
+    vTaskDelay(pdMS_TO_TICKS(1000));
+    taskENTER_CRITICAL();           /* 进入临界区 */
+		PWM_WS2812B_Blue(3);
+    taskEXIT_CRITICAL();            /* 退出临界区 */
+    lcdprintf("RED!\n");
+    vTaskDelay(pdMS_TO_TICKS(1000));
+    taskENTER_CRITICAL();           /* 进入临界区 */
+		PWM_WS2812B_Green(3);
+    taskEXIT_CRITICAL();            /* 退出临界区 */
+    lcdprintf("RED!\n");
     vTaskDelay(pdMS_TO_TICKS(1000));
   }
 }
@@ -224,8 +246,10 @@ void Beeper(void *pvParameters)
     		/* ---------- Beeper ---------- */
 		if (++Beeper_count >=2)
 		{
+      taskENTER_CRITICAL();           /* 进入临界区 */
 			Beeper_Proc();
 			Beeper_count = 0;
+      taskEXIT_CRITICAL();            /* 退出临界区 */
 		}
   }
   }

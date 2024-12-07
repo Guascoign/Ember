@@ -3,6 +3,7 @@
 "ember\freertos_main.o"
 "ember\main.o"
 "ember\gpio.o"
+"ember\dma.o"
 "ember\spi.o"
 "ember\tim.o"
 "ember\usart.o"
@@ -239,11 +240,12 @@
 "ember\st7789.o"
 "ember\lcd_consle.o"
 "ember\at24cxx.o"
+"ember\ws2812b.o"
 "ember\uart_pack.o"
 "ember\circle_buffer.o"
 "ember\crc.o"
 "ember\uart_printf.o"
-"ember\beeper.o"
+"ember\beep.o"
 --strict --scatter "Ember\Ember.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

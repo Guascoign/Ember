@@ -189,6 +189,7 @@ ember\freertos_main.o: ../Drivers/LIB/crc.h
 ember\freertos_main.o: ../Drivers/BSP/EEPROM/at24cxx.h
 ember\freertos_main.o: ../Drivers/BSP/UART/uart_pack.h
 ember\freertos_main.o: ../Drivers/LIB/uart_printf.h
-ember\freertos_main.o: ../Drivers/BSP/BEEPER/BEEPER.h
+ember\freertos_main.o: ../Drivers/BSP/BEEP/beep.h
+ember\freertos_main.o: ../Drivers/BSP/RGB/ws2812b.h
 ember\freertos_main.o: ../Middlewares_User/LVGL/GUI/lvgl/examples/porting/lv_port_disp_template.h
 ember\freertos_main.o: ../Middlewares_User/LVGL/GUI_APP/GUI_Guider/generated/../generated/events_init.h

@@ -1,21 +1,27 @@
-#ifndef _WS2812B_H
-#define _WS2812B_H
+#ifndef __WS2812B_H__
+#define __WS2812B_H__
 
-
-//#include "main.h"
-#include "tim.h"
-#include "stdio.h"
-#include <stdint.h>  // ÓÃÓÚ¶¨Òå uint16_t ÀàĞÍ
-
-#define LED_COUNT 2
-#define PWM_RESOLUTION 125  // WS2812ÖÜÆÚ1.25us¶ÔÓ¦µÄÊ±ÖÓÖÜÆÚÊı£¨Ö÷Æµ100 MHz£©
+#include "stdint.h"  // åŒ…å« stdint.h ä»¥ä¾¿ä½¿ç”¨ uint16_t
 
 
 
-// ÉèÖÃLEDÑÕÉ«
-void Set_LED_Color(uint8_t index, uint8_t red, uint8_t green, uint8_t blue);
+#define WS2812B_ARR 125 // TIM2çš„è‡ªåŠ¨é‡è£…å€¼//ä½¿å¾—PWMè¾“å‡ºé¢‘ç‡åœ¨800kHz
+#define T0H 35          // 0ç¼–ç é«˜ç”µå¹³æ—¶é—´å 1/3
+#define T1H 70          // 1ç¼–ç é«˜ç”µå¹³æ—¶é—´å 2/3
 
-// ½«ÑÕÉ«Êı¾İ×ª»»ÎªPWMĞÅºÅ
-void WS2812_Send(void);
+/*ä½¿ç”¨ç¯ç çš„ä¸ªæ•°*/
+#define WS2812B_NUM 3
+#define DATA_SIZE 24 // WS2812Bä¼ è¾“ä¸€ä¸ªæ•°æ®çš„å¤§å°æ˜¯3ä¸ªå­—èŠ‚ï¼ˆ24bitï¼‰
+#define DMA_DATA_SIZE (DATA_SIZE * WS2812B_NUM +50)
 
-#endif//_WS2812B_H
+void PWM_WS2812B_Init(uint16_t arr);
+void WS2812B_Write_24Bits(uint16_t num, uint32_t GRB_Data);
+void WS2812B_Show(void);
+void PWM_WS2812B_Red(uint16_t num);
+void PWM_WS2812B_Green(uint16_t num);
+void PWM_WS2812B_Blue(uint16_t num);
+
+void WS2812B_Write_24Bits_independence(uint16_t num, uint32_t *GRB_Data); // ç‹¬ç«‹å†™åƒç´ çš„é¢œè‰²
+void set_ws2812_breathing(uint8_t index);                                 // å‘¼å¸ç¯
+
+#endif

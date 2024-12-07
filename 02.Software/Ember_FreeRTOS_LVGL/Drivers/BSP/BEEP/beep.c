@@ -1,5 +1,4 @@
-#include "BEEPER/BEEPER.h"
-
+#include "BEEP/beep.h"
 
 /*创建Beeper的handle*/
 BEEPER_Tag Beeper0;
@@ -107,7 +106,6 @@ TONE const TWINKLE_TWINKLE[] = {
     {NOTE_E4, 4},  {REST_NOTE, 8},{NOTE_E4, 4}, {REST_NOTE, 8},
     {NOTE_D4, 4},  {REST_NOTE, 8},{NOTE_D4, 4}, {REST_NOTE, 8},
     {NOTE_C4,8},   {NOTE_C4,8},                        
-
     {CHECK_NOTE, 0}                           // 检查位
 };
 
@@ -119,7 +117,6 @@ TONE const BEEP2[] = {
     {REST_NOTE, 20},
     {NOTE_C5, 10},
     {NOTE_B4, 10},
-
     {NOTE_A4, 20},
     {NOTE_E5, 40},
     {NOTE_C5, 10},
@@ -163,20 +160,16 @@ TONE const BEEP2[] = {
     {CHECK_NOTE, 0}, // 检查位
 };
 
-TONE const WINDOWS_XP_BOOT[] = {
-    {NOTE_E5, 4},   {REST_NOTE, 2},  // E5
-    {NOTE_A5, 4},   {REST_NOTE, 2},  // A5
-    {NOTE_E5, 4},   {REST_NOTE, 2},  // E5
-    {NOTE_A5, 4},   {REST_NOTE, 2},  // A5
-    {NOTE_E5, 4},   {REST_NOTE, 2},  // E5
-
-    {NOTE_A5, 4},   {REST_NOTE, 2},  // A5
-    {NOTE_E5, 4},   {REST_NOTE, 2},  // E5
-    {NOTE_A5, 4},   {REST_NOTE, 2},  // A5
-    {NOTE_E5, 8},   {REST_NOTE, 4},  // E5 (渐弱)
-
-    {CHECK_NOTE, 0}                  // 检查位
+TONE const BOOT[] = {
+    {REST_NOTE, 2},  // 休止
+    {NOTE_G4, 4},  // 音符G4
+    {REST_NOTE, 2},  // 休止
+    {NOTE_C5, 4},  // 中高音C5
+    {NOTE_E5, 8},  // 高音E5
+    {REST_NOTE, 4},  // 休止
+    {CHECK_NOTE, 0}  // 结束标志
 };
+
 
 
 

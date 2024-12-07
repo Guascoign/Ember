@@ -57,6 +57,7 @@ extern void xPortSysTickHandler(void);
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
+extern DMA_HandleTypeDef hdma_tim4_ch3;
 extern TIM_HandleTypeDef htim11;
 
 /* USER CODE BEGIN EV */
@@ -160,7 +161,7 @@ void UsageFault_Handler(void)
 // void SVC_Handler(void)
 // {
 //   /* USER CODE BEGIN SVCall_IRQn 0 */
-
+// // // // // //   CUBEMX生成代码后重新屏蔽此函数
 //   /* USER CODE END SVCall_IRQn 0 */
 //   /* USER CODE BEGIN SVCall_IRQn 1 */
 
@@ -186,7 +187,7 @@ void DebugMon_Handler(void)
 // void PendSV_Handler(void)
 // {
 //   /* USER CODE BEGIN PendSV_IRQn 0 */
-
+// // // // // // // CUBEMX生成代码后重新屏蔽此函数
 //   /* USER CODE END PendSV_IRQn 0 */
 //   /* USER CODE BEGIN PendSV_IRQn 1 */
 
@@ -230,6 +231,20 @@ void TIM1_TRG_COM_TIM11_IRQHandler(void)
   /* USER CODE BEGIN TIM1_TRG_COM_TIM11_IRQn 1 */
 
   /* USER CODE END TIM1_TRG_COM_TIM11_IRQn 1 */
+}
+
+/**
+  * @brief This function handles DMA1 stream7 global interrupt.
+  */
+void DMA1_Stream7_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA1_Stream7_IRQn 0 */
+
+  /* USER CODE END DMA1_Stream7_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_tim4_ch3);
+  /* USER CODE BEGIN DMA1_Stream7_IRQn 1 */
+
+  /* USER CODE END DMA1_Stream7_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

@@ -84,6 +84,8 @@ void Error_Handler(void);
 #define IIC2_SCL_GPIO_Port GPIOB
 #define IIC2_SDA_Pin GPIO_PIN_5
 #define IIC2_SDA_GPIO_Port GPIOB
+#define RGB_Pin GPIO_PIN_8
+#define RGB_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
