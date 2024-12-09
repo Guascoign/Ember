@@ -33,4 +33,16 @@ ember\ws2812b.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 ember\ws2812b.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 ember\ws2812b.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 ember\ws2812b.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+ember\ws2812b.o: ../Drivers/BSP/KEY\key.h
+ember\ws2812b.o: ../Middlewares_User/FreeRTOS/include/FreeRTOS.h
+ember\ws2812b.o: ../Middlewares_User/FreeRTOS/include/FreeRTOSConfig.h
+ember\ws2812b.o: ../Middlewares_User/FreeRTOS/include/projdefs.h
+ember\ws2812b.o: ../Middlewares_User/FreeRTOS/include/portable.h
+ember\ws2812b.o: ../Middlewares_User/FreeRTOS/include/deprecated_definitions.h
+ember\ws2812b.o: ../Middlewares_User/FreeRTOS/portable/RVDS/ARM_CM4F/portmacro.h
+ember\ws2812b.o: ../Middlewares_User/FreeRTOS/include/mpu_wrappers.h
+ember\ws2812b.o: ../Middlewares_User/FreeRTOS/include/timers.h
+ember\ws2812b.o: ../Middlewares_User/FreeRTOS/include/task.h
+ember\ws2812b.o: ../Middlewares_User/FreeRTOS/include/list.h
+ember\ws2812b.o: ../Core/Inc/main.h
 ember\ws2812b.o: ../Core/Inc/tim.h

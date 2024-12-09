@@ -41,6 +41,9 @@ ember\freertos_main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 ember\freertos_main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 ember\freertos_main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 ember\freertos_main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+ember\freertos_main.o: ../Drivers/BSP/KEY\key.h
+ember\freertos_main.o: ../Middlewares_User/FreeRTOS/include/timers.h
+ember\freertos_main.o: ../Core/Inc/main.h
 ember\freertos_main.o: ../Drivers/BSP/LCD/lcd.h
 ember\freertos_main.o: ../Core/Inc/gpio.h
 ember\freertos_main.o: ../Core/Inc/spi.h

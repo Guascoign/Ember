@@ -6,6 +6,7 @@
         "delay.h": "c",
         "ws2812b.h": "c",
         "lcd.h": "c",
-        "tim.h": "c"
+        "tim.h": "c",
+        "task.h": "c"
     }
 }

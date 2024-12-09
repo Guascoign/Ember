@@ -34,3 +34,15 @@ ember\beep.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 ember\beep.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 ember\beep.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ember\beep.o: ../Core/Inc/main.h
+ember\beep.o: ../Drivers/BSP/KEY\key.h
+ember\beep.o: ../Middlewares_User/FreeRTOS/include/FreeRTOS.h
+ember\beep.o: ../Middlewares_User/FreeRTOS/include/FreeRTOSConfig.h
+ember\beep.o: ../Middlewares_User/FreeRTOS/include/projdefs.h
+ember\beep.o: ../Middlewares_User/FreeRTOS/include/portable.h
+ember\beep.o: ../Middlewares_User/FreeRTOS/include/deprecated_definitions.h
+ember\beep.o: ../Middlewares_User/FreeRTOS/portable/RVDS/ARM_CM4F/portmacro.h
+ember\beep.o: ../Middlewares_User/FreeRTOS/include/mpu_wrappers.h
+ember\beep.o: ../Middlewares_User/FreeRTOS/include/timers.h
+ember\beep.o: ../Middlewares_User/FreeRTOS/include/task.h
+ember\beep.o: ../Middlewares_User/FreeRTOS/include/list.h
+ember\beep.o: ../Core/Inc/main.h

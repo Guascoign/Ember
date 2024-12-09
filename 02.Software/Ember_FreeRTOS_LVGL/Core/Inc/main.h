@@ -31,7 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "KEY\key.h"
 
 /* USER CODE END Includes */
 
@@ -72,8 +72,10 @@ void Error_Handler(void);
 #define TFT_RST_GPIO_Port GPIOC
 #define KEY2_Pin GPIO_PIN_5
 #define KEY2_GPIO_Port GPIOC
+#define KEY2_EXTI_IRQn EXTI9_5_IRQn
 #define KEY1_Pin GPIO_PIN_0
 #define KEY1_GPIO_Port GPIOB
+#define KEY1_EXTI_IRQn EXTI0_IRQn
 #define BEEPER_Pin GPIO_PIN_1
 #define BEEPER_GPIO_Port GPIOB
 #define RUNLED_Pin GPIO_PIN_14
@@ -88,7 +90,7 @@ void Error_Handler(void);
 #define RGB_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
-
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin);
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

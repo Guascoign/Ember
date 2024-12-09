@@ -33,3 +33,15 @@ ember\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 ember\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 ember\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 ember\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+ember\gpio.o: ../Drivers/BSP/KEY\key.h
+ember\gpio.o: ../Middlewares_User/FreeRTOS/include/FreeRTOS.h
+ember\gpio.o: ../Middlewares_User/FreeRTOS/include/FreeRTOSConfig.h
+ember\gpio.o: ../Middlewares_User/FreeRTOS/include/projdefs.h
+ember\gpio.o: ../Middlewares_User/FreeRTOS/include/portable.h
+ember\gpio.o: ../Middlewares_User/FreeRTOS/include/deprecated_definitions.h
+ember\gpio.o: ../Middlewares_User/FreeRTOS/portable/RVDS/ARM_CM4F/portmacro.h
+ember\gpio.o: ../Middlewares_User/FreeRTOS/include/mpu_wrappers.h
+ember\gpio.o: ../Middlewares_User/FreeRTOS/include/timers.h
+ember\gpio.o: ../Middlewares_User/FreeRTOS/include/task.h
+ember\gpio.o: ../Middlewares_User/FreeRTOS/include/list.h
+ember\gpio.o: ../Core/Inc/main.h

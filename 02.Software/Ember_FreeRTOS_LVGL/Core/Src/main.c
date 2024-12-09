@@ -27,6 +27,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "FreeRTOS_main.h"
+#include "KEY\key.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -161,6 +162,20 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+    switch (GPIO_Pin) {
+        case GPIO_PIN_0: // 对应按键1
+            Key_HandleInterrupt(GPIOB, GPIO_PIN_0);
+            break;
+        case GPIO_PIN_5: // 对应按键2
+            Key_HandleInterrupt(GPIOC, GPIO_PIN_5);
+            break;
+        default:
+            break;
+    }
+}
+
 
 /* USER CODE END 4 */
 

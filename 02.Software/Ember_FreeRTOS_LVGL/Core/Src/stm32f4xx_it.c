@@ -93,19 +93,7 @@ void HardFault_Handler(void)
   while (1)
   {
     /* USER CODE BEGIN W1_HardFault_IRQn 0 */
-		HAL_GPIO_TogglePin(RUNLED_GPIO_Port,RUNLED_Pin);
-    HAL_Delay(300);
-		HAL_GPIO_TogglePin(RUNLED_GPIO_Port,RUNLED_Pin);
-    HAL_Delay(300);
-		HAL_GPIO_TogglePin(RUNLED_GPIO_Port,RUNLED_Pin);
-    HAL_Delay(300);
-		HAL_GPIO_TogglePin(RUNLED_GPIO_Port,RUNLED_Pin);
-    HAL_Delay(300);
-		HAL_GPIO_TogglePin(RUNLED_GPIO_Port,RUNLED_Pin);
-    HAL_Delay(300);
-		HAL_GPIO_TogglePin(RUNLED_GPIO_Port,RUNLED_Pin);
-    HAL_Delay(300);
-		HAL_Delay(2000);
+
     /* USER CODE END W1_HardFault_IRQn 0 */
   }
 }
@@ -161,7 +149,7 @@ void UsageFault_Handler(void)
 // void SVC_Handler(void)
 // {
 //   /* USER CODE BEGIN SVCall_IRQn 0 */
-// // // // // //   CUBEMX生成代码后重新屏蔽此函数
+// //// // // // // // //   CUBEMX生成代码后重新屏蔽此函数
 //   /* USER CODE END SVCall_IRQn 0 */
 //   /* USER CODE BEGIN SVCall_IRQn 1 */
 
@@ -187,7 +175,7 @@ void DebugMon_Handler(void)
 // void PendSV_Handler(void)
 // {
 //   /* USER CODE BEGIN PendSV_IRQn 0 */
-// // // // // // // CUBEMX生成代码后重新屏蔽此函数
+// //// // // // // // // // CUBEMX生成代码后重新屏蔽此函数
 //   /* USER CODE END PendSV_IRQn 0 */
 //   /* USER CODE BEGIN PendSV_IRQn 1 */
 
@@ -218,6 +206,34 @@ void SysTick_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32f4xx.s).                    */
 /******************************************************************************/
+
+/**
+  * @brief This function handles EXTI line0 interrupt.
+  */
+void EXTI0_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI0_IRQn 0 */
+
+  /* USER CODE END EXTI0_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(KEY1_Pin);
+  /* USER CODE BEGIN EXTI0_IRQn 1 */
+
+  /* USER CODE END EXTI0_IRQn 1 */
+}
+
+/**
+  * @brief This function handles EXTI line[9:5] interrupts.
+  */
+void EXTI9_5_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI9_5_IRQn 0 */
+
+  /* USER CODE END EXTI9_5_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(KEY2_Pin);
+  /* USER CODE BEGIN EXTI9_5_IRQn 1 */
+
+  /* USER CODE END EXTI9_5_IRQn 1 */
+}
 
 /**
   * @brief This function handles TIM1 trigger and commutation interrupts and TIM11 global interrupt.
