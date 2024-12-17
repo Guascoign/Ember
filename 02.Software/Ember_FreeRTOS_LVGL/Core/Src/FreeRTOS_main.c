@@ -14,6 +14,7 @@
 #include "uart_printf.h"
 #include "BEEP/beep.h"
 #include "RGB/ws2812b.h"
+#include "adc.h"
 /*LVGL*********************************************************************************************/
 #include "lvgl.h"
 #include "lv_port_disp_template.h"
@@ -142,7 +143,7 @@ void start_task(void *pvParameters)
   vTaskDelete(StartTask_Handler); /* 删除开始任务 */
   taskEXIT_CRITICAL();            /* 退出临界区 */
 }
-
+extern ADC_HandleTypeDef hadc1;
 /**
  * @brief       Main
  * @param       pvParameters : 传入参数(未用到)
@@ -154,6 +155,8 @@ void Main(void *pvParameters)
  Boot_anim();
   while(1)
   {
+    
+    //lcdprintf("ADC = %d\n", GET_ADC_AVERAGE(hadc1 , ADC_CHANNEL_3 , 100) );
     vTaskDelay(pdMS_TO_TICKS(1000));
   }
 }
@@ -219,7 +222,7 @@ void Beeper(void *pvParameters)
   
   while(1)
   {
-    vTaskDelay(pdMS_TO_TICKS(10));
+    vTaskDelay(pdMS_TO_TICKS(10));//10ms进入一次
     /* ---------- Beeper ---------- */
 		if (++Beeper_count >=2)
 		{
@@ -273,7 +276,7 @@ void Boot_anim(void)
 	lcdprintf("HELLO!\n");
   vTaskDelay(pdMS_TO_TICKS(200));
   PWM_WS2812B_Red(3);
-  Beeper_Perform(BOOT);		// 蜂鸣器响声
+ // Beeper_Perform(BOOT);		// 蜂鸣器响声
   vTaskDelay(pdMS_TO_TICKS(150));
   PWM_WS2812B_Blue(3);
   vTaskDelay(pdMS_TO_TICKS(150));

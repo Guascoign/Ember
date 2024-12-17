@@ -170,9 +170,15 @@ TONE const BOOT[] = {
     {CHECK_NOTE, 0}  // 结束标志
 };
 
+TONE const KEY_PRESS[] = {
+    {NOTE_B4, 6},  // 音符G4
+    {CHECK_NOTE, 0}  // 结束标志
+};
 
-
-
+TONE const KEY_RELEASE[] = {
+    {NOTE_E5, 6},  // 高音E5
+    {CHECK_NOTE, 0}  // 结束标志
+};
 
 
 void TIM3_PWM_Init(uint16_t arr)

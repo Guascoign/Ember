@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "adc.h"
 #include "dma.h"
 #include "spi.h"
 #include "tim.h"
@@ -32,7 +33,8 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+extern TIM_HandleTypeDef  htim10;
+uint8_t g_htim11_flag = 0 ;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -97,6 +99,8 @@ int main(void)
   MX_SPI2_Init();
   MX_TIM3_Init();
   MX_TIM4_Init();
+  MX_ADC1_Init();
+  MX_TIM10_Init();
   /* USER CODE BEGIN 2 */
 
 	freertos_start();
@@ -196,7 +200,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-
+  if(htim->Instance == TIM10){
+    HAL_TIM_Base_Stop_IT(&htim10);
+    g_htim11_flag = 1;
+  }
   /* USER CODE END Callback 1 */
 }
 

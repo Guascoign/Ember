@@ -108,6 +108,8 @@ extern TIM_HandleTypeDef htim3;
 	extern const TONE TWINKLE_TWINKLE[];
 	extern const TONE BEEP2[];
 	extern const TONE BOOT[];
+	extern const TONE KEY_PRESS[];
+	extern const TONE KEY_RELEASE[];
 	extern BEEPER_Tag Beeper0;
 
 	/*音调频率表*/
