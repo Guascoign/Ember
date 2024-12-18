@@ -193,11 +193,15 @@ void SysTick_Handler(void)
   /* USER CODE END SysTick_IRQn 0 */
 
   /* USER CODE BEGIN SysTick_IRQn 1 */
+
+  /*FREERTOS*/
     if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED)
     {
         xPortSysTickHandler();
     }
-
+  /*KEY*/
+    extern void check_timer(void);
+    check_timer();
   /* USER CODE END SysTick_IRQn 1 */
 }
 

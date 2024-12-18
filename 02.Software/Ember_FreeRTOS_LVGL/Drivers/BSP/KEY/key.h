@@ -24,12 +24,11 @@ typedef struct KEY_Device{
     void *priv_data;//私有数据
 } KEY_DeviceTypeDef;
 
+
 extern struct KEY_Device KEY1;//KEY.c定义接口
 extern struct KEY_Device KEY2;//KEY.c定义接口
 
 
 
-// 函数接口
-void Key_HandleInterrupt(GPIO_TypeDef *port, uint16_t pin);
 
 #endif // KEY_H

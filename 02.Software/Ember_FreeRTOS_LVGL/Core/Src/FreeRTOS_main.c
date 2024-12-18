@@ -153,11 +153,19 @@ void Main(void *pvParameters)
 {
   
  Boot_anim();
+ uint8_t key_val = 0;
+extern circle_buf g_key_bufs;
   while(1)
   {
     
-    //lcdprintf("ADC = %d\n", GET_ADC_AVERAGE(hadc1 , ADC_CHANNEL_3 , 100) );
-    vTaskDelay(pdMS_TO_TICKS(1000));
+    //lcdprintf("key = %d\n", GET_ADC_AVERAGE(hadc1 , ADC_CHANNEL_3 , 100) );
+		
+if (0 == circle_buf_read(&g_key_bufs, &key_val))
+	  {
+		 
+    lcdprintf("key = %d\n",  key_val  );
+	  }
+    vTaskDelay(pdMS_TO_TICKS(10));
   }
 }
 
