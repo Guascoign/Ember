@@ -154,6 +154,7 @@ void Main(void *pvParameters)
   
  Boot_anim();
  uint8_t key_val = 0;
+ uint8_t key_time = 0;
 extern circle_buf g_key_bufs;
   while(1)
   {
@@ -162,8 +163,8 @@ extern circle_buf g_key_bufs;
 		
 if (0 == circle_buf_read(&g_key_bufs, &key_val))
 	  {
-		 
-    lcdprintf("key = %d\n",  key_val  );
+		 key_time = key_time + 1;
+    lcdprintf("key = %d %d\n",  key_val , key_time );
 	  }
     vTaskDelay(pdMS_TO_TICKS(10));
   }
