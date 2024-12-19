@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "task.h"
 #include "FreeRTOS.h"
+#include "soft_timer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -150,7 +151,7 @@ void UsageFault_Handler(void)
 //void SVC_Handler(void)
 //{
 //  /* USER CODE BEGIN SVCall_IRQn 0 */
-//// // // //// // // // // // //   CUBEMX生成代码后重新屏蔽此函数
+//CUBEMX生成代码后重新屏蔽此函数
 //  /* USER CODE END SVCall_IRQn 0 */
 //  /* USER CODE BEGIN SVCall_IRQn 1 */
 
@@ -176,7 +177,7 @@ void DebugMon_Handler(void)
 //void PendSV_Handler(void)
 //{
 //  /* USER CODE BEGIN PendSV_IRQn 0 */
-//// // // //// // // // // // // // CUBEMX生成代码后重新屏蔽此函数
+//CUBEMX生成代码后重新屏蔽此函数
 //  /* USER CODE END PendSV_IRQn 0 */
 //  /* USER CODE BEGIN PendSV_IRQn 1 */
 
@@ -186,6 +187,7 @@ void DebugMon_Handler(void)
 /**
   * @brief This function handles System tick timer.
   */
+extern void Check_soft_timer(void);
 void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
@@ -199,9 +201,9 @@ void SysTick_Handler(void)
     {
         xPortSysTickHandler();
     }
-  /*KEY*/
-    extern void check_timer(void);
-    check_timer();
+  /*Soft_timer*/
+    extern void Check_Soft_Timer(void);
+    Check_Soft_Timer();
   /* USER CODE END SysTick_IRQn 1 */
 }
 

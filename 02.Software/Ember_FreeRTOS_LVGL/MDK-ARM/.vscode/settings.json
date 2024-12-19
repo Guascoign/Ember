@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "soft_timer.h": "c",
+        "key.h": "c",
+        "timers.h": "c",
+        "main.h": "c",
+        "circle_buffer.h": "c"
+    }
+}

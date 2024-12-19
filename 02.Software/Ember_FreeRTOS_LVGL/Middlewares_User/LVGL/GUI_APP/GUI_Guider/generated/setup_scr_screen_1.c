@@ -64,7 +64,7 @@ void setup_scr_screen_1(lv_ui *ui)
 
     //Write codes screen_1_bar_1
     ui->screen_1_bar_1 = lv_bar_create(ui->screen_1_cont_1);
-    lv_obj_set_style_anim_time(ui->screen_1_bar_1, 1500, 0);
+    lv_obj_set_style_anim_time(ui->screen_1_bar_1, 500, 0);
     lv_bar_set_mode(ui->screen_1_bar_1, LV_BAR_MODE_NORMAL);
     lv_bar_set_range(ui->screen_1_bar_1, 0, 100);
     lv_bar_set_value(ui->screen_1_bar_1, 100, LV_ANIM_ON);

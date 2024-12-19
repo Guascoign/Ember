@@ -30,15 +30,13 @@
 #include "FreeRTOS_main.h"
 #include "KEY\key.h"
 #include "circle_buffer.h"
+#include "soft_timer.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-struct soft_timer {
-	uint32_t timeout;
-	void * args;
-	void (*func)(void *);
-};
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -54,51 +52,14 @@ struct soft_timer {
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+uint8_t g_data_buf[100];  //按键数据缓存区
 
-
-int g_key_cnt = 0;
-
-void key_timeout_func(void *args);
-
-struct soft_timer key_timer = {~0, NULL, key_timeout_func};
-
-static uint8_t g_data_buf[100];
-circle_buf g_key_bufs;
-
-void key_timeout_func(void *args)
-{
-	uint8_t key_val; /* 按下是0x1, 松开 0x81 */
-	g_key_cnt++;
-	key_timer.timeout = ~0;
-	
-	/* read gpio */
-	if (HAL_GPIO_ReadPin(KEY1_GPIO_Port, KEY1_Pin) == GPIO_PIN_RESET)
-		key_val = 0x1;
-	else
-		key_val = 0x9;
-	
-	/* put key val into circle buf */
-	circle_buf_write(&g_key_bufs, key_val);
-}
-
-void mod_timer(struct soft_timer *pTimer, uint32_t timeout)
-{
-	pTimer->timeout = HAL_GetTick() + timeout;
-}
-
-void check_timer(void)
-{
-	if (key_timer.timeout <= HAL_GetTick())
-	{
-		key_timer.func(key_timer.args);
-	}
-}
-
+/* 外部中断回调函数 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	if (GPIO_Pin == KEY1_Pin)
-	{		
-		mod_timer(&key_timer, 10);
+	{
+		Start_Soft_Timer(&key_timer, 10); // 启动定时器，超时 10ms
 	}
 }
 
@@ -140,7 +101,9 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
+
   circle_buf_init(&g_key_bufs, 100, g_data_buf);
+
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */

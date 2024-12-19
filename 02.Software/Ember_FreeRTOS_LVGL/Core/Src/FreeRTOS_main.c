@@ -272,7 +272,7 @@ void Beeper(void *pvParameters)
  */
 void Boot_anim(void)
 {
-   vTaskDelay(pdMS_TO_TICKS(3000));
+   vTaskDelay(pdMS_TO_TICKS(1000));
   lcdprintf("=================\r\n"); 
   lcdprintf("System Start!\r\n"); 
   vTaskDelay(pdMS_TO_TICKS(100));
@@ -281,7 +281,7 @@ void Boot_anim(void)
   lcdprintf("FreeRTOS V202212.01\r\n");
   vTaskDelay(pdMS_TO_TICKS(100));
   lcdprintf("=================\r\n"); 
-  vTaskDelay(pdMS_TO_TICKS(1000));
+  vTaskDelay(pdMS_TO_TICKS(500));
 	lcdprintf("HELLO!\n");
   vTaskDelay(pdMS_TO_TICKS(200));
   PWM_WS2812B_Red(3);

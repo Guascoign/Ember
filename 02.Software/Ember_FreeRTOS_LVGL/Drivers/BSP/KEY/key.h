@@ -5,30 +5,30 @@
 #include "FreeRTOS.h"
 #include "timers.h"
 #include "main.h"
-// 按键管理器
-#define MAX_KEYS 2  //最大按键数量
-#define LONG_PRESS_Delay 2000   //按下事件>2s即为长按
-#define _DOUBLE_CLICK_Delay 500 //按下-松开-<0.5S-按下-松开 为双击
-#define KEY_EVENT_IDLE 0
-#define KEY_EVENT_PRESS 1
-#define KEY_EVENT_RELEASE 2
+#include "BEEP/beep.h"
+#include "circle_buffer.h"
+#include "soft_timer.h"
 
-// 按键对象定义
-typedef struct KEY_Device{
-    GPIO_TypeDef *KEY_GPIO_Port;    // 按键 GPIO 端口
-    uint16_t GPIO_Pin;          // 按键 GPIO 引脚
-    void (*KEY_Init)(struct KEY_Device *p_KEYDev); //初始化
-    char *name;             //按键名称
-    uint8_t Status;      // 当前按键状态
-    void (*KEY_Callback)(struct KEY_Device *p_KEYDev);     // 按键事件回调函数
-    void *priv_data;//私有数据
+/* 按键设备定义 */
+typedef struct {
+	GPIO_TypeDef *KEY_GPIO_Port;       // 按键 GPIO 端口
+	uint16_t GPIO_Pin;                 // 按键 GPIO 引脚
+	char *name;                        // 按键名称
+	uint8_t Status;                    // 当前按键状态
+	void (*KEY_Callback)(void *args);  // 按键事件回调函数
+	void *priv_data;                   // 私有数据
 } KEY_DeviceTypeDef;
 
+/* 环形缓冲区声明 */
+extern circle_buf g_key_bufs;
 
-extern struct KEY_Device KEY1;//KEY.c定义接口
-extern struct KEY_Device KEY2;//KEY.c定义接口
+/* 全局按键计数器 */
+extern int g_key_cnt;
 
+/* 定义软件定时器 */
+extern struct soft_timer key_timer;
 
-
+/* 按键超时回调函数 */
+void key_timeout_func(void *args);
 
 #endif // KEY_H

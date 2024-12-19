@@ -746,8 +746,8 @@ Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
 interwork --depend=ember\startup_stm32f411xe.d -oember\startup_stm32f411xe.o -I
 .\RTE\_Ember -IC:\Users\admin\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Cor
 e\Include --predefine="__UVISION_VERSION SETA 541" --predefine="STM32F411xE SET
-A 1" --predefine="_RTE_ SETA 1" --list=startup_stm32f411xe.lst startup_stm32f41
-1xe.s
+A 1" --predefine="_RTE_ SETA 1" --list=.\list\startup_stm32f411xe.lst startup_s
+tm32f411xe.s
 
 
 
