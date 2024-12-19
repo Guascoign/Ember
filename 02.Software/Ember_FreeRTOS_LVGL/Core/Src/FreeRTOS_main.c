@@ -153,19 +153,11 @@ void Main(void *pvParameters)
 {
   
  Boot_anim();
- uint8_t key_val = 0;
- uint8_t key_time = 0;
-extern circle_buf g_key_bufs;
   while(1)
   {
     
     //lcdprintf("key = %d\n", GET_ADC_AVERAGE(hadc1 , ADC_CHANNEL_3 , 100) );
-		
-if (0 == circle_buf_read(&g_key_bufs, &key_val))
-	  {
-		 key_time = key_time + 1;
-    lcdprintf("key = %d %d\n",  key_val , key_time );
-	  }
+
     vTaskDelay(pdMS_TO_TICKS(10));
   }
 }
@@ -231,9 +223,9 @@ void Beeper(void *pvParameters)
   
   while(1)
   {
-    vTaskDelay(pdMS_TO_TICKS(10));//10ms进入一次
+    vTaskDelay(pdMS_TO_TICKS(1));//1ms进入一次
     /* ---------- Beeper ---------- */
-		if (++Beeper_count >=2)
+		if (++Beeper_count >=20)
 		{
       taskENTER_CRITICAL();           /* 进入临界区 */
 			Beeper_Proc();
@@ -241,7 +233,7 @@ void Beeper(void *pvParameters)
       taskEXIT_CRITICAL();            /* 退出临界区 */
 		}
     /* ---------- Runled ---------- */
-		 if (++Runled_count >= 200)
+		 if (++Runled_count >= 2000)
     {
         Runled_count = 0;
         if (Runled_status == 0)
@@ -250,17 +242,22 @@ void Beeper(void *pvParameters)
             Runled_status = 1;
         }
     }
-    else if (Runled_count >= 191   && Runled_status == 0)
+    else if (Runled_count >= 1910   && Runled_status == 0)
     {
         HAL_GPIO_WritePin(RUNLED_GPIO_Port, RUNLED_Pin, GPIO_PIN_SET);
         Runled_status = 1;
     }
-    else if (Runled_count < 191 && Runled_status == 1)
+    else if (Runled_count < 1910 && Runled_status == 1)
     {
         HAL_GPIO_WritePin(RUNLED_GPIO_Port, RUNLED_Pin, GPIO_PIN_RESET);
         Runled_status = 0;
     }
-    /* ---------- Key ---------- */
+    /* ---------- Soft_timer ---------- */
+    extern void Check_Soft_Timer(void *args);
+		extern key_t key1;
+    Check_Soft_Timer( (void *)&key1 );
+    extern key_t key2;
+    Check_Soft_Timer( (void *)&key2 );
   }
 }
 

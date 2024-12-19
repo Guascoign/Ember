@@ -31,7 +31,7 @@
 #include "KEY\key.h"
 #include "circle_buffer.h"
 #include "soft_timer.h"
-
+#include "uart_printf.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -53,13 +53,19 @@
 
 /* USER CODE BEGIN PV */
 uint8_t g_data_buf[100];  //按键数据缓存区
+key_t key1;
+key_t key2;
 
 /* 外部中断回调函数 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	if (GPIO_Pin == KEY1_Pin)
 	{
-		Start_Soft_Timer(&key_timer, 10); // 启动定时器，超时 10ms
+		Start_Soft_Timer(&key1.debounce_timer, 10); // 启动按键1的定时器，超时 10ms
+	}
+  if (GPIO_Pin == KEY2_Pin)
+	{
+		Start_Soft_Timer(&key2.debounce_timer, 10); // 启动按键2定时器，超时 10ms
 	}
 }
 
@@ -102,8 +108,8 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
 
-  circle_buf_init(&g_key_bufs, 100, g_data_buf);
-
+  Key_Init(&key1, KEY1_GPIO_Port, KEY1_Pin,"KEY1"); //按键实例初始化
+  Key_Init(&key2, KEY2_GPIO_Port, KEY2_Pin,"KEY2"); //按键实例初始化
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */

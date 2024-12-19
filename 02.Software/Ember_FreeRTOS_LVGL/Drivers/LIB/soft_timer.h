@@ -1,9 +1,9 @@
 /********************************************************************************
-    * 文件名称 ：circle_buffer.h
+    * 文件名称 ：soft_timer.h
     * 作     者：ZM
     * 版     本：V1.0
-    * 编写日期 ：2024-11-15
-    * 功     能：环形缓冲区实现
+    * 编写日期 ：2024-12-19
+    * 功     能：软件定时器实现
 *********************************************************************************/
 #ifndef SOFT_TIMER_H
 #define SOFT_TIMER_H
@@ -21,6 +21,6 @@ typedef struct soft_timer {
 void Start_Soft_Timer(struct soft_timer *pTimer, uint32_t timeout);
 
 /* 检查所有定时器状态 */
-void Check_Soft_Timer(void);
+void Check_Soft_Timer(void *args);
 
 #endif // SOFT_TIMER_H

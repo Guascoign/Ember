@@ -201,9 +201,12 @@ void SysTick_Handler(void)
     {
         xPortSysTickHandler();
     }
-  /*Soft_timer*/
-    extern void Check_Soft_Timer(void);
-    Check_Soft_Timer();
+
+  // /*Soft_timer*/ //移动到Freertos TASK
+  //   extern void Check_Soft_Timer(void *args);
+  //   extern key_t key1;
+  //   Check_Soft_Timer( (void *)&key1 );
+
   /* USER CODE END SysTick_IRQn 1 */
 }
 
