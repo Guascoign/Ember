@@ -10,6 +10,9 @@
 
 #include "soft_timer.h"
 #include "main.h"
+#include "BEEP/beep.h"
+#include "LCD/lcd_consle.h"
+
 
 #define KEY_PRESSED 1	//按键按下
 #define KEY_RELEASED 2	//按键松开
@@ -26,6 +29,7 @@ typedef struct key {
 void Key_Init(key_t *key, GPIO_TypeDef *port, uint8_t pin, char *name);
 /* 按键外部中断触发函数 */
 void Key_Interrupt_Handler(key_t *key);
+
 /* 定时器回调函数 */
 void Key_Debounce_Callback(void *args);
 

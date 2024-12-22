@@ -1,0 +1,68 @@
+\t (00:00:02) allegro 17.4 S037 Windows SPB 64-bit Edition
+\t (00:00:02)     Journal start - Thu Dec 19 20:46:34 2024
+\t (00:00:02)         Host=ITX User=15291 Pid=28648 CPUs=16
+\t (00:00:02) CmdLine= d:\cadence\spb_17.4\tools\bin\allegro.exe D:\Projects\Ember\01.Hardware\01.Main\02.PCB\EmberMain.brd
+\t (00:00:02) 
+   (00:00:02) Loading axlcore.cxt 
+   (00:00:03) Loading skillExt.cxt 
+   (00:00:03) function addMetadata redefined
+   (00:00:03) function addIndent redefined
+   (00:00:03) function addLine redefined
+   (00:00:03) function addCircle redefined
+   (00:00:03) function addArc redefined
+   (00:00:03) function parseSegment redefined
+   (00:00:03) function addText redefined
+   (00:00:03) function addVia redefined
+   (00:00:03) function lineToSvgPath redefined
+   (00:00:03) function arcToSvgPath redefined
+   (00:00:03) function textToSvgPath redefined
+   (00:00:03) function createSvgPath redefined
+   (00:00:03) function createZone redefined
+   (00:00:03) function addBoardGeometry redefined
+   (00:00:03) function rotateVector redefined
+   (00:00:03) function getBboxSize redefined
+   (00:00:03) function figureToSvgPath redefined
+   (00:00:03) function addPad redefined
+   (00:00:03) function addComponentTable redefined
+   (00:00:03) function addFootprint redefined
+   (00:00:03) function addSymbols redefined
+   (00:00:03) function addCopper redefined
+   (00:00:03) function addNets redefined
+   (00:00:03) function writeJsonFile redefined
+   (00:00:03) function getVariantInfo redefined
+   (00:00:03) function exportJson redefined
+\t (00:00:05) Opening existing design...
+\d (00:00:05) Design opened: D:/Projects/Ember/01.Hardware/01.Main/02.PCB/EmberMain.brd
+\i (00:00:06) trapsize 1501
+\i (00:00:06) trapsize 1528
+\i (00:00:06) trapsize 1725
+\i (00:00:06) trapsize 1757
+\i (00:00:06) placementedit 
+\t (00:00:06) axlTrigger disabled!
+\t (00:00:06) axlTrigger disabled!
+\i (00:00:06) zoom out 1 
+\i (00:00:06) setwindow pcb
+\i (00:00:06) zoom out 1349.696 335.295
+\i (00:00:06) trapsize 3514
+\i (00:00:07) zoom out 1 
+\i (00:00:07) setwindow pcb
+\i (00:00:07) zoom out 1358.831 331.781
+\i (00:00:07) trapsize 7028
+\i (00:00:07) GTSys_GTCmdg GTChangePage up 
+\i (00:00:07) placementedit 
+\i (00:00:09) GTSys_GTCmdg GTChangePage down 
+\i (00:00:09) placementedit 
+\i (00:00:09) GTSys_GTCmdg GTChangePage down 
+\i (00:00:09) placementedit 
+\i (00:00:09) GTSys_GTCmdg GTChangePage down 
+\i (00:00:09) placementedit 
+\i (00:00:10) GTSys_GTCmdg GTChangePage down 
+\i (00:00:10) placementedit 
+\i (00:00:10) GTSys_GTCmdg GTChangePage up 
+\i (00:00:10) placementedit 
+\i (00:00:10) GTSys_GTCmdg GTChangePage up 
+\i (00:00:10) placementedit 
+\i (00:00:11) GTSys_GTCmdg GTChangePage up 
+\i (00:00:11) placementedit 
+\i (00:00:13) exit 
+\t (00:00:13)     Journal end - Thu Dec 19 20:46:46 2024

@@ -1,6 +1,4 @@
 #include "key.h"
-#include "main.h" // HAL_GetTick 和 GPIO 函数声明
-#include "LCD/lcd_consle.h"
 
 /* 初始化按键 */
 void Key_Init(key_t *key, GPIO_TypeDef *port, uint8_t pin, char *name)
@@ -30,8 +28,10 @@ void Key_Debounce_Callback(void *args)
 	if (HAL_GPIO_ReadPin(key->port, key->pin) == GPIO_PIN_RESET) {
 		// 按键按下后处理逻辑（记录按键值或触发事件）
 		lcdprintf("key pressed!\n");
+		Beeper_Perform(KEY_PRESS);		// 蜂鸣器响声
 	}
 	else{
 		lcdprintf("key Released!\n");
+		Beeper_Perform(KEY_RELEASE);		// 蜂鸣器响声
 	}
 }

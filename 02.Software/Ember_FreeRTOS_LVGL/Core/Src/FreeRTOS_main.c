@@ -282,7 +282,7 @@ void Boot_anim(void)
 	lcdprintf("HELLO!\n");
   vTaskDelay(pdMS_TO_TICKS(200));
   PWM_WS2812B_Red(3);
- // Beeper_Perform(BOOT);		// ·äÃùÆ÷ÏìÉù
+  Beeper_Perform(BOOT);		// ·äÃùÆ÷ÏìÉù
   vTaskDelay(pdMS_TO_TICKS(150));
   PWM_WS2812B_Blue(3);
   vTaskDelay(pdMS_TO_TICKS(150));
