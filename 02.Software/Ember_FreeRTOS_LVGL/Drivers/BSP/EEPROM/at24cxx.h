@@ -12,20 +12,19 @@
 #include "main.h"
 #include <stdint.h>
 
+#define AT24_Address1 0x50  //七位地址  1010 （A0）（A1）（A2）（R/W）
 
-#define AT24_Address 0xA0
-
-// #define USE_AT24C01    //使用AT24C01
-// #define USE_AT24C02    //使用AT24C02
-// #define USE_AT24C04    //使用AT24C04
-// #define USE_AT24C08    //使用AT24C08
-// #define USE_AT24C16    //使用AT24C16
-// #define USE_AT24C32    //使用AT24C32
- #define USE_AT24C64    //使用AT24C64
-// #define USE_AT24C128   //使用AT24C128
-// #define USE_AT24C256   //使用AT24C256
-
-
+typedef enum {
+    AT24C01 = 0,
+    AT24C02,
+    AT24C04,
+    AT24C08,
+    AT24C16,
+    AT24C32,
+    AT24C64,
+    AT24C128,
+    AT24C256
+} AT24CXX_EEP_TYPE;
 
 typedef struct AT24CXX_Type
 {
@@ -40,16 +39,17 @@ typedef struct AT24CXX_Device
 {
     char *name;             //存储器名称
     AT24CXX_TypeDef *EEP_TYPE;        //存储器类型（存储器容量）
-    IIC_DeviceTypeDef *IIC_Device;                          // IIC设备接口
+    IIC_BusTypeDef *IIC_Bus;                          // IIC设备接口
+    uint8_t Address;
     void (*AT24CXX_Init)(struct AT24CXX_Device *p_AT24Dev); //初始化AT24CXX
-    uint8_t (*AT24CXX_ReadOneByte)(struct AT24CXX_Device *p_AT24Dev, uint16_t ReadAddr);//读取一个字节
-    void (*AT24CXX_WriteOneByte)(struct AT24CXX_Device *p_AT24Dev, uint16_t WriteAddr, uint8_t DataToWrite);//写入一个字节
-    void (*AT24CXX_Write)(struct AT24CXX_Device *p_AT24Dev, uint16_t WriteAddr, uint8_t *pBuffer, uint16_t NumToWrite);//连续写入(页写)
-    void (*AT24CXX_Read)(struct AT24CXX_Device *p_AT24Dev, uint16_t ReadAddr, uint8_t *pBuffer, uint16_t NumToRead);//连续读取(页读)
+    uint8_t (*AT24CXX_ReadReg)(struct AT24CXX_Device *p_AT24Dev, uint16_t ReadAddr);//读取一个字节
+    void (*AT24CXX_WriteReg)(struct AT24CXX_Device *p_AT24Dev, uint16_t WriteAddr, uint8_t DataToWrite);//写入一个字节
+    void (*AT24CXX_ReadRegs)(struct AT24CXX_Device *p_AT24Dev, uint16_t ReadAddr, uint8_t *pBuffer, uint16_t NumToRead);//连续读取(页读)
+    void (*AT24CXX_WriteRegs)(struct AT24CXX_Device *p_AT24Dev, uint16_t WriteAddr, uint8_t *pBuffer, uint16_t NumToWrite);//连续写入(页写)
     uint8_t (*AT24CXX_Check)(struct AT24CXX_Device *p_AT24Dev);   //检查器件
     void *priv_data;//私有数据
 }AT24CXX_DeviceDef;
 
-struct AT24CXX_Device *AT24CXX_GetDevice(char *name);
+AT24CXX_DeviceDef Create_AT24CXX(char *name,uint8_t Address,AT24CXX_EEP_TYPE EEP_TYPE,GPIO_TypeDef  *IIC_SCL_Port,GPIO_TypeDef  *IIC_SDA_Port,uint16_t IIC_SCL_Pin,uint16_t IIC_SDA_Pin);
 
 #endif //__AT24CXX_H

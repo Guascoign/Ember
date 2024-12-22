@@ -81,7 +81,7 @@
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
-            <RunUserProg2>1</RunUserProg2>
+            <RunUserProg2>0</RunUserProg2>
             <UserProg1Name></UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
@@ -164,10 +164,10 @@
             <AdsANop>0</AdsANop>
             <AdsANot>0</AdsANot>
             <AdsLLst>1</AdsLLst>
-            <AdsLmap>0</AdsLmap>
+            <AdsLmap>1</AdsLmap>
             <AdsLcgr>0</AdsLcgr>
             <AdsLsym>0</AdsLsym>
-            <AdsLszi>1</AdsLszi>
+            <AdsLszi>0</AdsLszi>
             <AdsLtoi>0</AdsLtoi>
             <AdsLsun>0</AdsLsun>
             <AdsLven>0</AdsLven>
@@ -2024,21 +2024,6 @@
               <FilePath>..\Middlewares_User\LVGL\GUI_APP\GUI_Guider\generated\widgets_init.c</FilePath>
             </File>
             <File>
-              <FileName>lv_font_Alatsi_Regular_18.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Middlewares_User\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_Alatsi_Regular_18.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_font_montserratMedium_12.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Middlewares_User\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_montserratMedium_12.c</FilePath>
-            </File>
-            <File>
-              <FileName>lv_font_montserratMedium_16.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Middlewares_User\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_montserratMedium_16.c</FilePath>
-            </File>
-            <File>
               <FileName>lv_font_Youshebiaotihei_10.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares_User\LVGL\GUI_APP\GUI_Guider\generated\guider_fonts\lv_font_Youshebiaotihei_10.c</FilePath>
@@ -2057,11 +2042,6 @@
               <FileName>_indent_alpha_20x20.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Middlewares_User\LVGL\GUI_APP\GUI_Guider\generated\images\_indent_alpha_20x20.c</FilePath>
-            </File>
-            <File>
-              <FileName>_windowsxp_alpha_187x85.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Middlewares_User\LVGL\GUI_APP\GUI_Guider\generated\images\_windowsxp_alpha_187x85.c</FilePath>
             </File>
             <File>
               <FileName>_windowsxp_alpha_198x89.c</FileName>
@@ -2083,11 +2063,6 @@
         <Group>
           <GroupName>BSP/LCD</GroupName>
           <Files>
-            <File>
-              <FileName>HzLib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Drivers\BSP\LCD\HzLib.c</FilePath>
-            </File>
             <File>
               <FileName>lcd.c</FileName>
               <FileType>1</FileType>
@@ -2180,6 +2155,16 @@
               <FileName>key.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\BSP\KEY\key.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>BSP/MPU</GroupName>
+          <Files>
+            <File>
+              <FileName>MPU6050.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\BSP\MPU\MPU6050.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -29,6 +29,10 @@
         "limits": "c",
         "locale": "c",
         "random": "c",
-        "vector": "c"
+        "vector": "c",
+        "math.h": "c",
+        "lcd_consle.h": "c",
+        "at24cxx.h": "c",
+        "typeinfo": "c"
     }
 }

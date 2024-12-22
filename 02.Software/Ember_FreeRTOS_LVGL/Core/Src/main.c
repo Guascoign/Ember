@@ -29,9 +29,11 @@
 /* USER CODE BEGIN Includes */
 #include "FreeRTOS_main.h"
 #include "KEY\key.h"
-#include "circle_buffer.h"
+#include "IIC/iic.h"
+#include "EEPROM/at24cxx.h"
+//#include "circle_buffer.h"
 #include "soft_timer.h"
-#include "uart_printf.h"
+//#include "uart_printf.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,6 +57,7 @@
 uint8_t g_data_buf[100];  //按键数据缓存区
 key_t key1;
 key_t key2;
+AT24CXX_DeviceDef myDevice;
 
 /* 外部中断回调函数 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
@@ -123,6 +126,10 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM10_Init();
   /* USER CODE BEGIN 2 */
+  
+  
+  myDevice = Create_AT24CXX("AT24C64", 0xA0, AT24C64, IIC2_SCL_GPIO_Port, IIC2_SDA_GPIO_Port, IIC2_SCL_Pin, IIC2_SDA_Pin);
+
 
 	freertos_start();
 	

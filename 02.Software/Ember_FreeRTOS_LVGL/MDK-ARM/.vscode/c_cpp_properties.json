@@ -86,7 +86,8 @@
                 "d:\\Projects\\Ember\\02.Software\\Ember_FreeRTOS_LVGL\\Drivers\\BSP\\RGB",
                 "d:\\Projects\\Ember\\02.Software\\Ember_FreeRTOS_LVGL\\Drivers\\BSP\\UART",
                 "d:\\Projects\\Ember\\02.Software\\Ember_FreeRTOS_LVGL\\Drivers\\BSP\\BEEP",
-                "d:\\Projects\\Ember\\02.Software\\Ember_FreeRTOS_LVGL\\Drivers\\BSP\\KEY"
+                "d:\\Projects\\Ember\\02.Software\\Ember_FreeRTOS_LVGL\\Drivers\\BSP\\KEY",
+                "d:\\Projects\\Ember\\02.Software\\Ember_FreeRTOS_LVGL\\Drivers\\BSP\\MPU"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

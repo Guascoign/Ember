@@ -84,7 +84,7 @@ void Error_Handler(void);
 #define SPI2_CS1_GPIO_Port GPIOA
 #define IIC2_SCL_Pin GPIO_PIN_4
 #define IIC2_SCL_GPIO_Port GPIOB
-#define IIC2_SDA_Pin GPIO_PIN_5
+#define IIC2_SDA_Pin GPIO_PIN_3
 #define IIC2_SDA_GPIO_Port GPIOB
 #define RGB_Pin GPIO_PIN_8
 #define RGB_GPIO_Port GPIOB

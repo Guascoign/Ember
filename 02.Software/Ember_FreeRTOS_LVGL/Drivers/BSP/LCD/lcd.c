@@ -7,7 +7,7 @@
 *********************************************************************************/
 #include "LCD/lcd.h"
 #include "LCD/font.h"
-#include "LCD/HzLib.h"
+//#include "LCD/HzLib.h"
 uint16_t POINT_COLOR = WHITE;        //默认笔刷颜色
 uint16_t BACK_COLOR = BLACK;        //默认背景颜色
 /**

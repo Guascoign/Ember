@@ -15,6 +15,7 @@
 #include "BEEP/beep.h"
 #include "RGB/ws2812b.h"
 #include "adc.h"
+//#include "MPU/MPU6050.h"
 /*LVGL*********************************************************************************************/
 #include "lvgl.h"
 #include "lv_port_disp_template.h"
@@ -109,7 +110,6 @@ void start_task(void *pvParameters)
   taskENTER_CRITICAL();           /* 进入临界区 */
   Beeper_Init();						// 蜂鸣器初始化
   //PWM_WS2812B_Init(125);	// RGB初始化
-
   /* 创建任务1 */
   xTaskCreate((TaskFunction_t )Main,
               (const char*    )"Main_Task",
@@ -151,14 +151,20 @@ extern ADC_HandleTypeDef hadc1;
  */
 void Main(void *pvParameters)
 {
-  
- Boot_anim();
+  Boot_anim();
+  extern AT24CXX_DeviceDef myDevice;
+  if (myDevice.priv_data == NULL) {
+    lcdprintf("AT24C126 device created successfully!\n");
+} else {
+    lcdprintf("Device creation failed.\n");
+}
+
   while(1)
   {
-    
-    //lcdprintf("key = %d\n", GET_ADC_AVERAGE(hadc1 , ADC_CHANNEL_3 , 100) );
 
-    vTaskDelay(pdMS_TO_TICKS(10));
+    //lcdprintf("ADC = %d\n", GET_ADC_AVERAGE(hadc1 , ADC_CHANNEL_3 , 100) );
+
+    vTaskDelay(pdMS_TO_TICKS(1000));
   }
 }
 

@@ -5,89 +5,8 @@
      *编写日期 ：2024-05-09
      *功     能：AT24CXX驱动
 *********************************************************************************/
-#include "at24cxx.h"
+#include "EEPROM/at24cxx.h"
 #include "string.h"
-
-#ifdef USE_AT24C01
-struct AT24CXX_Type AT24C01 = { 
-    .EEP_SIZE = 128,
-    .EEP_PAGENUM = 16,
-    .EEP_PAGESIZE = 8,
-    .ADDR = AT24_Address
-};
-#endif
-
-#ifdef USE_AT24C02
-struct AT24CXX_Type AT24C02 = { 
-    .EEP_SIZE = 256,
-    .EEP_PAGENUM = 32,
-    .EEP_PAGESIZE = 8,
-    .ADDR = AT24_Address
-};
-#endif
-
-#ifdef USE_AT24C04
-struct AT24CXX_Type AT24C04 = { 
-    .EEP_SIZE = 512,
-    .EEP_PAGENUM = 32,
-    .EEP_PAGESIZE = 16,
-    .ADDR = AT24_Address
-};
-#endif
-
-#ifdef USE_AT24C08
-struct AT24CXX_Type AT24C08 = { 
-    .EEP_SIZE = 1024,
-    .EEP_PAGENUM = 64,
-    .EEP_PAGESIZE = 16,
-    .ADDR = AT24_Address
-};
-#endif
-
-#ifdef USE_AT24C16
-struct AT24CXX_Type AT24C16 = { 
-    .EEP_SIZE = 2048,
-    .EEP_PAGENUM = 128,
-    .EEP_PAGESIZE = 16,
-    .ADDR = AT24_Address
-};
-#endif
-
-#ifdef USE_AT24C32
-struct AT24CXX_Type AT24C32 = { 
-    .EEP_SIZE = 4096,
-    .EEP_PAGENUM = 128,
-    .EEP_PAGESIZE = 32,
-    .ADDR = AT24_Address
-};
-#endif
-
-#ifdef USE_AT24C64
-struct AT24CXX_Type AT24C64 = { 
-    .EEP_SIZE = 8192,
-    .EEP_PAGENUM = 256,
-    .EEP_PAGESIZE = 32,
-    .ADDR = AT24_Address
-};
-#endif
-
-#ifdef USE_AT24C128
-struct AT24CXX_Type AT24C128 = { 
-    .EEP_SIZE = 16384,
-    .EEP_PAGENUM = 512,
-    .EEP_PAGESIZE = 64,
-    .ADDR = AT24_Address
-};
-#endif
-
-#ifdef USE_AT24C256
-struct AT24CXX_Type AT24C256 = { 
-    .EEP_SIZE = 32768,
-    .EEP_PAGENUM = 512,
-    .EEP_PAGESIZE = 128,
-    .ADDR = AT24_Address
-};
-#endif
 
 /**
  * @brief   读取AT24CXX存储器中指定地址的数据
@@ -97,25 +16,25 @@ struct AT24CXX_Type AT24C256 = {
  *
  * @return  读取到的数据
  */
-static uint8_t AT24CXX_ReadOneByte(struct AT24CXX_Device *p_AT24Dev,uint16_t ReadAddr)
+static uint8_t AT24CXX_ReadReg(struct AT24CXX_Device *p_AT24Dev,uint16_t ReadAddr)
 {
 	uint8_t temp=0;                          
-    p_AT24Dev->IIC_Device->IIC_Start(p_AT24Dev->IIC_Device);   //发送起始信号
-    p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, AT24_Address | 0);    //发送地址 + 写命令
-    p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
+    p_AT24Dev->IIC_Bus->IIC_Start(p_AT24Dev->IIC_Bus);   //发送起始信号
+    p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, (p_AT24Dev->Address<<1) | 0);    //发送地址 + 写命令
+    p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
     if(p_AT24Dev->EEP_TYPE->EEP_SIZE > 2048) //AT24C32/64/128/256地址是2个字节的
     {
-        p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, ReadAddr / 256);   //发送高地址
-        p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
+        p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, ReadAddr / 256);   //发送高地址
+        p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
     }
-    p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, ReadAddr % 256);   //发送低地址
-    p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
-    p_AT24Dev->IIC_Device->IIC_Restart(p_AT24Dev->IIC_Device);   //发送起始信号
-    p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, AT24_Address | 1);    //发送地址 + 读命令
-    p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
-    temp = p_AT24Dev->IIC_Device->IIC_ReadByte(p_AT24Dev->IIC_Device,0);//读取一个字节
-    p_AT24Dev->IIC_Device->IIC_Nack(p_AT24Dev->IIC_Device);//发送nACK
-    p_AT24Dev->IIC_Device->IIC_Stop(p_AT24Dev->IIC_Device);//产生一个停止条件
+    p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, ReadAddr % 256);   //发送低地址
+    p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
+    p_AT24Dev->IIC_Bus->IIC_Restart(p_AT24Dev->IIC_Bus);   //发送起始信号
+    p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, (p_AT24Dev->Address<<1) | 1);    //发送地址 + 读命令
+    p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
+    temp = p_AT24Dev->IIC_Bus->IIC_ReceiveByte(p_AT24Dev->IIC_Bus,0);//读取一个字节
+    p_AT24Dev->IIC_Bus->IIC_Nack(p_AT24Dev->IIC_Bus);//发送nACK
+    p_AT24Dev->IIC_Bus->IIC_Stop(p_AT24Dev->IIC_Bus);//产生一个停止条件
 	return temp;
 }
 
@@ -126,37 +45,23 @@ static uint8_t AT24CXX_ReadOneByte(struct AT24CXX_Device *p_AT24Dev,uint16_t Rea
  * @param   WriteAddr       写入数据的目的地址
  * @param   DataToWrite     要写入的数据
  */
-static void AT24CXX_WriteOneByte(struct AT24CXX_Device *p_AT24Dev,uint16_t WriteAddr,uint8_t DataToWrite)
+static void AT24CXX_WriteReg(struct AT24CXX_Device *p_AT24Dev,uint16_t WriteAddr,uint8_t DataToWrite)
 {                                
-    p_AT24Dev->IIC_Device->IIC_Start(p_AT24Dev->IIC_Device);   //发送起始信号
-    p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, AT24_Address | 0);    //发送地址 + 写命令
-    p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
+    p_AT24Dev->IIC_Bus->IIC_Start(p_AT24Dev->IIC_Bus);   //发送起始信号
+    p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, (p_AT24Dev->Address<<1) | 0);    //发送地址 + 写命令
+    p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
     if(p_AT24Dev->EEP_TYPE->EEP_SIZE > 2048)//AT24C32/64/128/256地址是2个字节的
     {
-        p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, WriteAddr / 256);   //发送高地址
-        p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
+        p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, WriteAddr / 256);   //发送高地址
+        p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
     }
-    p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, WriteAddr % 256);   //发送低地址
-    p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
-    p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device,DataToWrite);     //发送字节 
-    p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
-  	p_AT24Dev->IIC_Device->IIC_Stop(p_AT24Dev->IIC_Device);//产生一个停止条件
-    p_AT24Dev->IIC_Device->delay_us(10000); //写完后需要一定的时间
+    p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, WriteAddr % 256);   //发送低地址
+    p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
+    p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus,DataToWrite);     //发送字节 
+    p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
+  	p_AT24Dev->IIC_Bus->IIC_Stop(p_AT24Dev->IIC_Bus);//产生一个停止条件
+    p_AT24Dev->IIC_Bus->delay_us(10000); //写完后需要一定的时间
 }
-
-/**
- * @brief   初始化IIC接口
- *
- * @param   p_AT24Dev   AT24CXX存储器设备结构体指针
- */
-static void AT24CXX_Init(struct AT24CXX_Device *p_AT24Dev)
-{
-    #ifdef Debug_Logs
-        printf("AT24CXX_Init\r\n");
-    #endif   
- 	p_AT24Dev->IIC_Device->IIC_Init(p_AT24Dev->IIC_Device);//IIC初始化
-}
-
 
 /**
  * @brief   检查AT24CXX存储器设备
@@ -167,13 +72,13 @@ static void AT24CXX_Init(struct AT24CXX_Device *p_AT24Dev)
 static uint8_t AT24CXX_Check(struct AT24CXX_Device *p_AT24Dev)   
 {
 	uint8_t temp;
- 	temp = p_AT24Dev->AT24CXX_ReadOneByte(p_AT24Dev,p_AT24Dev->EEP_TYPE->EEP_SIZE);//避免每次开机都写AT24CXX      
- 	if(temp == 0X42)return 0;     
+ 	temp = p_AT24Dev->AT24CXX_ReadReg(p_AT24Dev,p_AT24Dev->EEP_TYPE->EEP_SIZE);//避免每次开机都写AT24CXX      
+ 	if(temp == 0X67)return 0;     
  	else//排除第一次初始化的情况
  	{
-   		 p_AT24Dev->AT24CXX_WriteOneByte(p_AT24Dev,p_AT24Dev->EEP_TYPE->EEP_SIZE,0X42);
-     		temp = p_AT24Dev->AT24CXX_ReadOneByte(p_AT24Dev,p_AT24Dev->EEP_TYPE->EEP_SIZE);
-    		if(temp==0X42)return 0;
+   		 p_AT24Dev->AT24CXX_WriteReg(p_AT24Dev,p_AT24Dev->EEP_TYPE->EEP_SIZE,0X67);
+     		temp = p_AT24Dev->AT24CXX_ReadReg(p_AT24Dev,p_AT24Dev->EEP_TYPE->EEP_SIZE);
+    		if(temp==0X67)return 0;
 	 }
      #ifdef Debug_Logs
         printf("EEprom Check ERROR");
@@ -183,7 +88,7 @@ static uint8_t AT24CXX_Check(struct AT24CXX_Device *p_AT24Dev)
 
 
 
-static void AT24CXX_Write(struct AT24CXX_Device *p_AT24Dev, uint16_t WriteAddr, uint8_t *pBuffer, uint16_t NumToWrite)
+static void AT24CXX_WriteRegs(struct AT24CXX_Device *p_AT24Dev, uint16_t WriteAddr, uint8_t *pBuffer, uint16_t NumToWrite)
 {                                
     uint16_t PageSize = p_AT24Dev->EEP_TYPE->EEP_PAGESIZE;
     uint16_t PageNum = p_AT24Dev->EEP_TYPE->EEP_PAGENUM;
@@ -208,26 +113,26 @@ static void AT24CXX_Write(struct AT24CXX_Device *p_AT24Dev, uint16_t WriteAddr, 
     while (NumToWrite > RemainingBytes)
     {
         // 先写入当前页剩余的字节
-        p_AT24Dev->IIC_Device->IIC_Start(p_AT24Dev->IIC_Device);   // 发送起始信号
-        p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, AT24_Address | 0);    // 发送地址 + 写命令
-        p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
+        p_AT24Dev->IIC_Bus->IIC_Start(p_AT24Dev->IIC_Bus);   // 发送起始信号
+        p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, (p_AT24Dev->Address<<1) | 0);    // 发送地址 + 写命令
+        p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
         if(p_AT24Dev->EEP_TYPE->EEP_SIZE > 2048)  // AT24C32/64/128/256地址是2个字节的
         {
-            p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, PageStartAddr / 256);   // 发送高地址
-            p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
+            p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, PageStartAddr / 256);   // 发送高地址
+            p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
         }
-        p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, PageStartAddr % 256);   // 发送低地址
-        p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
+        p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, PageStartAddr % 256);   // 发送低地址
+        p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
 
         // 循环写入数据到当前页
         for(uint16_t i = 0; i < RemainingBytes; i++)
         {
-            p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, pBuffer[i]);  // 发送字节
-            p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
+            p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, pBuffer[i]);  // 发送字节
+            p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
         }
 
-        p_AT24Dev->IIC_Device->IIC_Stop(p_AT24Dev->IIC_Device);  // 产生一个停止条件
-        p_AT24Dev->IIC_Device->delay_us(10000); // 写完后需要一定的时间
+        p_AT24Dev->IIC_Bus->IIC_Stop(p_AT24Dev->IIC_Bus);  // 产生一个停止条件
+        p_AT24Dev->IIC_Bus->delay_us(10000); // 写完后需要一定的时间
 
         // 更新要写入的数据和写入地址
         NumToWrite -= RemainingBytes;
@@ -240,96 +145,148 @@ static void AT24CXX_Write(struct AT24CXX_Device *p_AT24Dev, uint16_t WriteAddr, 
     }
 
     // 写入剩余的数据（不足一页的情况）
-    p_AT24Dev->IIC_Device->IIC_Start(p_AT24Dev->IIC_Device);   // 发送起始信号
-    p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, AT24_Address | 0);    // 发送地址 + 写命令
-    p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
+    p_AT24Dev->IIC_Bus->IIC_Start(p_AT24Dev->IIC_Bus);   // 发送起始信号
+    p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, (p_AT24Dev->Address<<1) | 0);    // 发送地址 + 写命令
+    p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
     if(p_AT24Dev->EEP_TYPE->EEP_SIZE > 2048)  // AT24C32/64/128/256地址是2个字节的
     {
-        p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, WriteAddr / 256);   // 发送高地址
-        p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
+        p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, WriteAddr / 256);   // 发送高地址
+        p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
     }
-    p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, WriteAddr % 256);   // 发送低地址
-    p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
+    p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, WriteAddr % 256);   // 发送低地址
+    p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
 
     // 循环写入剩余的数据
     for(uint16_t i = 0; i < NumToWrite; i++)
     {
-        p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, pBuffer[i]);  // 发送字节
-        p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
+        p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, pBuffer[i]);  // 发送字节
+        p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
     }
 
-    p_AT24Dev->IIC_Device->IIC_Stop(p_AT24Dev->IIC_Device);  // 产生一个停止条件
-    p_AT24Dev->IIC_Device->delay_us(10000); // 写完后需要一定的时间
+    p_AT24Dev->IIC_Bus->IIC_Stop(p_AT24Dev->IIC_Bus);  // 产生一个停止条件
+    p_AT24Dev->IIC_Bus->delay_us(10000); // 写完后需要一定的时间
 }
 
 
-void AT24CXX_Read(struct AT24CXX_Device *p_AT24Dev, uint16_t ReadAddr, uint8_t *pBuffer, uint16_t NumToRead)
+void AT24CXX_ReadRegs(struct AT24CXX_Device *p_AT24Dev, uint16_t ReadAddr, uint8_t *pBuffer, uint16_t NumToRead)
 {
-    p_AT24Dev->IIC_Device->IIC_Start(p_AT24Dev->IIC_Device);   //发送起始信号
-    p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, AT24_Address | 0);    //发送地址 + 写命令
-    p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
+    p_AT24Dev->IIC_Bus->IIC_Start(p_AT24Dev->IIC_Bus);   //发送起始信号
+    p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, (p_AT24Dev->Address<<1) | 0);    //发送地址 + 写命令
+    p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
     if(p_AT24Dev->EEP_TYPE->EEP_SIZE > 2048) //AT24C32/64/128/256地址是2个字节的
     {
-        p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, ReadAddr / 256);   //发送高地址
-        p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
+        p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, ReadAddr / 256);   //发送高地址
+        p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
     }
-    p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, ReadAddr % 256);   //发送低地址
-    p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
+    p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, ReadAddr % 256);   //发送低地址
+    p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
 
-    p_AT24Dev->IIC_Device->IIC_Restart(p_AT24Dev->IIC_Device);   //发送起始信号
-    p_AT24Dev->IIC_Device->IIC_SendByte(p_AT24Dev->IIC_Device, AT24_Address | 1);    //发送地址 + 读命令
-    p_AT24Dev->IIC_Device->IIC_WaitAck(p_AT24Dev->IIC_Device);
+    p_AT24Dev->IIC_Bus->IIC_Restart(p_AT24Dev->IIC_Bus);   //发送起始信号
+    p_AT24Dev->IIC_Bus->IIC_SendByte(p_AT24Dev->IIC_Bus, (p_AT24Dev->Address<<1) | 1);    //发送地址 + 读命令
+    p_AT24Dev->IIC_Bus->IIC_WaitAck(p_AT24Dev->IIC_Bus);
 
     // 读取数据
     for(uint16_t i = 0; i < NumToRead; i++)
     {
-        pBuffer[i] = p_AT24Dev->IIC_Device->IIC_ReadByte(p_AT24Dev->IIC_Device, i == NumToRead - 1 ? 0 : 1); //读取一个字节
+        pBuffer[i] = p_AT24Dev->IIC_Bus->IIC_ReceiveByte(p_AT24Dev->IIC_Bus, i == NumToRead - 1 ? 0 : 1); //读取一个字节
     }
 
-    p_AT24Dev->IIC_Device->IIC_Stop(p_AT24Dev->IIC_Device);  // 产生一个停止条件
+    p_AT24Dev->IIC_Bus->IIC_Stop(p_AT24Dev->IIC_Bus);  // 产生一个停止条件
 }
 
-
-
-//实例化AT24CXX对象
-extern struct IIC_Device IIC2;//IIC.c定义接口
-struct AT24CXX_Device EEPROM_device = {
-    .name = "EEPROM",
-    .EEP_TYPE =  &AT24C64,
-    .IIC_Device = &IIC2,
-    .AT24CXX_Init = AT24CXX_Init,
-    .AT24CXX_ReadOneByte = AT24CXX_ReadOneByte, //done
-    .AT24CXX_WriteOneByte = AT24CXX_WriteOneByte,   //done
-    .AT24CXX_Read = AT24CXX_Read,
-    .AT24CXX_Write = AT24CXX_Write,
-    .AT24CXX_Check = AT24CXX_Check,
-    .priv_data = NULL
-};
-
-
 /**
-  *@brief   AT24设备数组
- */
-struct AT24CXX_Device *AT24CXX_Devices[] = {
-    &EEPROM_device  //AT24C64
-};
-
-/**
-  *@brief   根据设备名称获取对应的EEPROM设备指针
+ * @brief   创建AT24CXX设备
  *
-  *@param   name    设备名称
-  *@return  返回对应设备名称的EEPROM设备指针，如果找不到则返回NULL
+ * @param   p_AT24Dev   AT24CXX存储器设备结构体指针
  */
-struct AT24CXX_Device *AT24CXX_GetDevice(char *name)
+AT24CXX_DeviceDef Create_AT24CXX(char *name,uint8_t Address,AT24CXX_EEP_TYPE EEP_TYPE,GPIO_TypeDef  *IIC_SCL_Port,GPIO_TypeDef  *IIC_SDA_Port,uint16_t IIC_SCL_Pin,uint16_t IIC_SDA_Pin)
 {
-    int i = 0;
-        for (i = 0; i < sizeof(AT24CXX_Devices)/sizeof(AT24CXX_Devices[0]); i++)
-    {
-        if (0 == strcmp(name, AT24CXX_Devices[i]->name))
-            return AT24CXX_Devices[i];
+    AT24CXX_DeviceDef AT24CXX;
+    IIC_BusTypeDef IIC_Bus;
+    IIC_Bus = Create_IIC(name , IIC_SCL_Port ,IIC_SDA_Port,IIC_SCL_Pin,IIC_SDA_Pin);
+    AT24CXX.name = name;
+switch (EEP_TYPE) {
+        case AT24C01:
+            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
+                .EEP_SIZE = 128,
+                .EEP_PAGENUM = 16,
+                .EEP_PAGESIZE = 8
+            };
+            break;
+        case AT24C02:
+            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
+                .EEP_SIZE = 256,
+                .EEP_PAGENUM = 32,
+                .EEP_PAGESIZE = 8
+            };
+            break;
+        case AT24C04:
+            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
+                .EEP_SIZE = 512,
+                .EEP_PAGENUM = 32,
+                .EEP_PAGESIZE = 16
+            };
+            break;
+        case AT24C08:
+            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
+                .EEP_SIZE = 1024,
+                .EEP_PAGENUM = 64,
+                .EEP_PAGESIZE = 16
+            };
+            break;
+        case AT24C16:
+            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
+                .EEP_SIZE = 2048,
+                .EEP_PAGENUM = 128,
+                .EEP_PAGESIZE = 16
+            };
+            break;
+        case AT24C32:
+            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
+                .EEP_SIZE = 4096,
+                .EEP_PAGENUM = 128,
+                .EEP_PAGESIZE = 32
+            };
+            break;
+        case AT24C64:
+            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
+                .EEP_SIZE = 8192,
+                .EEP_PAGENUM = 256,
+                .EEP_PAGESIZE = 32
+            };
+            break;
+        case AT24C128:
+            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
+                .EEP_SIZE = 16384,
+                .EEP_PAGENUM = 512,
+                .EEP_PAGESIZE = 64
+            };
+            break;
+        case AT24C256:
+            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
+                .EEP_SIZE = 32768,
+                .EEP_PAGENUM = 512,
+                .EEP_PAGESIZE = 128
+            };
+            break;
+        default:
+            AT24CXX.EEP_TYPE = NULL;  // 错误的 EEPROM 类型
+            break;
     }
-    return NULL;
+    AT24CXX.IIC_Bus = &IIC_Bus;
+    AT24CXX.Address = Address;
+    AT24CXX.AT24CXX_ReadReg = AT24CXX_ReadReg; 
+    AT24CXX.AT24CXX_WriteReg = AT24CXX_WriteReg; 
+    AT24CXX.AT24CXX_ReadRegs = AT24CXX_ReadRegs;
+    AT24CXX.AT24CXX_WriteRegs = AT24CXX_WriteRegs;
+    AT24CXX.AT24CXX_Check = AT24CXX_Check;
+
+     // 检查 EEPROM 类型是否正确
+    if (AT24CXX.EEP_TYPE != NULL && AT24CXX_Check(&AT24CXX) == 0) {
+        AT24CXX.priv_data = NULL;
+        return AT24CXX; // 创建成功
+    } else {
+        AT24CXX.priv_data = (void *)1;  // 创建失败
+        return AT24CXX;
+    }
 }
-
-
-
