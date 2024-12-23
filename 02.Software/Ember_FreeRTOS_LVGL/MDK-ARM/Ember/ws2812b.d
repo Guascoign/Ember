@@ -1,6 +1,6 @@
 ember\ws2812b.o: ..\Drivers\BSP\RGB\ws2812b.c
 ember\ws2812b.o: ../Drivers/BSP/RGB\ws2812b.h
-ember\ws2812b.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+ember\ws2812b.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\ws2812b.o: ../Core/Inc/main.h
 ember\ws2812b.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 ember\ws2812b.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -16,7 +16,7 @@ ember\ws2812b.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 ember\ws2812b.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 ember\ws2812b.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 ember\ws2812b.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-ember\ws2812b.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+ember\ws2812b.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ember\ws2812b.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 ember\ws2812b.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 ember\ws2812b.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -40,15 +40,15 @@ ember\ws2812b.o: ../Drivers/BSP/KEY\key.h
 ember\ws2812b.o: ../Drivers/LIB/soft_timer.h
 ember\ws2812b.o: ../Core/Inc/main.h
 ember\ws2812b.o: ../Drivers/BSP/BEEP/beep.h
-ember\ws2812b.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+ember\ws2812b.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ember\ws2812b.o: ../Drivers/BSP/LCD/lcd_consle.h
 ember\ws2812b.o: ../Drivers/BSP/LCD/lcd.h
 ember\ws2812b.o: ../Core/Inc/gpio.h
 ember\ws2812b.o: ../Core/Inc/spi.h
-ember\ws2812b.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-ember\ws2812b.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-ember\ws2812b.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-ember\ws2812b.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+ember\ws2812b.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+ember\ws2812b.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+ember\ws2812b.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+ember\ws2812b.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 ember\ws2812b.o: ../Drivers/BSP/LCD/st7789.h
 ember\ws2812b.o: ../Drivers/BSP/LCD/lcd.h
 ember\ws2812b.o: ../Core/Inc/tim.h

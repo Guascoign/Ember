@@ -3,7 +3,7 @@ ember\beep.o: ../Drivers/BSP/BEEP/beep.h
 ember\beep.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 ember\beep.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h
 ember\beep.o: ../Drivers/CMSIS/Include/core_cm4.h
-ember\beep.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+ember\beep.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\beep.o: ../Drivers/CMSIS/Include/cmsis_version.h
 ember\beep.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 ember\beep.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -15,7 +15,7 @@ ember\beep.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
 ember\beep.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 ember\beep.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 ember\beep.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-ember\beep.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+ember\beep.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ember\beep.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 ember\beep.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 ember\beep.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -35,7 +35,7 @@ ember\beep.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 ember\beep.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 ember\beep.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 ember\beep.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-ember\beep.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+ember\beep.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ember\beep.o: ../Core/Inc/main.h
 ember\beep.o: ../Drivers/BSP/KEY\key.h
 ember\beep.o: ../Drivers/LIB/soft_timer.h
@@ -45,9 +45,9 @@ ember\beep.o: ../Drivers/BSP/LCD/lcd_consle.h
 ember\beep.o: ../Drivers/BSP/LCD/lcd.h
 ember\beep.o: ../Core/Inc/gpio.h
 ember\beep.o: ../Core/Inc/spi.h
-ember\beep.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-ember\beep.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-ember\beep.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-ember\beep.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+ember\beep.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+ember\beep.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+ember\beep.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+ember\beep.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 ember\beep.o: ../Drivers/BSP/LCD/st7789.h
 ember\beep.o: ../Drivers/BSP/LCD/lcd.h

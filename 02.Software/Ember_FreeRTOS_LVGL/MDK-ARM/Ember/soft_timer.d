@@ -1,6 +1,6 @@
 ember\soft_timer.o: ..\Drivers\LIB\soft_timer.c
 ember\soft_timer.o: ..\Drivers\LIB\soft_timer.h
-ember\soft_timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+ember\soft_timer.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\soft_timer.o: ../Core/Inc/main.h
 ember\soft_timer.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 ember\soft_timer.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -16,7 +16,7 @@ ember\soft_timer.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 ember\soft_timer.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 ember\soft_timer.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 ember\soft_timer.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-ember\soft_timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+ember\soft_timer.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ember\soft_timer.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 ember\soft_timer.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 ember\soft_timer.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -39,14 +39,14 @@ ember\soft_timer.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 ember\soft_timer.o: ../Drivers/BSP/KEY\key.h
 ember\soft_timer.o: ../Core/Inc/main.h
 ember\soft_timer.o: ../Drivers/BSP/BEEP/beep.h
-ember\soft_timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+ember\soft_timer.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ember\soft_timer.o: ../Drivers/BSP/LCD/lcd_consle.h
 ember\soft_timer.o: ../Drivers/BSP/LCD/lcd.h
 ember\soft_timer.o: ../Core/Inc/gpio.h
 ember\soft_timer.o: ../Core/Inc/spi.h
-ember\soft_timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-ember\soft_timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-ember\soft_timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-ember\soft_timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+ember\soft_timer.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+ember\soft_timer.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+ember\soft_timer.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+ember\soft_timer.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 ember\soft_timer.o: ../Drivers/BSP/LCD/st7789.h
 ember\soft_timer.o: ../Drivers/BSP/LCD/lcd.h

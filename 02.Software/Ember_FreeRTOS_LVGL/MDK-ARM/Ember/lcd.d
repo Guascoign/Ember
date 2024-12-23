@@ -9,7 +9,7 @@ ember\lcd.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 ember\lcd.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 ember\lcd.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h
 ember\lcd.o: ../Drivers/CMSIS/Include/core_cm4.h
-ember\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+ember\lcd.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\lcd.o: ../Drivers/CMSIS/Include/cmsis_version.h
 ember\lcd.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 ember\lcd.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -17,7 +17,7 @@ ember\lcd.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 ember\lcd.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 ember\lcd.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 ember\lcd.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-ember\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+ember\lcd.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ember\lcd.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 ember\lcd.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 ember\lcd.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -41,13 +41,13 @@ ember\lcd.o: ../Drivers/BSP/KEY\key.h
 ember\lcd.o: ../Drivers/LIB/soft_timer.h
 ember\lcd.o: ../Core/Inc/main.h
 ember\lcd.o: ../Drivers/BSP/BEEP/beep.h
-ember\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+ember\lcd.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ember\lcd.o: ../Drivers/BSP/LCD/lcd_consle.h
 ember\lcd.o: ../Drivers/BSP/LCD/lcd.h
-ember\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-ember\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
-ember\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+ember\lcd.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+ember\lcd.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+ember\lcd.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ember\lcd.o: ../Core/Inc/spi.h
-ember\lcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+ember\lcd.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ember\lcd.o: ../Drivers/BSP/LCD/st7789.h
 ember\lcd.o: ../Drivers/BSP/LCD/font.h

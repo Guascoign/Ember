@@ -1,9 +1,9 @@
 ember\queue.o: ..\Middlewares_User\FreeRTOS\queue.c
-ember\queue.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-ember\queue.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+ember\queue.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+ember\queue.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ember\queue.o: ../Middlewares_User/FreeRTOS/include/FreeRTOS.h
-ember\queue.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-ember\queue.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+ember\queue.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+ember\queue.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\queue.o: ../Middlewares_User/FreeRTOS/include/FreeRTOSConfig.h
 ember\queue.o: ../Middlewares_User/FreeRTOS/include/projdefs.h
 ember\queue.o: ../Middlewares_User/FreeRTOS/include/portable.h

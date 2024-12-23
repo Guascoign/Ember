@@ -6,7 +6,7 @@ ember\uart_pack.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 ember\uart_pack.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 ember\uart_pack.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h
 ember\uart_pack.o: ../Drivers/CMSIS/Include/core_cm4.h
-ember\uart_pack.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+ember\uart_pack.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\uart_pack.o: ../Drivers/CMSIS/Include/cmsis_version.h
 ember\uart_pack.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 ember\uart_pack.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -14,7 +14,7 @@ ember\uart_pack.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 ember\uart_pack.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 ember\uart_pack.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 ember\uart_pack.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-ember\uart_pack.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+ember\uart_pack.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ember\uart_pack.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 ember\uart_pack.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 ember\uart_pack.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -36,4 +36,4 @@ ember\uart_pack.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 ember\uart_pack.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 ember\uart_pack.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h
 ember\uart_pack.o: ..\Drivers\BSP\UART\uart_pack.h
-ember\uart_pack.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+ember\uart_pack.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

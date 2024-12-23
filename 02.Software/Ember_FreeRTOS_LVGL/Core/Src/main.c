@@ -57,7 +57,7 @@
 uint8_t g_data_buf[100];  //按键数据缓存区
 key_t key1;
 key_t key2;
-AT24CXX_DeviceDef myDevice;
+AT24CXX_DeviceDef myDevice = {0};
 
 /* 外部中断回调函数 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)

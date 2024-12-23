@@ -199,94 +199,85 @@ void AT24CXX_ReadRegs(struct AT24CXX_Device *p_AT24Dev, uint16_t ReadAddr, uint8
  *
  * @param   p_AT24Dev   AT24CXX存储器设备结构体指针
  */
-AT24CXX_DeviceDef Create_AT24CXX(char *name,uint8_t Address,AT24CXX_EEP_TYPE EEP_TYPE,GPIO_TypeDef  *IIC_SCL_Port,GPIO_TypeDef  *IIC_SDA_Port,uint16_t IIC_SCL_Pin,uint16_t IIC_SDA_Pin)
-{
-    AT24CXX_DeviceDef AT24CXX;
-    IIC_BusTypeDef IIC_Bus;
-    IIC_Bus = Create_IIC(name , IIC_SCL_Port ,IIC_SDA_Port,IIC_SCL_Pin,IIC_SDA_Pin);
+AT24CXX_DeviceDef Create_AT24CXX(char *name, uint8_t Address, AT24CXX_EEP_TYPE EEP_TYPE, GPIO_TypeDef *IIC_SCL_Port, GPIO_TypeDef *IIC_SDA_Port, uint16_t IIC_SCL_Pin, uint16_t IIC_SDA_Pin) {
+    AT24CXX_DeviceDef AT24CXX = {0};
+//    IIC_BusTypeDef IIC_Bus = {0};
+
+    // 初始化 IIC 总线
+   // IIC_Bus = *Create_IIC(name, IIC_SCL_Port, IIC_SDA_Port, IIC_SCL_Pin, IIC_SDA_Pin);
+    AT24CXX.IIC_Bus = Create_IIC(name, IIC_SCL_Port, IIC_SDA_Port, IIC_SCL_Pin, IIC_SDA_Pin);
+//    if (AT24CXX.IIC_Bus == NULL) {
+//        // 内存分配失败
+//				AT24CXX.priv_data = (void *)1;	//AT24CXX.IIC_Bus内存分配失败
+//        return AT24CXX;
+//    }
+//    *(AT24CXX.IIC_Bus) = IIC_Bus;
+
     AT24CXX.name = name;
-switch (EEP_TYPE) {
+
+    // 动态分配 EEP_TYPE
+    AT24CXX.EEP_TYPE = malloc(sizeof(struct AT24CXX_Type));
+    if (AT24CXX.EEP_TYPE == NULL) {
+        // 内存分配失败
+//        free(AT24CXX.IIC_Bus);
+//        AT24CXX.IIC_Bus = NULL;
+				AT24CXX.priv_data = (void *)1;	//AT24CXX.EEP_TYPE内存分配失败
+        return AT24CXX;
+    }
+
+    // 根据 EEP_TYPE 填充数据
+    switch (EEP_TYPE) {
         case AT24C01:
-            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
-                .EEP_SIZE = 128,
-                .EEP_PAGENUM = 16,
-                .EEP_PAGESIZE = 8
-            };
+            *(AT24CXX.EEP_TYPE) = (struct AT24CXX_Type){128, 16, 8};
             break;
         case AT24C02:
-            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
-                .EEP_SIZE = 256,
-                .EEP_PAGENUM = 32,
-                .EEP_PAGESIZE = 8
-            };
+            *(AT24CXX.EEP_TYPE) = (struct AT24CXX_Type){256, 32, 8};
             break;
         case AT24C04:
-            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
-                .EEP_SIZE = 512,
-                .EEP_PAGENUM = 32,
-                .EEP_PAGESIZE = 16
-            };
+            *(AT24CXX.EEP_TYPE) = (struct AT24CXX_Type){512, 32, 16};
             break;
         case AT24C08:
-            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
-                .EEP_SIZE = 1024,
-                .EEP_PAGENUM = 64,
-                .EEP_PAGESIZE = 16
-            };
+            *(AT24CXX.EEP_TYPE) = (struct AT24CXX_Type){1024, 64, 16};
             break;
         case AT24C16:
-            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
-                .EEP_SIZE = 2048,
-                .EEP_PAGENUM = 128,
-                .EEP_PAGESIZE = 16
-            };
+            *(AT24CXX.EEP_TYPE) = (struct AT24CXX_Type){2048, 128, 16};
             break;
         case AT24C32:
-            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
-                .EEP_SIZE = 4096,
-                .EEP_PAGENUM = 128,
-                .EEP_PAGESIZE = 32
-            };
+            *(AT24CXX.EEP_TYPE) = (struct AT24CXX_Type){4096, 128, 32};
             break;
         case AT24C64:
-            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
-                .EEP_SIZE = 8192,
-                .EEP_PAGENUM = 256,
-                .EEP_PAGESIZE = 32
-            };
+            *(AT24CXX.EEP_TYPE) = (struct AT24CXX_Type){8192, 256, 32};
             break;
         case AT24C128:
-            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
-                .EEP_SIZE = 16384,
-                .EEP_PAGENUM = 512,
-                .EEP_PAGESIZE = 64
-            };
+            *(AT24CXX.EEP_TYPE) = (struct AT24CXX_Type){16384, 512, 64};
             break;
         case AT24C256:
-            AT24CXX.EEP_TYPE = &(struct AT24CXX_Type) {
-                .EEP_SIZE = 32768,
-                .EEP_PAGENUM = 512,
-                .EEP_PAGESIZE = 128
-            };
+            *(AT24CXX.EEP_TYPE) = (struct AT24CXX_Type){32768, 512, 128};
             break;
         default:
-            AT24CXX.EEP_TYPE = NULL;  // 错误的 EEPROM 类型
-            break;
+//            free(AT24CXX.EEP_TYPE);
+//            free(AT24CXX.IIC_Bus);
+//            AT24CXX.EEP_TYPE = NULL;
+//            AT24CXX.IIC_Bus = NULL;
+						AT24CXX.priv_data = (void *)1;	//AT24CXX.EEP_TYPE无此型号
+            return AT24CXX;  // 错误类型
     }
-    AT24CXX.IIC_Bus = &IIC_Bus;
+
     AT24CXX.Address = Address;
-    AT24CXX.AT24CXX_ReadReg = AT24CXX_ReadReg; 
-    AT24CXX.AT24CXX_WriteReg = AT24CXX_WriteReg; 
+    AT24CXX.AT24CXX_ReadReg = AT24CXX_ReadReg;
+    AT24CXX.AT24CXX_WriteReg = AT24CXX_WriteReg;
     AT24CXX.AT24CXX_ReadRegs = AT24CXX_ReadRegs;
     AT24CXX.AT24CXX_WriteRegs = AT24CXX_WriteRegs;
     AT24CXX.AT24CXX_Check = AT24CXX_Check;
 
-     // 检查 EEPROM 类型是否正确
-    if (AT24CXX.EEP_TYPE != NULL && AT24CXX_Check(&AT24CXX) == 0) {
-        AT24CXX.priv_data = NULL;
-        return AT24CXX; // 创建成功
-    } else {
-        AT24CXX.priv_data = (void *)1;  // 创建失败
-        return AT24CXX;
+    // 检查设备
+    if (AT24CXX_Check(&AT24CXX) != 0) {
+//        free(AT24CXX.EEP_TYPE);
+//        free(AT24CXX.IIC_Bus);
+//        AT24CXX.EEP_TYPE = NULL;
+//        AT24CXX.IIC_Bus = NULL;
+				AT24CXX.priv_data = (void *)1;	//AT24CXX检查失败
     }
+	
+    return AT24CXX;
 }

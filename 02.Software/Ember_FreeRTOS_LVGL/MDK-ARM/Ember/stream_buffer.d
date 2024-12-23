@@ -1,8 +1,8 @@
 ember\stream_buffer.o: ..\Middlewares_User\FreeRTOS\stream_buffer.c
-ember\stream_buffer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-ember\stream_buffer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+ember\stream_buffer.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+ember\stream_buffer.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ember\stream_buffer.o: ../Middlewares_User/FreeRTOS/include/FreeRTOS.h
-ember\stream_buffer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+ember\stream_buffer.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ember\stream_buffer.o: ../Middlewares_User/FreeRTOS/include/FreeRTOSConfig.h
 ember\stream_buffer.o: ../Middlewares_User/FreeRTOS/include/projdefs.h
 ember\stream_buffer.o: ../Middlewares_User/FreeRTOS/include/portable.h

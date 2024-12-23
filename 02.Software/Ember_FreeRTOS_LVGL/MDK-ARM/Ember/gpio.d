@@ -8,7 +8,7 @@ ember\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 ember\gpio.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 ember\gpio.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h
 ember\gpio.o: ../Drivers/CMSIS/Include/core_cm4.h
-ember\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+ember\gpio.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\gpio.o: ../Drivers/CMSIS/Include/cmsis_version.h
 ember\gpio.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 ember\gpio.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -16,7 +16,7 @@ ember\gpio.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 ember\gpio.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 ember\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 ember\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-ember\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+ember\gpio.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ember\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 ember\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 ember\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -40,14 +40,14 @@ ember\gpio.o: ../Drivers/BSP/KEY\key.h
 ember\gpio.o: ../Drivers/LIB/soft_timer.h
 ember\gpio.o: ../Core/Inc/main.h
 ember\gpio.o: ../Drivers/BSP/BEEP/beep.h
-ember\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+ember\gpio.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ember\gpio.o: ../Drivers/BSP/LCD/lcd_consle.h
 ember\gpio.o: ../Drivers/BSP/LCD/lcd.h
 ember\gpio.o: ../Core/Inc/gpio.h
 ember\gpio.o: ../Core/Inc/spi.h
-ember\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-ember\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-ember\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-ember\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+ember\gpio.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+ember\gpio.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+ember\gpio.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+ember\gpio.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 ember\gpio.o: ../Drivers/BSP/LCD/st7789.h
 ember\gpio.o: ../Drivers/BSP/LCD/lcd.h

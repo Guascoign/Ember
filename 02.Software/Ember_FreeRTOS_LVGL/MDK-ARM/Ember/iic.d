@@ -1,6 +1,6 @@
 ember\iic.o: ..\Drivers\BSP\IIC\iic.c
 ember\iic.o: ..\Drivers\BSP\IIC\iic.h
-ember\iic.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+ember\iic.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\iic.o: ../Core/Inc/main.h
 ember\iic.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 ember\iic.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -16,7 +16,7 @@ ember\iic.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 ember\iic.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 ember\iic.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 ember\iic.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-ember\iic.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+ember\iic.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ember\iic.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 ember\iic.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 ember\iic.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -40,15 +40,15 @@ ember\iic.o: ../Drivers/BSP/KEY\key.h
 ember\iic.o: ../Drivers/LIB/soft_timer.h
 ember\iic.o: ../Core/Inc/main.h
 ember\iic.o: ../Drivers/BSP/BEEP/beep.h
-ember\iic.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+ember\iic.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ember\iic.o: ../Drivers/BSP/LCD/lcd_consle.h
 ember\iic.o: ../Drivers/BSP/LCD/lcd.h
 ember\iic.o: ../Core/Inc/gpio.h
 ember\iic.o: ../Core/Inc/spi.h
-ember\iic.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-ember\iic.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-ember\iic.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-ember\iic.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+ember\iic.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+ember\iic.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+ember\iic.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+ember\iic.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 ember\iic.o: ../Drivers/BSP/LCD/st7789.h
 ember\iic.o: ../Drivers/BSP/LCD/lcd.h
 ember\iic.o: ../Drivers/LIB/delay.h

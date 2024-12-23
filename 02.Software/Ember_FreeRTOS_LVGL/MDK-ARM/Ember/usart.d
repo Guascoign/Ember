@@ -8,7 +8,7 @@ ember\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 ember\usart.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 ember\usart.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h
 ember\usart.o: ../Drivers/CMSIS/Include/core_cm4.h
-ember\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+ember\usart.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ember\usart.o: ../Drivers/CMSIS/Include/cmsis_version.h
 ember\usart.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 ember\usart.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -16,7 +16,7 @@ ember\usart.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 ember\usart.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 ember\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 ember\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-ember\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+ember\usart.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ember\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 ember\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 ember\usart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -40,14 +40,14 @@ ember\usart.o: ../Drivers/BSP/KEY\key.h
 ember\usart.o: ../Drivers/LIB/soft_timer.h
 ember\usart.o: ../Core/Inc/main.h
 ember\usart.o: ../Drivers/BSP/BEEP/beep.h
-ember\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+ember\usart.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ember\usart.o: ../Drivers/BSP/LCD/lcd_consle.h
 ember\usart.o: ../Drivers/BSP/LCD/lcd.h
 ember\usart.o: ../Core/Inc/gpio.h
 ember\usart.o: ../Core/Inc/spi.h
-ember\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-ember\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-ember\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-ember\usart.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+ember\usart.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+ember\usart.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+ember\usart.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+ember\usart.o: C:\Users\admin\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 ember\usart.o: ../Drivers/BSP/LCD/st7789.h
 ember\usart.o: ../Drivers/BSP/LCD/lcd.h

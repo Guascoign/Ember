@@ -163,7 +163,9 @@ void Main(void *pvParameters)
   {
 
     //lcdprintf("ADC = %d\n", GET_ADC_AVERAGE(hadc1 , ADC_CHANNEL_3 , 100) );
-
+	  myDevice.AT24CXX_WriteReg(&myDevice,0x00,0x01);
+    vTaskDelay(pdMS_TO_TICKS(100));
+    lcdprintf("reg = %d\n", myDevice.AT24CXX_ReadReg(&myDevice,0x00) );
     vTaskDelay(pdMS_TO_TICKS(1000));
   }
 }
@@ -288,7 +290,7 @@ void Boot_anim(void)
 	lcdprintf("HELLO!\n");
   vTaskDelay(pdMS_TO_TICKS(200));
   PWM_WS2812B_Red(3);
-  Beeper_Perform(BOOT);		// ·äÃùÆ÷ÏìÉù
+  //Beeper_Perform(BOOT);		// ·äÃùÆ÷ÏìÉù
   vTaskDelay(pdMS_TO_TICKS(150));
   PWM_WS2812B_Blue(3);
   vTaskDelay(pdMS_TO_TICKS(150));

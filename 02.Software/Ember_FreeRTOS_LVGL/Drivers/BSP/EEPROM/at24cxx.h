@@ -41,7 +41,6 @@ typedef struct AT24CXX_Device
     AT24CXX_TypeDef *EEP_TYPE;        //存储器类型（存储器容量）
     IIC_BusTypeDef *IIC_Bus;                          // IIC设备接口
     uint8_t Address;
-    void (*AT24CXX_Init)(struct AT24CXX_Device *p_AT24Dev); //初始化AT24CXX
     uint8_t (*AT24CXX_ReadReg)(struct AT24CXX_Device *p_AT24Dev, uint16_t ReadAddr);//读取一个字节
     void (*AT24CXX_WriteReg)(struct AT24CXX_Device *p_AT24Dev, uint16_t WriteAddr, uint8_t DataToWrite);//写入一个字节
     void (*AT24CXX_ReadRegs)(struct AT24CXX_Device *p_AT24Dev, uint16_t ReadAddr, uint8_t *pBuffer, uint16_t NumToRead);//连续读取(页读)

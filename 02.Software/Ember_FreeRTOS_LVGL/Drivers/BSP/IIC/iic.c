@@ -371,31 +371,31 @@ void iic_delay(int delay)
  * @param   IIC_Bus  IIC设备结构体
  *
  */
-IIC_BusTypeDef Create_IIC(char *name , GPIO_TypeDef  *IIC_SCL_Port , GPIO_TypeDef  *IIC_SDA_Port , uint16_t IIC_SCL_Pin , uint16_t IIC_SDA_Pin)
-{
-    IIC_BusTypeDef IIC_Bus;
-    GPIO_InitTypeDef GPIO_Initure;
-
-    IIC_Bus.name = name; // 设备名称
-    IIC_Bus.IIC_SCL_Port = IIC_SCL_Port; // SCL引脚所在的GPIO组
-    IIC_Bus.IIC_SCL_Pin = IIC_SCL_Pin; // SCL引脚编号
-    IIC_Bus.IIC_SDA_Port = IIC_SDA_Port; // SDA引脚所在的GPIO组
-    IIC_Bus.IIC_SDA_Pin = IIC_SDA_Pin; // SDA引脚编号
-    IIC_Bus.IIC_Start = iic_start; // 发送IIC开始信号
-    IIC_Bus.IIC_Restart = iic_restart; // 发送IIC重新开始信号
-    IIC_Bus.IIC_Stop = iic_stop; // 发送IIC停止信号
-    IIC_Bus.IIC_Ack = iic_ack; // IIC发送ACK信号
-    IIC_Bus.IIC_Nack = iic_nack; // IIC不发送ACK信号
-    IIC_Bus.IIC_WaitAck = iic_wait_ack; // IIC等待ACK信号
-    IIC_Bus.IIC_SendByte = iic_send_byte; // IIC发送一个字节
-    IIC_Bus.IIC_ReceiveByte = iic_receiveByte_byte; // IIC读取一个字节
-    IIC_Bus.IIC_WriteReg = iic_WriteReg;
-    IIC_Bus.IIC_ReadReg = iic_ReadReg;
-    IIC_Bus.IIC_WriteRegs = iic_WriteRegs;
-    IIC_Bus.IIC_ReadRegs = iic_ReadRegs;
-    IIC_Bus.delay_us = delay_us; // 延时函数
-    IIC_Bus.priv_data = NULL; // 私有数据
-
+IIC_BusTypeDef *Create_IIC(char *name, GPIO_TypeDef *IIC_SCL_Port, GPIO_TypeDef *IIC_SDA_Port, uint16_t IIC_SCL_Pin, uint16_t IIC_SDA_Pin) {
+    IIC_BusTypeDef *IIC_Bus = malloc(sizeof(IIC_BusTypeDef));  // 在堆上分配内存
+    if (IIC_Bus == NULL) {
+        return NULL;  // 检查内存分配是否成功
+    }
+    IIC_Bus->name = name; // 设备名称
+    IIC_Bus->IIC_SCL_Port = IIC_SCL_Port; // SCL引脚所在的GPIO组
+    IIC_Bus->IIC_SCL_Pin = IIC_SCL_Pin; // SCL引脚编号
+    IIC_Bus->IIC_SDA_Port = IIC_SDA_Port; // SDA引脚所在的GPIO组
+    IIC_Bus->IIC_SDA_Pin = IIC_SDA_Pin; // SDA引脚编号
+    IIC_Bus->IIC_Start = iic_start; // 发送IIC开始信号
+    IIC_Bus->IIC_Restart = iic_restart; // 发送IIC重新开始信号
+    IIC_Bus->IIC_Stop = iic_stop; // 发送IIC停止信号
+    IIC_Bus->IIC_Ack = iic_ack; // IIC发送ACK信号
+    IIC_Bus->IIC_Nack = iic_nack; // IIC不发送ACK信号
+    IIC_Bus->IIC_WaitAck = iic_wait_ack; // IIC等待ACK信号
+    IIC_Bus->IIC_SendByte = iic_send_byte; // IIC发送一个字节
+    IIC_Bus->IIC_ReceiveByte = iic_receiveByte_byte; // IIC读取一个字节
+    IIC_Bus->IIC_WriteReg = iic_WriteReg;	//IIC写寄存器
+    IIC_Bus->IIC_ReadReg = iic_ReadReg;	//IIC读寄存器
+    IIC_Bus->IIC_WriteRegs = iic_WriteRegs;	//IIC连续写寄存器
+    IIC_Bus->IIC_ReadRegs = iic_ReadRegs;	//IIC连续读寄存器
+    IIC_Bus->delay_us = delay_us; // 延时函数
+    IIC_Bus->priv_data = NULL; // 私有数据 1:初始化失败 0:初始化成功
+		
     //根据GPIO组初始化GPIO时钟
     if(IIC_SCL_Port == GPIOA || IIC_SDA_Port == GPIOA)
     {
@@ -421,7 +421,8 @@ IIC_BusTypeDef Create_IIC(char *name , GPIO_TypeDef  *IIC_SCL_Port , GPIO_TypeDe
     {
         __HAL_RCC_GPIOH_CLK_ENABLE();   //使能GPIOH时钟
     }     
-
+		
+		GPIO_InitTypeDef GPIO_Initure;
     //GPIO_SCL初始化设置
     GPIO_Initure.Pin=IIC_SCL_Pin;
     GPIO_Initure.Mode=GPIO_MODE_OUTPUT_OD;  //开漏输出
@@ -436,7 +437,7 @@ IIC_BusTypeDef Create_IIC(char *name , GPIO_TypeDef  *IIC_SCL_Port , GPIO_TypeDe
     HAL_GPIO_Init(IIC_SDA_Port,&GPIO_Initure);
 
     //SCL与SDA的初始化均为高电平
-    IIC_SCL(&IIC_Bus, 1);
-    IIC_SDA(&IIC_Bus, 1);
+    IIC_SCL(IIC_Bus, 1);
+    IIC_SDA(IIC_Bus, 1);
     return IIC_Bus;
 }

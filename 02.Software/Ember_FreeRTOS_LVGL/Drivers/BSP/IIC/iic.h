@@ -44,7 +44,7 @@ typedef struct IIC_Bus
 	  void *priv_data;//私有数据
 }IIC_BusTypeDef;
 
-IIC_BusTypeDef Create_IIC(char *name , GPIO_TypeDef  *IIC_SCL_Port , GPIO_TypeDef  *IIC_SDA_Port , uint16_t IIC_SCL_Pin , uint16_t IIC_SDA_Pin);
+IIC_BusTypeDef *Create_IIC(char *name , GPIO_TypeDef  *IIC_SCL_Port , GPIO_TypeDef  *IIC_SDA_Port , uint16_t IIC_SCL_Pin , uint16_t IIC_SDA_Pin);
 
 extern struct IIC_Bus IIC1;//IIC.c定义接口
 
