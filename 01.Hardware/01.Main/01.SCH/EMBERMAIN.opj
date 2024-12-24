@@ -1,6 +1,6 @@
 (ExpressProject ""
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[12/23/24]")
+  (SoftwareVersion "17.4-2019 S039 (4153571)  [11/4/2023]-[12/24/24]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library")
@@ -50,6 +50,10 @@
       (Sort User)))
   (Folder "Logs")
   (PartMRUSelector
+    (STM32F405RxTx_64
+      (FullPartName "STM32F405RxTx_64B.Normal")
+      (LibraryName "F:\CADENCE\ZM_LIB\DATABASE\LIB\IC.OLB")
+      (DeviceIndex "1"))
     (Triode-NPN
       (FullPartName "Triode-NPN.Normal")
       (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
@@ -143,12 +147,8 @@
     ("DIODE SCHOTTKY"
       (FullPartName "DIODE SCHOTTKY.Normal")
       (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
-      (DeviceIndex "0"))
-    (C
-      (FullPartName "C.Normal")
-      (LibraryName "D:\CADENCE\LIB\DATABASE\LIB\BASIC.OLB")
       (DeviceIndex "0")))
-  (MPSSessionName "15291")
+  (MPSSessionName "admin")
   (ISPCBBASICLICENSE "false")
   (GlobalState
     (FileView
@@ -157,30 +157,30 @@
       (Path "Design Resources" ".\embermain.dsn" "SCHEMATIC1")
       (Path "Design Resources" ".\embermain.dsn" "Design Cache")
       (Path "Outputs")
-      (Select "Design Resources" ".\embermain.dsn"))
+      (Select "Design Resources" ".\embermain.dsn" "SCHEMATIC1"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 1000"))
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 721"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 2232 28 1022")
-        (Scroll "-462 -9")
-        (Zoom "131")
+        (Placement "44 0 1 -1 -1 -1 -1 5 1674 28 743")
+        (Scroll "-142 -6")
+        (Zoom "67")
         (Occurrence "/"))
-      (Path "D:\PROJECTS\EMBER\01.HARDWARE\01.MAIN\01.SCH\EMBERMAIN.DSN")
+      (Path "C:\USERS\ADMIN\DESKTOP\01.MAIN\01.SCH\EMBERMAIN.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "01 VERSION"))
+      (Page "02 MCU"))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 5 28 5 2232 28 1022")
-        (Scroll "1634 939")
-        (Zoom "190")
+        (Placement "44 0 1 -1 -1 -1 -1 5 1674 28 743")
+        (Scroll "17 220")
+        (Zoom "200")
         (Occurrence "/"))
-      (Path "D:\PROJECTS\EMBER\01.HARDWARE\01.MAIN\01.SCH\EMBERMAIN.DSN")
+      (Path "C:\USERS\ADMIN\DESKTOP\01.MAIN\01.SCH\EMBERMAIN.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "02 MCU"))))
+      (Page "01 VERSION"))))
