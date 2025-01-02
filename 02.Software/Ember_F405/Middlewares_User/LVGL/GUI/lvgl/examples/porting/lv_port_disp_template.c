@@ -88,9 +88,9 @@ void lv_port_disp_init(void)
 
     /* Example for 2) */
     static lv_disp_draw_buf_t draw_buf_dsc_2;
-    static lv_color_t buf_2_1[MY_DISP_HOR_RES * 50];                        /*A buffer for 10 rows*/
-    static lv_color_t buf_2_2[MY_DISP_HOR_RES * 50];                        /*An other buffer for 10 rows*/
-     lv_disp_draw_buf_init(&draw_buf_dsc_2, buf_2_1, buf_2_2, MY_DISP_HOR_RES * 50);   /*Initialize the display buffer*/
+    static lv_color_t buf_2_1[MY_DISP_HOR_RES * 20];                        /*A buffer for 10 rows*/
+    static lv_color_t buf_2_2[MY_DISP_HOR_RES * 20];                        /*An other buffer for 10 rows*/
+     lv_disp_draw_buf_init(&draw_buf_dsc_2, buf_2_1, buf_2_2, MY_DISP_HOR_RES * 20);   /*Initialize the display buffer*/
 
     // /* Example for 3) also set disp_drv.full_refresh = 1 below*/
     // static lv_disp_draw_buf_t draw_buf_dsc_3;
@@ -152,14 +152,6 @@ void disp_enable_update(void)
 
 /* Disable updating the screen (the flushing process) when disp_flush() is called by LVGL
  */
-void disp_disable_update(void)
-{
-    disp_flush_enabled = false;
-}
-
-/*Flush the content of the internal buffer the specific area on the display
- *You can use DMA or any hardware acceleration to do this operation in the background but
- *'lv_disp_flush_ready()' has to be called when finished.*/
 static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p)
 {
     //  if(disp_flush_enabled) {
@@ -172,7 +164,7 @@ static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_colo
 	LCD_Address_Set(area->x1,area->y1,area->x2,area->y2);
    LCD_CS(0);
    LCD_DC(1);
-	HAL_SPI_Transmit_DMA(&hspi1,(uint8_t*)color_p, num);
+	HAL_SPI_Transmit_DMA(&hspi1,(uint8_t*)&color_p->full, num);
 
 
 
@@ -181,22 +173,29 @@ static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_colo
     //}
 }
 
-//void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi)
-//{
-//	if(hspi->Instance==SPI1)
-//	{
-//		LCD_CS(1);
-//		lv_disp_flush_ready(&disp_drv);
-//		HAL_SPI_DMAStop(&hspi1);
-//	}
-//}
-void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
-    if (hspi->Instance == SPI1) {
-     LCD_CS(1);
+void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi)
+{
+	if(hspi->Instance==SPI1)
+	{
+		LCD_CS(1);
 		lv_disp_flush_ready(&disp_drv);
 		HAL_SPI_DMAStop(&hspi1);
-    }
+	}
 }
+//void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
+//    if (hspi->Instance == SPI1) {
+//     LCD_CS(1);
+//		lv_disp_flush_ready(&disp_drv);
+//		HAL_SPI_DMAStop(&hspi1);
+//    }
+//}
+
+// void DMA2_Stream3_IRQHandler(void)
+// {
+//  LCD_CS(1);
+//		lv_disp_flush_ready(&disp_drv);
+//		HAL_SPI_DMAStop(&hspi1);
+// }
 
 
 /*OPTIONAL: GPU INTERFACE*/

@@ -87,9 +87,6 @@ void Beeper(void *pvParameters);             /* 任务函数 */
  */
 void freertos_start(void)
 {    
-  /*LVGL 界面初始化*/
-	lv_init();											//lvgl系统初始化
-  lv_port_disp_init();						//lvgl显示接口初始化,放在lv_init()的后面
   LCD_PWR(1);
   //LCD_Clear(WHITE);
   xTaskCreate((TaskFunction_t )start_task,            /* 任务函数 */

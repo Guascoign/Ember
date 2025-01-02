@@ -133,9 +133,13 @@ int main(void)
   /* USER CODE BEGIN 2 */
   
   //ST7789V_Init();
+	
+  /*LVGL 界面初始化*/
+	lv_init();											//lvgl系统初始化
+  lv_port_disp_init();						//lvgl显示接口初始化,放在lv_init()的后面
   LCD_DisplayOn();
-	uint8_t testdata = 0x66;
-	HAL_SPI_Transmit_DMA(&hspi1,&testdata, 2);
+//	uint8_t testdata = 0x66;
+//	HAL_SPI_Transmit_DMA(&hspi1,&testdata, 2);
 	freertos_start();//开启任务调度
 
   /* USER CODE END 2 */
@@ -189,7 +193,7 @@ void SystemClock_Config(void)
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)

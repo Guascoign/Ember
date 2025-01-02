@@ -305,16 +305,17 @@ void DMA1_Stream7_IRQHandler(void)
 /**
   * @brief This function handles DMA2 stream3 global interrupt.
   */
-void DMA2_Stream3_IRQHandler(void)
-{
-  /* USER CODE BEGIN DMA2_Stream3_IRQn 0 */
+ void DMA2_Stream3_IRQHandler(void)
+ {
+   /* USER CODE BEGIN DMA2_Stream3_IRQn 0 */
+  
+ // //// // CUBEMX生成代码后重新屏蔽此函数
+   /* USER CODE END DMA2_Stream3_IRQn 0 */
+   HAL_DMA_IRQHandler(&hdma_spi1_tx);
+   /* USER CODE BEGIN DMA2_Stream3_IRQn 1 */
 
-  /* USER CODE END DMA2_Stream3_IRQn 0 */
-  HAL_DMA_IRQHandler(&hdma_spi1_tx);
-  /* USER CODE BEGIN DMA2_Stream3_IRQn 1 */
-
-  /* USER CODE END DMA2_Stream3_IRQn 1 */
-}
+   /* USER CODE END DMA2_Stream3_IRQn 1 */
+ }
 
 /* USER CODE BEGIN 1 */
 
