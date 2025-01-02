@@ -1,0 +1,14 @@
+ember\stream_buffer.o: ..\Middlewares_User\FreeRTOS\stream_buffer.c
+ember\stream_buffer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+ember\stream_buffer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+ember\stream_buffer.o: ../Middlewares_User/FreeRTOS/include/FreeRTOS.h
+ember\stream_buffer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+ember\stream_buffer.o: ../Middlewares_User/FreeRTOS/include/FreeRTOSConfig.h
+ember\stream_buffer.o: ../Middlewares_User/FreeRTOS/include/projdefs.h
+ember\stream_buffer.o: ../Middlewares_User/FreeRTOS/include/portable.h
+ember\stream_buffer.o: ../Middlewares_User/FreeRTOS/include/deprecated_definitions.h
+ember\stream_buffer.o: ../Middlewares_User/FreeRTOS/portable/RVDS/ARM_CM4F/portmacro.h
+ember\stream_buffer.o: ../Middlewares_User/FreeRTOS/include/mpu_wrappers.h
+ember\stream_buffer.o: ../Middlewares_User/FreeRTOS/include/task.h
+ember\stream_buffer.o: ../Middlewares_User/FreeRTOS/include/list.h
+ember\stream_buffer.o: ../Middlewares_User/FreeRTOS/include/stream_buffer.h

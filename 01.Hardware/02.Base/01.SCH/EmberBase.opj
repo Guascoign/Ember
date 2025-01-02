@@ -1,6 +1,6 @@
 (ExpressProject ""
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[12/05/24]")
+  (SoftwareVersion "17.4-2019 S037 (4108587)  [5/20/2023]-[12/24/24]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library")
@@ -99,20 +99,10 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 5 28 5 2232 28 1022")
-        (Scroll "0 317")
-        (Zoom "262")
+        (Placement "44 0 1 -1 -1 -1 -1 5 2232 28 1022")
+        (Scroll "-462 -9")
+        (Zoom "131")
         (Occurrence "/"))
       (Path "D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\EMBERBASE.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "02 POWER"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 5 28 5 2232 28 1022")
-        (Scroll "-352 -5")
-        (Zoom "98")
-        (Occurrence "/"))
-      (Path "D:\PROJECTS\EMBER\01.HARDWARE\02.BASE\01.SCH\EMBERBASE.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "03 MCU"))))
+      (Page "01 VERSION"))))
