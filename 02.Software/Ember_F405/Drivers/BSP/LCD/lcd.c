@@ -5,11 +5,11 @@
     * 编写日期 ：2024-04-12
     * 功     能：LCD屏幕驱动
 *********************************************************************************/
-#include "LCD/lcd.h"
-#include "LCD/font.h"
-//#include "LCD/HzLib.h"
+#include "BSP/LCD/lcd.h"
+
 uint16_t POINT_COLOR = WHITE;        //默认笔刷颜色
 uint16_t BACK_COLOR = BLACK;        //默认背景颜色
+
 #ifdef USE_DMA
 #include <string.h>
 uint16_t DMA_MIN_SIZE = 16;
@@ -21,7 +21,6 @@ uint16_t DMA_MIN_SIZE = 16;
  #define HOR_LEN 	10	//	Also mind the resolution of your screen!
 uint16_t disp_buf[LCD_Width * HOR_LEN];
 #endif
-
 
 /**
  * @brief    LCD底层SPI发送数据函数
@@ -35,7 +34,6 @@ uint16_t disp_buf[LCD_Width * HOR_LEN];
  */
 void LCD_Write_buff(uint8_t *buff, uint16_t buff_size)
 {
-    LCD_CS(0);
     LCD_DC(1);
     while (buff_size > 0) {
 		uint16_t chunk_size = buff_size > 65535 ? 65535 : buff_size;
@@ -54,7 +52,6 @@ void LCD_Write_buff(uint8_t *buff, uint16_t buff_size)
 		buff += chunk_size;
 		buff_size -= chunk_size;
 	}
-    LCD_CS(1);
 }
 
 /**
@@ -66,10 +63,8 @@ void LCD_Write_buff(uint8_t *buff, uint16_t buff_size)
  */
 void LCD_Write_Cmd(uint8_t cmd)
 {
-	LCD_CS(0);
   LCD_DC(0);
   HAL_SPI_Transmit(&LCD_SPI_PORT, &cmd, sizeof(cmd), HAL_MAX_DELAY);	
-  LCD_CS(1);
 }
 
 /**
@@ -81,10 +76,8 @@ void LCD_Write_Cmd(uint8_t cmd)
  */
 void LCD_Write_Data(uint8_t data)
 {
-	LCD_CS(0);
     LCD_DC(1);
     HAL_SPI_Transmit(&LCD_SPI_PORT, &data, sizeof(data), HAL_MAX_DELAY);	
-    LCD_CS(1);
 }
 
 /**
@@ -123,6 +116,7 @@ void LCD_Clear(uint16_t color)
     uint8_t data[2] = { 0 };
     data[0] = color >> 8;
     data[1] = color;
+    LCD_CS(0);
 	LCD_Address_Set(0, 0, LCD_Width - 1, LCD_Height - 1); //偏移 40 53
     for (j = 0; j < LCD_Buf_Size / 2; j++) {
         lcd_buf[j * 2] = data[0];
@@ -131,6 +125,7 @@ void LCD_Clear(uint16_t color)
     for (i = 0; i < (LCD_TOTAL_BUF_SIZE / LCD_Buf_Size); i++) {
         LCD_Write_buff(lcd_buf, LCD_Buf_Size);
     }
+    LCD_CS(1);
 }
 
 /**
@@ -146,6 +141,7 @@ void LCD_Fill(uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end
 {
   uint32_t size = (x_end - x_start + 1) * (y_end - y_start + 1) * 2; // 计算总字节数
   // 设置目标区域
+  LCD_CS(0);
   LCD_Address_Set(x_start, y_start, x_end, y_end);
 #ifdef USE_DMA
     LCD_Write_buff((uint8_t *)color, size);
@@ -173,6 +169,7 @@ void LCD_Fill(uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end
     }
   }
 #endif
+  LCD_CS(1);
 }
 /**
  * 设置数据写入LCD缓存区域
@@ -184,6 +181,7 @@ void LCD_Fill(uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end
  */
 void LCD_Address_Set(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)//LCD_Address_Set(0, 0, LCD_Width - 1, LCD_Height - 1)
 {
+  LCD_CS(0);
 	x1 = x1 + X_SHIFT;
 	x2 = x2 + X_SHIFT;
 	y1 = y1 + Y_SHIFT;

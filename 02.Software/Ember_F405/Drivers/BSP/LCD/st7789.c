@@ -5,7 +5,7 @@
     * 编写日期 ：2024-04-12
     * 功     能：LCD屏幕驱动
 *********************************************************************************/
-#include "LCD/st7789.h"
+#include "BSP/LCD/st7789.h"
 
 
 /**
@@ -18,7 +18,7 @@
 void ST7789V_Init(void)
 {
     //LCD_Gpio_Init();    //硬件接口初始化
-
+    LCD_CS(0);
     LCD_PWR(0);
     LCD_RST(0);
     HAL_Delay(12);
@@ -135,8 +135,8 @@ void ST7789V_Init(void)
                 LCD_Write_Cmd(0x29);         //开启显示 
 
     LCD_Address_Set(0, 0, LCD_Width - 1, LCD_Height - 1);
-
-    LCD_Clear(WHITE);
+		
+    LCD_Clear(BLACK);
 
     /* Display on */
     LCD_PWR(1);

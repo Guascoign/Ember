@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2024 STMicroelectronics.
+  * Copyright (c) 2025 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -21,26 +21,16 @@
 #include "adc.h"
 #include "dma.h"
 #include "spi.h"
-#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "FreeRTOS_main.h"
-#include "KEY\key.h"
-#include "IIC/iic.h"
-#include "EEPROM/at24cxx.h"
-//#include "circle_buffer.h"
-#include "soft_timer.h"
-//#include "uart_printf.h"
-/*LVGL*********************************************************************************************/
-#include "lvgl.h"
-#include "lv_port_disp_template.h"
-#include "../generated/gui_guider.h"
-#include "../generated/events_init.h"
-#include "lv_demo_benchmark.h"
-/******************************************************************************************************/
+#include "BSP/peripherals/peripherals.h"
+///* lvgl V8.3.11 ----------------------------------------------------------*/
+//#include "lvgl.h"
+//#include "lv_port_disp_template.h"
+//#include "lv_demo_benchmark.h"
 
 /* USER CODE END Includes */
 
@@ -62,24 +52,6 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t g_data_buf[100];  //按键数据缓存区
-key_t key1;
-key_t key2;
-AT24CXX_DeviceDef myDevice = {0};
-
-/* 外部中断回调函数 */
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-	if (GPIO_Pin == KEY1_Pin)
-	{
-		Start_Soft_Timer(&key1.debounce_timer, 10); // 启动按键1的定时器，超时 10ms
-	}
-  if (GPIO_Pin == KEY2_Pin)
-	{
-		Start_Soft_Timer(&key2.debounce_timer, 10); // 启动按键2定时器，超时 10ms
-	}
-}
-
 
 /* USER CODE END PV */
 
@@ -116,32 +88,20 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
 
-//  Key_Init(&key1, KEY1_GPIO_Port, KEY1_Pin,"KEY1"); //按键实例初始化
-//  Key_Init(&key2, KEY2_GPIO_Port, KEY2_Pin,"KEY2"); //按键实例初始化
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_SPI1_Init();
-  MX_SPI2_Init();
-  MX_TIM4_Init();
-  MX_TIM3_Init();
-  MX_TIM10_Init();
-  MX_ADC1_Init();
   MX_USART1_UART_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
-  
-  //ST7789V_Init();
-	
-  /*LVGL 界面初始化*/
-	lv_init();											//lvgl系统初始化
-  lv_port_disp_init();						//lvgl显示接口初始化,放在lv_init()的后面
-  LCD_DisplayOn();
-//	uint8_t testdata = 0x66;
-//	HAL_SPI_Transmit_DMA(&hspi1,&testdata, 2);
-	freertos_start();//开启任务调度
+  All_Peripherals_Init();
 
+//	lv_init();
+//	lv_port_disp_init();
+//  lv_demo_benchmark();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -151,8 +111,9 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    LCD_Clear(BLACK);
-    LCD_Clear(RED);
+    //lv_task_handler();
+    HAL_GPIO_TogglePin(RUNLED_GPIO_Port, RUNLED_Pin);
+    HAL_Delay(500);
   }
   /* USER CODE END 3 */
 }
@@ -204,12 +165,11 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
-
 /* USER CODE END 4 */
 
 /**
   * @brief  Period elapsed callback in non blocking mode
-  * @note   This function is called  when TIM11 interrupt took place, inside
+  * @note   This function is called  when TIM14 interrupt took place, inside
   * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
   * a global variable "uwTick" used as application time base.
   * @param  htim : TIM handle
@@ -220,7 +180,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE BEGIN Callback 0 */
 
   /* USER CODE END Callback 0 */
-  if (htim->Instance == TIM11) {
+  if (htim->Instance == TIM14) {
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */

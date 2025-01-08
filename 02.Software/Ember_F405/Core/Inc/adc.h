@@ -7,7 +7,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2024 STMicroelectronics.
+  * Copyright (c) 2025 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -41,8 +41,7 @@ extern ADC_HandleTypeDef hadc1;
 void MX_ADC1_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-uint16_t GET_ADC(ADC_HandleTypeDef hadc , uint32_t ch);
-uint16_t GET_ADC_AVERAGE(ADC_HandleTypeDef hdc , uint32_t ch , uint8_t times);
+
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

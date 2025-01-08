@@ -29,7 +29,7 @@ extern SPI_HandleTypeDef LCD_SPI_PORT;
 
 #ifdef USING_ST7789VW
 	#include "st7789.h"
-    #define LCD_Init ST7789V_Init
+  #define LCD_Init ST7789V_Init
 	#define LCD_Init ST7789V_Init
 #endif
 
@@ -50,7 +50,6 @@ extern SPI_HandleTypeDef LCD_SPI_PORT;
 #define LCD_Buf_Size    648	// 单页缓存大小，不得超过MCU_SRAM
 static uint8_t lcd_buf[LCD_Buf_Size];
 
-
 /*
     LCD_PWR:    LCD背光
     LCD_RST:    SPI复位
@@ -58,11 +57,11 @@ static uint8_t lcd_buf[LCD_Buf_Size];
     LCD_CS:     SPI片选
 */
 //n=1 高	n=0 低
-#define LCD_PWR(n)   (n?HAL_GPIO_WritePin(TFT_BLK_GPIO_Port,TFT_BLK_Pin,GPIO_PIN_SET):HAL_GPIO_WritePin(TFT_BLK_GPIO_Port,TFT_BLK_Pin,GPIO_PIN_RESET))//0关闭背光 1打开背光
-#define LCD_RST(n)   (n?HAL_GPIO_WritePin(TFT_RST_GPIO_Port,TFT_RST_Pin,GPIO_PIN_SET):HAL_GPIO_WritePin(TFT_RST_GPIO_Port,TFT_RST_Pin,GPIO_PIN_RESET))
-#define LCD_DC(n)    (n?HAL_GPIO_WritePin(TFT_DC_GPIO_Port,TFT_DC_Pin,GPIO_PIN_SET):HAL_GPIO_WritePin(TFT_DC_GPIO_Port,TFT_DC_Pin,GPIO_PIN_RESET))  
+#define LCD_PWR(n)   (n?HAL_GPIO_WritePin(LCD_BLK_GPIO_Port,LCD_BLK_Pin,GPIO_PIN_SET):HAL_GPIO_WritePin(LCD_BLK_GPIO_Port,LCD_BLK_Pin,GPIO_PIN_RESET))//0关闭背光 1打开背光
+#define LCD_RST(n)   (n?HAL_GPIO_WritePin(LCD_RST_GPIO_Port,LCD_RST_Pin,GPIO_PIN_SET):HAL_GPIO_WritePin(LCD_RST_GPIO_Port,LCD_RST_Pin,GPIO_PIN_RESET))
+#define LCD_DC(n)    (n?HAL_GPIO_WritePin(LCD_DC_GPIO_Port,LCD_DC_Pin,GPIO_PIN_SET):HAL_GPIO_WritePin(LCD_DC_GPIO_Port,LCD_DC_Pin,GPIO_PIN_RESET))  
 #ifdef USE_SOFT_CS
-#define LCD_CS(n)    (n?HAL_GPIO_WritePin(SPI1_CS1_GPIO_Port,SPI1_CS1_Pin,GPIO_PIN_SET):HAL_GPIO_WritePin(SPI1_CS1_GPIO_Port,SPI1_CS1_Pin,GPIO_PIN_RESET))
+#define LCD_CS(n)    (n?HAL_GPIO_WritePin(LCD_CS_GPIO_Port,LCD_CS_Pin,GPIO_PIN_SET):HAL_GPIO_WritePin(LCD_CS_GPIO_Port,LCD_CS_Pin,GPIO_PIN_RESET))
 #endif
 
 /* 笔刷颜色 */
@@ -91,8 +90,6 @@ static uint8_t lcd_buf[LCD_Buf_Size];
 extern uint16_t POINT_COLOR;        //默认笔刷颜色
 extern uint16_t BACK_COLOR;        //默认背景颜色
 
-
-
 void LCD_DisplayOn(void);                                                                //Open display
 void LCD_DisplayOff(void);                                                                //Close display
 void LCD_Write_buff(uint8_t *buff, uint16_t buff_size);
@@ -101,6 +98,5 @@ void LCD_Write_Data(uint8_t data);
 void LCD_Clear(uint16_t color);                                                            //Clean screen
 void LCD_Fill(uint16_t x_start, uint16_t y_start, uint16_t x_end, uint16_t y_end, uint16_t *color);                //Filled monochrome
 void LCD_Address_Set(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);                //Setting up the data display area
-
 
 #endif

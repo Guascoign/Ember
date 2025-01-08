@@ -1,1 +1,0 @@
-GEN_CSRCS += _windowsxp_alpha_198x89.c _indent_alpha_20x20.c

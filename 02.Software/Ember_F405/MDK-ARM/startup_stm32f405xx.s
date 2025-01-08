@@ -25,7 +25,7 @@
 ;
 ; Amount of memory (in bytes) allocated for Stack
 ; Tailor this value to your application needs
-; <h> Stack ConfigurationR
+; <h> Stack Configuration
 ;   <o> Stack Size (in Bytes) <0x0-0xFFFFFFFF:8>
 ; </h>
 
