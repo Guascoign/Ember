@@ -8,7 +8,7 @@
 #ifndef __LCD_CONSLE_H
 #define __LCD_CONSLE_H
 
-#include "LCD/lcd.h"
+#include "BSP/LCD/lcd.h"
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>

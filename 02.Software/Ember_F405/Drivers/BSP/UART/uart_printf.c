@@ -6,31 +6,24 @@
     * 功     能：串口打印重写
 *********************************************************************************
 V1.0 2024-05-08 add STM32 HAL
-
+V1.1 2025-01-08 更换为UART设备结构体
 *********************************************************************************/
 
-#ifndef UART_PRINTF_H
-#define UART_PRINTF_H
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-
-#include "main.h"
+#include "uart_printf.h"
+#include "BSP/UART/uart_pack.h"
 #include <stdio.h>
 
-
-extern UART_HandleTypeDef huart1;
-#define Print_UART huart1
-
-int fputc(int ch, FILE *f);
-int fgetc(FILE *f);
-
-
-
-#ifdef __cplusplus
+int fputc(int ch, FILE *f)
+{
+    Printf_Uart.Send(&Printf_Uart, (uint8_t *)&ch, 1, 0xFFff);
+    return ch;
 }
-#endif
 
-#endif // UART_PRINTF_H
+int fgetc(FILE *f)
+{
+    uint8_t ch = 0;
+    Printf_Uart.Recv(&Printf_Uart, &ch, 0xffff);
+    return ch;
+}
+
+

@@ -24,7 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "task.h"
 #include "FreeRTOS.h"
-#include "soft_timer.h"
+#include "LIB/soft_timer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -153,7 +153,7 @@ void UsageFault_Handler(void)
 // void SVC_Handler(void)
 // {
 //   /* USER CODE BEGIN SVCall_IRQn 0 */
-// // //// // CUBEMX生成代码后重新屏蔽此函数
+// //// // //// // CUBEMX生成代码后重新屏蔽此函数
 //   /* USER CODE END SVCall_IRQn 0 */
 //   /* USER CODE BEGIN SVCall_IRQn 1 */
 
@@ -179,7 +179,7 @@ void DebugMon_Handler(void)
 // void PendSV_Handler(void)
 // {
 //   /* USER CODE BEGIN PendSV_IRQn 0 */
-// // //// // CUBEMX生成代码后重新屏蔽此函数
+// //// // //// // CUBEMX生成代码后重新屏蔽此函数
 //   /* USER CODE END PendSV_IRQn 0 */
 //   /* USER CODE BEGIN PendSV_IRQn 1 */
 
@@ -309,7 +309,6 @@ void DMA2_Stream3_IRQHandler(void)
 {
   /* USER CODE BEGIN DMA2_Stream3_IRQn 0 */
   
- // //// // CUBEMX生成代码后重新屏蔽此函数
   /* USER CODE END DMA2_Stream3_IRQn 0 */
   HAL_DMA_IRQHandler(&hdma_spi1_tx);
   /* USER CODE BEGIN DMA2_Stream3_IRQn 1 */

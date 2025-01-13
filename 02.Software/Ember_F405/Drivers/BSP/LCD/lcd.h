@@ -16,6 +16,8 @@
 #include <string.h>
 #include <stdarg.h>
 
+#include "BSP/LCD/lcd_consle.h"
+
 /* 选择硬件SPI通道 */
 #define LCD_SPI_PORT hspi1
 extern SPI_HandleTypeDef LCD_SPI_PORT;

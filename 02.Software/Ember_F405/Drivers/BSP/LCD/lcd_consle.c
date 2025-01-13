@@ -5,7 +5,7 @@
     * 编写日期 ：2024-04-12
     * 功     能：LCD仿命令台输出
 *********************************************************************************/
-#include "lcd_consle.h"
+#include "BSP/LCD/lcd_consle.h"
 
 // 显示缓冲区：总缓冲区大小为 buflen * bufrow
 char LCD_printf_buf[buflen];    // 单条格式化数据缓冲区

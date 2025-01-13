@@ -28,12 +28,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "FreeRTOS_main.h"
-#include "KEY\key.h"
-#include "IIC/iic.h"
-#include "EEPROM/at24cxx.h"
-//#include "circle_buffer.h"
-#include "soft_timer.h"
-//#include "uart_printf.h"
+
 /*LVGL*********************************************************************************************/
 #include "lvgl.h"
 #include "lv_port_disp_template.h"
@@ -62,23 +57,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t g_data_buf[100];  //按键数据缓存区
-key_t key1;
-key_t key2;
-AT24CXX_DeviceDef myDevice = {0};
 
-/* 外部中断回调函数 */
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-	if (GPIO_Pin == KEY1_Pin)
-	{
-		Start_Soft_Timer(&key1.debounce_timer, 10); // 启动按键1的定时器，超时 10ms
-	}
-  if (GPIO_Pin == KEY2_Pin)
-	{
-		Start_Soft_Timer(&key2.debounce_timer, 10); // 启动按键2定时器，超时 10ms
-	}
-}
 
 
 /* USER CODE END PV */
@@ -134,15 +113,12 @@ int main(void)
   MX_ADC1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  
-  //ST7789V_Init();
+
 	
   /*LVGL 界面初始化*/
 	lv_init();											//lvgl系统初始化
   lv_port_disp_init();						//lvgl显示接口初始化,放在lv_init()的后面
-  LCD_DisplayOn();
-//	uint8_t testdata = 0x66;
-//	HAL_SPI_Transmit_DMA(&hspi1,&testdata, 2);
+
 	freertos_start();//开启任务调度
 
   /* USER CODE END 2 */
@@ -154,8 +130,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    LCD_Clear(BLACK);
-    LCD_Clear(RED);
+
   }
   /* USER CODE END 3 */
 }

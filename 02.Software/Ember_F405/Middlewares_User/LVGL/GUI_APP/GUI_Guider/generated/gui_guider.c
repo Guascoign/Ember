@@ -91,11 +91,11 @@ void change_to_screen_2(lv_timer_t *timer)
 void setup_ui(lv_ui *ui)
 {
     init_scr_del_flag(ui);
-    //setup_scr_screen_1(ui);
+    setup_scr_screen_1(ui);
     setup_scr_screen_2(ui);
-    lv_scr_load(ui->screen_2);
+    lv_scr_load(ui->screen_1);
 
-    //lv_timer_t *timer = lv_timer_create(change_to_screen_2, 600, ui);
-    //lv_timer_set_repeat_count(timer, 1); // 设置只执行一次
+    lv_timer_t *timer = lv_timer_create(change_to_screen_2, 600, ui);
+    lv_timer_set_repeat_count(timer, 1); // 设置只执行一次
 	
 }

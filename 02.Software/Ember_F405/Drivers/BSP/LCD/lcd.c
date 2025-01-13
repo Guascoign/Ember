@@ -5,9 +5,7 @@
     * 编写日期 ：2024-04-12
     * 功     能：LCD屏幕驱动
 *********************************************************************************/
-#include "LCD/lcd.h"
-#include "LCD/font.h"
-//#include "LCD/HzLib.h"
+#include "BSP/LCD/lcd.h"
 uint16_t POINT_COLOR = WHITE;        //默认笔刷颜色
 uint16_t BACK_COLOR = BLACK;        //默认背景颜色
 #ifdef USE_DMA

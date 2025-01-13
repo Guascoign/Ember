@@ -6,26 +6,30 @@
     * 功     能：串口打印重写
 *********************************************************************************
 V1.0 2024-05-08 add STM32 HAL
-
+V1.1 2025-01-08 更换为UART设备结构体
 *********************************************************************************/
 
-#include "uart_printf.h"
-#include "usart.h"
+#ifndef UART_PRINTF_H
+#define UART_PRINTF_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdio.h>
+#include "stm32f4xx_hal.h"
+#include "stm32f4xx_hal_uart.h"
+#include "BSP/Peripherals/Peripherals.h"
 
-int fputc(int ch, FILE *f)
-{
+extern struct UART_Device Test_Uart;
+#define Printf_Uart Test_Uart
+int fputc(int ch, FILE *f);
+int fgetc(FILE *f);
 
-    HAL_UART_Transmit(&Print_UART, (uint8_t *)&ch, 1, 0xFFff);
 
-    return ch;
+
+#ifdef __cplusplus
 }
+#endif
 
-int fgetc(FILE *f)
-{
-    uint8_t ch = 0;
-    HAL_UART_Receive(&Print_UART, &ch, 1, 0xffff);
-    return ch;
-}
-
-
+#endif // UART_PRINTF_H

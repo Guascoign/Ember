@@ -11,7 +11,7 @@
  *********************/
 #include "lv_port_disp_template.h"
 #include <stdbool.h>
-#include "LCD/lcd.h"
+#include "BSP/LCD/lcd.h"
 /*********************
  *      DEFINES
  *********************/

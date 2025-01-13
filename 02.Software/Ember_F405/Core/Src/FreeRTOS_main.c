@@ -3,20 +3,10 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "main.h"
-/******************************************************************************************************/
-#include "LCD/lcd.h"
-#include "LCD/lcd_consle.h"
-//#include "widgets_init.h"
-//#include "circle_buffer.h"
-//#include "IIC/iic.h"
-//#include "EEPROM/at24cxx.h"
-//#include "UART/uart_pack.h"
-//#include "uart_printf.h"
-//#include "BEEP/beep.h"
-//#include "RGB/ws2812b.h"
-#include "adc.h"
-//#include "MPU/MPU6050.h"
-/*LVGL*********************************************************************************************/
+/*Peripherals******************************************************************************************/
+#include "BSP/Peripherals/Peripherals.h"
+#include "BSP/LCD/lcd_consle.h"
+/*LVGL*************************************************************************************************/
 #include "lvgl.h"
 #include "lv_port_disp_template.h"
 #include "../generated/gui_guider.h"
@@ -24,11 +14,12 @@
 #include "lv_demo_benchmark.h"
 /******************************************************************************************************/
 lv_ui guider_ui;
-char g_LCD_consle_buf[1280];   // ÏÔÊ¾»º³åÇø
+char g_LCD_consle_buf[1280];   // æ˜¾ç¤ºç¼“å†²åŒº
 uint8_t g_LCD_text_flag = 0;
 
 typedef struct Run_time
   {
+    uint16_t Count;
     uint8_t Hour;
     uint8_t Minute;
     uint8_t Second;
@@ -36,220 +27,201 @@ typedef struct Run_time
   Run_time_TypeDef run_time = {0,0,0};
 
  
-static uint16_t Runled_count = 0;  // ¼ÆÊýÆ÷
-static uint8_t Runled_status = 0;     // 0 ±íÊ¾ RESET£¬1 ±íÊ¾ SET
 void Boot_anim(void);
 /******************************************************************************************************/
-/* START_TASK ÈÎÎñ ÅäÖÃ
- * °üÀ¨: ÈÎÎñ¾ä±ú ÈÎÎñÓÅÏÈ¼¶ ¶ÑÕ»´óÐ¡ ´´½¨ÈÎÎñ
+/* START_TASK ä»»åŠ¡ é…ç½®
+ * åŒ…æ‹¬: ä»»åŠ¡å¥æŸ„ ä»»åŠ¡ä¼˜å…ˆçº§ å †æ ˆå¤§å° åˆ›å»ºä»»åŠ¡
  */
-#define START_TASK_PRIO 1                   /* ÈÎÎñÓÅÏÈ¼¶ */
-#define START_STK_SIZE  64                 /* ÈÎÎñ¶ÑÕ»´óÐ¡ */
-TaskHandle_t            StartTask_Handler;  /* ÈÎÎñ¾ä±ú */
-void start_task(void *pvParameters);        /* ÈÎÎñº¯Êý */
+#define START_TASK_PRIO 1                   /* ä»»åŠ¡ä¼˜å…ˆçº§ */
+#define START_STK_SIZE  64                 /* ä»»åŠ¡å †æ ˆå¤§å° */
+TaskHandle_t            StartTask_Handler;  /* ä»»åŠ¡å¥æŸ„ */
+void start_task(void *pvParameters);        /* ä»»åŠ¡å‡½æ•° */
 
-/* Main ÈÎÎñ ÅäÖÃ
- * °üÀ¨: ÈÎÎñ¾ä±ú ÈÎÎñÓÅÏÈ¼¶ ¶ÑÕ»´óÐ¡ ´´½¨ÈÎÎñ
+/* Main ä»»åŠ¡ é…ç½®
+ * åŒ…æ‹¬: ä»»åŠ¡å¥æŸ„ ä»»åŠ¡ä¼˜å…ˆçº§ å †æ ˆå¤§å° åˆ›å»ºä»»åŠ¡
  */
-#define Main_PRIO      9                   /* ÈÎÎñÓÅÏÈ¼¶ */
-#define Main_STK_SIZE  1000                 /* ÈÎÎñ¶ÑÕ»´óÐ¡ */
-TaskHandle_t            Main_TaskHandle;  /* ÈÎÎñ¾ä±ú */
-void Main(void *pvParameters);             /* ÈÎÎñº¯Êý */
+#define Main_PRIO      9                   /* ä»»åŠ¡ä¼˜å…ˆçº§ */
+#define Main_STK_SIZE  1000                 /* ä»»åŠ¡å †æ ˆå¤§å° */
+TaskHandle_t            Main_TaskHandle;  /* ä»»åŠ¡å¥æŸ„ */
+void Main(void *pvParameters);             /* ä»»åŠ¡å‡½æ•° */
 
-/* LcdRefresh ÈÎÎñ ÅäÖÃ
- * °üÀ¨: ÈÎÎñ¾ä±ú ÈÎÎñÓÅÏÈ¼¶ ¶ÑÕ»´óÐ¡ ´´½¨ÈÎÎñ
+/* LcdRefresh ä»»åŠ¡ é…ç½®
+ * åŒ…æ‹¬: ä»»åŠ¡å¥æŸ„ ä»»åŠ¡ä¼˜å…ˆçº§ å †æ ˆå¤§å° åˆ›å»ºä»»åŠ¡
  */
-#define LcdRefresh_PRIO      9                   /* ÈÎÎñÓÅÏÈ¼¶ */
-#define LcdRefresh_STK_SIZE  500                 /* ÈÎÎñ¶ÑÕ»´óÐ¡ */
-TaskHandle_t            LcdRefresh_TaskHandle;  /* ÈÎÎñ¾ä±ú */
-void LcdRefresh(void *pvParameters);             /* ÈÎÎñº¯Êý */
+#define LcdRefresh_PRIO      9                   /* ä»»åŠ¡ä¼˜å…ˆçº§ */
+#define LcdRefresh_STK_SIZE  500                 /* ä»»åŠ¡å †æ ˆå¤§å° */
+TaskHandle_t            LcdRefresh_TaskHandle;  /* ä»»åŠ¡å¥æŸ„ */
+void LcdRefresh(void *pvParameters);             /* ä»»åŠ¡å‡½æ•° */
 
-/* LED ÈÎÎñ ÅäÖÃ
- * °üÀ¨: ÈÎÎñ¾ä±ú ÈÎÎñÓÅÏÈ¼¶ ¶ÑÕ»´óÐ¡ ´´½¨ÈÎÎñ
+/* LCD_RTC ä»»åŠ¡ é…ç½®
+ * åŒ…æ‹¬: ä»»åŠ¡å¥æŸ„ ä»»åŠ¡ä¼˜å…ˆçº§ å †æ ˆå¤§å° åˆ›å»ºä»»åŠ¡
  */
-#define LED_PRIO      9                   /* ÈÎÎñÓÅÏÈ¼¶ */
-#define LED_STK_SIZE  64                 /* ÈÎÎñ¶ÑÕ»´óÐ¡ */
-TaskHandle_t            LED_TaskHandle;  /* ÈÎÎñ¾ä±ú */
-void LED(void *pvParameters);             /* ÈÎÎñº¯Êý */
+#define LCD_RTC_PRIO      4                   /* ä»»åŠ¡ä¼˜å…ˆçº§ */
+#define LCD_RTC_STK_SIZE  128                 /* ä»»åŠ¡å †æ ˆå¤§å° */
+TaskHandle_t            LCD_RTC_TaskHandle;  /* ä»»åŠ¡å¥æŸ„ */
+void LCD_RTC(void *pvParameters);             /* ä»»åŠ¡å‡½æ•° */
 
-/* Beeper ÈÎÎñ ÅäÖÃ
- * °üÀ¨: ÈÎÎñ¾ä±ú ÈÎÎñÓÅÏÈ¼¶ ¶ÑÕ»´óÐ¡ ´´½¨ÈÎÎñ
+/* Soft_timer ä»»åŠ¡ é…ç½®
+ * åŒ…æ‹¬: ä»»åŠ¡å¥æŸ„ ä»»åŠ¡ä¼˜å…ˆçº§ å †æ ˆå¤§å° åˆ›å»ºä»»åŠ¡
  */
-#define Beeper_PRIO     9                   /* ÈÎÎñÓÅÏÈ¼¶ */
-#define Beeper_STK_SIZE  64                 /* ÈÎÎñ¶ÑÕ»´óÐ¡ */
-TaskHandle_t            Beeper_TaskHandle;  /* ÈÎÎñ¾ä±ú */
-void Beeper(void *pvParameters);             /* ÈÎÎñº¯Êý */
+#define Soft_timer_PRIO     9                   /* ä»»åŠ¡ä¼˜å…ˆçº§ */
+#define Soft_timer_STK_SIZE  64                 /* ä»»åŠ¡å †æ ˆå¤§å° */
+TaskHandle_t            Soft_timer_TaskHandle;  /* ä»»åŠ¡å¥æŸ„ */
+void Soft_timer(void *pvParameters);             /* ä»»åŠ¡å‡½æ•° */
 /******************************************************************************************************/
 /**
- * @brief       FreeRTOSÀý³ÌÈë¿Úº¯Êý
- * @param       ÎÞ
- * @retval      ÎÞ
+ * @brief       FreeRTOSä¾‹ç¨‹å…¥å£å‡½æ•°
+ * @param       æ— 
+ * @retval      æ— 
  */
 void freertos_start(void)
 {    
-  LCD_PWR(1);
-  //LCD_Clear(WHITE);
-  xTaskCreate((TaskFunction_t )start_task,            /* ÈÎÎñº¯Êý */
-              (const char*    )"start_task",          /* ÈÎÎñÃû³Æ */
-              (uint16_t       )START_STK_SIZE,        /* ÈÎÎñ¶ÑÕ»´óÐ¡ */
-              (void*          )NULL,                  /* ´«Èë¸øÈÎÎñº¯ÊýµÄ²ÎÊý */
-              (UBaseType_t    )START_TASK_PRIO,       /* ÈÎÎñÓÅÏÈ¼¶ */
-              (TaskHandle_t*  )&StartTask_Handler);   /* ÈÎÎñ¾ä±ú */
+
+  xTaskCreate((TaskFunction_t )start_task,            /* ä»»åŠ¡å‡½æ•° */
+              (const char*    )"start_task",          /* ä»»åŠ¡åç§° */
+              (uint16_t       )START_STK_SIZE,        /* ä»»åŠ¡å †æ ˆå¤§å° */
+              (void*          )NULL,                  /* ä¼ å…¥ç»™ä»»åŠ¡å‡½æ•°çš„å‚æ•° */
+              (UBaseType_t    )START_TASK_PRIO,       /* ä»»åŠ¡ä¼˜å…ˆçº§ */
+              (TaskHandle_t*  )&StartTask_Handler);   /* ä»»åŠ¡å¥æŸ„ */
 
   vTaskStartScheduler();
 }
 
 /**
- * @brief       start_task ¿ªÊ¼Ïß³Ì
- * @param       pvParameters : ´«Èë²ÎÊý(Î´ÓÃµ½)
- * @retval      ÎÞ
+ * @brief       start_task å¼€å§‹çº¿ç¨‹
+ * @param       pvParameters : ä¼ å…¥å‚æ•°(æœªç”¨åˆ°)
+ * @retval      æ— 
  */
 void start_task(void *pvParameters)
 {
-  taskENTER_CRITICAL();           /* ½øÈëÁÙ½çÇø */
-  //Beeper_Init();						// ·äÃùÆ÷³õÊ¼»¯
-  //PWM_WS2812B_Init(125);	// RGB³õÊ¼»¯
-  /* ´´½¨ÈÎÎñ1 */
+  taskENTER_CRITICAL();           /* è¿›å…¥ä¸´ç•ŒåŒº */
+  //Soft_timer_Init();						// èœ‚é¸£å™¨åˆå§‹åŒ–
+  //PWM_WS2812B_Init(125);	// RGBåˆå§‹åŒ–
+  All_Peripherals_Init();    // åˆå§‹åŒ–æ‰€æœ‰å¤–è®¾
+
+
+  /* åˆ›å»ºä»»åŠ¡1 */
   xTaskCreate((TaskFunction_t )Main,
               (const char*    )"Main_Task",
               (uint16_t       )Main_STK_SIZE,
               (void*          )NULL,
               (UBaseType_t    )Main_PRIO,
               (TaskHandle_t*  )&Main_TaskHandle);
-//  /* ´´½¨ÈÎÎñ2 */          
-//  xTaskCreate((TaskFunction_t )LcdRefresh,
-//              (const char*    )"LcdRefresh_Task",
-//              (uint16_t       )LcdRefresh_STK_SIZE,
-//              (void*          )NULL,
-//              (UBaseType_t    )LcdRefresh_PRIO,
-//              (TaskHandle_t*  )&LcdRefresh_TaskHandle);
-////  /* ´´½¨ÈÎÎñ3 */
-//  xTaskCreate((TaskFunction_t )LED,
-//              (const char*    )"Led_Task",
-//              (uint16_t       )LED_STK_SIZE,
-//              (void*          )NULL,
-//              (UBaseType_t    )LED_PRIO,
-//              (TaskHandle_t*  )&LED_TaskHandle);
-//  /* ´´½¨ÈÎÎñ4 */
-//  xTaskCreate((TaskFunction_t )Beeper,
-//              (const char*    )"Beeper_Task",
-//              (uint16_t       )Beeper_STK_SIZE,
-//              (void*          )NULL,
-//              (UBaseType_t    )Beeper_PRIO,
-//              (TaskHandle_t*  )&Beeper_TaskHandle);
+ /* åˆ›å»ºä»»åŠ¡2 */          
+ xTaskCreate((TaskFunction_t )LcdRefresh,
+             (const char*    )"LcdRefresh_Task",
+             (uint16_t       )LcdRefresh_STK_SIZE,
+             (void*          )NULL,
+             (UBaseType_t    )LcdRefresh_PRIO,
+             (TaskHandle_t*  )&LcdRefresh_TaskHandle);
+  /* åˆ›å»ºä»»åŠ¡3 */
+  xTaskCreate((TaskFunction_t )LCD_RTC,
+              (const char*    )"LCD_RTC_Task",
+              (uint16_t       )LCD_RTC_STK_SIZE,
+              (void*          )NULL,
+              (UBaseType_t    )LCD_RTC_PRIO,
+              (TaskHandle_t*  )&LCD_RTC_TaskHandle);
+ /* åˆ›å»ºä»»åŠ¡4 */
+ xTaskCreate((TaskFunction_t )Soft_timer,
+             (const char*    )"Soft_timer_Task",
+             (uint16_t       )Soft_timer_STK_SIZE,
+             (void*          )NULL,
+             (UBaseType_t    )Soft_timer_PRIO,
+             (TaskHandle_t*  )&Soft_timer_TaskHandle);
 
 
-  vTaskDelete(StartTask_Handler); /* É¾³ý¿ªÊ¼ÈÎÎñ */
-  taskEXIT_CRITICAL();            /* ÍË³öÁÙ½çÇø */
+  vTaskDelete(StartTask_Handler); /* åˆ é™¤å¼€å§‹ä»»åŠ¡ */
+  taskEXIT_CRITICAL();            /* é€€å‡ºä¸´ç•ŒåŒº */
 }
-extern ADC_HandleTypeDef hadc1;
+
 /**
  * @brief       Main
- * @param       pvParameters : ´«Èë²ÎÊý(Î´ÓÃµ½)
- * @retval      ÎÞ
+ * @param       pvParameters : ä¼ å…¥å‚æ•°(æœªç”¨åˆ°)
+ * @retval      æ— 
  */
 void Main(void *pvParameters)
 {
- // Boot_anim();
+  Boot_anim();
    vTaskDelay(pdMS_TO_TICKS(100));
-	lv_demo_benchmark();
+	//lv_demo_benchmark();//å¯åŠ¨benchmarkä¾‹ç¨‹
+  uint8_t i = 0;
   while(1)
   {
-		
-	    lv_task_handler();
-   //vTaskDelay(pdMS_TO_TICKS(100));
+  lcdprintf("Main Task Runing LCD Refresh %d\r\n",i++);
+  
+  vTaskDelay(pdMS_TO_TICKS(100));
   }
 }
 
 /**
- * @brief       LcdRefresh  ÆÁÄ»Ë¢ÐÂ
- * @param       pvParameters : ´«Èë²ÎÊý(Î´ÓÃµ½)
- * @retval      ÎÞ
+ * @brief       LCD_RTC
+ * @param       pvParameters : ä¼ å…¥å‚æ•°(æœªç”¨åˆ°)
+ * @retval      æ— 
  */
-void LcdRefresh(void *pvParameters)
-{    
-//  setup_ui(&guider_ui);
-//	events_init(&guider_ui);
-    while(1)
-    {
-//      if(g_LCD_text_flag) //ÃüÁîÌ¨Êä³öË¢ÐÂ±êÖ¾Î»
-//        {
-//          lv_label_set_text(guider_ui.screen_2_label_3, g_LCD_consle_buf);
-//          g_LCD_text_flag = 0;
-//        }
-  //   lv_timer_handler();
-      vTaskDelay(1);
-  
-    }
-}
-
-/**
- * @brief       Led
- * @param       pvParameters : ´«Èë²ÎÊý(Î´ÓÃµ½)
- * @retval      ÎÞ
- */
-void LED(void *pvParameters)
+void LCD_RTC(void *pvParameters)
 {
-//  char LCD_time_buf[32]; // ÓÃÓÚ´æ´¢¸ñÊ½»¯µÄ×Ö·û´®
+  char LCD_time_buf[32]; // ç”¨äºŽå­˜å‚¨æ ¼å¼åŒ–çš„å­—ç¬¦ä¸²
   while(1)
   {
     vTaskDelay(pdMS_TO_TICKS(1000));
-//    run_time.Second = run_time.Second +1;
-//    if(run_time.Second == 60)
-//    {
-//      run_time.Second = 0;
-//      run_time.Minute = run_time.Minute +1;
-//      if(run_time.Minute == 60)
-//      {
-//        run_time.Minute = 0;
-//        run_time.Hour = run_time.Hour +1;
-//      }
-//    }
-//    // ¸ñÊ½»¯×Ö·û´® xxH xxM xxS
-//    sprintf(LCD_time_buf, "%02dH%02dM%02dS", run_time.Hour, run_time.Minute, run_time.Second);
-//    lv_label_set_text(guider_ui.screen_2_label_2, LCD_time_buf);
+    run_time.Second = run_time.Second +1;
+    if(run_time.Second == 60)
+    {
+      run_time.Second = 0;
+      run_time.Minute = run_time.Minute +1;
+      if(run_time.Minute == 60)
+      {
+        run_time.Minute = 0;
+        run_time.Hour = run_time.Hour +1;
+      }
+    }
+    // æ ¼å¼åŒ–å­—ç¬¦ä¸² xxH xxM xxS
+    sprintf(LCD_time_buf, "%02dH%02dM%02dS", run_time.Hour, run_time.Minute, run_time.Second);
+    lv_label_set_text(guider_ui.screen_2_label_2, LCD_time_buf);
   }
 }
 
 /**
- * @brief       Beeper
- * @param       pvParameters : ´«Èë²ÎÊý(Î´ÓÃµ½)
- * @retval      ÎÞ
+ * @brief       LcdRefresh  å±å¹•åˆ·æ–°
+ * @param       pvParameters : ä¼ å…¥å‚æ•°(æœªç”¨åˆ°)
+ * @retval      æ— 
  */
-void Beeper(void *pvParameters)
+void LcdRefresh(void *pvParameters)
+{    
+  setup_ui(&guider_ui);
+	events_init(&guider_ui);
+    while(1)
+    {
+     if(g_LCD_text_flag) //å‘½ä»¤å°è¾“å‡ºåˆ·æ–°æ ‡å¿—ä½
+       {
+         lv_label_set_text(guider_ui.screen_2_label_3, g_LCD_consle_buf);
+         g_LCD_text_flag = 0;
+       }
+      lv_timer_handler();
+  	  lv_task_handler();
+      vTaskDelay(20);
+    }
+}
+
+/**
+ * @brief       Soft_timer
+ * @param       pvParameters : ä¼ å…¥å‚æ•°(æœªç”¨åˆ°)
+ * @retval      æ— 
+ */
+void Soft_timer(void *pvParameters)
 {
   
   while(1)
   {
-    vTaskDelay(pdMS_TO_TICKS(1));//1ms½øÈëÒ»´Î
-//    /* ---------- Beeper ---------- */
-//		if (++Beeper_count >=20)
+    vTaskDelay(pdMS_TO_TICKS(1));//1msè¿›å…¥ä¸€æ¬¡
+//    /* ---------- Soft_timer ---------- */
+//		if (++Soft_timer_count >=20)
 //		{
-//      taskENTER_CRITICAL();           /* ½øÈëÁÙ½çÇø */
-//			Beeper_Proc();
-//			Beeper_count = 0;
-//      taskEXIT_CRITICAL();            /* ÍË³öÁÙ½çÇø */
+//      taskENTER_CRITICAL();           /* è¿›å…¥ä¸´ç•ŒåŒº */
+//			Soft_timer_Proc();
+//			Soft_timer_count = 0;
+//      taskEXIT_CRITICAL();            /* é€€å‡ºä¸´ç•ŒåŒº */
 //		}
-//    /* ---------- Runled ---------- */
-		 if (++Runled_count >= 2000)
-    {
-        Runled_count = 0;
-        if (Runled_status == 0)
-        {
-            HAL_GPIO_WritePin(RUNLED_GPIO_Port, RUNLED_Pin, GPIO_PIN_RESET);
-            Runled_status = 1;
-        }
-    }
-//    else if (Runled_count >= 1910   && Runled_status == 0)
-//    {
-//        HAL_GPIO_WritePin(RUNLED_GPIO_Port, RUNLED_Pin, GPIO_PIN_SET);
-//        Runled_status = 1;
-//    }
-//    else if (Runled_count < 1910 && Runled_status == 1)
-//    {
-//        HAL_GPIO_WritePin(RUNLED_GPIO_Port, RUNLED_Pin, GPIO_PIN_RESET);
-//        Runled_status = 0;
-//    }
 //    /* ---------- Soft_timer ---------- */
 //    extern void Check_Soft_Timer(void *args);
 //		extern key_t key1;
@@ -257,34 +229,35 @@ void Beeper(void *pvParameters)
 //    extern key_t key2;
 //    Check_Soft_Timer( (void *)&key2 );
   }
+
 }
 
 /**
  * @brief   Boot_anim 
- * @param       ÎÞ
- * @retval      ÎÞ
+ * @param       æ— 
+ * @retval      æ— 
  * 
  */
-//void Boot_anim(void)
-//{
-//   vTaskDelay(pdMS_TO_TICKS(1000));
-//  lcdprintf("=================\r\n"); 
-//  lcdprintf("System Start!\r\n"); 
-//  vTaskDelay(pdMS_TO_TICKS(100));
-//  lcdprintf("LVGL V8.4.0\r\n");
-//  vTaskDelay(pdMS_TO_TICKS(100));
-//  lcdprintf("FreeRTOS V202212.01\r\n");
-//  vTaskDelay(pdMS_TO_TICKS(100));
-//  lcdprintf("=================\r\n"); 
-//  vTaskDelay(pdMS_TO_TICKS(500));
-//	lcdprintf("HELLO!\n");
-//  vTaskDelay(pdMS_TO_TICKS(200));
-//  PWM_WS2812B_Red(3);
-//  //Beeper_Perform(BOOT);		// ·äÃùÆ÷ÏìÉù
-//  vTaskDelay(pdMS_TO_TICKS(150));
-//  PWM_WS2812B_Blue(3);
-//  vTaskDelay(pdMS_TO_TICKS(150));
-//  PWM_WS2812B_Green(3);
-//  vTaskDelay(pdMS_TO_TICKS(250));
-//  PWM_WS2812B_Close(3);
-//}
+void Boot_anim(void)
+{
+  vTaskDelay(pdMS_TO_TICKS(1000));
+ lcdprintf("=================\r\n"); 
+ lcdprintf("System Start!\r\n"); 
+ vTaskDelay(pdMS_TO_TICKS(100));
+ lcdprintf("LVGL V8.4.0\r\n");
+ vTaskDelay(pdMS_TO_TICKS(100));
+ lcdprintf("FreeRTOS V202212.01\r\n");
+ vTaskDelay(pdMS_TO_TICKS(100));
+ lcdprintf("=================\r\n"); 
+ vTaskDelay(pdMS_TO_TICKS(500));
+	lcdprintf("HELLO!\n");
+ vTaskDelay(pdMS_TO_TICKS(200));
+ //PWM_WS2812B_Red(3);
+ //Soft_timer_Perform(BOOT);		// èœ‚é¸£å™¨å“å£°
+ vTaskDelay(pdMS_TO_TICKS(150));
+ //PWM_WS2812B_Blue(3);
+ vTaskDelay(pdMS_TO_TICKS(150));
+ //PWM_WS2812B_Green(3);
+ vTaskDelay(pdMS_TO_TICKS(250));
+ //PWM_WS2812B_Close(3);
+}
