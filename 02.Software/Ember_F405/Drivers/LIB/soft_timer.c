@@ -7,6 +7,7 @@
 *********************************************************************************/
 #include "LIB/soft_timer.h"
 #include "main.h" // HAL_GetTick 的声明
+#include "BSP/Peripherals/Peripherals.h"
 
 /* 修改定时器超时时间 */
 void Start_Soft_Timer(struct soft_timer *pTimer, uint32_t timeout)
@@ -16,15 +17,15 @@ void Start_Soft_Timer(struct soft_timer *pTimer, uint32_t timeout)
 
 
 /* 检查定时器是否超时 */
-void Check_Soft_Timer(void *args)
+void Check_LED_Soft_Timer(void *args)
 {
-    // // 检查定时器是否超时
-    // if (key->debounce_timer.timeout <= HAL_GetTick()) {
-    //     // 调用回调函数
-    //     if (key->debounce_timer.func) {
-    //         key->debounce_timer.func(key->debounce_timer.args);	//进入定时器回调函数
-	// 				key->debounce_timer.timeout = ~0;	//复位软件定时器超时时间
-    //     }
-    // }
-    
+    LED_DeviceTypeDef *LED = (LED_DeviceTypeDef *)args;  // 将 void * 转换为 key_t 指针
+    if(((LED_DeviceTypeDef *)LED)->timer.timeout <= HAL_GetTick())
+    {
+        // 调用回调函数
+        if(LED->timer.func != NULL)
+        {
+        LED->timer.func(LED->timer.args); // 进入定时器回调函数
+        }
+    }
 }

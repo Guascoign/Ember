@@ -14,7 +14,7 @@ PeripheralDeviceTypeDef **peripheral_devices = NULL;
 int peripheral_device_count = 0;
 
 UART_DeviceTypeDef Test_Uart;   //测试串口
-GPIO_DeviceTypeDef RUNLED;
+LED_DeviceTypeDef RUNLED;
 void All_Peripherals_Init(void) {
 /*注册测试串口*****************/
   UART_Init(
@@ -26,8 +26,8 @@ void All_Peripherals_Init(void) {
     Word_length_8B,
     PARITY_NONE,
     Stop_bits_1);
-    GPIO_Init(&RUNLED , "RUNLED",(void *)RUNLED_GPIO_Port,RUNLED_Pin);
-    RUNLED.Set(&RUNLED,PIN_SET);
+
+    LED_Init(&RUNLED , "RUNLED",(void *)RUNLED_GPIO_Port,RUNLED_Pin);
 
 // 打印初始化成功的所有外设的名称
 //Print_AllDevice_Info();

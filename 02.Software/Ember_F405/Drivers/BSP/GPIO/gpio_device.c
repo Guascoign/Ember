@@ -15,7 +15,6 @@ static uint8_t Read(GPIO_DeviceTypeDef *p_GPIODev)
     return HAL_GPIO_ReadPin(p_GPIODev->instance, p_GPIODev->pin);
 }
 
-
 static void Set(GPIO_DeviceTypeDef *p_GPIODev, GPIO_PinState PinState)
 {
     HAL_GPIO_WritePin(p_GPIODev->instance, p_GPIODev->pin, PinState);
@@ -45,7 +44,6 @@ static uint8_t Init(GPIO_DeviceTypeDef *p_GPIODev)
     HAL_GPIO_Init(p_GPIODev->instance, &GPIO_InitStruct);
     return 0;
 }
-
 #endif  //USE_HAL
 
 int8_t GPIO_Init(GPIO_DeviceTypeDef *p_GPIODev,char *name ,void *Instance ,uint16_t pin)

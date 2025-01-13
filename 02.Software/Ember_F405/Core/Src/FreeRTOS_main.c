@@ -139,16 +139,17 @@ void start_task(void *pvParameters)
  * @param       pvParameters : 传入参数(未用到)
  * @retval      无
  */
+extern LED_DeviceTypeDef RUNLED;
 void Main(void *pvParameters)
 {
   Boot_anim();
    vTaskDelay(pdMS_TO_TICKS(100));
 	//lv_demo_benchmark();//启动benchmark例程
   uint8_t i = 0;
+  RUNLED.Set(&RUNLED, LED_Blink_Three, continue_Blink);
   while(1)
   {
   lcdprintf("Main Task Runing LCD Refresh %d\r\n",i++);
-  
   vTaskDelay(pdMS_TO_TICKS(100));
   }
 }
@@ -197,9 +198,9 @@ void LcdRefresh(void *pvParameters)
          lv_label_set_text(guider_ui.screen_2_label_3, g_LCD_consle_buf);
          g_LCD_text_flag = 0;
        }
-      lv_timer_handler();
-  	  lv_task_handler();
-      vTaskDelay(20);
+      lv_timer_handler();//定时器处理
+  	  lv_task_handler();//任务处理
+      vTaskDelay(30);
     }
 }
 
@@ -208,26 +209,15 @@ void LcdRefresh(void *pvParameters)
  * @param       pvParameters : 传入参数(未用到)
  * @retval      无
  */
+extern void Check_Soft_Timer(void *args);
 void Soft_timer(void *pvParameters)
 {
   
   while(1)
   {
     vTaskDelay(pdMS_TO_TICKS(1));//1ms进入一次
-//    /* ---------- Soft_timer ---------- */
-//		if (++Soft_timer_count >=20)
-//		{
-//      taskENTER_CRITICAL();           /* 进入临界区 */
-//			Soft_timer_Proc();
-//			Soft_timer_count = 0;
-//      taskEXIT_CRITICAL();            /* 退出临界区 */
-//		}
-//    /* ---------- Soft_timer ---------- */
-//    extern void Check_Soft_Timer(void *args);
-//		extern key_t key1;
-//    Check_Soft_Timer( (void *)&key1 );
-//    extern key_t key2;
-//    Check_Soft_Timer( (void *)&key2 );
+  /* ---------- Soft_timer ---------- */
+   Check_LED_Soft_Timer( (void *)&RUNLED );//放入1ms定时器中断
   }
 
 }

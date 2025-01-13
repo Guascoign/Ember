@@ -32,9 +32,17 @@ typedef enum {
     single_Blink = 0x01U, //单次
 }LED_BlinkMode;
 
+typedef enum {
+    LED_Delay_100ms = 100, //100ms
+    LED_Delay_200ms = 200, //200ms
+    LED_Delay_500ms = 500, //500ms
+    LED_Delay_1000ms = 1000, //1000ms
+}LED_Delay;//闪烁延时 n x 1ms + 2 x 1ms 为一组
+
 typedef struct {
     LED_BlinkType blink; //闪烁
     LED_BlinkMode mode; //闪烁模式
+    LED_Delay delay; //闪烁延时
     uint8_t flag; //闪烁标志位，记录次数
 }LED_BlinkTypeDef;
 

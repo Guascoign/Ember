@@ -21,6 +21,6 @@ typedef struct soft_timer {
 void Start_Soft_Timer(struct soft_timer *pTimer, uint32_t timeout);
 
 /* 检查所有定时器状态 */
-void Check_Soft_Timer(void *args);
+void Check_LED_Soft_Timer(void *args);
 
 #endif // SOFT_TIMER_H
