@@ -1,5 +1,5 @@
 /********************************************************************************
-    * 文件名称 ：uartpack.h
+    * 文件名称 ：uart_device.h
     * 作     者：@ZM
     * 版     本：V1.0
     * 编写日期 ：2024-04-21
@@ -14,8 +14,8 @@ UART_Init(&Test_Uart,"Test_Uart_Uart3",USART3,UART_MODE_NORMAL,Rate_115200,Word_
 Printf_Uart.Send(&Printf_Uart, (uint8_t *)&ch, 1, 0xFFff); 发送函数
 Printf_Uart.Recv(&Printf_Uart, &ch, 0xffff); 接收函数
 *********************************************************************************/
-#ifndef _UART_PACK_H
-#define _UART_PACK_H
+#ifndef __UART_DEVICE_H
+#define __UART_DEVICE_H
 
 #include <stdint.h>
 #include "string.h"

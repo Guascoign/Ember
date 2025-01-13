@@ -2241,14 +2241,19 @@
               <FilePath>..\Drivers\BSP\Peripherals\Peripherals.c</FilePath>
             </File>
             <File>
+              <FileName>led_device.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\BSP\GPIO\led_device.c</FilePath>
+            </File>
+            <File>
               <FileName>gpio_device.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\BSP\GPIO\gpio_device.c</FilePath>
             </File>
             <File>
-              <FileName>uart_pack.c</FileName>
+              <FileName>uart_device.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Drivers\BSP\UART\uart_pack.c</FilePath>
+              <FilePath>..\Drivers\BSP\UART\uart_device.c</FilePath>
             </File>
             <File>
               <FileName>uart_printf.c</FileName>
@@ -2256,9 +2261,14 @@
               <FilePath>..\Drivers\BSP\UART\uart_printf.c</FilePath>
             </File>
             <File>
-              <FileName>led_device.c</FileName>
+              <FileName>rgb_device.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Drivers\BSP\GPIO\led_device.c</FilePath>
+              <FilePath>..\Drivers\BSP\RGB\rgb_device.c</FilePath>
+            </File>
+            <File>
+              <FileName>ws2812.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\BSP\RGB\ws2812.c</FilePath>
             </File>
           </Files>
         </Group>

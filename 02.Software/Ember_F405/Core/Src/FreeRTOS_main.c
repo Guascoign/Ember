@@ -140,6 +140,7 @@ void start_task(void *pvParameters)
  * @retval      无
  */
 extern LED_DeviceTypeDef RUNLED;
+extern RGB_DeviceTypeDef WS2812B;
 void Main(void *pvParameters)
 {
   Boot_anim();
@@ -147,6 +148,7 @@ void Main(void *pvParameters)
 	//lv_demo_benchmark();//启动benchmark例程
   uint8_t i = 0;
   RUNLED.Set(&RUNLED, LED_Blink_Three, continue_Blink);
+  WS2812B.SetAllRGB(&WS2812B,0,0,255);
   while(1)
   {
   lcdprintf("Main Task Runing LCD Refresh %d\r\n",i++);

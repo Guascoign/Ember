@@ -18,9 +18,10 @@ Print_Devices();//打印所有已注册的外设
 #include <stdio.h>
 #include <string.h>
 #include "main.h"
-#include "BSP/UART/uart_pack.h"
+#include "BSP/UART/uart_device.h"
 #include "BSP/GPIO/led_device.h"
 #include "BSP/GPIO/gpio_device.h"
+#include "BSP/RGB/rgb_device.h"
 
 #define MAX_UART_DEVICES 10 //最大设备数量
 

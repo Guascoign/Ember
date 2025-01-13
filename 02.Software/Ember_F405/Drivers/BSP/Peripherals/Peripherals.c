@@ -15,6 +15,7 @@ int peripheral_device_count = 0;
 
 UART_DeviceTypeDef Test_Uart;   //测试串口
 LED_DeviceTypeDef RUNLED;
+RGB_DeviceTypeDef WS2812B;
 void All_Peripherals_Init(void) {
 /*注册测试串口*****************/
   UART_Init(
@@ -28,6 +29,7 @@ void All_Peripherals_Init(void) {
     Stop_bits_1);
 
     LED_Init(&RUNLED , "RUNLED",(void *)RUNLED_GPIO_Port,RUNLED_Pin);
+    RGB_Init(&WS2812B,"WS2812B",3);
 
 // 打印初始化成功的所有外设的名称
 //Print_AllDevice_Info();

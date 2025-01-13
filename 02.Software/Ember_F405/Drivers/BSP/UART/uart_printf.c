@@ -10,7 +10,7 @@ V1.1 2025-01-08 更换为UART设备结构体
 *********************************************************************************/
 
 #include "uart_printf.h"
-#include "BSP/UART/uart_pack.h"
+#include "BSP/UART/uart_device.h"
 #include <stdio.h>
 
 int fputc(int ch, FILE *f)

@@ -152,9 +152,57 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
+          <LineNumber>33</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>..\Drivers\BSP\Peripherals\Peripherals.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>34</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134227330</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\Drivers\BSP\Peripherals\Peripherals.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\Ember\../Drivers/BSP/Peripherals/Peripherals.c\34</Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
+          <LineNumber>32</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134227320</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\Drivers\BSP\Peripherals\Peripherals.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\Ember\../Drivers/BSP/Peripherals/Peripherals.c\32</Expression>
+        </Bp>
+        <Bp>
+          <Number>3</Number>
+          <Type>0</Type>
           <LineNumber>77</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134235908</Address>
+          <Address>134236778</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -166,11 +214,11 @@
           <Expression>\\Ember\../Drivers/BSP/GPIO/led_device.c\77</Expression>
         </Bp>
         <Bp>
-          <Number>1</Number>
+          <Number>4</Number>
           <Type>0</Type>
           <LineNumber>53</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134235880</Address>
+          <Address>134236764</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -182,11 +230,11 @@
           <Expression>\\Ember\../Drivers/BSP/GPIO/led_device.c\53</Expression>
         </Bp>
         <Bp>
-          <Number>2</Number>
+          <Number>5</Number>
           <Type>0</Type>
           <LineNumber>841</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134388312</Address>
+          <Address>134390436</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -198,7 +246,7 @@
           <Expression>\\Ember\../Middlewares_User/LVGL/GUI/lvgl/src/widgets/lv_arc.c\841</Expression>
         </Bp>
         <Bp>
-          <Number>3</Number>
+          <Number>6</Number>
           <Type>0</Type>
           <LineNumber>9</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -214,7 +262,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>4</Number>
+          <Number>7</Number>
           <Type>0</Type>
           <LineNumber>24</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -230,7 +278,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>5</Number>
+          <Number>8</Number>
           <Type>0</Type>
           <LineNumber>90</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -246,7 +294,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>6</Number>
+          <Number>9</Number>
           <Type>0</Type>
           <LineNumber>96</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -262,7 +310,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>7</Number>
+          <Number>10</Number>
           <Type>0</Type>
           <LineNumber>117</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -278,7 +326,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>8</Number>
+          <Number>11</Number>
           <Type>0</Type>
           <LineNumber>118</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -294,7 +342,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>9</Number>
+          <Number>12</Number>
           <Type>0</Type>
           <LineNumber>119</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -310,7 +358,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>10</Number>
+          <Number>13</Number>
           <Type>0</Type>
           <LineNumber>121</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -326,7 +374,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>11</Number>
+          <Number>14</Number>
           <Type>0</Type>
           <LineNumber>122</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -342,7 +390,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>12</Number>
+          <Number>15</Number>
           <Type>0</Type>
           <LineNumber>123</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -358,7 +406,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>13</Number>
+          <Number>16</Number>
           <Type>0</Type>
           <LineNumber>156</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -374,7 +422,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>14</Number>
+          <Number>17</Number>
           <Type>0</Type>
           <LineNumber>167</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -390,7 +438,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>15</Number>
+          <Number>18</Number>
           <Type>0</Type>
           <LineNumber>196</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -406,7 +454,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>16</Number>
+          <Number>19</Number>
           <Type>0</Type>
           <LineNumber>225</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -422,7 +470,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>17</Number>
+          <Number>20</Number>
           <Type>0</Type>
           <LineNumber>279</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -448,6 +496,21 @@
           <count>1</count>
           <WinNumber>1</WinNumber>
           <ItemText>p_LEDDev</ItemText>
+        </Ww>
+        <Ww>
+          <count>2</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>WS2812B</ItemText>
+        </Ww>
+        <Ww>
+          <count>3</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>p_ws2812b</ItemText>
+        </Ww>
+        <Ww>
+          <count>4</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>p_ws2812b</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
@@ -3591,8 +3654,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Drivers\BSP\GPIO\gpio_device.c</PathWithFileName>
-      <FilenameWithoutPath>gpio_device.c</FilenameWithoutPath>
+      <PathWithFileName>..\Drivers\BSP\GPIO\led_device.c</PathWithFileName>
+      <FilenameWithoutPath>led_device.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -3603,14 +3666,26 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Drivers\BSP\UART\uart_pack.c</PathWithFileName>
-      <FilenameWithoutPath>uart_pack.c</FilenameWithoutPath>
+      <PathWithFileName>..\Drivers\BSP\GPIO\gpio_device.c</PathWithFileName>
+      <FilenameWithoutPath>gpio_device.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
       <FileNumber>254</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Drivers\BSP\UART\uart_device.c</PathWithFileName>
+      <FilenameWithoutPath>uart_device.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>9</GroupNumber>
+      <FileNumber>255</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3622,13 +3697,25 @@
     </File>
     <File>
       <GroupNumber>9</GroupNumber>
-      <FileNumber>255</FileNumber>
+      <FileNumber>256</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>1</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Drivers\BSP\RGB\rgb_device.c</PathWithFileName>
+      <FilenameWithoutPath>rgb_device.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>9</GroupNumber>
+      <FileNumber>257</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Drivers\BSP\GPIO\led_device.c</PathWithFileName>
-      <FilenameWithoutPath>led_device.c</FilenameWithoutPath>
+      <PathWithFileName>..\Drivers\BSP\RGB\ws2812.c</PathWithFileName>
+      <FilenameWithoutPath>ws2812.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -3642,7 +3729,7 @@
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>10</GroupNumber>
-      <FileNumber>256</FileNumber>
+      <FileNumber>258</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3654,7 +3741,7 @@
     </File>
     <File>
       <GroupNumber>10</GroupNumber>
-      <FileNumber>257</FileNumber>
+      <FileNumber>259</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3674,7 +3761,7 @@
     <RteFlg>0</RteFlg>
     <File>
       <GroupNumber>11</GroupNumber>
-      <FileNumber>258</FileNumber>
+      <FileNumber>260</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3686,7 +3773,7 @@
     </File>
     <File>
       <GroupNumber>11</GroupNumber>
-      <FileNumber>259</FileNumber>
+      <FileNumber>261</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
@@ -3698,7 +3785,7 @@
     </File>
     <File>
       <GroupNumber>11</GroupNumber>
-      <FileNumber>260</FileNumber>
+      <FileNumber>262</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
