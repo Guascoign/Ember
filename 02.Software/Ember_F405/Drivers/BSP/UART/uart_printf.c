@@ -13,12 +13,27 @@ V1.1 2025-01-08 更换为UART设备结构体
 #include "BSP/UART/uart_device.h"
 #include <stdio.h>
 
+/**
+ * @brief   串口打印
+ * 
+ * @param ch    字
+ * @param *f     文件指针
+ * 
+ * @return ch   字
+ */
 int fputc(int ch, FILE *f)
 {
     Printf_Uart.Send(&Printf_Uart, (uint8_t *)&ch, 1, 0xFFff);
     return ch;
 }
 
+/**
+ * @brief   串口接收
+ * 
+ * @param *f     文件指针
+ * 
+ * @return ch   字
+ */
 int fgetc(FILE *f)
 {
     uint8_t ch = 0;

@@ -10,7 +10,13 @@
 
 #include <stdint.h>
 
-/* 软件定时器结构体 */
+/**
+ * @brief    软件定时器结构体
+ * @param    timeout	超时时间
+ * @param    args		回调参数
+ * @param    func		超时回调函数
+ * @param    Disable_Refresh	禁用刷新
+ */
 typedef struct Soft_timer {
 	uint32_t timeout;            // 超时时间
 	void *args;                  // 回调参数

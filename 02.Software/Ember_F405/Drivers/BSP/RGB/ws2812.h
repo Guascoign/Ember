@@ -31,6 +31,20 @@ extern DMA_HandleTypeDef hdma_tim2_ch1;
 #define DATA_SIZE 24 // WS2812B传输一个数据的大小是3个字节（24bit）
 #define DMA_DATA_SIZE (DATA_SIZE * WS2812B_NUM +50)
 
+/**
+ * @brief   WS2812B设备结构体
+ * @param   name    设备名称
+ * @param   data[DMA_DATA_SIZE]    DMA数据缓存
+ * @param   tim_handle  定时器句柄
+ * @param   tim_channel 定时器通道
+ * @param   Init    初始化
+ * @param   DeInit  反初始化
+ * @param   SetRGB  设置RGB
+ * @param   SetHSV  设置HSV
+ * @param   SetAllRGB   设置所有灯的RGB值
+ * @param   SetAllHSV   设置所有灯的HSV值
+ * @param   Update  更新
+ */
 typedef struct ws2812b_device
 {
     char *name;

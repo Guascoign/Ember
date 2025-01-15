@@ -11,6 +11,13 @@ Check_LED_Soft_Timer( (void *)&RUNLED );//放入1ms定时器中断
 *********************************************************************************/
 #include "BSP/GPIO/led_device.h"
 
+/**
+ * @brief    检查LED定时器是否超时
+ *
+ * @param   args	LED设备句柄
+ *
+ * @return  void
+ */
 static uint8_t LED_Set(LED_DeviceTypeDef *p_LEDDev, LED_BlinkType blink ,LED_BlinkMode mode)
 {
     if(p_LEDDev == NULL)
@@ -49,6 +56,13 @@ static uint8_t LED_Set(LED_DeviceTypeDef *p_LEDDev, LED_BlinkType blink ,LED_Bli
     return 0;
 }
 
+/**
+ * @brief    LED定时器回调函数
+ *
+ * @param   args	LED设备句柄
+ *
+ * @return  void
+ */
 void LED_Callback(void *args)
 {
 	LED_DeviceTypeDef *p_LEDDev = (LED_DeviceTypeDef *)args;
@@ -81,6 +95,16 @@ void LED_Callback(void *args)
     
 }
 
+/**
+ * @brief    初始化LED
+ *
+ * @param   p_LEDDev	LED设备句柄
+ * @param   name	LED名称
+ * @param   Instance	引脚基地址
+ * @param   pin	引脚号
+ *
+ * @return  int8_t 0:成功 1:失败
+ */
 int8_t LED_Init(LED_DeviceTypeDef *p_LEDDev,char *name,void *Instance ,uint16_t pin)
 {
     if(p_LEDDev == NULL)

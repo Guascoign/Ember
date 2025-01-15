@@ -7,6 +7,11 @@
 *********************************************************************************/
 #include "BSP/RGB/ws2812.h"
 
+/**
+ * @brief   WS2812B初始化
+ * @param   p_ws2812b   WS2812B设备句柄
+ * @param   arr         定时器ARR值
+ */
 static void init(WS2812B_DeviceTypeDef *p_ws2812b , uint16_t arr)
 {
 //    /* 初始化GPIO结构体 */
@@ -87,6 +92,14 @@ static void init(WS2812B_DeviceTypeDef *p_ws2812b , uint16_t arr)
 
 }
 
+/**
+ * @brief   设置单个灯的RGB值
+ * @param   *p_RGBDev   RGB设备句柄
+ * @param   R   红色
+ * @param   G   绿色
+ * @param   B   蓝色
+ * @param   num 灯的编号
+ */
 static void set_rgb(WS2812B_DeviceTypeDef *p_ws2812b, uint8_t R, uint8_t G, uint8_t B, uint16_t num)
 {
     uint16_t i = num * DATA_SIZE;
@@ -126,6 +139,14 @@ static void set_rgb(WS2812B_DeviceTypeDef *p_ws2812b, uint8_t R, uint8_t G, uint
     }
 }
 
+/**
+ * @brief   设置单个灯的HSV值
+ * @param   *p_RGBDev   RGB设备句柄
+ * @param   H   色调
+ * @param   S   饱和度
+ * @param   V   明度
+ * @param   num 灯的编号
+ */
 static void set_hsv(WS2812B_DeviceTypeDef *p_ws2812b, uint8_t H, uint8_t S, uint8_t V, uint16_t num)
 {
     RGB_TypeDef rgb;
@@ -137,6 +158,13 @@ static void set_hsv(WS2812B_DeviceTypeDef *p_ws2812b, uint8_t H, uint8_t S, uint
     set_rgb(p_ws2812b, rgb.R, rgb.G, rgb.B, num);
 }
 
+/**
+ * @brief   设置所有灯的RGB值
+ * @param   *p_RGBDev   RGB设备句柄
+ * @param   R   红色
+ * @param   G   绿色
+ * @param   B   蓝色
+ */
 static void set_allrgb(WS2812B_DeviceTypeDef *p_ws2812b, uint8_t R, uint8_t G, uint8_t B)
 {
     uint16_t i;
@@ -146,6 +174,13 @@ static void set_allrgb(WS2812B_DeviceTypeDef *p_ws2812b, uint8_t R, uint8_t G, u
     }
 }
 
+/**
+ * @brief   设置所有灯的HSV值
+ * @param   *p_RGBDev   RGB设备句柄
+ * @param   H   色调
+ * @param   S   饱和度
+ * @param   V   明度
+ */
 static void set_allhsv(WS2812B_DeviceTypeDef *p_ws2812b, uint8_t H, uint8_t S, uint8_t V)
 {
     uint16_t i;
@@ -155,13 +190,23 @@ static void set_allhsv(WS2812B_DeviceTypeDef *p_ws2812b, uint8_t H, uint8_t S, u
     }
 }
 
+/**
+ * @brief   发送灯珠颜色数据
+ * @param   *p_RGBDev   RGB设备句柄
+ */
 static void update(WS2812B_DeviceTypeDef *p_ws2812b)
 {
     //HAL_TIM_PWM_Start_DMA(p_ws2812b->tim_handle, p_ws2812b->tim_channel, (uint32_t *)p_ws2812b->data, DMA_DATA_SIZE);
     HAL_TIM_PWM_Start_DMA(&htim2, TIM_CHANNEL_1, (uint32_t *)p_ws2812b->data, DMA_DATA_SIZE);
 }
 
-
+/**
+ * @brief   WS2812B初始化
+ * @param   p_ws2812b   WS2812B设备句柄
+ * @param   tim_handle  定时器句柄
+ * @param   tim_channel 定时器通道
+ * @param   name        设备名称
+ */
 void WS2812B_Init(WS2812B_DeviceTypeDef *p_ws2812b,void *tim_handle, uint32_t tim_channel , char *name )
 {
     p_ws2812b->tim_handle = tim_handle;

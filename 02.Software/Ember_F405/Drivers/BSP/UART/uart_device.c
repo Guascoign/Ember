@@ -19,7 +19,7 @@ V1.1 2025-01-08 更换为UART设备结构体 暂只支持阻塞
  * @param   datas       待发送数据的缓冲区指针
  * @param   len         待发送数据的长度
  * @param   timeout_ms  发送超时时间（毫秒）
- * @return  返回值为HAL库函数的返回值，表示发送操作的状态
+ * @return  HAL_UART_Transmit HAL库函数的返回值，表示发送操作的状态
  */
 static int Send(struct UART_Device *p_UARTDev, uint8_t *datas, int len, int timeout_ms)
 {
@@ -32,7 +32,7 @@ static int Send(struct UART_Device *p_UARTDev, uint8_t *datas, int len, int time
  * @param   p_UARTDev        UART设备结构体指针
  * @param   data        接收数据的缓冲区指针
  * @param   timeout_ms  接收超时时间（毫秒）
- * @return  返回值为HAL库函数的返回值，表示接收操作的状态
+ * @return  HAL_UART_Receive 返回值为HAL库函数的返回值，表示接收操作的状态
  */
 static int Recv(struct UART_Device *p_UARTDev, uint8_t *data, int timeout_ms)
 {
@@ -46,7 +46,7 @@ static int Recv(struct UART_Device *p_UARTDev, uint8_t *data, int timeout_ms)
  * @param   datas       待发送数据的缓冲区指针
  * @param   len         待发送数据的长度
  * @param   timeout_ms  发送超时时间（毫秒）（此参数暂时未使用）
- * @return  返回值为HAL库函数的返回值，表示发送操作的状态
+ * @return  HAL_UART_Transmit_IT 返回值为HAL库函数的返回值，表示发送操作的状态
  */
 static int Send_IT(struct UART_Device *p_UARTDev, uint8_t *datas, int len, int timeout_ms)
 {
@@ -59,7 +59,7 @@ static int Send_IT(struct UART_Device *p_UARTDev, uint8_t *datas, int len, int t
  * @param   p_UARTDev        UART设备结构体指针
  * @param   data        接收数据的缓冲区指针
  * @param   timeout_ms  接收超时时间（毫秒）（此参数暂时未使用）
- * @return  返回值为HAL库函数的返回值，表示接收操作的状态
+ * @return  HAL_UART_Receive_IT 返回值为HAL库函数的返回值，表示接收操作的状态
  */
 static int Recv_IT(struct UART_Device *p_UARTDev, uint8_t *data, int timeout_ms)
 {
@@ -73,7 +73,7 @@ static int Recv_IT(struct UART_Device *p_UARTDev, uint8_t *data, int timeout_ms)
  * @param   datas       待发送数据的缓冲区指针
  * @param   len         待发送数据的长度
  * @param   timeout_ms  发送超时时间（毫秒）（此参数暂时未使用）
- * @return  返回值为HAL库函数的返回值，表示发送操作的状态
+ * @return  HAL_UART_Transmit_DMA 返回值为HAL库函数的返回值，表示发送操作的状态
  */
 static int Send_DMA(struct UART_Device *p_UARTDev, uint8_t *datas, int len, int timeout_ms)
 {
@@ -86,7 +86,7 @@ static int Send_DMA(struct UART_Device *p_UARTDev, uint8_t *datas, int len, int 
  * @param   p_UARTDev        UART设备结构体指针
  * @param   data        接收数据的缓冲区指针
  * @param   timeout_ms  接收超时时间（毫秒）（此参数暂时未使用）
- * @return  返回值为HAL库函数的返回值，表示接收操作的状态
+ * @return  HAL_UART_Receive_DMA 返回值为HAL库函数的返回值，表示接收操作的状态
  */
 static int Recv_DMA(struct UART_Device *p_UARTDev, uint8_t *data, int timeout_ms)
 {

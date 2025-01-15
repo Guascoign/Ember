@@ -17,17 +17,40 @@
 #include "stm32f4xx_hal_gpio.h"
 #endif  //USE_HAL
 
+/**
+ * @brief    GPIO状态
+ * @param    PIN_RESET	低电平
+ * @param    PIN_SET		高电平
+ */
 typedef enum {
     PIN_RESET = 0x00U, //低电平
     PIN_SET = 0x01U //高电平
 } PinState;
 
+/**
+ * @brief    GPIO模式
+ * @param    GPIO_INPUT		输入模式
+ * @param    GPIO_OUTPUT_PP	推挽输出模式
+ * @param    GPIO_OUTPUT_OD	开漏输出模式
+ */
 typedef enum {
     GPIO_INPUT = 0x00U, //输入模式
     GPIO_OUTPUT_PP = 0x01U, //推挽输出模式
     GPIO_OUTPUT_OD = 0x02U, //开漏输出模式
 }GPIO_ModeTypeDef;
 
+/**
+ * @brief    GPIO设备结构体
+ * @param    name	设备名称
+ * @param    Mode	模式
+ * @param    instance	基地址
+ * @param    pin	引脚
+ * @param    Init	初始化函数
+ * @param    DeInit	去初始化函数
+ * @param    Set	设置函数
+ * @param    Read	读取函数
+ * @param    priv_data	私有数据
+ */
 typedef struct GPIO_Device {
     char *name; //设备名称
     GPIO_ModeTypeDef Mode; //模式

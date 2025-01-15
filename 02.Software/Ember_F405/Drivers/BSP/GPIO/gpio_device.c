@@ -10,16 +10,38 @@ V1.0 2025-01-13 First version
 #include "BSP/GPIO/gpio_device.h"
 
 #ifdef USE_HAL
+/**
+ * @brief    读取GPIO状态
+ *
+ * @param   p_GPIODev	GPIO设备句柄
+ *
+ * @return  uint8_t
+ */
 static uint8_t Read(GPIO_DeviceTypeDef *p_GPIODev)
 {
     return HAL_GPIO_ReadPin(p_GPIODev->instance, p_GPIODev->pin);
 }
 
+/**
+ * @brief    设置GPIO状态
+ *
+ * @param   p_GPIODev	GPIO设备句柄
+ * @param   PinState	状态
+ *
+ * @return  void
+ */
 static void Set(GPIO_DeviceTypeDef *p_GPIODev, GPIO_PinState PinState)
 {
     HAL_GPIO_WritePin(p_GPIODev->instance, p_GPIODev->pin, PinState);
 }
 
+/**
+ * @brief    初始化GPIO
+ *
+ * @param   p_GPIODev	GPIO设备句柄
+ *
+ * @return  uint8_t
+ */
 static uint8_t Init(GPIO_DeviceTypeDef *p_GPIODev)
 {
     GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -46,6 +68,16 @@ static uint8_t Init(GPIO_DeviceTypeDef *p_GPIODev)
 }
 #endif  //USE_HAL
 
+/**
+ * @brief    初始化GPIO
+ *
+ * @param   p_GPIODev	GPIO设备句柄
+ * @param   name	GPIO名称
+ * @param   Instance	引脚基地址
+ * @param   pin	引脚号
+ *
+ * @return  int8_t
+ */
 int8_t GPIO_Init(GPIO_DeviceTypeDef *p_GPIODev,char *name ,void *Instance ,uint16_t pin)
 {
     if(p_GPIODev == NULL)

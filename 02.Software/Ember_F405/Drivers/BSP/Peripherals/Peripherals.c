@@ -19,7 +19,10 @@ RGB_DeviceTypeDef WS2812B;
 KEY_DeviceTypeDef key1;
 KEY_DeviceTypeDef key2;
 
-
+/**
+ * @brief   初始化所有外设
+ * @return  void
+ */
 void All_Peripherals_Init(void) {
 /*注册测试串口*****************/
   UART_Init(
@@ -39,13 +42,14 @@ void All_Peripherals_Init(void) {
     
 // 打印初始化成功的所有外设的名称
 //Print_AllDevice_Info();
-
 }
 
 /**
  * @brief   添加设备到外设列表
  * @param   name    设备名称
- * param   handle  设备句柄
+ * @param   handle  设备句柄
+ * @param   type    设备类型
+ * @return  0:成功 -1:失败
  */
 int Add_Device(char *name, void *handle, DeviceTypeDef type) {
     PeripheralDeviceTypeDef *new_device = (PeripheralDeviceTypeDef *)malloc(sizeof(PeripheralDeviceTypeDef));
