@@ -13,22 +13,24 @@
 #include "LIB/soft_timer.h"//软件定时器
 //#include "circle_buffer.h"
 
-#define LONG_PRESS_TIME  1000 //长按时间 0.5s
-#define CONTINUE_PRESS_TIME  1000 //连续按下时间 1s
+#define LONG_PRESS_TIME  500 //长按时间 0.5s
+#define CONTINUE_PRESS_TIME  500 //连续按下时间 0.5s
 #define CONTINUE_PRESS  100 //连续按下触发递增（长按1s后 每0.1s触发一次按下事件）
-#define DOUBLE_CLICK_TIME  300 //双击间隔时间 300ms
+#define CLICK_TIME  200 //多击间隔时间 200ms
 #define DEBOUNCE_TIME  20 //消抖时间 10ms
 
 typedef enum {
   Idle          = 0x00U,//空闲
   Press         = 0x01U,//按下
-  Release       = 0x02U,//释放
-  LongPress     = 0x03U,//长按
-  LongRelease   = 0x04U,//长按释放
-  ContinuePress = 0x05U,//连续按下
-  ContinueRelease = 0x06U,//连续释放
-  DoubleClick   = 0x07U,//双击
-  TripleClick   = 0x08U,//三击
+  Release       = 0x02U,//释放 调用单击回调
+  Long_Press     = 0x03U,//长按
+  Long_Release   = 0x04U,//长按释放 调用长按回调
+  Continue_Press = 0x05U,//连续按下 连续调用连续按下回调
+  Continue_Release = 0x06U,//连续释放 停用连续按下
+  Double_Press   = 0x07U,//双击
+  Double_Release= 0x08U,//双击结束 调用双击回调
+  Triple_Press   = 0x09U,//三击
+  Triple_Release= 0x0AU,//三击结束 调用三击回调
 }Button_Event;
 
 /* 按键结构体 */
@@ -36,8 +38,10 @@ typedef struct KEY_Device {
 	char *name;				//按键名称
     uint8_t (*Read)(struct KEY_Device *p_KeyDev);//读取按键状态
     void (*Callback)(void *args); //按键回调处理函数
-	soft_timer DeBounce_timer;	// 按键消抖定时器
-    soft_timer Mode_timer; //按键类定时器
+    uint8_t PressCount; //按键按下次数
+	Soft_TimerTypeDef DeBounce_timer;	// 按键消抖定时器
+    Soft_TimerTypeDef Mode_timer; //按键长按类定时器
+    Soft_TimerTypeDef Click_timer; //双击定时器
 	Button_Event value;				// 按键值
     void *priv_data;//私有数据 存入GPIO_DeviceTypeDef句柄
 }KEY_DeviceTypeDef, *p_KEY_DeviceTypeDef;

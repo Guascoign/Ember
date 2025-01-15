@@ -11,14 +11,15 @@
 #include <stdint.h>
 
 /* 软件定时器结构体 */
-typedef struct soft_timer {
+typedef struct Soft_timer {
 	uint32_t timeout;            // 超时时间
 	void *args;                  // 回调参数
 	void (*func)(void *);        // 超时回调函数
-} soft_timer;
+    uint8_t Disable_Refresh;      // 使能刷新
+}Soft_TimerTypeDef, *p_Soft_TimerTypeDef;
 
 /* 修改定时器超时时间 */
-void Start_Soft_Timer(struct soft_timer *pTimer, uint32_t timeout);
+void Start_Soft_Timer(Soft_TimerTypeDef *p_Timer, uint32_t timeout);
 
 /* 检查所有定时器状态 */
 void Check_LED_Soft_Timer(void *args);

@@ -10,9 +10,12 @@
 #include "BSP/Peripherals/Peripherals.h"
 
 /* 修改定时器超时时间 */
-void Start_Soft_Timer(struct soft_timer *pTimer, uint32_t timeout)
+void Start_Soft_Timer(Soft_TimerTypeDef *p_Timer, uint32_t timeout)
 {
-	pTimer->timeout = HAL_GetTick() + timeout; // 当前时间加超时值
+    if(p_Timer->Disable_Refresh == 0)//判断是否禁止刷新
+    {
+	    p_Timer->timeout = HAL_GetTick() + timeout; // 当前时间加超时值
+    }
 }
 
 void Check_KEY_Soft_Timer(void *args)
@@ -32,6 +35,14 @@ void Check_KEY_Soft_Timer(void *args)
         if(KEY->Mode_timer.func != NULL)
         {
         KEY->Mode_timer.func(KEY->Mode_timer.args); // 进入定时器回调函数
+        }
+    }
+    if(((KEY_DeviceTypeDef *)KEY)->Click_timer.timeout <= HAL_GetTick())
+    {
+        // 调用回调函数
+        if(KEY->Click_timer.func != NULL)
+        {
+        KEY->Click_timer.func(KEY->Click_timer.args); // 进入定时器回调函数
         }
     }
 }

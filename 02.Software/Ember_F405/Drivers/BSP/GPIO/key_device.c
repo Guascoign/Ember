@@ -11,20 +11,20 @@ Check_LED_Soft_Timer( (void *)&RUNLED );//放入1ms定时器中断
 *********************************************************************************/
 #include "BSP/GPIO/key_device.h"
 #include "BSP/LCD/lcd_consle.h"
-#include "BSP/LCD/lcd.h" 
 
 extern KEY_DeviceTypeDef key1;
 extern KEY_DeviceTypeDef key2;
+
 /* 外部中断回调函数 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	if (GPIO_Pin == KEY1_Pin)
 	{
-		Start_Soft_Timer(&key1.DeBounce_timer, DEBOUNCE_TIME); // 启动按键1的定时
+		Start_Soft_Timer(&key1.DeBounce_timer, DEBOUNCE_TIME); // 启动按键1消抖定时器
 	}
   if (GPIO_Pin == KEY2_Pin)
 	{
-		Start_Soft_Timer(&key2.DeBounce_timer, DEBOUNCE_TIME); // 启动按键2定时器
+		Start_Soft_Timer(&key2.DeBounce_timer, DEBOUNCE_TIME); // 启动按键2消抖定时器
 	}
 }
 
@@ -35,46 +35,131 @@ void Key_Mode_Callback(void *args)
 	{
 		if(KEY->value == Press)
 		{
-			KEY->value = LongPress;
+			KEY->value = Long_Press;
+			KEY->Mode_timer.Disable_Refresh = 0;//使能时间刷新
 			Start_Soft_Timer(&KEY->Mode_timer, CONTINUE_PRESS_TIME); // 启动按键连续按下定时器
 		}
-		if(KEY->value == LongPress)
+		else if(KEY->value == Long_Press)
 		{
-			KEY->value = ContinuePress;
+			KEY->value = Continue_Press;
+			KEY->Callback(KEY);//处理连续按下事件
 			KEY->Mode_timer.timeout = ~0;//复位
 		}
 	}
 }
 
+void Key_Click_Callback(void *args)
+{
+	KEY_DeviceTypeDef *KEY = (KEY_DeviceTypeDef *)args;  // 将 void * 转换为 key_t 指针
+	KEY->Click_timer.timeout = ~0;//复位
+	if(KEY->value == Release || KEY->value == Double_Release || KEY->value == Triple_Release)//处理单击事件
+	{
+		KEY->Callback(KEY);
+	}
+	KEY->PressCount = 0;//按键次数清零
+}
 
 void Key_DeBounce_Callback(void *args)
 {
 	KEY_DeviceTypeDef *KEY = (KEY_DeviceTypeDef *)args;  // 将 void * 转换为 key_t 指针
-	if(KEY->Read(KEY) == 0)
+	if(KEY->Read(KEY) == 0)//按下事件
 	{
-		KEY->value = Press;
-		Start_Soft_Timer(&KEY->Mode_timer, LONG_PRESS_TIME); // 启动按键长按定时器
+		if(KEY->PressCount == 0)//一个按键事件周期结束
+		{
+			KEY->value = Press;
+			if(KEY->Mode_timer.Disable_Refresh == 0)
+			{
+				Start_Soft_Timer(&KEY->Mode_timer, LONG_PRESS_TIME); // 启动按键连续按下定时器
+			}
+			Start_Soft_Timer(&KEY->Click_timer, CLICK_TIME); // 启动按键多击超时定时器,超时后处理单击事件
+		}
+		else if(KEY->PressCount == 1)//双击
+		{
+			KEY->value = Double_Press;
+			Start_Soft_Timer(&KEY->Click_timer, CLICK_TIME); // 启动按键多击超时定时器,超时后处理双击事件
+		}
+		else if(KEY->PressCount == 2)//三击
+		{
+			KEY->value = Triple_Press;
+			Start_Soft_Timer(&KEY->Click_timer, CLICK_TIME); // 启动按键多击超时定时器,超时后处理三击事件
+		}
 	}
-	else
+	else//松开事件
 	{
 		if(KEY->value == Press)
 		{
 			KEY->value = Release;
+			KEY->Mode_timer.timeout = ~0;//复位长按定时器
+			KEY->PressCount++;
+			//Start_Soft_Timer(&KEY->Click_timer, CLICK_TIME); // 启动按键多击超时定时器
 		}
-		if(KEY->value == ContinuePress)
+		else if(KEY->value == Long_Press)
 		{
-			KEY->value = ContinueRelease;
+			KEY->Mode_timer.timeout = ~0;//复位
+			KEY->value = Long_Release;
+			KEY->Callback(KEY);//处理长按事件
 		}
-		if(KEY->value == LongPress)
+		else if(KEY->value == Continue_Press)
 		{
-			KEY->value = LongRelease;
+			KEY->Mode_timer.timeout = ~0;//复位
+			KEY->value = Continue_Release;
+			KEY->Callback(KEY);//关闭连续按下事件
+		}
+		else if(KEY->value == Double_Press)
+		{
+			KEY->value = Double_Release;
+			KEY->PressCount++;
+			//Start_Soft_Timer(&KEY->Click_timer, CLICK_TIME); // 启动按键多击超时定时器
+		}
+		else if(KEY->value == Triple_Press)
+		{
+			KEY->value = Triple_Release;
+			KEY->PressCount++;
+			//Start_Soft_Timer(&KEY->Click_timer, CLICK_TIME); // 启动按键多击超时定时器
 		}
 	}
+	KEY->DeBounce_timer.timeout = ~0;//复位
 }
 
 static uint8_t Read(KEY_DeviceTypeDef *p_keydev)
 {
 	return ((GPIO_DeviceTypeDef *)p_keydev->priv_data)->Read(p_keydev->priv_data);
+}
+
+static void Key_Callback(void *args)
+{
+	KEY_DeviceTypeDef *KEY = (KEY_DeviceTypeDef *)args;  // 将 void * 转换为 key_t 指针
+	if(KEY->value == Release || KEY->PressCount == 1)//单击事件
+	{
+		/* 编写按键单击事件 */
+		lcdprintf("%s\tPress\r\n",KEY->name);
+	}
+	else if(KEY->value == Double_Release || KEY->PressCount == 2)//双击事件
+	{
+		/* 编写按键双击事件 */
+		lcdprintf("%s\tDouble Press\r\n",KEY->name);
+	}
+	else if(KEY->value == Triple_Release || KEY->PressCount == 3)//三击事件
+	{
+		/* 编写按键三击事件 */
+		lcdprintf("%s\tTriple Press\r\n",KEY->name);
+	}
+	else if(KEY->value == Long_Release)//长按事件
+	{
+		/* 编写按键长按事件 */
+		lcdprintf("%s\tLong Press\r\n",KEY->name);
+	}
+	else if(KEY->value == Continue_Press)//连续按下事件
+	{
+		/* 编写按键连续按下事件 */
+		lcdprintf("%s\tContinue Press\r\n",KEY->name);
+	}
+	else if(KEY->value == Continue_Release)//连续按下事件
+	{
+		/* 编写按键连续按下事件 */
+		lcdprintf("%s\tContinue Release\r\n",KEY->name);
+	}
+	
 }
 
 int8_t Key_Init(KEY_DeviceTypeDef *p_keydev, char *name ,void *Instance ,uint16_t pin)
@@ -97,6 +182,13 @@ int8_t Key_Init(KEY_DeviceTypeDef *p_keydev, char *name ,void *Instance ,uint16_
 	p_keydev->Mode_timer.func = Key_Mode_Callback;
 	p_keydev->Mode_timer.args = (void *)p_keydev;
 	p_keydev->Mode_timer.timeout = ~0;
+	p_keydev->Click_timer.func = Key_Click_Callback;
+	p_keydev->Click_timer.args = (void *)p_keydev;
+	p_keydev->Click_timer.timeout = ~0;
+
 	p_keydev->Read = Read;
+	p_keydev->PressCount = 0;
+	p_keydev->value = Idle;
+	p_keydev->Callback = Key_Callback;
 	return 0;
 }

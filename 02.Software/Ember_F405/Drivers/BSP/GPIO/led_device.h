@@ -49,7 +49,7 @@ typedef struct {
 typedef struct LED_Device {
     char *name; //设备名称
     LED_BlinkTypeDef blink; //闪烁
-    soft_timer timer; // 定时器
+    Soft_TimerTypeDef timer; // 定时器
     uint8_t (*Init)(struct LED_Device *p_LEDDev);//初始化,绑定GPIO
     uint8_t (*Set)(struct LED_Device *p_LEDDev, LED_BlinkType blink ,LED_BlinkMode mode);//设置
     void *priv_data;//私有数据 存入GPIO_DeviceTypeDef句柄
