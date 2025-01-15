@@ -78,13 +78,13 @@ void Error_Handler(void);
 #define RUNLED_GPIO_Port GPIOB
 #define SPI2_CS1_Pin GPIO_PIN_8
 #define SPI2_CS1_GPIO_Port GPIOA
+#define RGB_Pin GPIO_PIN_15
+#define RGB_GPIO_Port GPIOA
 #define IIC2_SCL_Pin GPIO_PIN_4
 #define IIC2_SCL_GPIO_Port GPIOB
 #define IIC2_SDA_Pin GPIO_PIN_5
 #define IIC2_SDA_GPIO_Port GPIOB
-#define RGB_Pin GPIO_PIN_8
-#define RGB_GPIO_Port GPIOB
-#define KEY1_Pin GPIO_PIN_9
+#define KEY1_Pin GPIO_PIN_7
 #define KEY1_GPIO_Port GPIOB
 #define KEY1_EXTI_IRQn EXTI9_5_IRQn
 

@@ -6,6 +6,7 @@
 /*Peripherals******************************************************************************************/
 #include "BSP/Peripherals/Peripherals.h"
 #include "BSP/LCD/lcd_consle.h"
+#include "LIB/soft_timer.h"
 /*LVGL*************************************************************************************************/
 #include "lvgl.h"
 #include "lv_port_disp_template.h"
@@ -26,7 +27,11 @@ typedef struct Run_time
   }Run_time_TypeDef;
   Run_time_TypeDef run_time = {0,0,0};
 
- 
+extern LED_DeviceTypeDef RUNLED;
+extern RGB_DeviceTypeDef WS2812B;
+extern KEY_DeviceTypeDef key1;
+extern KEY_DeviceTypeDef key2;
+
 void Boot_anim(void);
 /******************************************************************************************************/
 /* START_TASK 任务 配置
@@ -139,8 +144,6 @@ void start_task(void *pvParameters)
  * @param       pvParameters : 传入参数(未用到)
  * @retval      无
  */
-extern LED_DeviceTypeDef RUNLED;
-extern RGB_DeviceTypeDef WS2812B;
 void Main(void *pvParameters)
 {
   Boot_anim();
@@ -151,7 +154,7 @@ void Main(void *pvParameters)
   WS2812B.SetAllRGB(&WS2812B,0,0,255);
   while(1)
   {
-  lcdprintf("Main Task Runing LCD Refresh %d\r\n",i++);
+  //lcdprintf("Main Task Runing LCD Refresh %d\r\n",i++);
   vTaskDelay(pdMS_TO_TICKS(100));
   }
 }
@@ -219,7 +222,9 @@ void Soft_timer(void *pvParameters)
   {
     vTaskDelay(pdMS_TO_TICKS(1));//1ms进入一次
   /* ---------- Soft_timer ---------- */
-   Check_LED_Soft_Timer( (void *)&RUNLED );//放入1ms定时器中断
+  Check_LED_Soft_Timer( (void *)&RUNLED );//放入1ms定时器中断
+  Check_KEY_Soft_Timer( (void *)&key1 );//放入1ms定时器中断
+  Check_KEY_Soft_Timer( (void *)&key2 );//放入1ms定时器中断
   }
 
 }

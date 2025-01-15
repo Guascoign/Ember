@@ -2,7 +2,7 @@
     * 文件名称 ：st7789.h
     * 作     者：ZM
     * 版     本：V1.0
-    * 编写日期 ：2024-04-12
+    * 编写日期 ：2025-01-13
     * 功     能：LCD屏幕驱动
 *********************************************************************************/
 #ifndef __ST7789_H
@@ -17,14 +17,14 @@
 #include "rgb_device.h"
 
 /* 定时器句柄 */
-extern TIM_HandleTypeDef htim4;
+extern TIM_HandleTypeDef htim2;
 /* DMA 句柄 */
-extern DMA_HandleTypeDef hdma_tim4_ch3;
+extern DMA_HandleTypeDef hdma_tim2_ch1;
 
 
-#define WS2812B_ARR 125 // TIM2的自动重装值//使得PWM输出频率在800kHz
-#define T0H 35          // 0编码高电平时间占1/3
-#define T1H 70          // 1编码高电平时间占2/3
+#define WS2812B_ARR 209 // TIM2的自动重装值//使得PWM输出频率在800kHz
+#define T0H 63          // 0编码高电平时间占1/3
+#define T1H 126          // 1编码高电平时间占2/3
 
 /*使用灯珠的个数*/
 #define WS2812B_NUM 3

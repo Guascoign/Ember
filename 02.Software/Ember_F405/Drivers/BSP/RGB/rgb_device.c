@@ -119,7 +119,7 @@ void RGB_Init(RGB_DeviceTypeDef *p_RGBDev, char *name, uint16_t num)
     {
         return;
     }
-    WS2812B_Init((WS2812B_DeviceTypeDef *)p_RGBDev->priv_data, &htim4, TIM_CHANNEL_3, "WS2812B");
+    WS2812B_Init((WS2812B_DeviceTypeDef *)p_RGBDev->priv_data, &htim2, TIM_CHANNEL_1, "WS2812B");
     p_RGBDev->SetRGB = set_rgb;
     p_RGBDev->SetHSV = set_hsv;
     p_RGBDev->SetAllRGB = set_allrgb;

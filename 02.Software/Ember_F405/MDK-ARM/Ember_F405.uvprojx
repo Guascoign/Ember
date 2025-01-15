@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F405xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\Drivers;../Middlewares_User/FreeRTOS/include;../Middlewares_User/FreeRTOS/portable/RVDS/ARM_CM4F;../Middlewares_User/LVGL/GUI;../Middlewares_User/LVGL/GUI/lvgl;../Middlewares_User/LVGL/GUI/lvgl/examples/porting;../Middlewares_User/LVGL/GUI/lvgl/src;../Middlewares_User/LVGL/GUI_APP/demos;../Middlewares_User/LVGL/GUI_APP/demos/stress;../Middlewares_User/LVGL/GUI_APP/GUI_Guider/generated;../Middlewares_User/LVGL/GUI_APP/GUI_Guider/custom;../Middlewares_User/LVGL/GUI_APP/demos/benchmark</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Drivers;../Middlewares_User/FreeRTOS/include;../Middlewares_User/FreeRTOS/portable/RVDS/ARM_CM4F;../Middlewares_User/LVGL/GUI;../Middlewares_User/LVGL/GUI/lvgl;../Middlewares_User/LVGL/GUI/lvgl/examples/porting;../Middlewares_User/LVGL/GUI/lvgl/src;../Middlewares_User/LVGL/GUI_APP/demos;../Middlewares_User/LVGL/GUI_APP/demos/stress;../Middlewares_User/LVGL/GUI_APP/GUI_Guider/generated;../Middlewares_User/LVGL/GUI_APP/GUI_Guider/custom;../Middlewares_User/LVGL/GUI_APP/demos/benchmark</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2269,6 +2269,11 @@
               <FileName>ws2812.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\BSP\RGB\ws2812.c</FilePath>
+            </File>
+            <File>
+              <FileName>key_device.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\BSP\GPIO\key_device.c</FilePath>
             </File>
           </Files>
         </Group>
