@@ -38,7 +38,7 @@ void Boot_anim(void);
  * 包括: 任务句柄 任务优先级 堆栈大小 创建任务
  */
 #define START_TASK_PRIO 1                   /* 任务优先级 */
-#define START_STK_SIZE  64                 /* 任务堆栈大小 */
+#define START_STK_SIZE  256                 /* 任务堆栈大小 */
 TaskHandle_t            StartTask_Handler;  /* 任务句柄 */
 void start_task(void *pvParameters);        /* 任务函数 */
 
@@ -149,11 +149,13 @@ void Main(void *pvParameters)
   Boot_anim();
    vTaskDelay(pdMS_TO_TICKS(100));
 	//lv_demo_benchmark();//启动benchmark例程
-  uint8_t i = 0;
+  //uint8_t i = 0;
   RUNLED.Set(&RUNLED, LED_Blink_Three, continue_Blink);
-  WS2812B.SetAllRGB(&WS2812B,0,0,255);
+  //WS2812B.SetAllRGB(&WS2812B,0,0,255);
   while(1)
   {
+    lcdprintf("Key2:%d Key1:%d\r\n",key2.value,key1.value);
+  //lcdprintf("Key2:%d Key1:%d\r\n",key2.Read(&key2),key1.Read(&key1));
   //lcdprintf("Main Task Runing LCD Refresh %d\r\n",i++);
   vTaskDelay(pdMS_TO_TICKS(100));
   }

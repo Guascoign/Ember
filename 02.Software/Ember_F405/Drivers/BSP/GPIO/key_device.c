@@ -33,13 +33,16 @@ void Key_Mode_Callback(void *args)
 	KEY_DeviceTypeDef *KEY = (KEY_DeviceTypeDef *)args;  // 将 void * 转换为 key_t 指针
 	if(KEY->Read(KEY) == 0)
 	{
-		KEY->value = ContinuePress;
-		//lcd_printf("ContinuePress Name:%s\r\n",KEY->name);
-	}
-	else
-	{
-		KEY->value = ContinueRelease;
-		//lcd_printf("ContinueRelease Name:%s\r\n",KEY->name);
+		if(KEY->value == Press)
+		{
+			KEY->value = LongPress;
+			Start_Soft_Timer(&KEY->Mode_timer, CONTINUE_PRESS_TIME); // 启动按键连续按下定时器
+		}
+		if(KEY->value == LongPress)
+		{
+			KEY->value = ContinuePress;
+			KEY->Mode_timer.timeout = ~0;//复位
+		}
 	}
 }
 
@@ -50,14 +53,28 @@ void Key_DeBounce_Callback(void *args)
 	if(KEY->Read(KEY) == 0)
 	{
 		KEY->value = Press;
-		//lcd_printf("Press Name:%s\r\n",KEY->name);
 		Start_Soft_Timer(&KEY->Mode_timer, LONG_PRESS_TIME); // 启动按键长按定时器
 	}
 	else
 	{
-		KEY->value = Release;
-		//lcd_printf("Release Name:%s\r\n",KEY->name);
+		if(KEY->value == Press)
+		{
+			KEY->value = Release;
+		}
+		if(KEY->value == ContinuePress)
+		{
+			KEY->value = ContinueRelease;
+		}
+		if(KEY->value == LongPress)
+		{
+			KEY->value = LongRelease;
+		}
 	}
+}
+
+static uint8_t Read(KEY_DeviceTypeDef *p_keydev)
+{
+	return ((GPIO_DeviceTypeDef *)p_keydev->priv_data)->Read(p_keydev->priv_data);
 }
 
 int8_t Key_Init(KEY_DeviceTypeDef *p_keydev, char *name ,void *Instance ,uint16_t pin)
@@ -80,6 +97,6 @@ int8_t Key_Init(KEY_DeviceTypeDef *p_keydev, char *name ,void *Instance ,uint16_
 	p_keydev->Mode_timer.func = Key_Mode_Callback;
 	p_keydev->Mode_timer.args = (void *)p_keydev;
 	p_keydev->Mode_timer.timeout = ~0;
-	p_keydev->Read = ((GPIO_DeviceTypeDef *)p_keydev->priv_data)->Read;
+	p_keydev->Read = Read;
 	return 0;
 }

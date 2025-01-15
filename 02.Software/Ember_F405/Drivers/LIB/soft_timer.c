@@ -36,8 +36,6 @@ void Check_KEY_Soft_Timer(void *args)
     }
 }
 
-
-
 /* 检查定时器是否超时 */
 void Check_LED_Soft_Timer(void *args)
 {

@@ -33,7 +33,7 @@ void All_Peripherals_Init(void) {
     Stop_bits_1);
 
     LED_Init(&RUNLED , "RUNLED",(void *)RUNLED_GPIO_Port,RUNLED_Pin);
-    RGB_Init(&WS2812B,"WS2812B",3);
+    //RGB_Init(&WS2812B,"WS2812B",3);
     Key_Init(&key1,"KEY1",(void *)KEY1_GPIO_Port,KEY1_Pin);
     Key_Init(&key2,"KEY2",(void *)KEY2_GPIO_Port,KEY2_Pin);
     

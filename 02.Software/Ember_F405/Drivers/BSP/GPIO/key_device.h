@@ -13,21 +13,22 @@
 #include "LIB/soft_timer.h"//软件定时器
 //#include "circle_buffer.h"
 
-#define LONG_PRESS_TIME  500 //长按时间 0.5s
+#define LONG_PRESS_TIME  1000 //长按时间 0.5s
 #define CONTINUE_PRESS_TIME  1000 //连续按下时间 1s
 #define CONTINUE_PRESS  100 //连续按下触发递增（长按1s后 每0.1s触发一次按下事件）
 #define DOUBLE_CLICK_TIME  300 //双击间隔时间 300ms
 #define DEBOUNCE_TIME  20 //消抖时间 10ms
 
 typedef enum {
-  Press         = 0x00U,//按下
-  Release       = 0x01U,//释放
-  LongPress     = 0x02U,//长按
-  LongRelease   = 0x03U,//长按释放
-  ContinuePress = 0x04U,//连续按下
-  ContinueRelease = 0x05U,//连续释放
-  DoubleClick   = 0x06U,//双击
-  TripleClick   = 0x07U,//三击
+  Idle          = 0x00U,//空闲
+  Press         = 0x01U,//按下
+  Release       = 0x02U,//释放
+  LongPress     = 0x03U,//长按
+  LongRelease   = 0x04U,//长按释放
+  ContinuePress = 0x05U,//连续按下
+  ContinueRelease = 0x06U,//连续释放
+  DoubleClick   = 0x07U,//双击
+  TripleClick   = 0x08U,//三击
 }Button_Event;
 
 /* 按键结构体 */
