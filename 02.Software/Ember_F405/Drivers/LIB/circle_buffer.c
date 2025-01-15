@@ -10,47 +10,47 @@
 #include <string.h>
 
 
-void circle_buf_init(p_circle_buf pCircleBuf, uint32_t len, uint8_t *buf)
+void circle_buf_init(p_Circle_bufTypeDef p_CircleBuf, uint32_t len, uint8_t *buf)
 {
-	pCircleBuf->r = pCircleBuf->w = 0;//初始化读写指针和长度
-	pCircleBuf->len = len;//初始化缓冲区长度
-	pCircleBuf->buf = buf;//初始化缓冲区指针
+	p_CircleBuf->r = p_CircleBuf->w = 0;//初始化读写指针和长度
+	p_CircleBuf->len = len;//初始化缓冲区长度
+	p_CircleBuf->buf = buf;//初始化缓冲区指针
 }
 
-int circle_buf_read(p_circle_buf pCircleBuf, uint8_t *pVal)
+int circle_buf_read(p_Circle_bufTypeDef p_CircleBuf, uint8_t *pVal)
 {
-	if (pCircleBuf->r != pCircleBuf->w)
+	if (p_CircleBuf->r != p_CircleBuf->w)
 	{
-		*pVal = pCircleBuf->buf[pCircleBuf->r];
+		*pVal = p_CircleBuf->buf[p_CircleBuf->r];
 		
-		pCircleBuf->r++;
+		p_CircleBuf->r++;
 		
-		if (pCircleBuf->r == pCircleBuf->len)
-			pCircleBuf->r = 0;
+		if (p_CircleBuf->r == p_CircleBuf->len)
+			p_CircleBuf->r = 0;
 		return 0;
 	}
 	else
 	{
-		return -1;
+		return 1;
 	}
 }
 
-int circle_buf_write(p_circle_buf pCircleBuf, uint8_t val)
+int circle_buf_write(p_Circle_bufTypeDef p_CircleBuf, uint8_t val)
 {
 	uint32_t next_w;
 	
-	next_w = pCircleBuf->w + 1;
-	if (next_w == pCircleBuf->len)
+	next_w = p_CircleBuf->w + 1;
+	if (next_w == p_CircleBuf->len)
 		next_w = 0;
 	
-	if (next_w != pCircleBuf->r)
+	if (next_w != p_CircleBuf->r)
 	{
-		pCircleBuf->buf[pCircleBuf->w] = val;
-		pCircleBuf->w = next_w;
+		p_CircleBuf->buf[p_CircleBuf->w] = val;
+		p_CircleBuf->w = next_w;
 		return 0;
 	}
 	else
 	{
-		return -1;
+		return 1;
 	}
 }

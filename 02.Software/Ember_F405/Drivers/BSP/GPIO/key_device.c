@@ -132,34 +132,33 @@ static void Key_Callback(void *args)
 	if(KEY->value == Release || KEY->PressCount == 1)//单击事件
 	{
 		/* 编写按键单击事件 */
-		lcdprintf("%s\tPress\r\n",KEY->name);
+		circle_buf_write(&KEY->Circle_buf, KEY->value);
 	}
 	else if(KEY->value == Double_Release || KEY->PressCount == 2)//双击事件
 	{
 		/* 编写按键双击事件 */
-		lcdprintf("%s\tDouble Press\r\n",KEY->name);
+		circle_buf_write(&KEY->Circle_buf, KEY->value);
 	}
 	else if(KEY->value == Triple_Release || KEY->PressCount == 3)//三击事件
 	{
 		/* 编写按键三击事件 */
-		lcdprintf("%s\tTriple Press\r\n",KEY->name);
+		circle_buf_write(&KEY->Circle_buf, KEY->value);
 	}
 	else if(KEY->value == Long_Release)//长按事件
 	{
 		/* 编写按键长按事件 */
-		lcdprintf("%s\tLong Press\r\n",KEY->name);
+		circle_buf_write(&KEY->Circle_buf, KEY->value);
 	}
 	else if(KEY->value == Continue_Press)//连续按下事件
 	{
 		/* 编写按键连续按下事件 */
-		lcdprintf("%s\tContinue Press\r\n",KEY->name);
+		circle_buf_write(&KEY->Circle_buf, KEY->value);
 	}
 	else if(KEY->value == Continue_Release)//连续按下事件
 	{
 		/* 编写按键连续按下事件 */
-		lcdprintf("%s\tContinue Release\r\n",KEY->name);
+		circle_buf_write(&KEY->Circle_buf, KEY->value);
 	}
-	
 }
 
 int8_t Key_Init(KEY_DeviceTypeDef *p_keydev, char *name ,void *Instance ,uint16_t pin)
@@ -185,10 +184,58 @@ int8_t Key_Init(KEY_DeviceTypeDef *p_keydev, char *name ,void *Instance ,uint16_
 	p_keydev->Click_timer.func = Key_Click_Callback;
 	p_keydev->Click_timer.args = (void *)p_keydev;
 	p_keydev->Click_timer.timeout = ~0;
-
+	//初始化环形缓冲区
+	circle_buf_init(&p_keydev->Circle_buf, Circle_buf_size, (uint8_t *)malloc(Circle_buf_size));
+	//初始化按键
 	p_keydev->Read = Read;
 	p_keydev->PressCount = 0;
 	p_keydev->value = Idle;
 	p_keydev->Callback = Key_Callback;
 	return 0;
+}
+
+//处理按键 从环形缓冲区读出数据 20ms处理一次
+void Key_Process(KEY_DeviceTypeDef *p_keydev)
+{
+	Button_Event value;
+	if(circle_buf_read(&p_keydev->Circle_buf, &value) == 0)
+	{
+		switch (value)
+		{
+			case Release:
+				{/* 编写按键单击事件 */
+				lcdprintf("%s Press\n",p_keydev->name);
+				break;
+				}
+			case Long_Release:
+				{/* 编写按键长按事件 */
+				lcdprintf("%s Long_Press\n",p_keydev->name);
+				break;
+				}
+			case Continue_Press:
+				{
+				/* 编写按键连续按下事件 */
+				lcdprintf("%s Continue_Press\n",p_keydev->name);
+				break;
+				}
+			case Continue_Release:
+				{/* 编写按键连续按下事件 */
+				lcdprintf("%s Continue_Release\n",p_keydev->name);
+				break;
+				}
+			case Double_Release:
+				{/* 编写按键双击事件 */
+				lcdprintf("%s Double_Press\n",p_keydev->name);
+				break;
+				}
+			case Triple_Release:
+				{/* 编写按键三击事件 */
+				lcdprintf("%s Triple_Press\n",p_keydev->name);
+				break;
+				}
+			default:
+				break;
+		}
+	}
+	
 }

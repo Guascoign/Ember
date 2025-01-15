@@ -10,21 +10,21 @@
 
 #include <stdint.h>
 
-typedef struct circle_buf {
+typedef struct Circle_buf {
 	uint32_t r;
 	uint32_t w;
 	uint32_t len;
 	uint8_t *buf;
-}circle_buf, *p_circle_buf;
+}Circle_bufTypeDef, *p_Circle_bufTypeDef;
 
 #define BUF_SIZE 256 // 假设缓冲区的最大大小
 
 void LCDPrint(const char *text, char *bufs, uint16_t buf_size);
 
-void circle_buf_init(p_circle_buf pCircleBuf, uint32_t len, uint8_t *buf);
+void circle_buf_init(p_Circle_bufTypeDef p_CircleBuf, uint32_t len, uint8_t *buf);
 
-int circle_buf_read(p_circle_buf pCircleBuf, uint8_t *pVal);
+int circle_buf_read(p_Circle_bufTypeDef p_CircleBuf, uint8_t *pVal);
 
-int circle_buf_write(p_circle_buf pCircleBuf, uint8_t val);
+int circle_buf_write(p_Circle_bufTypeDef p_CircleBuf, uint8_t val);
 
 #endif /* _CIRCLE_BUF_H */

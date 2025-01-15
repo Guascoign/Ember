@@ -219,14 +219,21 @@ void LcdRefresh(void *pvParameters)
 extern void Check_Soft_Timer(void *args);
 void Soft_timer(void *pvParameters)
 {
-  
+  int i = 0;
   while(1)
   {
     vTaskDelay(pdMS_TO_TICKS(1));//1ms进入一次
-  /* ---------- Soft_timer ---------- */
-  Check_LED_Soft_Timer( (void *)&RUNLED );//放入1ms定时器中断
-  Check_KEY_Soft_Timer( (void *)&key1 );//放入1ms定时器中断
-  Check_KEY_Soft_Timer( (void *)&key2 );//放入1ms定时器中断
+    i++;
+    /* ---------- Soft_timer ---------- 1ms*/
+    Check_LED_Soft_Timer( (void *)&RUNLED );//放入1ms定时器中断
+    Check_KEY_Soft_Timer( (void *)&key1 );//放入1ms定时器中断
+    Check_KEY_Soft_Timer( (void *)&key2 );//放入1ms定时器中断
+    /* ---------- Key Process ---------10ms*/
+    if(i == 10){
+      Key_Process(&key1);
+      Key_Process(&key2);
+      i = 0;
+    }
   }
 
 }

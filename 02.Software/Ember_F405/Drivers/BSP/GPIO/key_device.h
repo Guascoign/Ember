@@ -11,8 +11,9 @@
 #include "BSP/Peripherals/Peripherals.h"
 #include "BSP/GPIO/gpio_device.h"
 #include "LIB/soft_timer.h"//软件定时器
-//#include "circle_buffer.h"
+#include "LIB/circle_buffer.h"
 
+#define Circle_buf_size  4 //环形缓冲区大小
 #define LONG_PRESS_TIME  500 //长按时间 0.5s
 #define CONTINUE_PRESS_TIME  500 //连续按下时间 0.5s
 #define CONTINUE_PRESS  100 //连续按下触发递增（长按1s后 每0.1s触发一次按下事件）
@@ -44,6 +45,7 @@ typedef struct KEY_Device {
     Soft_TimerTypeDef Click_timer; //双击定时器
 	Button_Event value;				// 按键值
     void *priv_data;//私有数据 存入GPIO_DeviceTypeDef句柄
+    Circle_bufTypeDef Circle_buf;//环形缓冲区
 }KEY_DeviceTypeDef, *p_KEY_DeviceTypeDef;
 
 int8_t Key_Init(KEY_DeviceTypeDef *p_keydev, char *name ,void *Instance ,uint16_t pin);
@@ -51,5 +53,5 @@ int8_t Key_Init(KEY_DeviceTypeDef *p_keydev, char *name ,void *Instance ,uint16_
 /* 定时器回调函数 */
 void Key_DeBounce_Callback(void *args);//消抖回调函数
 void Key_Mode_Callback(void *args);//按键类定时器回调函数
-
+void Key_Process(KEY_DeviceTypeDef *p_keydev);//按键处理函数
 #endif  //__KEY_DEVICE_H
