@@ -5,7 +5,7 @@
     * 编写日期 ：2025-01-13
     * 功     能：led设备
 *********************************************************************************
-V1.0 2025-01-13 First version 
+V1.0 2025-01-13 First version Bug 1(100ms)-0(100ms)-1(100ms)-0(500ms)会卡双击和三击判断
 *********************************************************************************
 void Check_KEY_Soft_Timer(void *args) 检查按键定时器是否超时
 void Key_Process(KEY_DeviceTypeDef *p_keydev) 按键处理函数
@@ -79,8 +79,8 @@ void Key_Click_Callback(void *args)
 	if(KEY->value == Release || KEY->value == Double_Release || KEY->value == Triple_Release)//处理单击事件
 	{
 		KEY->Callback(KEY);
+		KEY->PressCount = 0;//按键次数清零
 	}
-	KEY->PressCount = 0;//按键次数清零
 }
 
 /**

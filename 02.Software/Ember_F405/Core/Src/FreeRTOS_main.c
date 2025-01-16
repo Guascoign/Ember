@@ -216,7 +216,6 @@ void LcdRefresh(void *pvParameters)
  * @param       pvParameters : 传入参数(未用到)
  * @retval      无
  */
-extern void Check_Soft_Timer(void *args);
 void Soft_timer(void *pvParameters)
 {
   int i = 0;

@@ -17,16 +17,18 @@
 #include "stm32f4xx_hal_gpio.h"
 #endif  //USE_HAL
 
-/**
- * @brief    GPIO状态
- * @param    PIN_RESET	低电平
- * @param    PIN_SET		高电平
- */
-typedef enum {
-    PIN_RESET = 0x00U, //低电平
-    PIN_SET = 0x01U //高电平
-} PinState;
+// /**
+//  * @brief    GPIO状态
+//  * @param    PIN_RESET	低电平
+//  * @param    PIN_SET		高电平
+//  */
+// typedef enum {
+//     PIN_RESET = 0x00U, //低电平
+//     PIN_SET = 0x01U //高电平
+// } PinState;
 
+#define PIN_SET 1   //高电平
+#define PIN_RESET 0 //低电平
 /**
  * @brief    GPIO模式
  * @param    GPIO_INPUT		输入模式
@@ -58,7 +60,7 @@ typedef struct GPIO_Device {
     uint16_t pin; //引脚
     uint8_t (*Init)(struct GPIO_Device *p_GPIODev);//初始化
     uint8_t (*DeInit)(struct GPIO_Device *p_GPIODev);//去初始化
-    void (*Set)(struct GPIO_Device *p_GPIODev, GPIO_PinState PinState);//设置
+    void (*Set)(struct GPIO_Device *p_GPIODev, uint8_t PinState);//设置
     uint8_t (*Read)(struct GPIO_Device *p_GPIODev);//获取
     void *priv_data;//私有数据
 }GPIO_DeviceTypeDef, *p_GPIO_DeviceTypeDef;

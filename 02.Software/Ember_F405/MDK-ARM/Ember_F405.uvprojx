@@ -2275,6 +2275,21 @@
               <FileType>1</FileType>
               <FilePath>..\Drivers\BSP\GPIO\key_device.c</FilePath>
             </File>
+            <File>
+              <FileName>iic_device.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\BSP\IIC\iic_device.c</FilePath>
+            </File>
+            <File>
+              <FileName>at24cxx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\BSP\EEPROM\at24cxx.c</FilePath>
+            </File>
+            <File>
+              <FileName>beeper_device.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\BSP\BEEPER\beeper_device.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
