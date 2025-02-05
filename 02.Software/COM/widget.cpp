@@ -9,6 +9,9 @@ Widget::Widget(QWidget *parent)
 {
     ui->setupUi(this);
     this->setLayout(ui->gridLayoutGlobal);
+    // 关闭扩展
+    ui->Addons_groupBox->hide();
+
     // 获取所有可用的串口信息
     QList<QSerialPortInfo> serialList = QSerialPortInfo::availablePorts();
     for (const QSerialPortInfo &serialInfo : serialList) {
@@ -37,3 +40,17 @@ Widget::~Widget()
     delete ui;
 }
 
+
+void Widget::on_Auto_reconnect_checkBox_2_clicked(bool checked)
+{
+    if(checked){
+        qDebug() << checked << endl;
+        ui->Addons_groupBox->show();
+    }
+    else{
+        qDebug() << checked << endl;
+        ui->Addons_groupBox->hide();
+    }
+
+
+}
