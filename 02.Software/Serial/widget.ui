@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1440</width>
-    <height>461</height>
+    <width>934</width>
+    <height>460</height>
    </rect>
   </property>
   <property name="font">
@@ -1041,7 +1041,7 @@
        <item row="4" column="0">
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QCheckBox" name="Auto_reconnect_checkBox_2">
+          <widget class="QCheckBox" name="Addons_checkBox">
            <property name="font">
             <font>
              <family>优设标题黑</family>

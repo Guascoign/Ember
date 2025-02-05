@@ -16,7 +16,8 @@ public:
     ~Widget();
 
 private slots:
-    void on_Auto_reconnect_checkBox_2_clicked(bool checked);
+
+    void on_Addons_checkBox_clicked(bool checked);
 
 private:
     Ui::Widget *ui;

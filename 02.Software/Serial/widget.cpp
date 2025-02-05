@@ -40,17 +40,16 @@ Widget::~Widget()
     delete ui;
 }
 
-
-void Widget::on_Auto_reconnect_checkBox_2_clicked(bool checked)
+void Widget::on_Addons_checkBox_clicked(bool checked)
 {
     if(checked){
-        qDebug() << checked << endl;
         ui->Addons_groupBox->show();
+        qDebug() << checked << Qt::endl;
     }
     else{
-        qDebug() << checked << endl;
         ui->Addons_groupBox->hide();
+        qDebug() << checked << Qt::endl;
     }
-
-
 }
+
+
