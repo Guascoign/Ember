@@ -19,7 +19,8 @@ public:
 
 private slots:
     void on_Addons_checkBox_clicked(bool checked);
-
+    void on_Opem_COM_pushButton_clicked();
+    void on_SEND_pushButton_clicked();
 private:
     Ui::Widget *ui;
     QSerialPort *SerialPort; // 新增成员变量

@@ -243,16 +243,6 @@
          <string/>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
-         <item row="0" column="0">
-          <widget class="QTextEdit" name="send_textEdit">
-           <property name="font">
-            <font>
-             <family>优设标题黑</family>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
-          </widget>
-         </item>
          <item row="1" column="0">
           <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,0,0,0,0,0,4">
            <item>
@@ -344,6 +334,9 @@
             </widget>
            </item>
           </layout>
+         </item>
+         <item row="0" column="0">
+          <widget class="QTextEdit" name="send_textEdit"/>
          </item>
         </layout>
        </widget>
@@ -644,6 +637,18 @@
           <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="1,0,0">
            <item>
             <widget class="QProgressBar" name="progressBar">
+             <property name="minimumSize">
+              <size>
+               <width>228</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>228</width>
+               <height>22</height>
+              </size>
+             </property>
              <property name="font">
               <font>
                <family>优设标题黑</family>
@@ -686,7 +691,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Hello</string>
+              <string>串口信息</string>
              </property>
             </widget>
            </item>
