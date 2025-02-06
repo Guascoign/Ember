@@ -7,6 +7,10 @@
 #include <QElapsedTimer>
 #include <QRegularExpression> // 新增头文件
 #include <QDateTime> // 新增头文件
+#include <QFileDialog> // 新增头文件
+#include <QFile> // 新增头文件
+#include <QTextStream> // 新增头文件
+#include <QMessageBox> // 新增头文件
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
@@ -14,6 +18,7 @@ Widget::Widget(QWidget *parent)
     , SerialPort(new QSerialPort(this))
     , autoRelineEnabled(false) // 初始化成员变量
     , timeUpdateTimer(new QTimer(this)) // 初始化成员变量
+    , totalTextSize(0) // 初始化成员变量
 {
     ui->setupUi(this);
     this->setLayout(ui->gridLayoutGlobal);
@@ -65,6 +70,9 @@ void Widget::on_SEND_pushButton_clicked(){
         totalTxBytes += txBytes;
         ui->Tx_label->setText(QString("Tx: %1 bytes").arg(totalTxBytes));
         
+        // 累加到 size_label
+        totalTextSize += txBytes;
+        updateSizeLabel();
 
     } else {
         ui->info_label->setText("Error: 串口未打开");
@@ -225,9 +233,9 @@ void Widget::on_Serialdata_readytoread()
     totalRxBytes += rxBytes;
     ui->Rx_label->setText(QString("Rx: %1 bytes").arg(totalRxBytes));
 
-    // 更新 recv_textEdit 里面的文本总量到 size_label
-    int textSize = ui->recv_textEdit->toPlainText().toUtf8().size();
-    ui->size_label->setText(QString("Size: %1 Kb").arg(textSize / 1024.0, 0, 'f', 2));
+    // 累加到 size_label
+    totalTextSize += rxBytes;
+    updateSizeLabel();
 }
 
 //自动换行
@@ -256,4 +264,35 @@ void Widget::on_auto_reline_pushButton_clicked(){
 void Widget::updateTimeLabel() {
     QString currentTime = QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss");
     ui->time_label->setText(currentTime);
+}
+
+// 更新 size_label
+void Widget::updateSizeLabel() {
+    QString sizeText;
+    if (totalTextSize < 1024 * 1024) {
+        sizeText = QString("Size: %1 Kb").arg(totalTextSize / 1024.0, 0, 'f', 2);
+    } else if (totalTextSize < 1024 * 1024 * 1024) {
+        sizeText = QString("Size: %1 Mb").arg(totalTextSize / (1024.0 * 1024.0), 0, 'f', 2);
+    } else {
+        sizeText = QString("Size: %1 Gb").arg(totalTextSize / (1024.0 * 1024.0 * 1024.0), 0, 'f', 2);
+    }
+    ui->size_label->setText(sizeText);
+}
+
+//保存为文件
+void Widget::on_Save_pushButton_clicked()
+{
+    QString fileName = QDateTime::currentDateTime().toString("yyyyMMdd_HHmmss") + ".txt";
+    QFile file(fileName);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::warning(this, "Error", "Can't open file to write!");
+        return;
+    }
+    QTextStream out(&file);
+    out << ui->recv_textEdit->toPlainText();
+    file.close();
+    ui->info_label->setText("Saved to " + fileName);
+    ui->recv_textEdit->clear();
+    totalTextSize = 0; // 重置总文本大小
+    updateSizeLabel(); // 更新 size_label
 }

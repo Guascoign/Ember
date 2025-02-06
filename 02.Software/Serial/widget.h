@@ -26,16 +26,17 @@ private slots:
     void on_Clear_recvbuf_pushButton_clicked();
     void on_Serialdata_readytoread(); 
     void on_auto_reline_pushButton_clicked();
-    void updateTimeLabel(); // 新增方法声明
-    // 删除自动发送相关的槽函数声明
+    void on_Save_pushButton_clicked();
+    void updateTimeLabel();
 private:
     Ui::Widget *ui;
-    QSerialPort *SerialPort; // 新增成员变量
-    bool autoRelineEnabled; // 新增成员变量
-    QTimer *timeUpdateTimer; // 新增成员变量
-    // 删除自动发送相关的成员变量
-    void searchSerialPorts(); // 新增方法声明
-    void animateProgressBar(int startValue, int endValue, int duration); // 新增方法声明
+    QSerialPort *SerialPort;
+    bool autoRelineEnabled;
+    QTimer *timeUpdateTimer;
+    qint64 totalTextSize; 
+    void searchSerialPorts(); 
+    void animateProgressBar(int startValue, int endValue, int duration); 
+    void updateSizeLabel();
 };
 
 #endif // WIDGET_H
