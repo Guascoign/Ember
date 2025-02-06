@@ -46,7 +46,7 @@
         </property>
         <layout class="QGridLayout" name="gridLayout">
          <item row="0" column="0">
-          <widget class="QTextEdit" name="recv_textEdit_2">
+          <widget class="QTextEdit" name="recv_textEdit">
            <property name="font">
             <font>
              <family>优设标题黑</family>
@@ -278,6 +278,12 @@
                <family>优设标题黑</family>
                <pointsize>10</pointsize>
               </font>
+             </property>
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>99999</number>
              </property>
             </widget>
            </item>
@@ -713,7 +719,7 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_11">
            <item>
-            <widget class="QLabel" name="seze_label">
+            <widget class="QLabel" name="size_label">
              <property name="font">
               <font>
                <family>优设标题黑</family>

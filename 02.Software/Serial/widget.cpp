@@ -4,14 +4,20 @@
 #include <QSerialPort>
 #include <QDebug>
 #include <QTimer>
+#include <QElapsedTimer>
+#include <QRegularExpression> // 新增头文件
+#include <QDateTime> // 新增头文件
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
-    , SerialPort(new QSerialPort(this)) // 修复初始化
+    , SerialPort(new QSerialPort(this))
+    , autoRelineEnabled(false) // 初始化成员变量
+    , timeUpdateTimer(new QTimer(this)) // 初始化成员变量
 {
     ui->setupUi(this);
     this->setLayout(ui->gridLayoutGlobal);
+    connect(SerialPort, &QSerialPort::readyRead, this, &Widget::on_Serialdata_readytoread);
     // 关闭扩展
     ui->Addons_groupBox->hide();
     // 设置默认值
@@ -20,9 +26,15 @@ Widget::Widget(QWidget *parent)
     ui->parity_comboBox->setCurrentIndex(0);// None
     ui->stopbits_comboBox->setCurrentIndex(0);// 1
     ui->flowcontrol_comboBox->setCurrentIndex(0);// None
-
+    ui->AUTOSEND_time_spinBox->setValue(1000); // 初始化自动发送时间为1000ms
+    // 更新时间到 time_label
+    updateTimeLabel();
     // 调用搜索串口方法
     searchSerialPorts();
+
+    // 设置定时器每秒更新一次时间
+    connect(timeUpdateTimer, &QTimer::timeout, this, &Widget::updateTimeLabel);
+    timeUpdateTimer->start(1000);
 }
 
 Widget::~Widget()
@@ -32,12 +44,55 @@ Widget::~Widget()
 
 //发送数据
 void Widget::on_SEND_pushButton_clicked(){
-    QString data = ui->send_textEdit->toPlainText(); // 获取文本框中的文本
-    SerialPort->write(data.toUtf8()); // 发送数据
-    qDebug() << "Send Data:" << data << Qt::endl;
+    if (SerialPort->isOpen()) {
+        QString data = ui->send_textEdit->toPlainText(); // 获取文本框中的文本
+        if (data.isEmpty()) {
+            ui->info_label->setText("Error: 发送框为空");
+            qDebug() << "Error: 发送框为空" << Qt::endl;
+            return;
+        }
+        SerialPort->write(data.toUtf8()); // 发送数据
+        qDebug() << "Send Data:" << data << Qt::endl;
+        
+        if (autoRelineEnabled) {
+            ui->recv_textEdit->append("<- " + data);
+        } else {
+            ui->recv_textEdit->append(data);
+        }
+        // 更新发送的数据量到 Tx_label
+        static int totalTxBytes = 0;
+        int txBytes = data.toUtf8().size();
+        totalTxBytes += txBytes;
+        ui->Tx_label->setText(QString("Tx: %1 bytes").arg(totalTxBytes));
+        
+
+    } else {
+        ui->info_label->setText("Error: 串口未打开");
+        qDebug() << "Error: 串口未打开" << Qt::endl;
+    }
 }
 
+//清空发送数据
+void Widget::on_Clear_sendbuf_pushButton_clicked(){
+    ui->send_textEdit->clear();
+}
 
+//清空接收数据
+void Widget::on_Clear_recvbuf_pushButton_clicked(){
+    ui->recv_textEdit->clear();
+}
+
+//进度条动画
+void Widget::animateProgressBar(int startValue, int endValue, int duration) {
+    QElapsedTimer timer;
+    timer.start();
+    while (timer.elapsed() < duration) {
+        int value = startValue + (endValue - startValue) * timer.elapsed() / duration;
+        ui->progressBar->setValue(value);
+        QCoreApplication::processEvents();
+    }
+    ui->progressBar->setValue(endValue);
+}
 
 //打开-关闭串口
 void Widget::on_Opem_COM_pushButton_clicked()
@@ -54,17 +109,7 @@ void Widget::on_Opem_COM_pushButton_clicked()
         ui->Opem_COM_pushButton->setText("打开串口");
 
         // 进度条动画
-        QTimer *timer = new QTimer(this);
-        connect(timer, &QTimer::timeout, [=]() {
-            int value = ui->progressBar->value();
-            if (value > 0) {
-                ui->progressBar->setValue(value - 1);
-            } else {
-                timer->stop();
-                timer->deleteLater();
-            }
-        });
-        timer->start(1); // 每1毫秒更新一次
+        animateProgressBar(100, 0, 100); // 关闭串口时进度条从100到0，持续1秒
     } else {
         // 获取选择的串口信息
         QString selectedPort = ui->Serial_number_comboBox->currentText().split(":").first();
@@ -114,17 +159,7 @@ void Widget::on_Opem_COM_pushButton_clicked()
             ui->Opem_COM_pushButton->setText("关闭串口");
             
             // 进度条动画
-            QTimer *timer = new QTimer(this);
-            connect(timer, &QTimer::timeout, [=]() {
-                int value = ui->progressBar->value();
-                if (value < 100) {
-                    ui->progressBar->setValue(value + 1);
-                } else {
-                    timer->stop();
-                    timer->deleteLater();
-                }
-            });
-            timer->start(1); // 每1毫秒更新一次
+            animateProgressBar(0, 100, 100); 
         }
         else{
             qDebug() << "Open Serial Port Failed!" << Qt::endl;
@@ -134,7 +169,6 @@ void Widget::on_Opem_COM_pushButton_clicked()
         }
     }
 }
-
 
 // 扩展开关
 void Widget::on_Addons_checkBox_clicked(bool checked)
@@ -148,6 +182,7 @@ void Widget::on_Addons_checkBox_clicked(bool checked)
         qDebug() << checked << Qt::endl;
     }
 }
+
 //串口搜索
 void Widget::searchSerialPorts()
 {
@@ -174,4 +209,51 @@ void Widget::searchSerialPorts()
     }
 }
 
+void Widget::on_Serialdata_readytoread()
+{
+    QString recvData = SerialPort->readAll();
+    if (ui->auto_reline_pushButton->text() == "自动换行") {
+        recvData.remove(QRegularExpression("\\n"));
+        ui->recv_textEdit->moveCursor(QTextCursor::End);
+        ui->recv_textEdit->insertPlainText(recvData);
+    } else {
+        ui->recv_textEdit->append("-> " + recvData);
+    }
+    // 更新收到的数据量到 Rx_label
+    static int totalRxBytes = 0;
+    int rxBytes = recvData.toUtf8().size();
+    totalRxBytes += rxBytes;
+    ui->Rx_label->setText(QString("Rx: %1 bytes").arg(totalRxBytes));
 
+    // 更新 recv_textEdit 里面的文本总量到 size_label
+    int textSize = ui->recv_textEdit->toPlainText().toUtf8().size();
+    ui->size_label->setText(QString("Size: %1 Kb").arg(textSize / 1024.0, 0, 'f', 2));
+}
+
+//自动换行
+void Widget::on_auto_reline_pushButton_clicked(){
+    autoRelineEnabled = !autoRelineEnabled;
+    if(autoRelineEnabled){
+        ui->recv_textEdit->setWordWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
+        ui->auto_reline_pushButton->setText("取消自动换行");
+    }
+    else{
+        ui->recv_textEdit->setWordWrapMode(QTextOption::NoWrap);
+        ui->auto_reline_pushButton->setText("自动换行");
+    }
+    QString text = ui->recv_textEdit->toPlainText();
+    if (autoRelineEnabled) {
+        if (!text.endsWith("\n")) {
+            text.append("\n");
+        }
+    } else {
+        text.remove(QRegularExpression("\\n$"));
+    }
+    ui->recv_textEdit->setPlainText(text);
+}
+
+// 更新时间到 time_label
+void Widget::updateTimeLabel() {
+    QString currentTime = QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss");
+    ui->time_label->setText(currentTime);
+}

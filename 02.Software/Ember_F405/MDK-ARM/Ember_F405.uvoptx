@@ -152,6 +152,38 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
+          <LineNumber>147</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134239572</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\Core\Src\FreeRTOS_main.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\Ember\../Core/Src/FreeRTOS_main.c\147</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>122</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134366208</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>../Core/Src/main.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\Ember\../Core/Src/main.c\122</Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
           <LineNumber>178</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
@@ -161,7 +193,7 @@
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\Drivers\BSP\GPIO\key_device.c</Filename>
+          <Filename>.\startup_stm32f405xx.s</Filename>
           <ExecCommand></ExecCommand>
           <Expression></Expression>
         </Bp>
@@ -265,7 +297,7 @@
 
   <Group>
     <GroupName>Application/User/Core</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>

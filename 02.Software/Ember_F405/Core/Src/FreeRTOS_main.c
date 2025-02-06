@@ -101,9 +101,7 @@ void start_task(void *pvParameters)
 {
   taskENTER_CRITICAL();           /* 进入临界区 */
   //Soft_timer_Init();						// 蜂鸣器初始化
-  //PWM_WS2812B_Init(125);	// RGB初始化
   All_Peripherals_Init();    // 初始化所有外设
-
 
   /* 创建任务1 */
   xTaskCreate((TaskFunction_t )Main,
@@ -154,7 +152,10 @@ void Main(void *pvParameters)
   //WS2812B.SetAllRGB(&WS2812B,0,0,255);
   while(1)
   {
-  vTaskDelay(pdMS_TO_TICKS(100));
+    printf("NO");
+    printf("YES\r\n");
+  vTaskDelay(pdMS_TO_TICKS(500));
+  
   }
 }
 
