@@ -16,6 +16,8 @@ find_package(Qt6 COMPONENTS SerialPort REQUIRED)
 set(PROJECT_SOURCES
         main.cpp
         widget.cpp
+        serial.h
+        serial.cpp
         widget.h
         widget.ui
 )

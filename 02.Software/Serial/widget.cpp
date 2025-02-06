@@ -11,6 +11,7 @@
 #include <QFile> // 新增头文件
 #include <QTextStream> // 新增头文件
 #include <QMessageBox> // 新增头文件
+#include <QCoreApplication>
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
@@ -18,11 +19,17 @@ Widget::Widget(QWidget *parent)
     , SerialPort(new QSerialPort(this))
     , autoRelineEnabled(false) // 初始化成员变量
     , timeUpdateTimer(new QTimer(this)) // 初始化成员变量
+    , serialPortUpdateTimer(new QTimer(this)) // 初始化定时器
     , totalTextSize(0) // 初始化成员变量
+    , currentPortName("") // 初始化成员变量
+    , disconnectFlag(false) // 初始化断开连接标志位
 {
     ui->setupUi(this);
     this->setLayout(ui->gridLayoutGlobal);
+
+
     connect(SerialPort, &QSerialPort::readyRead, this, &Widget::on_Serialdata_readytoread);
+    connect(serialPortUpdateTimer, &QTimer::timeout, this, &Widget::updateSerialPorts); // 连接定时器信号到槽
     // 关闭扩展
     ui->Addons_groupBox->hide();
     // 设置默认值
@@ -40,6 +47,13 @@ Widget::Widget(QWidget *parent)
     // 设置定时器每秒更新一次时间
     connect(timeUpdateTimer, &QTimer::timeout, this, &Widget::updateTimeLabel);
     timeUpdateTimer->start(1000);
+
+    // 启动定时器，每2秒更新一次串口列表
+    serialPortUpdateTimer->start(2000);
+
+    autoReconnectTimer = new QTimer(this); // 初始化定时器
+    autoReconnectTimer->setInterval(2000); // 设置定时器间隔为2秒
+    connect(autoReconnectTimer, &QTimer::timeout, this, &Widget::attemptReconnect); // 连接定时器信号到槽
 }
 
 Widget::~Widget()
@@ -118,7 +132,25 @@ void Widget::on_Opem_COM_pushButton_clicked()
 
         // 进度条动画
         animateProgressBar(100, 0, 100); // 关闭串口时进度条从100到0，持续1秒
+        currentPortName = ""; // 清空当前串口号
+        disconnectFlag = false; // 重置断开连接标志位
+        ui->label_17->setText("串口号："); // 清空显示的串口号
     } else {
+        if (disconnectFlag) {
+            QList<QSerialPortInfo> serialList = QSerialPortInfo::availablePorts();
+            bool portStillExists = false;
+            for (const QSerialPortInfo &serialInfo : serialList) {
+                if (serialInfo.portName() == currentPortName) {
+                    portStillExists = true;
+                    break;
+                }
+            }
+            if (!portStillExists) {
+                ui->info_label->setText(QString("Error: 无法重新连接到%1:%2").arg(currentPortName, ui->Serial_number_comboBox->currentText().split(":").last()));
+                return;
+            }
+        }
+
         // 获取选择的串口信息
         QString selectedPort = ui->Serial_number_comboBox->currentText().split(":").first();
         // 选择串口
@@ -168,6 +200,9 @@ void Widget::on_Opem_COM_pushButton_clicked()
             
             // 进度条动画
             animateProgressBar(0, 100, 100); 
+            currentPortName = selectedPort; // 记录当前串口号
+            disconnectFlag = false; // 重置断开连接标志位
+            ui->label_17->setText("串口号：" + selectedPort); // 显示当前串口号
         }
         else{
             qDebug() << "Open Serial Port Failed!" << Qt::endl;
@@ -188,6 +223,16 @@ void Widget::on_Addons_checkBox_clicked(bool checked)
     else{
         ui->Addons_groupBox->hide();
         qDebug() << checked << Qt::endl;
+    }
+}
+
+//自动重连
+void Widget::on_Auto_reconnect_checkBox_clicked(bool checked)
+{
+    if (checked && disconnectFlag) {
+        autoReconnectTimer->start(); // 启动定时器
+    } else {
+        autoReconnectTimer->stop(); // 停止定时器
     }
 }
 
@@ -284,15 +329,74 @@ void Widget::on_Save_pushButton_clicked()
 {
     QString fileName = QDateTime::currentDateTime().toString("yyyyMMdd_HHmmss") + ".txt";
     QFile file(fileName);
+    animateProgressBar(0, 50, 500); 
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::warning(this, "Error", "Can't open file to write!");
+        animateProgressBar(50, 0, 500); 
         return;
     }
     QTextStream out(&file);
     out << ui->recv_textEdit->toPlainText();
     file.close();
+    animateProgressBar(50, 100, 500);
     ui->info_label->setText("Saved to " + fileName);
     ui->recv_textEdit->clear();
     totalTextSize = 0; // 重置总文本大小
     updateSizeLabel(); // 更新 size_label
+}
+
+void Widget::updateSerialPorts()
+{
+    QString currentPortName;
+    QString currentPortDescription;
+    if (SerialPort->isOpen()) {
+        currentPortName = SerialPort->portName();
+        currentPortDescription = ui->Serial_number_comboBox->currentText().split(":").last();
+    }
+
+    QList<QSerialPortInfo> newSerialList = QSerialPortInfo::availablePorts();
+    QStringList newSerialNames;
+    for (const QSerialPortInfo &serialInfo : newSerialList) {
+        newSerialNames.append(serialInfo.portName());
+    }
+
+    QStringList oldSerialNames;
+    for (int i = 0; i < ui->Serial_number_comboBox->count(); ++i) {
+        oldSerialNames.append(ui->Serial_number_comboBox->itemText(i).split(":").first());
+    }
+
+    if (SerialPort->isOpen() && newSerialNames.contains(currentPortName)) {
+        return; // 当前串口未丢失，不更新列表
+    }
+
+    if (newSerialNames == oldSerialNames) {
+        return; // 串口列表未发生变化，不更新
+    }
+
+    ui->Serial_number_comboBox->clear();
+    searchSerialPorts();
+
+    if (!currentPortName.isEmpty()) {
+        bool portStillExists = false;
+        for (const QSerialPortInfo &serialInfo : newSerialList) {
+            if (serialInfo.portName() == currentPortName) {
+                portStillExists = true;
+                break;
+            }
+        }
+
+        if (!portStillExists) {
+            SerialPort->close();
+            ui->info_label->setText(QString("串口断联，已关闭%1:%2").arg(currentPortName, currentPortDescription));
+            ui->Opem_COM_pushButton->setText("重新连接");
+            disconnectFlag = true; // 设置断开连接标志位
+        }
+    }
+}
+
+void Widget::attemptReconnect()
+{
+    if (disconnectFlag) {
+        on_Opem_COM_pushButton_clicked();
+    }
 }
