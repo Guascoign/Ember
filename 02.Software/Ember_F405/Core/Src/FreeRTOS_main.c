@@ -151,12 +151,9 @@ void Main(void *pvParameters)
 	//lv_demo_benchmark();//启动benchmark例程
   //uint8_t i = 0;
   RUNLED.Set(&RUNLED, LED_Blink_Three, continue_Blink);
-  //WS2812B.SetAllRGB(&WS2812B,0,0,255);t
+  //WS2812B.SetAllRGB(&WS2812B,0,0,255);
   while(1)
   {
-  //lcdprintf("Key2:%d\t%d\tKey1:%d\t%d\r\n",key2.value,key2.PressCount,key1.value,key1.PressCount);
-  //lcdprintf("Key2:%d Key1:%d\r\n",key2.Read(&key2),key1.Read(&key1));
-  //lcdprintf("Main Task Runing LCD Refresh %d\r\n",i++);
   vTaskDelay(pdMS_TO_TICKS(100));
   }
 }

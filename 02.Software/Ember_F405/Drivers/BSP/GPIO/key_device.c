@@ -63,6 +63,7 @@ void Key_Mode_Callback(void *args)
 			KEY->Mode_timer.timeout = ~0;//复位
 		}
 	}
+	//printf("Key_Mode_Callback\n");
 }
 
 /**
@@ -81,6 +82,7 @@ void Key_Click_Callback(void *args)
 		KEY->Callback(KEY);
 		KEY->PressCount = 0;//按键次数清零
 	}
+	//printf("Key_Click_Callback\n");
 }
 
 /**

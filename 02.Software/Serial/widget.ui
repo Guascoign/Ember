@@ -886,7 +886,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="data_comboBox">
+            <widget class="QComboBox" name="databits_comboBox">
              <item>
               <property name="text">
                <string>5</string>
@@ -926,7 +926,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="check_comboBox">
+            <widget class="QComboBox" name="parity_comboBox">
              <item>
               <property name="text">
                <string>None</string>
@@ -966,7 +966,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="stop_comboBox">
+            <widget class="QComboBox" name="stopbits_comboBox">
              <item>
               <property name="text">
                <string>1</string>
@@ -1001,7 +1001,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="Flow_control_comboBox">
+            <widget class="QComboBox" name="flowcontrol_comboBox">
              <item>
               <property name="text">
                <string>None</string>
