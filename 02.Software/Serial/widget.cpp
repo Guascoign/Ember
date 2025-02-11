@@ -1,35 +1,66 @@
 #include "widget.h"
 #include "ui_widget.h"
+#include "chart.h"
+#include "chartview.h"
+#include <QLineSeries>
+#include <QMainWindow>
+#include <QRandomGenerator>
+#include <QtMath>
+#include <QValueAxis>
 #include <QSerialPortInfo>
 #include <QSerialPort>
 #include <QDebug>
 #include <QTimer>
 #include <QElapsedTimer>
-#include <QRegularExpression> // 新增头文件
-#include <QDateTime> // 新增头文件
-#include <QFileDialog> // 新增头文件
-#include <QFile> // 新增头文件
-#include <QTextStream> // 新增头文件
-#include <QMessageBox> // 新增头文件
+#include <QRegularExpression>
+#include <QDateTime>
+#include <QFileDialog>
+#include <QFile>
+#include <QTextStream>
+#include <QMessageBox>
 #include <QCoreApplication>
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
     , SerialPort(new QSerialPort(this))
-    , autoRelineEnabled(false) // 初始化成员变量
-    , timeUpdateTimer(new QTimer(this)) // 初始化成员变量
-    , serialPortUpdateTimer(new QTimer(this)) // 初始化定时器
-    , totalTextSize(0) // 初始化成员变量
-    , currentPortName("") // 初始化成员变量
-    , disconnectFlag(false) // 初始化断开连接标志位
+    , autoRelineEnabled(false)
+    , timeUpdateTimer(new QTimer(this))
+    , serialPortUpdateTimer(new QTimer(this))
+    , totalTextSize(0)
+    , currentPortName("")
+    , disconnectFlag(false)
 {
     ui->setupUi(this);
     this->setLayout(ui->gridLayoutGlobal);
 
+    auto series = new QLineSeries;
+    for (int i = 0; i < 500; i++) {
+        QPointF p((qreal) i, qSin(M_PI / 50 * i) * 100);
+        p.ry() += QRandomGenerator::global()->bounded(20);
+        *series << p;
+    }
+//https://blog.csdn.net/weixin_53403301/article/details/141168015
+    auto chart = new Chart;
+    chart->addSeries(series);
+    chart->setTitle("example");
+    chart->setAnimationOptions(QChart::SeriesAnimations);
+    chart->legend()->hide();
+    chart->createDefaultAxes();
+    
+    // 将 QChart 设置为 ui->DCDC_chartView 的图表
+    ui->DCDC_ChartView->setChart(chart);
+    ui->DCDC_ChartView->setRenderHint(QPainter::Antialiasing);
+    
+     // 启用缩放和拖动功能
+    ui->DCDC_ChartView->setRubberBand(QChartView::RectangleRubberBand);
+    
+
+
 
     connect(SerialPort, &QSerialPort::readyRead, this, &Widget::on_Serialdata_readytoread);
     connect(serialPortUpdateTimer, &QTimer::timeout, this, &Widget::updateSerialPorts); // 连接定时器信号到槽
+    connect(SerialPort,SIGNAL(errorOccurred(QSerialPort::SerialPortError)),this,SLOT(handleSerialError(QSerialPort::SerialPortError)));
     // 关闭扩展
     ui->Addons_groupBox->hide();
     // 设置默认值
@@ -94,6 +125,20 @@ void Widget::on_SEND_pushButton_clicked(){
     }
 }
 
+/*********************************串口基本设置相关函数*********************************/
+void Widget::handleSerialError(QSerialPort::SerialPortError serialPortErr)
+{
+    if(serialPortErr == QSerialPort::ResourceError)
+    {
+        QMessageBox::critical(NULL, "critical", "设备拔出", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+
+    }
+    if(serialPortErr == QSerialPort::DeviceNotFoundError)
+    {
+        QMessageBox::critical(NULL, "critical", "找不到串口", QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+
+    }
+}
 //清空发送数据
 void Widget::on_Clear_sendbuf_pushButton_clicked(){
     ui->send_textEdit->clear();

@@ -147,14 +147,21 @@ void Main(void *pvParameters)
   Boot_anim();
    vTaskDelay(pdMS_TO_TICKS(100));
 	//lv_demo_benchmark();//启动benchmark例程
-  //uint8_t i = 0;
+  uint16_t Lable_x,Lable_y;//图表x轴&y轴数据
+  //uint16_t i;
+  Lable_x = 0;
+  Lable_y = 0;
   RUNLED.Set(&RUNLED, LED_Blink_Three, continue_Blink);
   //WS2812B.SetAllRGB(&WS2812B,0,0,255);
+  printf("Label_Start\r\n");
   while(1)
   {
-    printf("NO");
-    printf("YES\r\n");
-  vTaskDelay(pdMS_TO_TICKS(500));
+    //x为三角波 y为正弦波
+    Lable_x = (Lable_x + 1) % 100; // 三角波生成
+    Lable_y = (uint16_t)(50 * (1 + sin(Lable_x * 2 * 3.14 / 100))); // 正弦波生成
+    printf("%d,%d\r\n",Lable_x,Lable_y);
+
+  vTaskDelay(pdMS_TO_TICKS(250));
   
   }
 }

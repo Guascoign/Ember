@@ -3,8 +3,9 @@
 
 #include <QWidget>
 #include <QTimer>
-#include <QSerialPort> // 新增头文件
-#include "serial.h" // 新增头文件
+#include <QSerialPort>
+#include "serial.h"
+#include <QtCharts/QChartView>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -31,20 +32,20 @@ private slots:
     void on_auto_reline_pushButton_clicked();
     void on_Save_pushButton_clicked();
     void updateTimeLabel();
-    void updateSerialPorts(); // 新增槽函数声明
-    void attemptReconnect(); // 新增槽函数声明
-
+    void updateSerialPorts();
+    void attemptReconnect();
+    void handleSerialError(QSerialPort::SerialPortError serialPortErr);
 private:
     Ui::Widget *ui;
     QSerialPort *SerialPort;
     bool autoRelineEnabled;
     QTimer *timeUpdateTimer;
     QTimer *serialPortUpdateTimer;
-    QTimer *autoReconnectTimer; // 新增定时器
+    QTimer *autoReconnectTimer;
     qint64 totalTextSize; 
-    QString currentPortName; // 新增成员变量
-    QString currentPortDescription; // 新增成员变量
-    bool disconnectFlag; // 新增断开连接标志位
+    QString currentPortName;
+    QString currentPortDescription;
+    bool disconnectFlag;
     void searchSerialPorts(); 
     void animateProgressBar(int startValue, int endValue, int duration); 
     void updateSizeLabel();

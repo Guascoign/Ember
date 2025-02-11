@@ -370,7 +370,7 @@
           </font>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="tab_2">
           <attribute name="title">
@@ -530,7 +530,7 @@
           </attribute>
           <layout class="QGridLayout" name="gridLayout_7">
            <item row="1" column="0">
-            <widget class="ChartView::ChartView::QChartView" name="DCDC_ChartView" native="true"/>
+            <widget class="QWidget" name="DCDC_ChartView" native="true"/>
            </item>
            <item row="2" column="0">
             <widget class="QPushButton" name="SEND_pushButton_2">
@@ -802,7 +802,7 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QComboBox" name="Serial_number_comboBox">
+        <widget class="NComboBox" name="Serial_number_comboBox">
          <property name="minimumSize">
           <size>
            <width>180</width>
@@ -832,7 +832,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="boundrate_comboBox">
+            <widget class="QComboBox" name="BaudRate_comboBox">
              <item>
               <property name="text">
                <string>4800</string>
@@ -897,7 +897,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="databits_comboBox">
+            <widget class="QComboBox" name="DataBits_comboBox">
              <item>
               <property name="text">
                <string>5</string>
@@ -937,7 +937,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="parity_comboBox">
+            <widget class="QComboBox" name="Parity_comboBox">
              <item>
               <property name="text">
                <string>None</string>
@@ -977,7 +977,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="stopbits_comboBox">
+            <widget class="QComboBox" name="StopBits_comboBox">
              <item>
               <property name="text">
                <string>1</string>
@@ -1012,7 +1012,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="flowcontrol_comboBox">
+            <widget class="QComboBox" name="FlowControl_comboBox">
              <item>
               <property name="text">
                <string>None</string>
@@ -1087,10 +1087,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ChartView::ChartView::QChartView</class>
-   <extends>QWidget</extends>
-   <header>chartview.h</header>
-   <container>1</container>
+   <class>NComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">ncombobox.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
