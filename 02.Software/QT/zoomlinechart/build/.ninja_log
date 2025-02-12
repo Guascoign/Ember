@@ -1,0 +1,10 @@
+# ninja log v6
+10	231	7610322049053401	zoomlinechart_autogen/timestamp	db8289420da43faa
+10	231	7610322049053401	zoomlinechart_autogen/mocs_compilation.cpp	db8289420da43faa
+10	231	7610322049053401	D:/Projects/Ember/02.Software/QT/zoomlinechart/build/zoomlinechart_autogen/timestamp	db8289420da43faa
+10	231	7610322049053401	D:/Projects/Ember/02.Software/QT/zoomlinechart/build/zoomlinechart_autogen/mocs_compilation.cpp	db8289420da43faa
+236	339	7610322049750393	CMakeFiles/zoomlinechart.dir/zoomlinechart_autogen/mocs_compilation.cpp.obj	e9db34b744ef50f8
+263	1687	7610322050022486	CMakeFiles/zoomlinechart.dir/chartview.cpp.obj	998005f0d2c506e0
+249	1793	7610322049893483	CMakeFiles/zoomlinechart.dir/chart.cpp.obj	24f8c59f77535398
+276	1838	7610322050154169	CMakeFiles/zoomlinechart.dir/main.cpp.obj	cabfcadb7b6d8409
+1839	2067	7610322065786974	zoomlinechart.exe	3f00be77e39c4bdf
