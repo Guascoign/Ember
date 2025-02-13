@@ -39,7 +39,13 @@ private slots:
     void on_Opem_COM_pushButton_clicked();//打开串口信号槽
     void on_Serial_number_comboBox_clicked();//串口号信号槽
     void handleSerialError(QSerialPort::SerialPortError error);//串口错误处理
-
+    void on_time_checkBox_clicked(bool checked);//时间显示信号槽
+    void on_auto_reline_pushButton_clicked();//自动换行信号槽
+    void on_recv_format_pushButton_clicked();//接收区格式化信号槽
+    void on_send_format_pushButton_clicked();//发送区格式化信号槽
+    void on_Auto_reconnect_checkBox_clicked(bool checked);//自动重连信号槽
+    void readSerialData();
+    void on_Auto_roll_pushButton_clicked();//自动滚动信号槽
 private:
     Ui::Widget *ui;
     void Update_RTC();//更新RTC
@@ -53,8 +59,10 @@ private:
     void System_Init();//系统初始化
     void updateSizeLabel();//更新数据量
     int autoReline_Flag;//自动换行标志
+    int showTime_Flag;//时间显示标志
     int totalTextSize;//总数据量
     int autoSend_Flag;//自动发送标志
     int autoSend_time;//自动发送时间
+    bool autoScrollEnabled;//自动滚动标志
 };
 #endif // WIDGET_H

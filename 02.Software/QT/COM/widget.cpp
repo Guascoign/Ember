@@ -3,7 +3,7 @@
 #include "./ui_widget.h"
 #include "chart.h"
 #include "chartview.h"
-
+#include <QDateTime>
 #include <QLineSeries>
 #include <QMainWindow>
 #include <QRandomGenerator>
@@ -15,6 +15,7 @@ Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
     , serialPortHandler(new SerialPortHandler())
+    , autoScrollEnabled(false) // 初始化自动滚动标志
 {
     ui->setupUi(this);
     this->setLayout(ui->gridLayoutGlobal);//布局缩放
@@ -50,13 +51,14 @@ void Widget::System_Init()
     totalTextSize = 0; // 初始化总文本大小为0
     autoReline_Flag = 0;//初始化自动换行标志
     autoSend_Flag = 0;//初始化自动发送标志
-    animateProgressBar(0, 20, 100);
+    animateProgressBar(10, 20, 100);
 
 //---------------------串口初始化----------------------
     connect(ui->Serial_number_comboBox,SIGNAL(clicked()),this,SLOT(Update_SerialPort()));//点击串口下拉框刷新串口
     connect(serialPortHandler->serialPort,SIGNAL(errorOccurred(QSerialPort::SerialPortError)),this,SLOT(handleSerialError(QSerialPort::SerialPortError)));//串口错误处理
+    connect(serialPortHandler->serialPort, &QSerialPort::readyRead, this, &Widget::readSerialData);
     Update_SerialPort();
-    animateProgressBar(0, 30, 100);
+    animateProgressBar(20, 30, 100);
 
     //生成正弦波
     auto series = new QLineSeries;
@@ -90,7 +92,6 @@ void Widget::System_Init()
     chartView->setRenderHint(QPainter::Antialiasing);
     ui->DCDC_ChartView = chartView; // 设置自定义的 ChartView 对象
     ui->gridLayout_7->addWidget(ui->DCDC_ChartView, 1, 0, 1, 1);//添加到布局
-    //ui->DCDC_ChartView->setChart(chart);
 
     auto Chart22 = new Chart;
     Chart22->addSeries(series2);
@@ -101,10 +102,9 @@ void Widget::System_Init()
     auto chartView2 = new ChartView(Chart22); // 使用自定义的 ChartView 类
     chartView2->setRenderHint(QPainter::Antialiasing);
     ui->chart2 = chartView2; // 设置自定义的 ChartView 对象
-
     ui->gridLayout_8->addWidget(ui->chart2, 0, 0, 1, 1);
-    //ui->chart2->setChart(chart);
-   
+    
+    animateProgressBar(30, 100, 100);
 }
 
 // 串口错误处理
@@ -255,6 +255,59 @@ void Widget::on_AUTOSEND_pushButton_clicked()
     
 }
 
+// 接收数据的槽函数
+void Widget::readSerialData()
+{
+    QByteArray data = serialPortHandler->serialPort->readAll();
+    QString receivedData = QString::fromUtf8(data);
+
+    QString formattedData = receivedData;
+    if (autoReline_Flag == 1 && showTime_Flag == 1) {
+        QString currentTime = QDateTime::currentDateTime().toString("yy/MM/dd-HH:mm:ss");
+        formattedData = QString("[%1]-> %2").arg(currentTime, receivedData);
+
+        ui->recv_textEdit->setTextColor(QColor(Qt::blue));  // 时间戳颜色
+        ui->recv_textEdit->insertPlainText(QString("[%1]").arg(currentTime));
+        ui->recv_textEdit->setTextColor(QColor(Qt::green));  // -> 颜色
+        ui->recv_textEdit->insertPlainText("-> ");
+        ui->recv_textEdit->setTextColor(QColor(Qt::black));  // 数据颜色
+        ui->recv_textEdit->insertPlainText(receivedData);
+        ui->recv_textEdit->append("");  // 添加一个空行以确保新数据在新行显示
+    } else if (autoReline_Flag == 1) {
+        formattedData = "-> " + receivedData;
+        ui->recv_textEdit->setTextColor(QColor(Qt::green));  // -> 颜色
+        ui->recv_textEdit->insertPlainText("-> ");
+        ui->recv_textEdit->setTextColor(QColor(Qt::black));  // 数据颜色
+        ui->recv_textEdit->insertPlainText(receivedData);
+        ui->recv_textEdit->append("");  // 添加一个空行以确保新数据在新行显示
+    } else if (showTime_Flag == 1) {
+        QString currentTime = QDateTime::currentDateTime().toString("yy/MM/dd-HH:mm:ss");
+        formattedData = QString("[%1] %2").arg(currentTime, receivedData);
+        ui->recv_textEdit->setTextColor(QColor(Qt::blue));  // 时间戳颜色
+        ui->recv_textEdit->insertPlainText(QString("[%1] ").arg(currentTime));
+        ui->recv_textEdit->setTextColor(QColor(Qt::black));  // 数据颜色
+        ui->recv_textEdit->insertPlainText(receivedData);
+    } else {
+        ui->recv_textEdit->setTextColor(QColor(Qt::black));  // 数据颜色
+        ui->recv_textEdit->insertPlainText(receivedData);
+    }
+
+    // 自动滚动到末尾
+    if (autoScrollEnabled) {
+        ui->recv_textEdit->moveCursor(QTextCursor::End);
+    }
+
+    // 更新接收的数据量到 Rx_label
+    static int totalRxBytes = 0;
+    int rxBytes = receivedData.toUtf8().size();
+    totalRxBytes += rxBytes;
+    ui->Rx_label->setText(QString("Rx: %1 bytes").arg(totalRxBytes));
+
+    // 累加到 size_label
+    totalTextSize += rxBytes;
+    updateSizeLabel();
+}
+
 // 发送数据
 void Widget::on_SEND_pushButton_clicked() {
     if (serialPortHandler->serialPort->isOpen()) {
@@ -271,11 +324,38 @@ void Widget::on_SEND_pushButton_clicked() {
         serialPortHandler->serialPort->write(data.toUtf8()); // 发送数据
         qDebug() << "Send Data:" << data << Qt::endl;
 
-        if (autoReline_Flag == 1) {
-            ui->recv_textEdit->append("<- " + data);
+        QString formattedData = data;
+        if (autoReline_Flag == 1 && showTime_Flag == 1) {
+            QString currentTime = QDateTime::currentDateTime().toString("yy/MM/dd-HH:mm:ss");
+            formattedData = QString("[%1]<- %2").arg(currentTime, data);
+
+            ui->recv_textEdit->setTextColor(QColor(Qt::blue));  // 时间戳颜色
+            ui->recv_textEdit->insertPlainText(QString("[%1]").arg(currentTime));
+            ui->recv_textEdit->setTextColor(QColor(Qt::red));  // <- 颜色
+            ui->recv_textEdit->insertPlainText("<- ");
+            ui->recv_textEdit->setTextColor(QColor(Qt::black));  // 数据颜色
+            ui->recv_textEdit->insertPlainText(data);
+            ui->recv_textEdit->append("");  // 添加一个空行以确保新数据在新行显示
+        } else if (autoReline_Flag == 1) {
+            formattedData = "<- " + data;
+            ui->recv_textEdit->setTextColor(QColor(Qt::red));  // <- 颜色
+            ui->recv_textEdit->insertPlainText("<- ");
+            ui->recv_textEdit->setTextColor(QColor(Qt::black));  // 数据颜色
+            ui->recv_textEdit->insertPlainText(data);
+            ui->recv_textEdit->append("");  // 添加一个空行以确保新数据在新行显示
+        } else if (showTime_Flag == 1) {
+            QString currentTime = QDateTime::currentDateTime().toString("yy/MM/dd-HH:mm:ss");
+            formattedData = QString("[%1] %2").arg(currentTime, data);
+            ui->recv_textEdit->setTextColor(QColor(Qt::blue));  // 时间戳颜色
+            ui->recv_textEdit->insertPlainText(QString("[%1] ").arg(currentTime));
+            ui->recv_textEdit->setTextColor(QColor(Qt::black));  // 数据颜色
+            ui->recv_textEdit->insertPlainText(data);
         } else {
-            ui->recv_textEdit->append(data);
+            ui->recv_textEdit->setTextColor(QColor(Qt::black));  // 数据颜色
+            ui->recv_textEdit->insertPlainText(data);
         }
+
+
         // 更新发送的数据量到 Tx_label
         static int totalTxBytes = 0;
         int txBytes = data.toUtf8().size();
@@ -295,6 +375,11 @@ void Widget::on_SEND_pushButton_clicked() {
 //保存为文件
 void Widget::on_Save_pushButton_clicked()
 {
+    //文件为空则不保存
+    if(ui->recv_textEdit->toPlainText().isEmpty()){
+        ui->info_label->setText("No Data to Save!");
+        return;
+    }
     QString fileName = QDateTime::currentDateTime().toString("yyyyMMdd_HHmmss") + ".txt";
     QFile file(fileName);
     animateProgressBar(0, 50, 500); 
@@ -348,7 +433,7 @@ void Widget::on_Opem_COM_pushButton_clicked()
     qDebug() << "Opem_COM_pushButton Clicked" << Qt::endl;
     if(serialPortHandler->serialPort->isOpen()){
         serialPortHandler->closeSerialPort();
-        ui->Opem_COM_pushButton->setText("Open COM");
+        ui->Opem_COM_pushButton->setText("打开串口");
         QString description = ui->Serial_number_comboBox->currentText().split(":").last();
         ui->info_label->setText(QString("%1:%2 Closed!").arg(ui->Serial_number_comboBox->currentText().split(":").at(0), description));
     }
@@ -399,11 +484,69 @@ void Widget::on_Opem_COM_pushButton_clicked()
         if(serialPortHandler->openSerialPort(config)){
             QString description = ui->Serial_number_comboBox->currentText().split(":").last();
             ui->info_label->setText(QString("%1:%2 Open!").arg(config.portName, description));
-            ui->Opem_COM_pushButton->setText("Close COM");
+            ui->Opem_COM_pushButton->setText("关闭串口");
         }
         else{
             QString description = ui->Serial_number_comboBox->currentText().split(":").last();
             ui->info_label->setText(QString("ERROR: Open %1:%2 Failed!").arg(config.portName, description));
         }
+    }
+}
+
+//时间显示
+void Widget::on_time_checkBox_clicked(bool checked)
+{
+    if(checked){
+        showTime_Flag = 1;
+        ui->info_label->setText("Time Show!");
+    }
+    else{
+        showTime_Flag = 0;
+        ui->info_label->setText("Time Hide!");
+    }
+}
+
+//自动换行
+void Widget::on_auto_reline_pushButton_clicked()
+{
+    if(autoReline_Flag == 0){
+        autoReline_Flag = 1;
+        ui->info_label->setText("Auto Reline!");
+        ui->auto_reline_pushButton->setText("关闭换行");
+    }
+    else{
+        autoReline_Flag = 0;
+        ui->info_label->setText("Close Auto Reline!");
+        ui->auto_reline_pushButton->setText("自动换行");
+    }
+}
+
+//接收区格式化
+void Widget::on_recv_format_pushButton_clicked()
+{
+
+}
+
+//发送区格式化
+void Widget::on_send_format_pushButton_clicked()
+{
+
+}
+
+//自动重连
+void Widget::on_Auto_reconnect_checkBox_clicked(bool checked)
+{
+
+}
+
+void Widget::on_Auto_roll_pushButton_clicked()
+{
+    autoScrollEnabled = !autoScrollEnabled; // 切换自动滚动标志
+    if (autoScrollEnabled) {
+        ui->info_label->setText("Auto Scroll Enabled");
+        ui->Auto_roll_pushButton->setText("关闭自动滚动");
+    } else {
+        ui->info_label->setText("Auto Scroll Disabled");
+        ui->Auto_roll_pushButton->setText("自动滚动");
     }
 }
