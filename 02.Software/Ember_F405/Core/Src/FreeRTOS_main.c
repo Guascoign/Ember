@@ -14,6 +14,7 @@
 #include "../generated/events_init.h"
 #include "lv_demo_benchmark.h"
 /******************************************************************************************************/
+#include <math.h> 
 lv_ui guider_ui;
 char g_LCD_consle_buf[1280];   // 显示缓冲区
 uint8_t g_LCD_text_flag = 0;
@@ -143,21 +144,16 @@ void start_task(void *pvParameters)
 void Main(void *pvParameters)
 {
   Boot_anim();
-   vTaskDelay(pdMS_TO_TICKS(100));
-	//lv_demo_benchmark();//启动benchmark例程
-  uint16_t Lable_x,Lable_y;//图表x轴&y轴数据
+  vTaskDelay(pdMS_TO_TICKS(100));
+  //lv_demo_benchmark();//启动benchmark例程
   //uint16_t i;
-  Lable_x = 0;
-  Lable_y = 0;
   RUNLED.Set(&RUNLED, LED_Blink_Three, continue_Blink);
-  //WS2812B.SetAllRGB(&WS2812B,0,0,0);
   printf("Label_Start\r\n");
-  uint32_t dma_data[30]; // 定义 DMA 数据数组
+  while (1)
+  {
 
-    while (1)
-    {
- vTaskDelay(pdMS_TO_TICKS(1000));
-    }
+    vTaskDelay(pdMS_TO_TICKS(100));
+  }
 }
 
 /**
@@ -266,7 +262,7 @@ void Boot_anim(void)
 	lcdprintf("HELLO!\n");
  vTaskDelay(pdMS_TO_TICKS(200));
  PWM_WS2812B_Red(3);
- //Beeper_Perform(BOOT);		// 蜂鸣器响声
+ Beeper_Perform(BOOT);		// 蜂鸣器响声
  vTaskDelay(pdMS_TO_TICKS(150));
  PWM_WS2812B_Blue(3);
  vTaskDelay(pdMS_TO_TICKS(150));
